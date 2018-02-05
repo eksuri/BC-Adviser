@@ -32,9 +32,9 @@
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
   </PropertyGroup>
   <ItemGroup>
-    <None Include="ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
+    <Compile Include="finals.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="_testdriver.js" />
   </ItemGroup>
   <ItemGroup>

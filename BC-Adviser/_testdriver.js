@@ -9,11 +9,11 @@
  * 
  */
 
-// Set the region to the locations of the S3 buckets
+// Set the region
 process.env['AWS_REGION'] = 'us-west-2'
 
 var fs = require('fs');
-var app = require('./index');
+var index = require('./index');
 
 // Load the sample event to be passed to Lambda. The _sampleEvent.json file can be modified to match
 // what you want Lambda to process on.
@@ -23,5 +23,13 @@ var context = {};
 context.done = function () {
     console.log("Lambda Function Complete");
 }
+context.succeed= function () {
+    console.log("Lambda Function Success");
+}
+context.fail = function () {
+    console.log("Lambda Function Failure");
+}
 
-app.handler(event, context);
+index.handler(event, context, function () {
+    console.log("Done");
+});

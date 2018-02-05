@@ -1,0 +1,112 @@
+GetFinalsInfoIntent when day are finals 
+GetFinalsInfoIntent this quarter when day are finals
+GetFinalsInfoIntent when day are finals this quarter
+GetFinalsInfoIntent when day are my finals 
+GetFinalsInfoIntent this quarter when day are my finals
+GetFinalsInfoIntent when day are my finals this quarter
+GetFinalsInfoIntent when day are Bellevue College's Finals 
+GetFinalsInfoIntent this quarter when day are Bellevue College's Finals
+GetFinalsInfoIntent when day are Bellevue College's Finals this quarter
+GetFinalsInfoIntent when days are finals 
+GetFinalsInfoIntent this quarter when days are finals
+GetFinalsInfoIntent when days are finals this quarter
+GetFinalsInfoIntent when days are my finals 
+GetFinalsInfoIntent this quarter when days are my finals
+GetFinalsInfoIntent when days are my finals this quarter
+GetFinalsInfoIntent when days are Bellevue College's Finals 
+GetFinalsInfoIntent this quarter when days are Bellevue College's Finals
+GetFinalsInfoIntent when days are Bellevue College's Finals this quarter
+GetFinalsInfoIntent when date are finals 
+GetFinalsInfoIntent this quarter when date are finals
+GetFinalsInfoIntent when date are finals this quarter
+GetFinalsInfoIntent when date are my finals 
+GetFinalsInfoIntent this quarter when date are my finals
+GetFinalsInfoIntent when date are my finals this quarter
+GetFinalsInfoIntent when date are Bellevue College's Finals 
+GetFinalsInfoIntent this quarter when date are Bellevue College's Finals
+GetFinalsInfoIntent when date are Bellevue College's Finals this quarter
+GetFinalsInfoIntent when dates are finals 
+GetFinalsInfoIntent this quarter when dates are finals
+GetFinalsInfoIntent when dates are finals this quarter
+GetFinalsInfoIntent when dates are my finals 
+GetFinalsInfoIntent this quarter when dates are my finals
+GetFinalsInfoIntent when dates are my finals this quarter
+GetFinalsInfoIntent when dates are Bellevue College's Finals 
+GetFinalsInfoIntent this quarter when dates are Bellevue College's Finals
+GetFinalsInfoIntent when dates are Bellevue College's Finals this quarter
+GetFinalsInfoIntent what day are finals 
+GetFinalsInfoIntent this quarter what day are finals
+GetFinalsInfoIntent what day are finals this quarter
+GetFinalsInfoIntent what day are my finals 
+GetFinalsInfoIntent this quarter what day are my finals
+GetFinalsInfoIntent what day are my finals this quarter
+GetFinalsInfoIntent what day are Bellevue College's Finals 
+GetFinalsInfoIntent this quarter what day are Bellevue College's Finals
+GetFinalsInfoIntent what day are Bellevue College's Finals this quarter
+GetFinalsInfoIntent what days are finals 
+GetFinalsInfoIntent this quarter what days are finals
+GetFinalsInfoIntent what days are finals this quarter
+GetFinalsInfoIntent what days are my finals 
+GetFinalsInfoIntent this quarter what days are my finals
+GetFinalsInfoIntent what days are my finals this quarter
+GetFinalsInfoIntent what days are Bellevue College's Finals 
+GetFinalsInfoIntent this quarter what days are Bellevue College's Finals
+GetFinalsInfoIntent what days are Bellevue College's Finals this quarter
+GetFinalsInfoIntent what date are finals 
+GetFinalsInfoIntent this quarter what date are finals
+GetFinalsInfoIntent what date are finals this quarter
+GetFinalsInfoIntent what date are my finals 
+GetFinalsInfoIntent this quarter what date are my finals
+GetFinalsInfoIntent what date are my finals this quarter
+GetFinalsInfoIntent what date are Bellevue College's Finals 
+GetFinalsInfoIntent this quarter what date are Bellevue College's Finals
+GetFinalsInfoIntent what date are Bellevue College's Finals this quarter
+GetFinalsInfoIntent what dates are finals 
+GetFinalsInfoIntent this quarter what dates are finals
+GetFinalsInfoIntent what dates are finals this quarter
+GetFinalsInfoIntent what dates are my finals 
+GetFinalsInfoIntent this quarter what dates are my finals
+GetFinalsInfoIntent what dates are my finals this quarter
+GetFinalsInfoIntent what dates are Bellevue College's Finals 
+GetFinalsInfoIntent this quarter what dates are Bellevue College's Finals
+GetFinalsInfoIntent what dates are Bellevue College's Finals this quarter
+GetFinalsInfoIntent which day are finals 
+GetFinalsInfoIntent this quarter which day are finals
+GetFinalsInfoIntent which day are finals this quarter
+GetFinalsInfoIntent which day are my finals 
+GetFinalsInfoIntent this quarter which day are my finals
+GetFinalsInfoIntent which day are my finals this quarter
+GetFinalsInfoIntent which day are Bellevue College's Finals 
+GetFinalsInfoIntent this quarter which day are Bellevue College's Finals
+GetFinalsInfoIntent which day are Bellevue College's Finals this quarter
+GetFinalsInfoIntent which days are finals 
+GetFinalsInfoIntent this quarter which days are finals
+GetFinalsInfoIntent which days are finals this quarter
+GetFinalsInfoIntent which days are my finals 
+GetFinalsInfoIntent this quarter which days are my finals
+GetFinalsInfoIntent which days are my finals this quarter
+GetFinalsInfoIntent which days are Bellevue College's Finals 
+GetFinalsInfoIntent this quarter which days are Bellevue College's Finals
+GetFinalsInfoIntent which days are Bellevue College's Finals this quarter
+GetFinalsInfoIntent which date are finals 
+GetFinalsInfoIntent this quarter which date are finals
+GetFinalsInfoIntent which date are finals this quarter
+GetFinalsInfoIntent which date are my finals 
+GetFinalsInfoIntent this quarter which date are my finals
+GetFinalsInfoIntent which date are my finals this quarter
+GetFinalsInfoIntent which date are Bellevue College's Finals 
+GetFinalsInfoIntent this quarter which date are Bellevue College's Finals
+GetFinalsInfoIntent which date are Bellevue College's Finals this quarter
+GetFinalsInfoIntent which dates are finals 
+GetFinalsInfoIntent this quarter which dates are finals
+GetFinalsInfoIntent which dates are finals this quarter
+GetFinalsInfoIntent which dates are my finals 
+GetFinalsInfoIntent this quarter which dates are my finals
+GetFinalsInfoIntent which dates are my finals this quarter
+GetFinalsInfoIntent which dates are Bellevue College's Finals 
+GetFinalsInfoIntent this quarter which dates are Bellevue College's Finals
+GetFinalsInfoIntent which dates are Bellevue College's Finals this quarter
+
+AboutIntent who made BC Advisor?
+AboutIntent who programmed BC Advisor?
+AboutIntent tell me about you

@@ -1,0 +1,9 @@
+{
+  "intents": [
+    { "intent": "GetFinalsInfoIntent" },
+    { "intent": "AboutIntent" },
+    { "intent": "AMAZON.HelpIntent" },
+    { "intent": "AMAZON.StopIntent" },
+    { "intent": "AMAZON.CancelIntent" }
+  ]
+  }
