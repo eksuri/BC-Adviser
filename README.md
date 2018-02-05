@@ -1,2 +1,2 @@
 # BC-Adviser
-Amazon Alexa application for Bellevue College Senior Capstone
+Amazon Alexa Skill for Bellevue College Senior Capstone
