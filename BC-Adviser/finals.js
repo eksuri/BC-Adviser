@@ -24,27 +24,28 @@ switch (month) { // this can be a shorter if-else block
         break;
 };
 
+exports.getDates = (callback) => {
+    let dates = [];
+    https.get('https://www.bellevuecollege.edu/courses/exams/', (res) => {
+        //console.log('statusCode:', res.statusCode);
+        //console.log('headers:', res.headers);
 
-let dates = [];
+        let data = '';
 
-https.get('https://www.bellevuecollege.edu/courses/exams/', (res) => {
-    //console.log('statusCode:', res.statusCode);
-    //console.log('headers:', res.headers);
-
-    let data = '';
-
-    res.on('data', (d) => {
-        data += d.toString();
-    }).on('end', (e) => {
-        //console.log(data);
-        while ((match = regex.exec(data))) {
-            match.shift(); // shift match[0], only groups left
-            match.forEach((s) => {
-                dates.push(s);
-            })
-        }
-        console.log(dates); // emit here
+        res.on('data', (d) => {
+            data += d.toString();
+        }).on('end', (e) => {
+            //console.log(data);
+            while ((match = regex.exec(data))) {
+                match.shift(); // shift match[0], only groups left
+                match.forEach((s) => {
+                    dates.push(s);
+                })
+                callback(dates);
+            }
+        });
+    }).on('error', (e) => {
+        return 'sad';
+        //console.error(e);
     });
-}).on('error', (e) => {
-    //console.error(e);
-});
+};
