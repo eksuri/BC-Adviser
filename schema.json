@@ -171,6 +171,13 @@
                     "this quarter which dates are Bellevue College's Finals",
                     "which dates are Bellevue College's Finals this quarter"
                 ]
+            },
+            {
+                "name": "ExampleIntent",
+                "slots": [],
+                "samples": [
+                    "Example Intent"
+                ]
             }
         ],
         "types": [
