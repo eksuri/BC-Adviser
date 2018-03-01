@@ -1,0 +1,11 @@
+{
+    "intents": [
+      {
+        "name": "TimeConflictIntent",
+        "slots": [],
+        "samples": [
+          "TimeConflictIntent"
+          ]
+        }
+    ]
+}
