@@ -178,6 +178,13 @@
                 "samples": [
                     "Example Intent"
                 ]
+            },
+            {
+                "name": "TimeConflictIntent",
+                "slots": [],
+                "samples": [
+                    "TimeConflictIntent"
+                ]
             }
         ],
         "types": [
