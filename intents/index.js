@@ -1,7 +1,8 @@
 const about= require('./about');
 const amazon = require('./amazon');
-const finals = require('./finals');
 const classes = require('./classes')
+const degrees = require('./degrees')
+const finals = require('./finals');
 
 exports.handlers = {
     'AboutIntent': about.AboutIntent,
@@ -10,5 +11,6 @@ exports.handlers = {
     'AMAZON.StopIntent': amazon.StopIntent,
     'Unhandled': amazon.Unhandled,
     'ClassesOfferedIntent' : classes.ClassesOfferedIntent,
-    'GetFinalsInfoIntent' : finals.GetFinalsInfoIntent
+    'GetFinalsInfoIntent' : finals.GetFinalsInfoIntent,
+    'BellevueDegrees' :  degrees.GetBellevueDegreesIntent
 };
