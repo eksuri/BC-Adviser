@@ -1,4 +1,5 @@
-﻿const https = require('https');
+﻿const https = require('../../common/get_https');
+
 const regex0 = /Winter.*\n<ul>\n<li>(.*)<\/li>\n<li>(.*)<\/li>\n<li>(.*)<\/li>/g;
 const regex1 = /Spring.*\n<ul>\n<li>(.*)<\/li>\n<li>(.*)<\/li>\n<li>(.*)<\/li>/g;
 const regex2 = /Summer.*\n<ul>\n<li>(.*)<\/li>\n<li>(.*)<\/li>/g;
@@ -26,26 +27,13 @@ switch (month) { // this can be a shorter if-else block
 
 exports.getDates = (callback) => {
     let dates = [];
-    https.get('https://www.bellevuecollege.edu/courses/exams/', (res) => {
-        //console.log('statusCode:', res.statusCode);
-        //console.log('headers:', res.headers);
-
-        let data = '';
-
-        res.on('data', (d) => {
-            data += d.toString();
-        }).on('end', (e) => {
-            //console.log(data);
-            while ((match = regex.exec(data))) {
-                match.shift(); // shift match[0], only groups left
-                match.forEach((s) => {
-                    dates.push(s);
-                })
-                callback(dates);
-            }
-        });
-    }).on('error', (e) => {
-        return 'sad';
-        //console.error(e);
-    });
-};
+    https.get('https://www.bellevuecollege.edu/courses/exams/', (data) => {
+        while ((match = regex.exec(data))) {
+            match.shift(); // shift match[0], only groups left
+            match.forEach((s) => {
+                dates.push(s);
+            })
+            callback(dates);
+        }
+    })
+}
