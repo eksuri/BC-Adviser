@@ -1,0 +1,11 @@
+{
+    "intents": [
+      {
+        "name": "ExampleIntent",
+        "slots": [],
+        "samples": [
+          "Example Intent"
+          ]
+        }
+    ]
+}
