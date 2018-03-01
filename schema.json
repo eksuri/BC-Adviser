@@ -3,6 +3,15 @@
         "invocationName": "bc adviser",
         "intents": [
             {
+                "name": "AboutIntent",
+                "slots": [],
+                "samples": [
+                    "who made BC Advisor",
+                    "who programmed BC Advisor",
+                    "tell me about you"
+                ]
+            },
+            {
                 "name": "AMAZON.CancelIntent",
                 "slots": [],
                 "samples": []
@@ -13,13 +22,41 @@
                 "samples": []
             },
             {
-                "name": "AboutIntent",
+                "name": "AMAZON.StopIntent",
                 "slots": [],
+                "samples": []
+            },
+            {
+                "name": "ClassesOfferedIntent",
+                "slots": [],
+                "samples": []
+            },
+            {
+                "name": "BellevueDegrees",
                 "samples": [
-                    "who made BC Advisor",
-                    "who programmed BC Advisor",
-                    "tell me about you"
+                    "{program}",
+                    "{program} please",
+                    "I would like more information on {program}",
+                    "tell me about {program}",
+                    "I would like to know about {program}",
+                    "List {program}",
+                    "please tell me about {program}",
+                    "please give me more information on {program}",
+                    "please tell me more about {program}"
+                ],
+                "slots": [
+                    {
+                        "name": "program",
+                        "type": "degreeType"
+                    }
                 ]
+            },
+            {
+                "name": "LaunchRequest",
+                "samples": [
+                    "open college advisor"
+                ],
+                "slots": []
             },
             {
                 "name": "GetFinalsInfoIntent",
@@ -134,33 +171,6 @@
                     "this quarter which dates are Bellevue College's Finals",
                     "which dates are Bellevue College's Finals this quarter"
                 ]
-            },
-            {
-                "name": "BellevueDegrees",
-                "samples": [
-                    "{program}",
-                    "{program} please",
-                    "I would like more information on {program}",
-                    "tell me about {program}",
-                    "I would like to know about {program}",
-                    "List {program}",
-                    "please tell me about {program}",
-                    "please give me more information on {program}",
-                    "please tell me more about {program}"
-                ],
-                "slots": [
-                    {
-                        "name": "program",
-                        "type": "degreeType"
-                    }
-                ]
-            },
-            {
-                "name": "LaunchRequest",
-                "samples": [
-                    "open college advisor"
-                ],
-                "slots": []
             }
         ],
         "types": [

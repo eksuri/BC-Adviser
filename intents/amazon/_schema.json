@@ -11,7 +11,7 @@
             "samples": []
         },
         {
-            "name": "AMAZON.HelpIntent",
+            "name": "AMAZON.StopIntent",
             "slots": [],
             "samples": []
         }

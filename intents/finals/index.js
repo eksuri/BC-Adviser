@@ -1,4 +1,6 @@
 const finals = require('../../common/finals');
+const schema = require('./_schema.json')
+exports.schema = schema
 
 exports.GetFinalsInfoIntent = function GetFinalsInfoIntent() {
     const date = new Date();
@@ -11,3 +13,5 @@ exports.GetFinalsInfoIntent = function GetFinalsInfoIntent() {
         this.emit(':responseReady');
     });
 }
+
+

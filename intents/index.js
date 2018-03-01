@@ -11,6 +11,15 @@ exports.handlers = {
     'AMAZON.StopIntent': amazon.StopIntent,
     'Unhandled': amazon.Unhandled,
     'ClassesOfferedIntent' : classes.ClassesOfferedIntent,
-    'GetFinalsInfoIntent' : finals.GetFinalsInfoIntent,
-    'BellevueDegrees' :  degrees.GetBellevueDegreesIntent
+    'BellevueDegrees' :  degrees.GetBellevueDegreesIntent,
+    'GetFinalsInfoIntent' : finals.GetFinalsInfoIntent
+
 };
+
+exports.schemas = [
+    about.schema,
+    amazon.schema,
+    classes.schema,
+    degrees.schema,
+    finals.schema
+]

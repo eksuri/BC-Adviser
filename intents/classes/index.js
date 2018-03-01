@@ -1,4 +1,6 @@
 const classes = require('../../common/classes');
+const schema = require('./_schema.json')
+exports.schema = schema
 
 exports.ClassesOfferedIntent = function ClassesOfferedIntent() {
     //Extract the value of the slots

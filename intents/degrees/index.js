@@ -1,10 +1,12 @@
 const finals = require('../../common/finals');
+const schema = require('./_schema.json')
+exports.schema = schema
 
-var bachelors = require("./bachelor");
-var eastern = require("./eastern");
-var transfer = require("./transfer");
-var professional = require("./professional");
-var nontransfer = require("./nontransfer");
+const bachelors = require("./bachelor");
+const eastern = require("./eastern");
+const transfer = require("./transfer");
+const professional = require("./professional");
+const nontransfer = require("./nontransfer");
 
 
 exports.GetBellevueDegreesIntent = function GetBellevueDegreesIntent() {

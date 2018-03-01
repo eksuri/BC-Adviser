@@ -1,3 +1,6 @@
+const schema = require('./_schema.json')
+exports.schema = schema
+
 const HELP_MESSAGE = "You can ask me which days finals, or you can exit... What can I help you with?";
 const HELP_REPROMPT = "What can I help you with?";
 const STOP_MESSAGE = "Goodbye!";
