@@ -1,18 +1,6 @@
 {
     "intents": [
         {
-            "name": "AMAZON.CancelIntent",
-            "samples": []
-        },
-        {
-            "name": "AMAZON.HelpIntent",
-            "samples": []
-        },
-        {
-            "name": "AMAZON.StopIntent",
-            "samples": []
-        },
-        {
             "name": "BellevueDegrees",
             "samples": [
                 "{program}",

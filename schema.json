@@ -1,14 +1,9 @@
 {
     "languageModel": {
-        "invocationName": "BC Adviser",
+        "invocationName": "bc adviser",
         "intents": [
             {
                 "name": "AMAZON.CancelIntent",
-                "slots": [],
-                "samples": []
-            },
-            {
-                "name": "AMAZON.HelpIntent",
                 "slots": [],
                 "samples": []
             },
@@ -138,6 +133,89 @@
                     "which dates are Bellevue College's Finals",
                     "this quarter which dates are Bellevue College's Finals",
                     "which dates are Bellevue College's Finals this quarter"
+                ]
+            },
+            {
+                "name": "BellevueDegrees",
+                "samples": [
+                    "{program}",
+                    "{program} please",
+                    "I would like more information on {program}",
+                    "tell me about {program}",
+                    "I would like to know about {program}",
+                    "List {program}",
+                    "please tell me about {program}",
+                    "please give me more information on {program}",
+                    "please tell me more about {program}"
+                ],
+                "slots": [
+                    {
+                        "name": "program",
+                        "type": "degreeType"
+                    }
+                ]
+            },
+            {
+                "name": "LaunchRequest",
+                "samples": [
+                    "open college advisor"
+                ],
+                "slots": []
+            }
+        ],
+        "types": [
+            {
+                "name": "degreeType",
+                "values": [
+                    {
+                        "id": null,
+                        "name": {
+                            "value": "bachelors degrees",
+                            "synonyms": []
+                        }
+                    },
+                    {
+                        "id": null,
+                        "name": {
+                            "value": "professional and technical degrees",
+                            "synonyms": []
+                        }
+                    },
+                    {
+                        "id": null,
+                        "name": {
+                            "value": "non transfer degrees",
+                            "synonyms": []
+                        }
+                    },
+                    {
+                        "id": null,
+                        "name": {
+                            "value": "transfer associate degrees",
+                            "synonyms": []
+                        }
+                    },
+                    {
+                        "id": null,
+                        "name": {
+                            "value": "test",
+                            "synonyms": []
+                        }
+                    },
+                    {
+                        "id": null,
+                        "name": {
+                            "value": "eastern Washington",
+                            "synonyms": []
+                        }
+                    },
+                    {
+                        "id": null,
+                        "name": {
+                            "value": "professional degrees",
+                            "synonyms": []
+                        }
+                    }
                 ]
             }
         ]
