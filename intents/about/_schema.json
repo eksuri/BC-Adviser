@@ -1,0 +1,13 @@
+{
+    "intents": [
+        {
+            "name": "AboutIntent",
+            "slots": [],
+            "samples": [
+                "who made BC Advisor",
+                "who programmed BC Advisor",
+                "tell me about you"
+            ]
+        }
+    ]
+}

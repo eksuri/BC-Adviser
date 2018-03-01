@@ -3,6 +3,30 @@
         "invocationName": "BC Adviser",
         "intents": [
             {
+                "name": "AMAZON.CancelIntent",
+                "slots": [],
+                "samples": []
+            },
+            {
+                "name": "AMAZON.HelpIntent",
+                "slots": [],
+                "samples": []
+            },
+            {
+                "name": "AMAZON.HelpIntent",
+                "slots": [],
+                "samples": []
+            },
+            {
+                "name": "AboutIntent",
+                "slots": [],
+                "samples": [
+                    "who made BC Advisor",
+                    "who programmed BC Advisor",
+                    "tell me about you"
+                ]
+            },
+            {
                 "name": "GetFinalsInfoIntent",
                 "slots": [],
                 "samples": [

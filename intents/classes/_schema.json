@@ -1,0 +1,11 @@
+{
+    "intents": [
+        {
+            "name": "ClassesOfferedIntent",
+            "slots": [],
+            "samples": [
+                ""
+            ]
+        }
+    ]
+}

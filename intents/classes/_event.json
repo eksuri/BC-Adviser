@@ -1,0 +1,49 @@
+﻿{
+  "session": {
+    "new": true,
+    "sessionId": "SessionId.c056c4be-4371-4a02-a2dc-cb9400bea5de",
+    "application": {
+      "applicationId": "amzn1.ask.skill.2ff580cc-00a9-40d4-9a88-115f9a2f1ec2"
+    },
+    "attributes": {},
+    "user": {
+      "userId": "amzn1.ask.account.AELAV6R6WUY3OU3KZEIO6FZREEUKH3ARJO3VSBIMFSE6Q7ORGYN3S4XDZWPYLSV2OJVFM6CLWS7SCZ6UQ2U2UEO7UAMKFW7AVRRFMRN2YIME3YMIBENAJFLUM3VXMLHZNHZK3UMBVRLRTFX37KGQRBITWV5YUCOBNGNGGCZQNJH43IHDXQE7WJY5KVXXI4QY2OCO3IMAXOYNGFA"
+    }
+  },
+  "request": {
+    "type": "IntentRequest",
+    "requestId": "EdwRequestId.287fff5d-001c-4157-ab73-e08357e327d8",
+    "intent": {
+      "name": "ClassesOfferedIntent",
+      "slots": {
+        "Quarters": {
+          "name": "Quarters",
+          "value": "spring2018"
+        },
+        "Subjects": {
+          "name": "Subjects",
+          "value": "cs"
+        }
+      }
+    },
+    "locale": "en-US",
+    "timestamp": "2018-02-21T09:17:24Z"
+  },
+  "context": {
+    "AudioPlayer": {
+      "playerActivity": "IDLE"
+    },
+    "System": {
+      "application": {
+        "applicationId": "amzn1.ask.skill.2ff580cc-00a9-40d4-9a88-115f9a2f1ec2"
+      },
+      "user": {
+        "userId": "amzn1.ask.account.AELAV6R6WUY3OU3KZEIO6FZREEUKH3ARJO3VSBIMFSE6Q7ORGYN3S4XDZWPYLSV2OJVFM6CLWS7SCZ6UQ2U2UEO7UAMKFW7AVRRFMRN2YIME3YMIBENAJFLUM3VXMLHZNHZK3UMBVRLRTFX37KGQRBITWV5YUCOBNGNGGCZQNJH43IHDXQE7WJY5KVXXI4QY2OCO3IMAXOYNGFA"
+      },
+      "device": {
+        "supportedInterfaces": {}
+      }
+    }
+  },
+  "version": "1.0"
+}
