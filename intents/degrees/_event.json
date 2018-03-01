@@ -1,7 +1,7 @@
 ﻿{
   "session": {
     "new": true,
-    "sessionId": "SessionId.c056c4be-4371-4a02-a2dc-cb9400bea5de",
+    "sessionId": "SessionId.cbce17ad-18bc-4ca9-9f3d-27a3d1654834",
     "application": {
       "applicationId": "amzn1.ask.skill.2ff580cc-00a9-40d4-9a88-115f9a2f1ec2"
     },
@@ -12,7 +12,7 @@
   },
   "request": {
     "type": "IntentRequest",
-    "requestId": "EdwRequestId.909b9664-01eb-4ea3-98d1-e30cffa78b27",
+    "requestId": "EdwRequestId.d7ac32f7-627c-47f0-8c28-a730ec4a911a",
     "intent": {
       "name": "BellevueDegrees",
       "slots": {
@@ -23,7 +23,7 @@
       }
     },
     "locale": "en-US",
-    "timestamp": "2018-03-01T09:56:41Z"
+    "timestamp": "2018-03-01T23:03:18Z"
   },
   "context": {
     "AudioPlayer": {
