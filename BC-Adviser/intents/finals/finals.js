@@ -1,39 +1,8 @@
-﻿const https = require('../../common/get_https');
-
-const regex0 = /Winter.*\n<ul>\n<li>(.*)<\/li>\n<li>(.*)<\/li>\n<li>(.*)<\/li>/g;
-const regex1 = /Spring.*\n<ul>\n<li>(.*)<\/li>\n<li>(.*)<\/li>\n<li>(.*)<\/li>/g;
-const regex2 = /Summer.*\n<ul>\n<li>(.*)<\/li>\n<li>(.*)<\/li>/g;
-const regex3 = /Fall.*\n<ul>\n<li>(.*)<\/li>\n<li>(.*)<\/li>\n<li>(.*)<\/li>/g;
-// /Winter.*\n<ul>(\n<li>.*<\/li>)*/g
-
-const date = new Date();
-let month = date.getMonth();
-let regex;
-
-switch (month) { // this can be a shorter if-else block
-    case 1: case 2: case 3:
-        regex = regex0;
-        break;
-    case 4: case 5: case 6:
-        regex = regex1;
-        break;
-    case 7: case 8:
-        regex = regex2;
-        break;
-    default:
-        regex = regex3;
-        break;
-};
+﻿const finals = require('../../common/finals');
 
 exports.getDates = (callback) => {
-    let dates = [];
-    https.get('https://www.bellevuecollege.edu/courses/exams/', (data) => {
-        while ((match = regex.exec(data))) {
-            match.shift(); // shift match[0], only groups left
-            match.forEach((s) => {
-                dates.push(s);
-            })
-            callback(dates);
-        }
-    })
+    const date = new Date();
+    const month = date.getMonth();
+
+    finals.getDates(month, callback)
 }
