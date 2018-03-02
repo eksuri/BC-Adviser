@@ -178,6 +178,13 @@
                 "samples": [
                     "Example Intent"
                 ]
+            },
+            {
+                "name": "RecommendedIntent",
+                "slots": [],
+                "samples": [
+                    "what is recommended"
+                ]
             }
         ],
         "types": [
