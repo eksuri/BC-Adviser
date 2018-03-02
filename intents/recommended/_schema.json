@@ -1,0 +1,11 @@
+{
+    "intents": [
+      {
+        "name": "RecommendedIntent",
+        "slots": [],
+        "samples": [
+          "what is recommended"
+          ]
+        }
+    ]
+}
