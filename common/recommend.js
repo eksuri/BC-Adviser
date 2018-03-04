@@ -1,11 +1,11 @@
 const https = require('./get');
 
- const regex = /<span class=\"courseID\">MATH 152(.*)View details for MATH 152<\/a>/g; 
- const regex2 =  /Recommended: (.*)\./g;
-
 
 exports.getRecommended = (subject, number, callback) => {
     var recommendedClasses = "";
+
+    const regex = /<span class=\"courseID\">MATH 152(.*)View details for MATH 152<\/a>/g; 
+    const regex2 =  /Recommended: (.*)\./g;
 
     let url = "https://www.bellevuecollege.edu/classes/All/MATH";// + subject.toUpperCase;
     https.get(url, (data) => {
