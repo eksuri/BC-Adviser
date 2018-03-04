@@ -14,7 +14,7 @@
         ]
       },
       {
-        "name": "number",
+        "name": "classNumber",
         "values": [
           {
             "id": null,
@@ -49,7 +49,7 @@
       {
         "name": "RecommendedIntent",
         "samples": [
-          "What classes are recommended before I take {subject} {classNumber}"
+          "What classes are recommended before I take {subject} {subNumber}"
         ],
         "slots": [
           {
@@ -57,8 +57,8 @@
             "type": "field"
           },
           {
-            "name": "classNumber",
-            "type": "number"
+            "name": "subNumber",
+            "type": "classNumber"
           }
         ]
       }

@@ -1,7 +1,7 @@
 const https = require('./get');
 
 
-exports.getRecommended = (subject, number, callback) => {
+exports.getRecommended = (subject, classNumber, callback) => {
     var recommendedClasses = "";
 
     const regex = /<span class=\"courseID\">MATH 152(.*)View details for MATH 152<\/a>/g; 
