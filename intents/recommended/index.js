@@ -11,7 +11,7 @@ exports.GetRecommendedIntent = function GetRecommendedIntent () {
     recommend.getRecommended(fieldOfStudy, classNumber, (classes) => {
         if (classes != "")
         {
-            const speechOutput = "Before taking " + fieldOfStudy + " " + classNumber + ", it is recommended you should take " + classes;
+            const speechOutput = "Before taking " + fieldOfStudy + " " + classNumber + ", it is recommended that you should take " + classes;
             this.response.speak(speechOutput);
             this.emit(':responseReady');
         }
