@@ -1,11 +1,68 @@
 {
+  "languageModel": {
+    "types": [
+      {
+        "name": "field",
+        "values": [
+          {
+            "id": null,
+            "name": {
+              "value": "math",
+              "synonyms": []
+            }
+          }
+        ]
+      },
+      {
+        "name": "number",
+        "values": [
+          {
+            "id": null,
+            "name": {
+              "value": "125",
+              "synonyms": []
+            }
+          }
+        ]
+      }
+    ],
     "intents": [
       {
-        "name": "RecommendedIntent",
-        "slots": [],
+        "name": "AMAZON.CancelIntent",
+        "samples": []
+      },
+      {
+        "name": "AMAZON.HelpIntent",
+        "samples": []
+      },
+      {
+        "name": "AMAZON.StopIntent",
+        "samples": []
+      },
+      {
+        "name": "LaunchRequest",
         "samples": [
-          "what is recommended"
-          ]
-        }
-    ]
+          "open college advisor"
+        ],
+        "slots": []
+      },
+      {
+        "name": "RecommendedIntent",
+        "samples": [
+          "What classes are recommended before I take {subject} {classNumber}"
+        ],
+        "slots": [
+          {
+            "name": "subject",
+            "type": "field"
+          },
+          {
+            "name": "classNumber",
+            "type": "number"
+          }
+        ]
+      }
+    ],
+    "invocationName": "college advisor"
+  }
 }
