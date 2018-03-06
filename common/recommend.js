@@ -1,29 +1,12 @@
 const https = require('./get');
 
 
-exports.getRecommended = (subject, classNumber, callback) => {
-    var recommendedClasses = "";
-
-    const regex = /<span class=\"courseID\">MATH 152(.*)View details for MATH 152<\/a>/g; 
-    const regex2 =  /Recommended: (.*)\./g;
-
-    let url = "https://www.bellevuecollege.edu/classes/All/MATH";// + subject.toUpperCase;
+exports.getRecommended = (subject, classNumber, type, callback) => {
+    const regex = new RegExp ('courseID\\">' + subject.toUpperCase() + '(\\&?) ' + classNumber + '((.|\\n|\\r)*?)' + type + ': ((.|\\n|\\r)*?)<\\/p>','g'); 
+    let url = "https://www.bellevuecollege.edu/classes/All/" + subject.toUpperCase();
     https.get(url, (data) => {
-        var data2 = data.replace(/&amp;/g, "&");
-        var data3 = data2.replace(/&/g, "");
-
-        var theClass;
-        if ((match = regex.exec(data3))) {
-            //console.log(match)
-
-            if(match2 = regex2.exec(match[1]))
-            {
-                recommendedClasses = match[1];
-                callback(recommendedClassses);
-            }
-           
-        }
-
-        callback(recommendedClasses);
+        let encoded= unescape(regex.exec(data)[4]);
+        let decoded = encoded.replace(/&amp;/g, '');
+        callback(decoded)
     })
 };

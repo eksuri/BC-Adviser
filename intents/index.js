@@ -6,6 +6,7 @@ const finals = require('./finals');
 const example = require('./example');
 const recommended = require('./recommended');
 
+
 exports.handlers = {
     'AboutIntent': about.AboutIntent,
     'AMAZON.HelpIntent': amazon.HelpIntent,

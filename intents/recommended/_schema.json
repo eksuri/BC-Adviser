@@ -1,5 +1,4 @@
 {
-  "languageModel": {
     "types": [
       {
         "name": "field",
@@ -28,25 +27,6 @@
     ],
     "intents": [
       {
-        "name": "AMAZON.CancelIntent",
-        "samples": []
-      },
-      {
-        "name": "AMAZON.HelpIntent",
-        "samples": []
-      },
-      {
-        "name": "AMAZON.StopIntent",
-        "samples": []
-      },
-      {
-        "name": "LaunchRequest",
-        "samples": [
-          "open college advisor"
-        ],
-        "slots": []
-      },
-      {
         "name": "RecommendedIntent",
         "samples": [
           "What classes are recommended before I take {subject} {subNumber}"
@@ -62,7 +42,5 @@
           }
         ]
       }
-    ],
-    "invocationName": "college advisor"
+    ]
   }
-}

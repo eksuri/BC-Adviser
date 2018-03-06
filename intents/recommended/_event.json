@@ -1,0 +1,49 @@
+﻿{
+  "session": {
+    "new": true,
+    "sessionId": "SessionId.900be8e3-d9d4-4c30-bb85-9341dc57ae6d",
+    "application": {
+      "applicationId": "amzn1.ask.skill.b4915257-301c-47d5-b2d7-9cf59619d376"
+    },
+    "attributes": {},
+    "user": {
+      "userId": "amzn1.ask.account.AHPHBXCT36ISCYLX5VZP5PBZC7PY2FJS3DWRLFL7GBBIIGQO66C3DQIFHATZKDKKPHNI7WBVO7XM3ZSHRBVDFAHTVH72QNE2WTJLCTBHI37WTUAENQJ6TJB5WX7BSO7GSU7AHTVDFRV2ERQA2EEI52I7NCLCLNLWZH42A23JUWIETXKDQRSIW3BSVUFKTFQ4ZP24UKCPILBQ25I"
+    }
+  },
+  "request": {
+    "type": "IntentRequest",
+    "requestId": "EdwRequestId.394801fc-0428-4351-abfb-549b83b87cd4",
+    "intent": {
+      "name": "RecommendedIntent",
+      "slots": {
+        "subject": {
+          "name": "subject",
+          "value": "math"
+        },
+        "subNumber": {
+          "name": "subNumber",
+          "value": "152"
+        }
+      }
+    },
+    "locale": "en-US",
+    "timestamp": "2018-03-06T01:00:30Z"
+  },
+  "context": {
+    "AudioPlayer": {
+      "playerActivity": "IDLE"
+    },
+    "System": {
+      "application": {
+        "applicationId": "amzn1.ask.skill.b4915257-301c-47d5-b2d7-9cf59619d376"
+      },
+      "user": {
+        "userId": "amzn1.ask.account.AHPHBXCT36ISCYLX5VZP5PBZC7PY2FJS3DWRLFL7GBBIIGQO66C3DQIFHATZKDKKPHNI7WBVO7XM3ZSHRBVDFAHTVH72QNE2WTJLCTBHI37WTUAENQJ6TJB5WX7BSO7GSU7AHTVDFRV2ERQA2EEI52I7NCLCLNLWZH42A23JUWIETXKDQRSIW3BSVUFKTFQ4ZP24UKCPILBQ25I"
+      },
+      "device": {
+        "supportedInterfaces": {}
+      }
+    }
+  },
+  "version": "1.0"
+}

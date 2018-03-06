@@ -6,20 +6,20 @@ const EXAMPLE_MESSAGE = "Hello World";
 
 exports.GetRecommendedIntent = function GetRecommendedIntent () {
     const fieldOfStudy = this.event.request.intent.slots.subject.value;
-    const classNumber = this.event.request.intent.slots.classNumber.value;
+    const classNumber = this.event.request.intent.slots.subNumber.value;
     
-    recommend.getRecommended(fieldOfStudy, classNumber, (classes) => {
+    recommend.getRecommended(fieldOfStudy, classNumber, "Recommended", (classes) => {
+        let speechOutput
         if (classes != "")
         {
-            const speechOutput = "Before taking " + fieldOfStudy + " " + classNumber + ", it is recommended that you should take " + classes;
-            this.response.speak(speechOutput);
-            this.emit(':responseReady');
+            speechOutput = "Before taking " + fieldOfStudy + " " + classNumber + ", it is recommended that you should take " + classes;
         }
         else {
-            const speechOutput = "There are no recommended classes for you to take before " + fieldOfStudy + " " + classNumber;
-            this.response.speak(speechOutput);
-            this.emit(':responseRead');
+            speechOutput = "There are no recommended classes for you to take before " + fieldOfStudy + " " + classNumber;
         }
+        this.response.speak(speechOutput);
+        console.log(speechOutput)
+        this.emit(':responseRead');
     });
 
 }
