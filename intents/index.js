@@ -6,7 +6,6 @@ const finals = require('./finals');
 const example = require('./example');
 const recommended = require('./recommended');
 
-
 exports.handlers = {
     'AboutIntent': about.AboutIntent,
     'AMAZON.HelpIntent': amazon.HelpIntent,
@@ -26,6 +25,7 @@ exports.schemas = [
     classes.schema,
     degrees.schema,
     finals.schema,
+  RecommendedIntent
     example.schema,
     recommended.schema
 ]
