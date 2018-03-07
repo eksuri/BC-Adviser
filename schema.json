@@ -194,6 +194,13 @@
                         "type": "classNumber"
                     }
                 ]
+            },
+            {
+                "name": "HelloWorldIntent",
+                "slots": [],
+                "samples": [
+                    "hello world"
+                ]
             }
         ],
         "types": [
@@ -269,7 +276,7 @@
                     {
                         "id": null,
                         "name": {
-                            "value": "125",
+                            "value": "152",
                             "synonyms": []
                         }
                     }

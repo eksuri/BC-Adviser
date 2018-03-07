@@ -1,0 +1,11 @@
+{
+    "intents": [
+      {
+        "name": "HelloWorldIntent",
+        "slots": [],
+        "samples": [
+          "hello world"
+          ]
+        }
+    ]
+}

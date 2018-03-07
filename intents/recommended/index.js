@@ -18,8 +18,7 @@ exports.GetRecommendedIntent = function GetRecommendedIntent () {
             speechOutput = "There are no recommended classes for you to take before " + fieldOfStudy + " " + classNumber;
         }
         this.response.speak(speechOutput);
-        console.log(speechOutput)
-        this.emit(':responseRead');
+        this.emit(':responseReady');
     });
 
 }
