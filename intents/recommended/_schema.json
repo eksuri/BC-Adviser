@@ -1,0 +1,46 @@
+{
+    "types": [
+      {
+        "name": "field",
+        "values": [
+          {
+            "id": null,
+            "name": {
+              "value": "math",
+              "synonyms": []
+            }
+          }
+        ]
+      },
+      {
+        "name": "classNumber",
+        "values": [
+          {
+            "id": null,
+            "name": {
+              "value": "125",
+              "synonyms": []
+            }
+          }
+        ]
+      }
+    ],
+    "intents": [
+      {
+        "name": "RecommendedIntent",
+        "samples": [
+          "What classes are recommended before I take {subject} {subNumber}"
+        ],
+        "slots": [
+          {
+            "name": "subject",
+            "type": "field"
+          },
+          {
+            "name": "subNumber",
+            "type": "classNumber"
+          }
+        ]
+      }
+    ]
+  }

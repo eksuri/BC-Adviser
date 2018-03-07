@@ -4,6 +4,7 @@ const classes = require('./classes');
 const degrees = require('./degrees');
 const finals = require('./finals');
 const example = require('./example');
+const recommended = require('./recommended');
 
 exports.handlers = {
     'AboutIntent': about.AboutIntent,
@@ -14,7 +15,8 @@ exports.handlers = {
     'ClassesOfferedIntent' : classes.ClassesOfferedIntent,
     'BellevueDegrees' :  degrees.GetBellevueDegreesIntent,
     'GetFinalsInfoIntent' : finals.GetFinalsInfoIntent,
-    'ExampleIntent': example.GetExampleIntent
+    'ExampleIntent': example.GetExampleIntent,
+    'RecommendedIntent': recommended.GetRecommendedIntent
 };
 
 exports.schemas = [
@@ -23,5 +25,7 @@ exports.schemas = [
     classes.schema,
     degrees.schema,
     finals.schema,
-    example.schema
+  RecommendedIntent
+    example.schema,
+    recommended.schema
 ]
