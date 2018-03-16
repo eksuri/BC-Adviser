@@ -7,16 +7,16 @@ const regex = new RegExp ('<span class="courseID">.*<\/span> <span class=\"cours
 exports.getOfferings = (course, quarter, callback) => {
     let offerings = [];
     let url = "https://www.bellevuecollege.edu/classes/" + quarter + "/" + course.toUpperCase();
-    https.get('https://www.bellevuecollege.edu/courses/exams/', (data) => {
-        /*while ((match = regex.exec(data))) {
-            //console.log(match)
+    https.get(url, (data) => {
+        while ((match = regex.exec(data))) {
             match.forEach((s) => {
                 offerings.push(s);
             })
-            callback(offerings)
-        }*/ 
+        }
 
-        offerings.push("fix me");
+        console.log()
+
+        //offerings.push("fix me");
         callback(offerings);
     })
 };
