@@ -1,7 +1,7 @@
 ﻿{
   "session": {
     "new": true,
-    "sessionId": "SessionId.8ee679a7-1a89-4315-b00f-afe838d303e5",
+    "sessionId": "SessionId.21b5e1c3-3289-47cb-b3b6-aa132da8148c",
     "application": {
       "applicationId": "amzn1.ask.skill.b4915257-301c-47d5-b2d7-9cf59619d376"
     },
@@ -12,22 +12,22 @@
   },
   "request": {
     "type": "IntentRequest",
-    "requestId": "EdwRequestId.c76b8453-8115-42d4-92d8-3cf75b57e62d",
+    "requestId": "EdwRequestId.1c0ed656-4aee-4137-8358-132f4174fc62",
     "intent": {
-      "name": "RecommendedIntent",
+      "name": "PrerequisiteIntent",
       "slots": {
         "subject": {
           "name": "subject",
-          "value": "math"
+          "value": "cs"
         },
         "subNumber": {
           "name": "subNumber",
-          "value": "152"
+          "value": "210"
         }
       }
     },
     "locale": "en-US",
-    "timestamp": "2018-03-06T02:24:15Z"
+    "timestamp": "2018-03-12T00:04:15Z"
   },
   "context": {
     "AudioPlayer": {

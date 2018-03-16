@@ -9,6 +9,13 @@
               "value": "math",
               "synonyms": []
             }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "cs",
+              "synonyms": []
+            }
           }
         ]
       },
@@ -20,6 +27,10 @@
             "name": {
               "value": "152",
               "synonyms": []
+            },
+            "name": {
+              "value": "210",
+              "synonyms": []
             }
           }
         ]
@@ -30,6 +41,22 @@
         "name": "RecommendedIntent",
         "samples": [
           "What classes are recommended before I take {subject} {subNumber}"
+        ],
+        "slots": [
+          {
+            "name": "subject",
+            "type": "field"
+          },
+          {
+            "name": "subNumber",
+            "type": "classNumber"
+          }
+        ]
+      },
+      {
+        "name": "PrerequisiteIntent",
+        "samples": [
+          "Are there any prerequisites for {subject} {subNumber}"
         ],
         "slots": [
           {

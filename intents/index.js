@@ -5,7 +5,7 @@ const degrees = require('./degrees');
 const finals = require('./finals');
 const example = require('./example');
 const recommended = require('./recommended');
-const hello = require('./hello')
+const hello = require('./hello');
 
 
 exports.handlers = {
@@ -19,6 +19,7 @@ exports.handlers = {
     'GetFinalsInfoIntent' : finals.GetFinalsInfoIntent,
     'ExampleIntent': example.GetExampleIntent,
     'RecommendedIntent': recommended.GetRecommendedIntent,
+    'PrerequisiteIntent': recommended.GetPrerequisiteIntent,
     'HelloWorldIntent': hello.HelloWorldIntent
 };
 
