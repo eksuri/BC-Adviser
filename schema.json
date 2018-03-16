@@ -173,6 +173,51 @@
                 ]
             },
             {
+                "name": "RecommendedIntent",
+                "samples": [
+                    "What classes are recommended before I take {subject} {subNumber}"
+                ],
+                "slots": [
+                    {
+                        "name": "subject",
+                        "type": "field"
+                    },
+                    {
+                        "name": "subNumber",
+                        "type": "classNumber"
+                    }
+                ]
+            },
+            {
+                "name": "RetakeClassIntent",
+                "slots": [
+                    {
+                        "name": "CourseAbbrev",
+                        "type": "LIST_OF_COURSE_ABBREVIATION"
+                    }
+                ],
+                "samples": [
+                    "when can I retake {CourseAbbrev}",
+                    "when is offered {CourseAbbrev}",
+                    "when can I next take {CourseAbbrev}",
+                    "in what quarter is offered {CourseAbbrev}",
+                    "in which quarter is offered {CourseAbbrev}"
+                ]
+            },
+            {
+                "name": "MinimumGradeIntent",
+                "slots": [
+                    {
+                        "name": "Programs",
+                        "type": "LIST_OF_PROGRAMS"
+                    }
+                ],
+                "samples": [
+                    "MinimumGradeIntent what is the minimum grade accepted by {Programs}",
+                    "MinimumGradeIntent what is the minimum grade for {Programs}"
+                ]
+            },
+            {
                 "name": "ExampleIntent",
                 "slots": [],
                 "samples": [

@@ -1,0 +1,192 @@
+{
+    "intents": [
+      {
+        "name": "MinimumGradeIntent",
+        "slots": [
+          {
+          "name": "Programs",
+          "type": "LIST_OF_PROGRAMS"
+          }
+        ],
+        "samples": [
+          "MinimumGradeIntent what is the minimum grade accepted by {Programs}",
+          "MinimumGradeIntent what is the minimum grade for {Programs}"
+          ]
+        }
+    ],
+    "types": [
+      {
+          "name": "LIST_OF_PROGRAMS",
+          "values": [
+              {
+                  "id": "",
+                  "name": {
+                      "value": "Accounting",
+                      "synonyms": []
+                  }
+              },
+              {
+                  "id": "",
+                  "name": {
+                      "value": "Computer Science",
+                      "synonyms": []
+                  }
+              },
+              {
+                  "id": "",
+                  "name": {
+                      "value": "Chemistry",
+                      "synonyms": []
+                  }
+              },
+              {
+                  "id": "",
+                  "name": {
+                      "value": "Art",
+                      "synonyms": []
+                  }
+              },
+              {
+                  "id": "",
+                  "name": {
+                      "value": "Astronomy",
+                      "synonyms": []
+                  }
+              },
+              {
+                  "id": "",
+                  "name": {
+                      "value": "Biology",
+                      "synonyms": []
+                  }
+              },
+              {
+                  "id": "",
+                  "name": {
+                      "value": "Botany",
+                      "synonyms": []
+                  }
+              },
+              {
+                  "id": "",
+                  "name": {
+                      "value": "Dance",
+                      "synonyms": []
+                  }
+              },
+              {
+                  "id": "",
+                  "name": {
+                      "value": "Drama",
+                      "synonyms": []
+                  }
+              },
+              {
+                  "id": "",
+                  "name": {
+                      "value": "Economics",
+                      "synonyms": []
+                  }
+              },
+              {
+                  "id": "",
+                  "name": {
+                      "value": "French",
+                      "synonyms": []
+                  }
+              },
+              {
+                  "id": "",
+                  "name": {
+                      "value": "Geography",
+                      "synonyms": []
+                  }
+              },
+              {
+                  "id": "",
+                  "name": {
+                      "value": "Geology",
+                      "synonyms": []
+                  }
+              },
+              {
+                  "id": "",
+                  "name": {
+                      "value": "German",
+                      "synonyms": []
+                  }
+              },
+              {
+                  "id": "",
+                  "name": {
+                      "value": "History",
+                      "synonyms": []
+                  }
+              },
+              {
+                  "id": "",
+                  "name": {
+                      "value": "Italian",
+                      "synonyms": []
+                  }
+              },
+              {
+                  "id": "",
+                  "name": {
+                      "value": "Japonese",
+                      "synonyms": []
+                  }
+              },
+              {
+                  "id": "",
+                  "name": {
+                      "value": "Mathematics",
+                      "synonyms": []
+                  }
+              },
+              {
+                  "id": "",
+                  "name": {
+                      "value": "Music",
+                      "synonyms": []
+                  }
+              },
+              {
+                  "id": "",
+                  "name": {
+                      "value": "Nursing",
+                      "synonyms": []
+                  }
+              },
+              {
+                  "id": "",
+                  "name": {
+                      "value": "Philosophy",
+                      "synonyms": []
+                  }
+              },
+              {
+                  "id": "",
+                  "name": {
+                      "value": "Physics",
+                      "synonyms": []
+                  }
+              },
+              {
+                  "id": "",
+                  "name": {
+                      "value": "Sociology",
+                      "synonyms": []
+                  }
+              },
+              {
+                  "id": "",
+                  "name": {
+                      "value": "Spanish",
+                      "synonyms": []
+                  }
+              }
+            ]
+      }
+    ]
+}

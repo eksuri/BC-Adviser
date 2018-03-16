@@ -2,6 +2,8 @@ const schema = require('./_schema.json')
 const recommend = require('../../common/recommend');
 exports.schema = schema
 
+const EXAMPLE_MESSAGE = "Hello World";
+
 exports.GetRecommendedIntent = function GetRecommendedIntent () {
     const fieldOfStudy = this.event.request.intent.slots.subject.value;
     const classNumber = this.event.request.intent.slots.subNumber.value;

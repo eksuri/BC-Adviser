@@ -5,6 +5,8 @@ const degrees = require('./degrees');
 const finals = require('./finals');
 const example = require('./example');
 const recommended = require('./recommended');
+const retake = require('./retake');
+const minimumgrades = require('./minimumgrades');
 
 exports.handlers = {
     'AboutIntent': about.AboutIntent,
@@ -18,6 +20,9 @@ exports.handlers = {
     'ExampleIntent': example.GetExampleIntent,
     'RecommendedIntent': recommended.GetRecommendedIntent,
     'PrerequisiteIntent': recommended.GetPrerequisiteIntent,
+    'RetakeClassIntent': retake.RetakeClassIntent,
+    'MinimumGradeIntent': minimumgrades.MinimumGradeIntent,
+    'ExampleIntent': example.GetExampleIntent
 };
 
 exports.schemas = [
@@ -26,6 +31,8 @@ exports.schemas = [
     classes.schema,
     degrees.schema,
     finals.schema,
-    example.schema,
-    recommended.schema
+    recommended.schema,
+    retake.schema,
+    minimumgrades.schema,
+    example.schema
 ]

@@ -12,6 +12,7 @@
   },
   "request": {
     "type": "IntentRequest",
+    "requestId": "EdwRequestId.394801fc-0428-4351-abfb-549b83b87cd4",
     "intent": {
       "name": "PrerequisiteIntent",
       "slots": {
