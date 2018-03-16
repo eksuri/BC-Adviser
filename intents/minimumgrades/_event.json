@@ -1,0 +1,45 @@
+﻿{
+  "session": {
+    "new": false,
+    "sessionId": "SessionId.a1ae4e76-18cc-466c-adfb-902bd5ea3e5b",
+    "application": {
+      "applicationId": "amzn1.ask.skill.070cf389-4c06-4883-a094-0e093674d9ad"
+    },
+    "attributes": {},
+    "user": {
+      "userId": "amzn1.ask.account.AGQIJSIIYMAUJWJAL7DS7PTLUSVHTZAQUB2GVVKK6O5BOQB7AWF5A647GK5454ALTUYQO2WT23HI3OYABZBYA7S7BT74YFSNZOLOWAB2ELZKXULMWUBON5UZ7PT6K55YGR7E6QAG5ZD7JQGUMXRTCXDCPXCXVYDC4N6USNS5FSN3AX7RPGKSRSTEGCKNFI6NG72CS54VZXPBZMI"
+    }
+  },
+  "request": {
+    "type": "IntentRequest",
+    "requestId": "EdwRequestId.ca83f7e8-fda7-4e44-9d83-52d72c0196dc",
+    "intent": {
+      "name": "MinimumGradeIntent",
+      "slots": {
+        "Programs": {
+          "name": "Programs",
+          "value": "computer science"
+        }
+      }
+    },
+    "locale": "en-US",
+    "timestamp": "2018-03-16T00:26:27Z"
+  },
+  "context": {
+    "AudioPlayer": {
+      "playerActivity": "IDLE"
+    },
+    "System": {
+      "application": {
+        "applicationId": "amzn1.ask.skill.070cf389-4c06-4883-a094-0e093674d9ad"
+      },
+      "user": {
+        "userId": "amzn1.ask.account.AGQIJSIIYMAUJWJAL7DS7PTLUSVHTZAQUB2GVVKK6O5BOQB7AWF5A647GK5454ALTUYQO2WT23HI3OYABZBYA7S7BT74YFSNZOLOWAB2ELZKXULMWUBON5UZ7PT6K55YGR7E6QAG5ZD7JQGUMXRTCXDCPXCXVYDC4N6USNS5FSN3AX7RPGKSRSTEGCKNFI6NG72CS54VZXPBZMI"
+      },
+      "device": {
+        "supportedInterfaces": {}
+      }
+    }
+  },
+  "version": "1.0"
+}
