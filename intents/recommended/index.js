@@ -8,7 +8,7 @@ exports.GetRecommendedIntent = function GetRecommendedIntent () {
     
     recommend.getRecommended(fieldOfStudy, classNumber, "Recommended", (classes) => {
         let speechOutput
-        if (classes != "")
+        if (classes != null)
         {
             speechOutput = "Before taking " + fieldOfStudy + " " + classNumber + ", it is recommended that you should take " + classes;
         }
@@ -27,7 +27,8 @@ exports.GetPrerequisiteIntent = function GetPrerequisiteIntent () {
 
     recommend.getRecommended(fieldOfStudy, classNumber, "Prerequisite", (classes) => {
         let speechOutput
-        if (classes != "")
+        console.log(classes);
+        if (classes != null)
         {
             speechOutput = "Prerequisites for " + fieldOfStudy + " " + classNumber + " include: " + classes;
         }
