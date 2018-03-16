@@ -17,7 +17,9 @@ exports.handlers = {
     'ClassesOfferedIntent' : classes.ClassesOfferedIntent,
     'BellevueDegrees' :  degrees.GetBellevueDegreesIntent,
     'GetFinalsInfoIntent' : finals.GetFinalsInfoIntent,
+    'ExampleIntent': example.GetExampleIntent,
     'RecommendedIntent': recommended.GetRecommendedIntent,
+    'PrerequisiteIntent': recommended.GetPrerequisiteIntent,
     'RetakeClassIntent': retake.RetakeClassIntent,
     'MinimumGradeIntent': minimumgrades.MinimumGradeIntent,
     'ExampleIntent': example.GetExampleIntent

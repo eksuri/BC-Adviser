@@ -24,6 +24,7 @@ exports.GetBellevueDegreesIntent = function GetBellevueDegreesIntent() {
                 response += ', ';
             })
             response += 'and ' + last;
+            // console.log(response);
             this.response.speak(response);
             this.emit(':responseReady');
         })

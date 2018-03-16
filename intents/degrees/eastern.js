@@ -26,6 +26,7 @@ exports.getDegrees = (cb) => {
                     //   console.log(s);
                 })
             }
+            console.log("test");
             cb(array);
         })
 

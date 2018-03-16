@@ -1,29 +1,29 @@
 ﻿{
   "session": {
-    "new": true,
-    "sessionId": "SessionId.cbce17ad-18bc-4ca9-9f3d-27a3d1654834",
+    "new": false,
+    "sessionId": "SessionId.bdbd3439-16b1-4800-a37b-1f46e64d886e",
     "application": {
-      "applicationId": "amzn1.ask.skill.2ff580cc-00a9-40d4-9a88-115f9a2f1ec2"
+      "applicationId": "amzn1.ask.skill.b4915257-301c-47d5-b2d7-9cf59619d376"
     },
     "attributes": {},
     "user": {
-      "userId": "amzn1.ask.account.AELAV6R6WUY3OU3KZEIO6FZREEUKH3ARJO3VSBIMFSE6Q7ORGYN3S4XDZWPYLSV2OJVFM6CLWS7SCZ6UQ2U2UEO7UAMKFW7AVRRFMRN2YIME3YMIBENAJFLUM3VXMLHZNHZK3UMBVRLRTFX37KGQRBITWV5YUCOBNGNGGCZQNJH43IHDXQE7WJY5KVXXI4QY2OCO3IMAXOYNGFA"
+      "userId": "amzn1.ask.account.AHPHBXCT36ISCYLX5VZP5PBZC7PY2FJS3DWRLFL7GBBIIGQO66C3DQIFHATZKDKKPHNI7WBVO7XM3ZSHRBVDFAHTVH72QNE2WTJLCTBHI37WTUAENQJ6TJB5WX7BSO7GSU7AHTVDFRV2ERQA2EEI52I7NCLCLNLWZH42A23JUWIETXKDQRSIW3BSVUFKTFQ4ZP24UKCPILBQ25I"
     }
   },
   "request": {
     "type": "IntentRequest",
-    "requestId": "EdwRequestId.d7ac32f7-627c-47f0-8c28-a730ec4a911a",
+    "requestId": "EdwRequestId.fe64c48b-8f63-44a8-8fc3-426754bb7c0d",
     "intent": {
       "name": "BellevueDegrees",
       "slots": {
         "program": {
           "name": "program",
-          "value": "bachelors degrees"
+          "value": "professional and technical degrees"
         }
       }
     },
     "locale": "en-US",
-    "timestamp": "2018-03-01T23:03:18Z"
+    "timestamp": "2018-03-16T02:27:43Z"
   },
   "context": {
     "AudioPlayer": {
@@ -31,10 +31,10 @@
     },
     "System": {
       "application": {
-        "applicationId": "amzn1.ask.skill.2ff580cc-00a9-40d4-9a88-115f9a2f1ec2"
+        "applicationId": "amzn1.ask.skill.b4915257-301c-47d5-b2d7-9cf59619d376"
       },
       "user": {
-        "userId": "amzn1.ask.account.AELAV6R6WUY3OU3KZEIO6FZREEUKH3ARJO3VSBIMFSE6Q7ORGYN3S4XDZWPYLSV2OJVFM6CLWS7SCZ6UQ2U2UEO7UAMKFW7AVRRFMRN2YIME3YMIBENAJFLUM3VXMLHZNHZK3UMBVRLRTFX37KGQRBITWV5YUCOBNGNGGCZQNJH43IHDXQE7WJY5KVXXI4QY2OCO3IMAXOYNGFA"
+        "userId": "amzn1.ask.account.AHPHBXCT36ISCYLX5VZP5PBZC7PY2FJS3DWRLFL7GBBIIGQO66C3DQIFHATZKDKKPHNI7WBVO7XM3ZSHRBVDFAHTVH72QNE2WTJLCTBHI37WTUAENQJ6TJB5WX7BSO7GSU7AHTVDFRV2ERQA2EEI52I7NCLCLNLWZH42A23JUWIETXKDQRSIW3BSVUFKTFQ4ZP24UKCPILBQ25I"
       },
       "device": {
         "supportedInterfaces": {}

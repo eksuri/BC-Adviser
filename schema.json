@@ -256,21 +256,19 @@
                 ]
             },
             {
-                "name": "ClassScheduleIntent",
+                "name": "RecommendedIntent",
+                "samples": [
+                    "What classes are recommended before I take {subject} {subNumber}"
+                ],
                 "slots": [
                     {
-                        "name": "Course",
-                        "type": "LIST_OF_COURSES"
+                        "name": "subject",
+                        "type": "field"
                     },
                     {
-                        "name": "Quarter",
-                        "type": "LIST_QUARTERS"
+                        "name": "subNumber",
+                        "type": "classNumber"
                     }
-                ],
-                "samples": [
-                    "what time is offered {Course} in the {Quarter}",
-                    "what time is {Course} in the {Quarter}",
-                    "what time will be {Course} in the {Quarter}"
                 ]
             }
         ],
@@ -707,11 +705,9 @@
                         "id": "",
                         "name": {
                             "value": "ENGL&",
-                            "synonyms": []
-                        }
                     },
                     {
-                        "id": "",
+                        "id": null,
                         "name": {
                             "value": "ENVS",
                             "synonyms": []
