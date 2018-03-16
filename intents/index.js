@@ -1,6 +1,6 @@
-const about= require('./about');
+﻿const about= require('./about');
 const amazon = require('./amazon');
-const classes = require('./classes');
+const classes = require('./classoffered');
 const degrees = require('./degrees');
 const finals = require('./finals');
 const example = require('./example');
