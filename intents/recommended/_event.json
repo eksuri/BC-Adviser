@@ -12,7 +12,6 @@
   },
   "request": {
     "type": "IntentRequest",
-    "requestId": "EdwRequestId.0245c90a-92fc-4832-97c4-7991a2e75e5e",
     "intent": {
       "name": "PrerequisiteIntent",
       "slots": {
@@ -27,7 +26,7 @@
       }
     },
     "locale": "en-US",
-    "timestamp": "2018-03-16T05:27:52Z"
+    "timestamp": "2018-02-05T07:21:11Z"
   },
   "context": {
     "AudioPlayer": {

@@ -194,29 +194,6 @@
                         "type": "classNumber"
                     }
                 ]
-            },
-            {
-                "name": "PrerequisiteIntent",
-                "samples": [
-                    "Are there any prerequisites for {subject} {subNumber}"
-                ],
-                "slots": [
-                    {
-                        "name": "subject",
-                        "type": "field"
-                    },
-                    {
-                        "name": "subNumber",
-                        "type": "classNumber"
-                    }
-                ]
-            },
-            {
-                "name": "HelloWorldIntent",
-                "slots": [],
-                "samples": [
-                    "hello world"
-                ]
             }
         ],
         "types": [
@@ -299,7 +276,7 @@
                     {
                         "id": null,
                         "name": {
-                            "value": "152",
+                            "value": "125",
                             "synonyms": []
                         }
                     },
