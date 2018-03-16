@@ -223,6 +223,22 @@
                 "samples": [
                     "Example Intent"
                 ]
+            },
+            {
+                "name": "RecommendedIntent",
+                "samples": [
+                    "What classes are recommended before I take {subject} {subNumber}"
+                ],
+                "slots": [
+                    {
+                        "name": "subject",
+                        "type": "field"
+                    },
+                    {
+                        "name": "subNumber",
+                        "type": "classNumber"
+                    }
+                ]
             }
         ],
         "types": [
@@ -289,6 +305,13 @@
                             "value": "math",
                             "synonyms": []
                         }
+                    },
+                    {
+                        "id": null,
+                        "name": {
+                            "value": "cs",
+                            "synonyms": []
+                        }
                     }
                 ]
             },
@@ -301,385 +324,11 @@
                             "value": "125",
                             "synonyms": []
                         }
-                    }
-                ]
-            },
-            {
-                "name": "LIST_OF_COURSE_ABBREVIATION",
-                "values": [
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 101",
-                            "synonyms": []
-                        }
                     },
                     {
-                        "id": "",
+                        "id": null,
                         "name": {
-                            "value": "cs 194",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 195",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 196",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 197",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 199",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 210",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 211",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 212",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 250",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 295",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 296",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 297",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 299",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 300",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 320",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 331",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 341",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 351",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 360",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 401",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 410",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 455",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 460",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 470",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 481",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 482",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 483",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 485",
-                            "synonyms": []
-                        }
-                    }
-                ]
-            },
-            {
-                "name": "LIST_OF_PROGRAMS",
-                "values": [
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Accounting",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Computer Science",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Chemistry",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Art",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Astronomy",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Biology",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Botany",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Dance",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Drama",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Economics",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "French",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Geography",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Geology",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "German",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "History",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Italian",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Japonese",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Mathematics",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Music",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Nursing",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Philosophy",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Physics",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Sociology",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Spanish",
+                            "value": "107",
                             "synonyms": []
                         }
                     }

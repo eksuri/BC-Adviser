@@ -10,7 +10,7 @@ exports.GetRecommendedIntent = function GetRecommendedIntent () {
     
     recommend.getRecommended(fieldOfStudy, classNumber, "Recommended", (classes) => {
         let speechOutput
-        if (classes != "")
+        if (classes != null)
         {
             speechOutput = "Before taking " + fieldOfStudy + " " + classNumber + ", it is recommended that you should take " + classes;
         }
@@ -20,6 +20,26 @@ exports.GetRecommendedIntent = function GetRecommendedIntent () {
         this.response.speak(speechOutput);
         console.log(speechOutput)
         this.emit(':responseRead');
+    });
+
+}
+
+exports.GetPrerequisiteIntent = function GetPrerequisiteIntent () {
+    const fieldOfStudy = this.event.request.intent.slots.subject.value;
+    const classNumber = this.event.request.intent.slots.subNumber.value;
+
+    recommend.getRecommended(fieldOfStudy, classNumber, "Prerequisite", (classes) => {
+        let speechOutput
+        console.log(classes);
+        if (classes != null)
+        {
+            speechOutput = "Prerequisites for " + fieldOfStudy + " " + classNumber + " include: " + classes;
+        }
+        else {
+            speechOutput = "There are no prerequisites for you to take before " + fieldOfStudy + " " + classNumber;
+        }
+        this.response.speak(speechOutput);
+        this.emit(':responseReady');
     });
 
 }
