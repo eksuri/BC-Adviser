@@ -4,21 +4,23 @@ exports.schema = schema
 exports.events = events
 
 const classes = require('../../common/classes');
+const quarters = require('../../common/quarters');
 
 exports.ClassesOfferedIntent = function ClassesOfferedIntent() {
     const course = this.event.request.intent.slots.Subjects.value;
-    const quarter = this.event.request.intent.slots.Quarters.value;
+    const season = this.event.request.intent.slots.Season.value;
 
-    // alexa will never parse "Winter2018". Fix this schema.
-
-    classes.getOfferings(course, quarter, (offering) => {
-        let speechOutput = "For the " + quarter + " quarter at Bellevue College are offered following classes: "
-        for (let i = 0; i = offering.length / 2; i++) {
-            speechOutput += offering.pop() + " ";
-            offering.pop();
-        }
-        this.response.speak(speechOutput);
-        this.emit(':responseReady');
+    quarters.parseQuarter(season, (quarter) => {
+        classes.getOfferings(course, quarter, (offering) => {
+            let speechOutput = "For the " + quarter + " quarter at Bellevue College are offered following classes: "
+            for (let i = 0; i = offering.length / 2; i++) {
+                speechOutput += offering.pop() + " ";
+                offering.pop();
+            }
+            console.log(speechOutput)
+            this.response.speak(speechOutput);
+            this.emit(':responseReady');
+        });
     });
 }
 
