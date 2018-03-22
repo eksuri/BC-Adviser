@@ -4,7 +4,6 @@ const URL = require('url');
 const fs = require('fs');
 
 exports.getBCRegex = (url, regex, callback) => {
-    console.log(url);
     this.getBC(url, (data) => {
         let array = [];
         while ((match = regex.exec(data))) {

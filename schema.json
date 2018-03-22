@@ -39,11 +39,11 @@
                     }
                 ],
                 "samples": [
-                    "what {Subjects} classes are offered in {Season}",
+                    "what {Subjects} classes are offered {Season}",
                     "what classes are offered in {Season} for {Subjects}",
-                    "what {Subjects} classes are offered for the {Season}",
-                    "what {Subjects} classes are offered in the {Season}",
-                    "what classes are offered in {Season} for the {Subjects}"
+                    "what {Subjects} classes are offered for {Season}",
+                    "what {Subjects} classes are offered {Season}",
+                    "what classes are offered {Season} for {Subjects}"
                 ]
             },
             {
