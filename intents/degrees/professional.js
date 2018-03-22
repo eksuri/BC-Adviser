@@ -31,14 +31,11 @@ exports.getDegrees = (cb) => {
             let array2 = [];
             for (let number = 0; number < array.length; number = number + 4)
             {
-                console.log(number);
-                console.log(array[number]);
                 if (match = regex2.exec(array[number]))
                     {
                         match.shift();
                         match.forEach((u) => {
                             array2.push(u);
-                            // console.log(u);
                         })
                     }
             }

@@ -9,7 +9,7 @@ exports.getBCRegex = (url, regex, callback) => {
         while ((match = regex.exec(data))) {
             match.shift(); // shift out match[0], only groups left
             match.forEach((s) => {
-                array.push(s);
+                array.push(decodeHtmlEntity(s));
             })
         }
         callback(array);
@@ -21,6 +21,15 @@ exports.getBC = (path, callback) => {
         callback(data);
     });
 }
+
+// hopefully no one's regex is relying on Html entitys or this will have to be pushed farther down the line
+function decodeHtmlEntity(str) {
+    return str.replace(/&#(\d+);/g, function(match, dec) {
+      return String.fromCharCode(dec);
+    });
+};
+
+
 
 
 // needs additional error handling for 404's, malformed webpages, etc.

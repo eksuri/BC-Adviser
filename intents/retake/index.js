@@ -1,7 +1,7 @@
 const schema = require('./_schema.json')
-const event = require('./_event.json')
+const events = require('./_events.json')
 exports.schema = schema
-exports.event = event
+exports.events = events
 
 const quarters = require('../../common/quarters');
 

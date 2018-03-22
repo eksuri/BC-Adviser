@@ -37,12 +37,12 @@ exports.schemas = [
 ]
 
 exports.events = [
-    //about.events,
-    //amazon.events,
-    //classes.events,
-    //degrees.events,
-    finals.event,
-    //recommended.events,
-    //retake.events,
-    example.event
+    about.events,
+    amazon.events,
+    classes.events,
+    degrees.events,
+    finals.events,
+    recommended.events,
+    retake.events,
+    example.events
 ]

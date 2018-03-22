@@ -1,13 +1,15 @@
 const schema = require('./_schema.json')
-const event = require('./_event.json')
+const events = require('./_events.json')
 exports.schema = schema
-exports.event = event
+exports.events = events
 
 const classes = require('../../common/classes');
 
 exports.ClassesOfferedIntent = function ClassesOfferedIntent() {
     const course = this.event.request.intent.slots.Subjects.value;
     const quarter = this.event.request.intent.slots.Quarters.value;
+
+    // alexa will never parse "Winter2018". Fix this schema.
 
     classes.getOfferings(course, quarter, (offering) => {
         let speechOutput = "For the " + quarter + " quarter at Bellevue College are offered following classes: "
