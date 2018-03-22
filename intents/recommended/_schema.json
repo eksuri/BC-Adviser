@@ -1,75 +1,35 @@
 {
-    "types": [
-      {
-        "name": "field",
-        "values": [
-          {
-            "id": null,
-            "name": {
-              "value": "math",
-              "synonyms": []
-            }
-          },
-          {
-            "id": null,
-            "name": {
-              "value": "cs",
-              "synonyms": []
-            }
-          }
-        ]
-      },
-      {
-        "name": "classNumber",
-        "values": [
-          {
-            "id": null,
-            "name": {
-              "value": "125",
-              "synonyms": []
-            }
-          },
-            {
-            "id": null,
-            "name": {
-              "value": "107",
-              "synonyms": []
-            }
-          }
-        ]
-      }
-    ],
     "intents": [
       {
         "name": "RecommendedIntent",
         "samples": [
-          "What classes are recommended before I take {subject} {subNumber}"
+          "What classes are recommended before I take {CourseAbbrev} {CourseNumber}"
         ],
         "slots": [
           {
-            "name": "subject",
-            "type": "field"
-          },
-          {
-            "name": "subNumber",
-            "type": "classNumber"
-          }
+            "name": "CourseAbbrev",
+            "type": "LIST_OF_SUBJECTS"
+        },
+        {
+            "name": "CourseNumber",
+            "type": "Amazon.NUMBER"
+        }
         ]
       },
       {
         "name": "PrerequisiteIntent",
         "samples": [
-          "Are there any prerequisites for {subject} {subNumber}"
+          "Are there any prerequisites for {CourseAbbrev} {CourseNumber}"
         ],
         "slots": [
           {
-            "name": "subject",
-            "type": "field"
-          },
-          {
-            "name": "subNumber",
-            "type": "classNumber"
-          }
+            "name": "CourseAbbrev",
+            "type": "LIST_OF_SUBJECTS"
+        },
+        {
+            "name": "CourseNumber",
+            "type": "Amazon.NUMBER"
+        }
         ]
       }
     ]

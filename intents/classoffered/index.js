@@ -3,7 +3,6 @@ const schema = require('./_schema.json')
 exports.schema = schema
 
 exports.ClassesOfferedIntent = function ClassesOfferedIntent() {
-    //Extract the value of the slots
     const course = this.event.request.intent.slots.Subjects.value;
     const quarter = this.event.request.intent.slots.Quarters.value;
 
@@ -13,7 +12,6 @@ exports.ClassesOfferedIntent = function ClassesOfferedIntent() {
             speechOutput += offering.pop() + " ";
             offering.pop();
         }
-        console.log(speechOutput);
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     });

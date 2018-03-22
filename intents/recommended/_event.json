@@ -3,7 +3,7 @@
     "new": false,
     "sessionId": "SessionId.335dd1ef-8c7f-4d77-8f1d-8917d183dd66",
     "application": {
-      "applicationId": "amzn1.ask.skill.b4915257-301c-47d5-b2d7-9cf59619d376"
+      "applicationId": "amzn1.ask.skill.2ff580cc-00a9-40d4-9a88-115f9a2f1ec2"
     },
     "attributes": {},
     "user": {
@@ -18,11 +18,11 @@
       "slots": {
         "subject": {
           "name": "subject",
-          "value": "math"
+          "value": "CS"
         },
         "subNumber": {
           "name": "subNumber",
-          "value": "152"
+          "value": "101"
         }
       }
     },
@@ -35,7 +35,7 @@
     },
     "System": {
       "application": {
-        "applicationId": "amzn1.ask.skill.b4915257-301c-47d5-b2d7-9cf59619d376"
+        "applicationId": "amzn1.ask.skill.2ff580cc-00a9-40d4-9a88-115f9a2f1ec2"
       },
       "user": {
         "userId": "amzn1.ask.account.AHPHBXCT36ISCYLX5VZP5PBZC7PY2FJS3DWRLFL7GBBIIGQO66C3DQIFHATZKDKKPHNI7WBVO7XM3ZSHRBVDFAHTVH72QNE2WTJLCTBHI37WTUAENQJ6TJB5WX7BSO7GSU7AHTVDFRV2ERQA2EEI52I7NCLCLNLWZH42A23JUWIETXKDQRSIW3BSVUFKTFQ4ZP24UKCPILBQ25I"

@@ -11,18 +11,27 @@ exports.getBCRegex = (url, regex, callback) => {
             match.forEach((s) => {
                 array.push(s);
             })
-            callback(array);
         }
+        callback(array);
     })
 };
 
-// needs additional error handling for 404's, malformed webpages, etc.
-
 exports.getBC = (path, callback) => {
+    this.get('https://www.bellevuecollege.edu' + path, (data) => {
+        callback(data);
+    });
+}
+
+
+// needs additional error handling for 404's, malformed webpages, etc.
+/*
+exports.getBC = (path, callback) => {
+    console.log('https://www.bellevuecollege.edu' + path)
     let filePath = './cache' + path; // needs to write to /tmp on lambda
     if (filePath.slice(-1) == '/') {
         filePath += 'index.html'
     }
+    console.log(filePath);
     fs.access(filePath, fs.constants.R_OK | fs.constants.W_OK, (err) => {
         if (err) {
             this.get('https://www.bellevuecollege.edu' + path, (data) => {
@@ -30,6 +39,7 @@ exports.getBC = (path, callback) => {
 
                 let dirs = filePath.split('/');
                 dirs.shift();
+                dirs.pop();
 
                 function checkDirectory(directory, callback) {
                     fs.stat(directory, function (err, stats) {
@@ -63,6 +73,7 @@ exports.getBC = (path, callback) => {
         }
     });
 };
+*/
 
 exports.get = (url, callback) => {
     https.get(url, (res) => {

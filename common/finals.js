@@ -25,7 +25,5 @@ exports.getDates = (month, callback) => {
     };
 
     let dates = [];
-    https.getBCRegex('/courses/exams/', regex, (data) => {
-        callback(data);
-    })
+    https.getBCRegex('/courses/exams/', regex, (data) => callback(data));
 }
