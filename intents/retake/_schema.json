@@ -9,7 +9,7 @@
                 },
                 {
                     "name": "CourseNumber",
-                    "type": "Amazon.NUMBER"
+                    "type": "AMAZON.NUMBER"
                 }
             ],
             "samples": [

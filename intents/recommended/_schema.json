@@ -12,7 +12,7 @@
         },
         {
             "name": "CourseNumber",
-            "type": "Amazon.NUMBER"
+            "type": "AMAZON.NUMBER"
         }
         ]
       },
@@ -28,7 +28,7 @@
         },
         {
             "name": "CourseNumber",
-            "type": "Amazon.NUMBER"
+            "type": "AMAZON.NUMBER"
         }
         ]
       }

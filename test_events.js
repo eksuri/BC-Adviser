@@ -1,4 +1,4 @@
-﻿process.env['AWS_REGION'] = 'us-west-2'
+process.env['AWS_REGION'] = 'us-west-2'
 
 var fs = require('fs');
 var index = require('../../index');
