@@ -1,7 +1,7 @@
 {
     "intents": [
       {
-        "name": "ExampleIntent",
+        "name": "GetExampleIntent",
         "slots": [],
         "samples": [
           "Example Intent"

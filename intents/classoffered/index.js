@@ -1,6 +1,9 @@
-const classes = require('../../common/classes');
 const schema = require('./_schema.json')
+const event = require('./_event.json')
 exports.schema = schema
+exports.event = event
+
+const classes = require('../../common/classes');
 
 exports.ClassesOfferedIntent = function ClassesOfferedIntent() {
     const course = this.event.request.intent.slots.Subjects.value;

@@ -1,6 +1,9 @@
 const schema = require('./_schema.json')
-const recommend = require('../../common/recommend');
+const event = require('./_event.json')
 exports.schema = schema
+exports.event = event
+
+const recommend = require('../../common/recommend');
 
 exports.GetRecommendedIntent = function GetRecommendedIntent () {
     const CourseAbbrev = this.event.request.intent.slots.CourseAbbrev.value;

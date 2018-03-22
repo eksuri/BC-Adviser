@@ -1,6 +1,7 @@
-const finals = require('../../common/finals');
 const schema = require('./_schema.json')
+const event = require('./_event.json')
 exports.schema = schema
+exports.event = event
 
 const bachelors = require("./bachelor");
 const eastern = require("./eastern");

@@ -1,6 +1,9 @@
-const quarters = require('../../common/quarters');
 const schema = require('./_schema.json')
+const event = require('./_event.json')
 exports.schema = schema
+exports.event = event
+
+const quarters = require('../../common/quarters');
 
 exports.RetakeClassIntent = function RetakeClassIntent() {
     //Extract the value of the slots

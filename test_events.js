@@ -1,11 +1,8 @@
 process.env['AWS_REGION'] = 'us-west-2'
+const index = require('./index');
+const events = require('./intents').events;
 
-var fs = require('fs');
-var index = require('../../index');
-
-var event = JSON.parse(fs.readFileSync('_event.json', 'utf8').trim());
-
-var context = {};
+let context = {};
 context.done = function () {
     console.log("Lambda Function Complete");
 }
@@ -16,6 +13,8 @@ context.fail = function () {
     console.log("Lambda Function Failure");
 }
 
-index.handler(event, context, function () {
-    console.log("Done");
-});
+events.forEach((event) => {
+    index.handler(event, context, function () {
+        console.log("Done");
+    });
+})
