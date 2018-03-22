@@ -1,60 +1,6 @@
 {
     "types": [
         {
-            "name": "LIST_OF_QUARTERS",
-            "values": [
-                {
-                    "id": "",
-                    "name": {
-                        "value": "Winter2019",
-                        "synonyms": []
-                    }
-                },
-                {
-                    "id": "",
-                    "name": {
-                        "value": "Spring2018",
-                        "synonyms": []
-                    }
-                },
-                {
-                    "id": "",
-                    "name": {
-                        "value": "Summer2018",
-                        "synonyms": []
-                    }
-                },
-                {
-                    "id": "",
-                    "name": {
-                        "value": "Fall2018",
-                        "synonyms": []
-                    }
-                },
-                {
-                    "id": "",
-                    "name": {
-                        "value": "Winter2018",
-                        "synonyms": []
-                    }
-                },
-                {
-                    "id": "",
-                    "name": {
-                        "value": "Fall2017",
-                        "synonyms": []
-                    }
-                },
-                {
-                    "id": "",
-                    "name": {
-                        "value": "Summer2017",
-                        "synonyms": []
-                    }
-                }
-            ]
-        },
-        {
             "name": "LIST_OF_SUBJECTS",
             "values": [
                 {

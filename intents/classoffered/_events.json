@@ -1,33 +1,33 @@
 ﻿{
   "session": {
-    "new": true,
-    "sessionId": "SessionId.c056c4be-4371-4a02-a2dc-cb9400bea5de",
+    "new": false,
+    "sessionId": "SessionId.e103d6ba-cd62-41cc-8d8b-530619d57bde",
     "application": {
       "applicationId": "amzn1.ask.skill.2ff580cc-00a9-40d4-9a88-115f9a2f1ec2"
     },
     "attributes": {},
     "user": {
-      "userId": "amzn1.ask.account.AELAV6R6WUY3OU3KZEIO6FZREEUKH3ARJO3VSBIMFSE6Q7ORGYN3S4XDZWPYLSV2OJVFM6CLWS7SCZ6UQ2U2UEO7UAMKFW7AVRRFMRN2YIME3YMIBENAJFLUM3VXMLHZNHZK3UMBVRLRTFX37KGQRBITWV5YUCOBNGNGGCZQNJH43IHDXQE7WJY5KVXXI4QY2OCO3IMAXOYNGFA"
+      "userId": "amzn1.ask.account.AELM3IDYQNDQKLCUDAJFRJEEAWE435BXGBKNCWEKH3YZWNBLXMWQPKUY6EHGWN7ODLMEW7MS56XWTAMW7VYDWAMJ3PZTYSL5DUR6MZFMBREOV3YKPQWOSHAELHCUPNQJFX5K5U36K7IRDU3MVUEQWXMCWVN62ARWNMKKQMQ5GDTNTQM7XBLDDXEL76CKQFVZPQEFUA25HNXCHEY"
     }
   },
   "request": {
     "type": "IntentRequest",
-    "requestId": "EdwRequestId.287fff5d-001c-4157-ab73-e08357e327d8",
+    "requestId": "EdwRequestId.18732f4b-f019-4388-98d1-bb5e107825cd",
     "intent": {
       "name": "ClassesOfferedIntent",
       "slots": {
-        "Quarters": {
-          "name": "Quarters",
-          "value": "Winter2018"
+        "Season": {
+          "name": "Season",
+          "value": "2018-SP"
         },
         "Subjects": {
           "name": "Subjects",
-          "value": "cs"
+          "value": "Math"
         }
       }
     },
     "locale": "en-US",
-    "timestamp": "2018-02-21T09:17:24Z"
+    "timestamp": "2018-03-22T11:20:20Z"
   },
   "context": {
     "AudioPlayer": {
@@ -38,7 +38,7 @@
         "applicationId": "amzn1.ask.skill.2ff580cc-00a9-40d4-9a88-115f9a2f1ec2"
       },
       "user": {
-        "userId": "amzn1.ask.account.AELAV6R6WUY3OU3KZEIO6FZREEUKH3ARJO3VSBIMFSE6Q7ORGYN3S4XDZWPYLSV2OJVFM6CLWS7SCZ6UQ2U2UEO7UAMKFW7AVRRFMRN2YIME3YMIBENAJFLUM3VXMLHZNHZK3UMBVRLRTFX37KGQRBITWV5YUCOBNGNGGCZQNJH43IHDXQE7WJY5KVXXI4QY2OCO3IMAXOYNGFA"
+        "userId": "amzn1.ask.account.AELM3IDYQNDQKLCUDAJFRJEEAWE435BXGBKNCWEKH3YZWNBLXMWQPKUY6EHGWN7ODLMEW7MS56XWTAMW7VYDWAMJ3PZTYSL5DUR6MZFMBREOV3YKPQWOSHAELHCUPNQJFX5K5U36K7IRDU3MVUEQWXMCWVN62ARWNMKKQMQ5GDTNTQM7XBLDDXEL76CKQFVZPQEFUA25HNXCHEY"
       },
       "device": {
         "supportedInterfaces": {}
