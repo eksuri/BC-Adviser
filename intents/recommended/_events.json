@@ -16,13 +16,13 @@
     "intent": {
       "name": "PrerequisiteIntent",
       "slots": {
-        "subject": {
-          "name": "subject",
+        "CourseAbbrev": {
+          "name": "CourseAbbrev",
           "value": "CS"
         },
-        "subNumber": {
-          "name": "subNumber",
-          "value": "101"
+        "CourseNumber": {
+          "name": "CourseNumber",
+          "value": "351"
         }
       }
     },
