@@ -8,7 +8,7 @@ exports.GetFinalsInfoIntent = function GetFinalsInfoIntent() {
     
     finals.getDates(month, (dates) => { // get array of finals dates
         const speechOutput = "Finals this quarter start on " + dates.shift() + " and last until " + dates.pop();
-        //console.log(speechOutput);
+        console.log(speechOutput);
         this.response.speak(speechOutput);
         this.emit(':responseReady');
     });
