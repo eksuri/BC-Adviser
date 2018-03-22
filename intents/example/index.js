@@ -1,5 +1,7 @@
 const schema = require('./_schema.json')
+const event = require('./_event.json')
 exports.schema = schema
+exports.event = event
 
 const EXAMPLE_MESSAGE = "Hello World";
 

@@ -14,7 +14,7 @@
     "type": "IntentRequest",
     "requestId": "EdwRequestId.669e418a-e023-4055-bfbd-89448584bba8",
     "intent": {
-      "name": "GetFinalsInfoIntent",
+      "name": "GetExampleIntent",
       "slots": {}
     },
     "locale": "en-US",

@@ -1,12 +1,12 @@
 ﻿const about= require('./about');
 const amazon = require('./amazon');
 const classes = require('./classoffered');
+const common = require('./common_types');
 const degrees = require('./degrees');
 const finals = require('./finals');
 const example = require('./example');
 const recommended = require('./recommended');
 const retake = require('./retake');
-const minimumgrades = require('./minimumgrades');
 
 exports.handlers = {
     'AboutIntent': about.AboutIntent,
@@ -21,7 +21,6 @@ exports.handlers = {
     'RecommendedIntent': recommended.GetRecommendedIntent,
     'PrerequisiteIntent': recommended.GetPrerequisiteIntent,
     'RetakeClassIntent': retake.RetakeClassIntent,
-    'MinimumGradeIntent': minimumgrades.MinimumGradeIntent,
     'ExampleIntent': example.GetExampleIntent
 };
 
@@ -29,10 +28,21 @@ exports.schemas = [
     about.schema,
     amazon.schema,
     classes.schema,
+    common.schema,
     degrees.schema,
     finals.schema,
     recommended.schema,
     retake.schema,
-    minimumgrades.schema,
     example.schema
+]
+
+exports.events = [
+    //about.events,
+    //amazon.events,
+    //classes.events,
+    //degrees.events,
+    finals.event,
+    //recommended.events,
+    //retake.events,
+    example.event
 ]

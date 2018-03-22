@@ -25,13 +25,5 @@ exports.getDates = (month, callback) => {
     };
 
     let dates = [];
-    https.get('https://www.bellevuecollege.edu/courses/exams/', (data) => {
-        while ((match = regex.exec(data))) {
-            match.shift(); // shift match[0], only groups left
-            match.forEach((s) => {
-                dates.push(s);
-            })
-            callback(dates);
-        }
-    })
+    https.getBCRegex('/courses/exams/', regex, (data) => callback(data));
 }

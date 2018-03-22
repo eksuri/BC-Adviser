@@ -3,7 +3,7 @@
     "new": true,
     "sessionId": "SessionId.72b46dde-a7db-490c-b50e-15b544e6ed7a",
     "application": {
-      "applicationId": "amzn1.ask.skill.070cf389-4c06-4883-a094-0e093674d9ad"
+      "applicationId": "amzn1.ask.skill.2ff580cc-00a9-40d4-9a88-115f9a2f1ec2"
     },
     "attributes": {},
     "user": {
@@ -18,7 +18,11 @@
       "slots": {
         "CourseAbbrev": {
           "name": "CourseAbbrev",
-          "value": "cs 101"
+          "value": "CS"
+        },
+        "CourseNumber": {
+          "name": "CourseNumber",
+          "value": "101"
         }
       }
     },
@@ -31,7 +35,7 @@
     },
     "System": {
       "application": {
-        "applicationId": "amzn1.ask.skill.070cf389-4c06-4883-a094-0e093674d9ad"
+        "applicationId": "amzn1.ask.skill.2ff580cc-00a9-40d4-9a88-115f9a2f1ec2"
       },
       "user": {
         "userId": "amzn1.ask.account.AEGWF2KBJDU6AFITTQI4TWFAVYAS5DMNLTIA3PKS2ACVLJFQCLC3U4EIMW27UXRLI5QXTCZ4JHIF7QITGR3KTLRTGE2C6ANYOA43TJRWTHWSTATPWVT3YEEFOMSVWZIINWDDDSSURBWFWK2KW4KBIOUR4KESFONTHTLEMSBGXUAGRQCEUPIBYX5QJWNOO6FRP5ZGPBMLUH7IEEI"

@@ -190,24 +190,33 @@
             {
                 "name": "RecommendedIntent",
                 "samples": [
-                    "What classes are recommended before I take {subject} {subNumber}"
+                    "What classes are recommended before I take {CourseAbbrev} {CourseNumber}"
                 ],
                 "slots": [
                     {
-                        "name": "subject",
-                        "type": "field"
+                        "name": "CourseAbbrev",
+                        "type": "LIST_OF_SUBJECTS"
                     },
                     {
-                        "name": "subNumber",
-                        "type": "classNumber"
+                        "name": "CourseNumber",
+                        "type": "AMAZON.NUMBER"
                     }
                 ]
             },
             {
-                "name": "ExampleIntent",
-                "slots": [],
+                "name": "PrerequisiteIntent",
                 "samples": [
-                    "Example Intent"
+                    "Are there any prerequisites for {CourseAbbrev} {CourseNumber}"
+                ],
+                "slots": [
+                    {
+                        "name": "CourseAbbrev",
+                        "type": "LIST_OF_SUBJECTS"
+                    },
+                    {
+                        "name": "CourseNumber",
+                        "type": "AMAZON.NUMBER"
+                    }
                 ]
             },
             {
@@ -215,60 +224,26 @@
                 "slots": [
                     {
                         "name": "CourseAbbrev",
-                        "type": "LIST_OF_COURSE_ABBREVIATION"
-                    }
-                ],
-                "samples": [
-                    "when can I retake {CourseAbbrev}",
-                    "when is offered {CourseAbbrev}",
-                    "when can I next take {CourseAbbrev}",
-                    "in what quarter is offered {CourseAbbrev}",
-                    "in which quarter is offered {CourseAbbrev}"
-                ]
-            },
-            {
-                "name": "MinimumGradeIntent",
-                "slots": [
-                    {
-                        "name": "Programs",
-                        "type": "LIST_OF_PROGRAMS"
-                    }
-                ],
-                "samples": [
-                    "MinimumGradeIntent what is the minimum grade accepted by {Programs}",
-                    "MinimumGradeIntent what is the minimum grade for {Programs}"
-                ]
-            },
-            {
-                "name": "TimeConflictIntent",
-                "slots": [
-                    {
-                        "name": "ClassOne",
-                        "type": "LIST_OF_COURSE_ABBREVIATION"
+                        "type": "LIST_OF_SUBJECTS"
                     },
                     {
-                        "name": "ClassTwo",
-                        "type": "LIST_OF_COURSE_ABBREVIATION"
+                        "name": "CourseNumber",
+                        "type": "AMAZON.NUMBER"
                     }
                 ],
+                "samples": [
+                    "when can I retake {CourseAbbrev} {CourseNumber}",
+                    "when is offered {CourseAbbrev} {CourseNumber}",
+                    "when can I next take {CourseAbbrev} {CourseNumber}",
+                    "in what quarter is offered {CourseAbbrev} {CourseNumber}",
+                    "in which quarter is offered {CourseAbbrev} {CourseNumber}"
+                ]
+            },
+            {
+                "name": "ExampleIntent",
+                "slots": [],
                 "samples": [
                     "Example Intent"
-                ]
-            },
-            {
-                "name": "RecommendedIntent",
-                "samples": [
-                    "What classes are recommended before I take {subject} {subNumber}"
-                ],
-                "slots": [
-                    {
-                        "name": "subject",
-                        "type": "field"
-                    },
-                    {
-                        "name": "subNumber",
-                        "type": "classNumber"
-                    }
                 ]
             }
         ],
@@ -705,9 +680,11 @@
                         "id": "",
                         "name": {
                             "value": "ENGL&",
+                            "synonyms": []
+                        }
                     },
                     {
-                        "id": null,
+                        "id": "",
                         "name": {
                             "value": "ENVS",
                             "synonyms": []
@@ -1219,666 +1196,6 @@
                         "id": null,
                         "name": {
                             "value": "professional degrees",
-                            "synonyms": []
-                        }
-                    }
-                ]
-            },
-            {
-                "name": "field",
-                "values": [
-                    {
-                        "id": null,
-                        "name": {
-                            "value": "math",
-                            "synonyms": []
-                        }
-                    }
-                ]
-            },
-            {
-                "name": "classNumber",
-                "values": [
-                    {
-                        "id": null,
-                        "name": {
-                            "value": "125",
-                            "synonyms": []
-                        }
-                    }
-                ]
-            },
-            {
-                "name": "LIST_OF_COURSE_ABBREVIATION",
-                "values": [
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 101",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 194",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 195",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 196",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 197",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 199",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 210",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 211",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 212",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 250",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 295",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 296",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 297",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 299",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 300",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 320",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 331",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 341",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 351",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 360",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 401",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 410",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 455",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 460",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 470",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 481",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 482",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 483",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 485",
-                            "synonyms": []
-                        }
-                    }
-                ]
-            },
-            {
-                "name": "LIST_OF_PROGRAMS",
-                "values": [
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Accounting",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Computer Science",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Chemistry",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Art",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Astronomy",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Biology",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Botany",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Dance",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Drama",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Economics",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "French",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Geography",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Geology",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "German",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "History",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Italian",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Japonese",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Mathematics",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Music",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Nursing",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Philosophy",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Physics",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Sociology",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Spanish",
-                            "synonyms": []
-                        }
-                    }
-                ]
-            },
-            {
-                "name": "LIST_OF_COURSES",
-                "values": [
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 101",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 194",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 195",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 196",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 197",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 199",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 210",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 211",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 212",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 250",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 295",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 296",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 297",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 299",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 300",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 320",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 331",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 341",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 351",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 360",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 401",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 410",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 455",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 460",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 470",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 481",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 482",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "cs 483",
-                            "synonyms": []
-                        }
-                    }
-                ]
-            },
-            {
-                "name": "LIST_QUARTERS",
-                "values": [
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Winter2019",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Spring2018",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Summer2018",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Fall2018",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Winter2018",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Fall2017",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "Summer2017",
                             "synonyms": []
                         }
                     }
