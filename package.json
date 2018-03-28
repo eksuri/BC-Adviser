@@ -4,7 +4,7 @@
   "description": "Amazon Alexa Skill for Bellevue College Capstone",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha intents/**/_test.js --reporter min"
+    "test": "./node_modules/.bin/mocha intents/**/_test.js --reporter list"
   },
   "repository": {
     "type": "git",

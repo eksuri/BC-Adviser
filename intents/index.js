@@ -1,5 +1,6 @@
 ﻿const about= require('./about');
 const amazon = require('./amazon');
+const canvas = require('./canvas');
 const classes = require('./classoffered');
 const common = require('./common_types');
 const degrees = require('./degrees');
@@ -17,6 +18,8 @@ exports.handlers = {
     'ClassesOfferedIntent' : classes.ClassesOfferedIntent,
     'BellevueDegrees' :  degrees.GetBellevueDegreesIntent,
     'GetFinalsInfoIntent' : finals.GetFinalsInfoIntent,
+    'MyClassesIntent': canvas.GetMyClasses,
+    'MyGradesIntent': canvas.GetMyGrades,
     'RecommendedIntent': recommended.GetRecommendedIntent,
     'PrerequisiteIntent': recommended.GetPrerequisiteIntent,
     'RetakeClassIntent': retake.RetakeClassIntent
@@ -25,6 +28,7 @@ exports.handlers = {
 exports.schemas = [
     about.schema,
     amazon.schema,
+    canvas.schema,
     classes.schema,
     common.schema,
     degrees.schema,
