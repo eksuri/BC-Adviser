@@ -1,12 +1,13 @@
 ﻿const about= require('./about');
 const amazon = require('./amazon');
+const canvas = require('./canvas');
 const classes = require('./classoffered');
 const common = require('./common_types');
 const degrees = require('./degrees');
 const finals = require('./finals');
-const example = require('./example');
 const recommended = require('./recommended');
 const retake = require('./retake');
+
 
 exports.handlers = {
     'AboutIntent': about.AboutIntent,
@@ -17,32 +18,21 @@ exports.handlers = {
     'ClassesOfferedIntent' : classes.ClassesOfferedIntent,
     'BellevueDegrees' :  degrees.GetBellevueDegreesIntent,
     'GetFinalsInfoIntent' : finals.GetFinalsInfoIntent,
-    'ExampleIntent': example.GetExampleIntent,
+    'MyClassesIntent': canvas.GetMyClasses,
+    'MyGradesIntent': canvas.GetMyGrades,
     'RecommendedIntent': recommended.GetRecommendedIntent,
     'PrerequisiteIntent': recommended.GetPrerequisiteIntent,
-    'RetakeClassIntent': retake.RetakeClassIntent,
-    'ExampleIntent': example.GetExampleIntent
+    'RetakeClassIntent': retake.RetakeClassIntent
 };
 
 exports.schemas = [
     about.schema,
     amazon.schema,
+    canvas.schema,
     classes.schema,
     common.schema,
     degrees.schema,
     finals.schema,
     recommended.schema,
-    retake.schema,
-    example.schema
-]
-
-exports.events = [
-    about.events,
-    amazon.events,
-    classes.events,
-    degrees.events,
-    finals.events,
-    recommended.events,
-    retake.events,
-    example.events
+    retake.schema
 ]

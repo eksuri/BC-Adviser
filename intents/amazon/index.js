@@ -1,31 +1,31 @@
 const schema = require('./_schema.json')
-const events = require('./_events.json')
 exports.schema = schema
-exports.events = events
 
+const IDK_MESSAGE = "I'm not sure I follow...";
 const HELP_MESSAGE = "You can ask me which days finals, or you can exit... What can I help you with?";
 const HELP_REPROMPT = "What can I help you with?";
 const STOP_MESSAGE = "Goodbye!";
-const IDK_MESSAGE = "I'm not sure I follow...";
 
-exports.HelpIntent = function HelpIntent() {
+
+exports.CancelIntent = function () {
+    this.response.speak(STOP_MESSAGE);
+    this.emit(':responseReady');
+};
+
+exports.HelpIntent = function () {
     const speechOutput = HELP_MESSAGE;
     const reprompt = HELP_REPROMPT;
 
     this.response.speak(speechOutput).listen(reprompt);
     this.emit(':responseReady');
-}
+};
 
-exports.CancelIntent = function HelpIntent() {
+exports.StopIntent = function () {
     this.response.speak(STOP_MESSAGE);
     this.emit(':responseReady');
-},
-exports.StopIntent = function StopIntent() {
-    this.response.speak(STOP_MESSAGE);
-    this.emit(':responseReady');
-}
+};
 
-exports.Unhandled = function Unahndled() {
+exports.Unhandled = function () {
     const speechOutput = IDK_MESSAGE;
     this.emit(':responseReady');
 }

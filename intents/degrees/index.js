@@ -1,7 +1,5 @@
 const schema = require('./_schema.json')
-const events = require('./_events.json')
 exports.schema = schema
-exports.events = events
 
 const bachelors = require("./bachelor");
 const eastern = require("./eastern");
@@ -10,7 +8,7 @@ const professional = require("./professional");
 const nontransfer = require("./nontransfer");
 
 
-exports.GetBellevueDegreesIntent = function GetBellevueDegreesIntent() {
+exports.GetBellevueDegreesIntent = function () {
     const programOfStudy = this.event.request.intent.slots.program.value;
 
     let response

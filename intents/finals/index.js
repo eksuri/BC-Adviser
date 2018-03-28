@@ -1,11 +1,9 @@
 const schema = require('./_schema.json')
-const events = require('./_events.json')
 exports.schema = schema
-exports.events = events
 
 const finals = require('../../common/finals');
 
-exports.GetFinalsInfoIntent = function GetFinalsInfoIntent() {
+exports.GetFinalsInfoIntent = function () {
     const date = new Date();
     const month = date.getMonth();
     

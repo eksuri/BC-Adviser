@@ -1,0 +1,24 @@
+{
+    "intents": [
+        {
+            "name": "MyClassesIntent",
+            "slots": [],
+            "samples": [
+                "what classes am I taking",
+                "what classes am I taking this quarter",
+                "what classes am I in",
+                "what classes am I in this quarter"
+            ]
+        },
+        {
+            "name": "MyGradesIntent",
+            "slots": [],
+            "samples": [
+                "what are my grades",
+                "what are my grades this quarter",
+                "what are my grades in ",
+                "what classes am I in this quarter"
+            ]
+        }
+    ]
+}

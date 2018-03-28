@@ -41,25 +41,4 @@ let schema = {
 
 fs.writeFile('./schema.json', JSON.stringify(schema, null, 4), 'utf-8', function(err) {
 	if (err) throw err
-	console.log('Done')
 })
-
-
-
-/*
-let schema = {
-    "languageModel": {
-        "invocationName": "bc adviser",
-        "intents": [],
-        "types": [],
-
-    },
-    "dialog": {
-        "intents": [],
-    },
-    "prompts": [
-
-    ]
-}
-
-*/
