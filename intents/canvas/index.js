@@ -27,11 +27,11 @@ exports.GetMyGrades = function () {
         let speechOutput;
 
         if (grades!= null && grades[0] != null) {
-            speechOutput = "Your grade in" + grades[0] + " is " + grades[1];
+            speechOutput = "Your grade in" + grades[0][0] + " is " + grades[0][1];
         } else {
             speechOutput = "I'm not sure.";
         }
-        this.response.speak(speechOutput);
+        this.response.speak(speechOutput.replace("&", "and"));
         this.emit(':responseReady');
     });
 }
