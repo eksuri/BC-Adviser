@@ -7,7 +7,7 @@ exports.getRecommended = (subject, classNumber, callback) => {
 }
 
 exports.getPrerequisite = (subject, classNumber, callback) => {
-    const regex = /Prerequisite: (.*?)<\/p>/g
+    const regex = /Prerequisites: (.*?)<\/p>/g
     let url = "/classes/All/" + subject.toUpperCase() + '/' + classNumber + '/';
     https.getBCRegex(url, regex, callback)
 }

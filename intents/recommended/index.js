@@ -1,11 +1,9 @@
 const schema = require('./_schema.json')
-const events = require('./_events.json')
 exports.schema = schema
-exports.events = events
 
 const recommend = require('../../common/recommend');
 
-exports.GetRecommendedIntent = function GetRecommendedIntent () {
+exports.GetRecommendedIntent = function () {
     const CourseAbbrev = this.event.request.intent.slots.CourseAbbrev.value;
     const CourseNumber = this.event.request.intent.slots.CourseNumber.value;
     
@@ -13,7 +11,7 @@ exports.GetRecommendedIntent = function GetRecommendedIntent () {
         let speechOutput
         if (classes != null && classes[0] != null)
         {
-            speechOutput = "Before taking " + CourseAbbrev + " " + CourseNumber + " it is recommended that you should take " + classes;
+            speechOutput = "Before taking " + CourseAbbrev + " " + CourseNumber + " it is recommended that you should take " + classes[0];
         }
         else {
             speechOutput = "There are no recommended classes for you to take before " + CourseAbbrev + " " + CourseNumber;
@@ -24,7 +22,7 @@ exports.GetRecommendedIntent = function GetRecommendedIntent () {
 
 }
 
-exports.GetPrerequisiteIntent = function GetPrerequisiteIntent () {
+exports.GetPrerequisiteIntent = function () {
     const CourseAbbrev = this.event.request.intent.slots.CourseAbbrev.value;
     const CourseNumber = this.event.request.intent.slots.CourseNumber.value;
 

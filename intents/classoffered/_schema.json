@@ -1,24 +1,56 @@
 {
-"intents": [
-    {
-        "name": "ClassesOfferedIntent",
-        "slots": [
-            {
-                "name": "Subjects",
-                "type": "LIST_OF_SUBJECTS"
-            },
-            {
-                "name": "Season",
-                "type": "AMAZON.DATE"
-            }
-        ],
-        "samples": [
-            "what {Subjects} classes are offered {Season}",
-            "what classes are offered in {Season} for {Subjects}",
-            "what {Subjects} classes are offered for {Season}",
-            "what {Subjects} classes are offered {Season}",
-            "what classes are offered {Season} for {Subjects}"
-        ]
-    }
-]
+    "intents": [
+        {
+            "name": "ClassesOfferedIntent",
+            "slots": [
+                {
+                    "name": "Subjects",
+                    "type": "LIST_OF_SUBJECTS"
+                },
+                {
+                    "name": "Quarter",
+                    "type": "LIST_OF_QUARTERS"
+                },
+                {
+                    "name": "Year",
+                    "type": "AMAZON.FOUR_DIGIT_NUMBER"
+                }
+            ],
+            "samples": [
+                "what {Subjects} classes are offered {Quarter} {Year}",
+                "what classes are offered in {Quarter} {Year} for {Subjects}",
+                "what classes are offered {Quarter} {Year} for {Subjects}"
+            ]
+        }
+    ],
+    "types" : [
+        {
+            "name": "LIST_OF_QUARTERS",
+            "values": [
+                {
+                    "name": {
+                        "value": "Fall",
+                        "syonyms": [
+                            "Autumn"
+                        ]
+                    }
+                },
+                {
+                    "name": {
+                        "value": "Summer"
+                    }
+                },
+                {
+                    "name": {
+                        "value": "Fall"
+                    }
+                },
+                {
+                    "name": {
+                        "value": "Winter"
+                    }
+                }
+            ]
+        }
+    ]
 }

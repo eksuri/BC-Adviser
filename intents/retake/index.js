@@ -1,11 +1,9 @@
 const schema = require('./_schema.json')
-const events = require('./_events.json')
 exports.schema = schema
-exports.events = events
 
 const quarters = require('../../common/quarters');
 
-exports.RetakeClassIntent = function RetakeClassIntent() {
+exports.RetakeClassIntent = function () {
     //Extract the value of the slots
     //const course = this.event.request.intent.slots.CourseAbbrev.value;
 
@@ -22,4 +20,3 @@ exports.RetakeClassIntent = function RetakeClassIntent() {
         this.emit(':responseReady');
     });
 }
-

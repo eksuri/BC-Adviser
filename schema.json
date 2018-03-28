@@ -27,6 +27,26 @@
                 "samples": []
             },
             {
+                "name": "MyClassesIntent",
+                "slots": [],
+                "samples": [
+                    "what classes am I taking",
+                    "what classes am I taking this quarter",
+                    "what classes am I in",
+                    "what classes am I in this quarter"
+                ]
+            },
+            {
+                "name": "MyGradesIntent",
+                "slots": [],
+                "samples": [
+                    "what are my grades",
+                    "what are my grades this quarter",
+                    "what are my grades in ",
+                    "what classes am I in this quarter"
+                ]
+            },
+            {
                 "name": "ClassesOfferedIntent",
                 "slots": [
                     {
@@ -34,16 +54,18 @@
                         "type": "LIST_OF_SUBJECTS"
                     },
                     {
-                        "name": "Season",
-                        "type": "AMAZON.DATE"
+                        "name": "Quarter",
+                        "type": "LIST_OF_QUARTERS"
+                    },
+                    {
+                        "name": "Year",
+                        "type": "AMAZON.FOUR_DIGIT_NUMBER"
                     }
                 ],
                 "samples": [
-                    "what {Subjects} classes are offered {Season}",
-                    "what classes are offered in {Season} for {Subjects}",
-                    "what {Subjects} classes are offered for {Season}",
-                    "what {Subjects} classes are offered {Season}",
-                    "what classes are offered {Season} for {Subjects}"
+                    "what {Subjects} classes are offered {Quarter} {Year}",
+                    "what classes are offered in {Quarter} {Year} for {Subjects}",
+                    "what classes are offered {Quarter} {Year} for {Subjects}"
                 ]
             },
             {
@@ -238,16 +260,37 @@
                     "in what quarter is offered {CourseAbbrev} {CourseNumber}",
                     "in which quarter is offered {CourseAbbrev} {CourseNumber}"
                 ]
-            },
-            {
-                "name": "GetExampleIntent",
-                "slots": [],
-                "samples": [
-                    "Example Intent"
-                ]
             }
         ],
         "types": [
+            {
+                "name": "LIST_OF_QUARTERS",
+                "values": [
+                    {
+                        "name": {
+                            "value": "Fall",
+                            "syonyms": [
+                                "Autumn"
+                            ]
+                        }
+                    },
+                    {
+                        "name": {
+                            "value": "Summer"
+                        }
+                    },
+                    {
+                        "name": {
+                            "value": "Fall"
+                        }
+                    },
+                    {
+                        "name": {
+                            "value": "Winter"
+                        }
+                    }
+                ]
+            },
             {
                 "name": "LIST_OF_SUBJECTS",
                 "values": [
