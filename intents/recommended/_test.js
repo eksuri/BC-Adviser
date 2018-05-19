@@ -12,5 +12,5 @@ const opts = {
 conversation(opts)
     .userSays('PrerequisiteIntent', { "CourseAbbrev":"math", "CourseNumber":"078"})
     .plainResponse
-        .shouldEqual("Prerequisites for math 078 include: MATH 070 with a passing grade or MATH 075 with a grade of B or higher, or placement by assessment.")
+        .shouldEqual("Prerequisites for math 078 include completion of MATH 070 with a C or better, MATH 075 with a grade of B or higher, or placement by assessment.")
     .end();

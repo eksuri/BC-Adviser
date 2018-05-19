@@ -2,7 +2,7 @@ const Speech = require('ssml-builder');
 const schema = require('./_schema.json')
 exports.schema = schema
 
-const canvas = require('../../common/canvas/canvas.js');
+const canvas = require('../../common/canvas/index.js');
 
 exports.GetMyClasses = async function () {
     let speech = new Speech();
