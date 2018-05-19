@@ -1,5 +1,3 @@
-const https = require('./get');
-
 const regex0 = /Winter.*\n<ul>\n<li>(.*)<\/li>\n<li>(.*)<\/li>\n<li>(.*)<\/li>/g;
 const regex1 = /Spring.*\n<ul>\n<li>(.*)<\/li>\n<li>(.*)<\/li>\n<li>(.*)<\/li>/g;
 const regex2 = /Summer.*\n<ul>\n<li>(.*)<\/li>\n<li>(.*)<\/li>/g;
@@ -25,5 +23,5 @@ exports.getDates = (month, callback) => {
     };
 
     let dates = [];
-    https.getBCRegex('/courses/exams/', regex, (data) => callback(data));
+    https.getRegex('https://www.bellevuecollege.edu/courses/exams/', regex, (data) => callback(data));
 }

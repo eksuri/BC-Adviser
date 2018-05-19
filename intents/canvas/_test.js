@@ -12,7 +12,7 @@ const opts = {
 conversation(opts)
   .userSays('MyClassesIntent')
     .plainResponse 
-      .shouldEqual("This quarter you're currently enrolled in FERPA Training Staff-Canvas Orientation")
+      .shouldEqual("This quarter you&apos;re currently enrolled in BIOL 150 Marine Biology CS 401 Algorithms CS 455 Cloud Computing CS 482 Senior Capstone II")
   .userSays('MyGradesIntent')
     .plainResponse 
       .shouldContain("grade")
