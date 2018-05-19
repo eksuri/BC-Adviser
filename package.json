@@ -1,6 +1,6 @@
 {
   "name": "bc-adviser",
-  "version": "0.0.1",
+  "version": "0.4.0",
   "description": "Amazon Alexa Skill for Bellevue College Capstone",
   "main": "index.js",
   "scripts": {
@@ -19,11 +19,13 @@
   },
   "homepage": "https://github.com/eksuri/BC-Adviser#readme",
   "dependencies": {
-    "alexa-sdk": "^1.0.25"
+    "alexa-sdk": "^1.0.25",
+    "node-fetch": "^2.1.2",
+    "ssml-builder": "^0.4.3"
   },
   "devDependencies": {
     "alexa-conversation": "^0.2.0",
-    "mocha": "^5.0.5"
+    "mocha": "^5.2.0"
   },
   "resolutions": {
     "ieee754": "1.1.8",
