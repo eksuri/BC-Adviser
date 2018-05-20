@@ -1,10 +1,9 @@
-﻿const schema = require('./_schema.json')
+﻿const Speech = require('ssml-builder');
+const schema = require('./_schema.json')
 exports.schema = schema
 
-const ABOUT_MESSAGE = "This application was made by Seniors at Bellevue College working on their Capstone for Computer Science.";
-
-exports.AboutIntent = function () {
-    const speechOutput = ABOUT_MESSAGE;
-    this.response.speak(speechOutput);
-    this.emit(':responseReady');
+exports.AboutIntent = async function () {
+    let speech = new Speech();
+    speech.say("This application was made by Seniors at Bellevue College working on their Capstone for Computer Science.")
+    this.emit(':tell', speech.ssml(true));
 }

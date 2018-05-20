@@ -13,13 +13,13 @@ conversation(opts)
   .userSays('AMAZON.CancelIntent')
     .plainResponse 
       .shouldEqual("Goodbye!")
-      .shouldNotEqual("I'm not sure I followed...")
+      .shouldNotEqual("I'm not sure I followed")
   .userSays('AMAZON.HelpIntent')
     .plainResponse 
-      .shouldEqual("You can ask me which days finals, or you can exit... What can I help you with?")
-      .shouldNotEqual("I'm not sure I followed...")
+      .shouldEqual("You can ask me which days finals, or you can exit What can I help you with?")
+      .shouldNotEqual("I'm not sure I followed")
   .userSays('AMAZON.StopIntent')
     .plainResponse 
       .shouldEqual('Goodbye!')
-      .shouldNotEqual("I'm not sure I followed...")
+      .shouldNotEqual("I'm not sure I followed")
   .end();

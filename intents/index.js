@@ -1,8 +1,8 @@
 ﻿const canvas = require('./canvas');
 const recommended = require('./recommended');
-/*
 const about= require('./about');
 const amazon = require('./amazon');
+/*
 const classes = require('./classoffered');
 const common = require('./common_types');
 const degrees = require('./degrees');
@@ -15,12 +15,12 @@ exports.handlers = {
     'MyGradesIntent': canvas.GetMyGrades,
     'RecommendedIntent': recommended.GetRecommendedIntent,
     'PrerequisiteIntent': recommended.GetPrerequisiteIntent,
-    /*
     'AboutIntent': about.AboutIntent,
     'AMAZON.HelpIntent': amazon.HelpIntent,
     'AMAZON.CancelIntent': amazon.CancelIntent,
     'AMAZON.StopIntent': amazon.StopIntent,
     'Unhandled': amazon.Unhandled,
+    /*
     'ClassesOfferedIntent' : classes.ClassesOfferedIntent,
     'BellevueDegrees' :  degrees.GetBellevueDegreesIntent,
     'GetFinalsInfoIntent' : finals.GetFinalsInfoIntent,
