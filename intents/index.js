@@ -1,12 +1,12 @@
-﻿const canvas = require('./canvas');
-const recommended = require('./recommended');
-const about= require('./about');
+﻿const about= require('./about');
 const amazon = require('./amazon');
-/*
 const classes = require('./classoffered');
+const canvas = require('./canvas');
 const common = require('./common_types');
-const degrees = require('./degrees');
 const finals = require('./finals');
+const recommended = require('./recommended');
+/*
+const degrees = require('./degrees');
 const retake = require('./retake');
 */
 
@@ -20,10 +20,10 @@ exports.handlers = {
     'AMAZON.CancelIntent': amazon.CancelIntent,
     'AMAZON.StopIntent': amazon.StopIntent,
     'Unhandled': amazon.Unhandled,
-    /*
     'ClassesOfferedIntent' : classes.ClassesOfferedIntent,
-    'BellevueDegrees' :  degrees.GetBellevueDegreesIntent,
     'GetFinalsInfoIntent' : finals.GetFinalsInfoIntent,
+    /*
+    'BellevueDegrees' :  degrees.GetBellevueDegreesIntent,
     'RetakeClassIntent': retake.RetakeClassIntent
     */
 };

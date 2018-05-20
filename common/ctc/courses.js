@@ -1,5 +1,4 @@
 const fetch = require('node-fetch');
-const config = require('../../config.json')
 
 getCourses = async (subject) => {
     const res = await fetch("http://bellevuecollege.edu/classes/All/" + subject.toUpperCase() + "/?format=json");
@@ -8,23 +7,16 @@ getCourses = async (subject) => {
 }
 
 getCourse = async (subject, number) => {
-    const courses = await getCourses(subject);
-    console.log(number)
-    const course = courses.find((c) => {
-        return (
-            (Number.parseInt(c.Number) === Number.parseInt(number)) &&
-            (c.Subject = subject.toUpperCase)
-        )
-    });
+    const res = await fetch("http://bellevuecollege.edu/classes/All/" + subject.toUpperCase() + "/" + number + "/?format=json");
+    const data = await res.json();
 
-    return course;
+    return data;
 }
 
 getFootnotes = async(subject, number) => {
-    const course = await getCourse(subject, number);
-    return course.Footnotes;
+    const data = await getCourse(subject, number);
+    return data.Courses[0].Footnotes;
 }
-
 
 exports.getPrerequisite = async (subject, number) => {
     const footnotes = await getFootnotes(subject, number);
@@ -43,4 +35,20 @@ exports.getRecommended = async () => {
     })
 
     return (recommended?recommended.split(':')[1]:null);
+}
+
+exports.getCoursesOffered = async (subject, number) => {
+    const courses = await getCourses(subject);
+    const numbers = await Promise.all(courses.map(async (c) => {return c.Number;}))
+    
+    const offered_function = numbers.map(async (n) => {
+        const course = getCourse(subject, n)
+        return course;
+    }) 
+
+
+
+    console.log(numbers);
+
+    return null;
 }

@@ -1,17 +1,20 @@
+const Speech = require('ssml-builder');
 const schema = require('./_schema.json')
 exports.schema = schema
 
-const finals = require('../../common/finals');
+const finals = require('../../common/web/finals.js');
 
-exports.GetFinalsInfoIntent = function () {
-    const date = new Date();
-    const month = date.getMonth();
-    
-    finals.getDates(month, (dates) => { // get array of finals dates
-        const speechOutput = "Finals this quarter start on " + dates.shift() + " and last until " + dates.pop();
-        this.response.speak(speechOutput);
-        this.emit(':responseReady');
-    });
+exports.GetFinalsInfoIntent = async function () {
+    let speech = new Speech();
+
+    const dates = await finals.getDates((new Date()).getMonth());
+
+    speech.say("Finals this quarter start on")
+          .say(dates.shift())
+          .say("and last until")
+          .say(dates.pop());
+
+    this.emit(':tell', speech.ssml(true));
 }
 
 
