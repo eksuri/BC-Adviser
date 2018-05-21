@@ -5,9 +5,9 @@ const canvas = require('./canvas');
 const common = require('./common_types');
 const finals = require('./finals');
 const recommended = require('./recommended');
+const retake = require('./retake');
 /*
 const degrees = require('./degrees');
-const retake = require('./retake');
 */
 
 exports.handlers = {
@@ -22,9 +22,9 @@ exports.handlers = {
     'Unhandled': amazon.Unhandled,
     'ClassesOfferedIntent' : classes.ClassesOfferedIntent,
     'GetFinalsInfoIntent' : finals.GetFinalsInfoIntent,
+    'RetakeClassIntent': retake.RetakeClassIntent
     /*
     'BellevueDegrees' :  degrees.GetBellevueDegreesIntent,
-    'RetakeClassIntent': retake.RetakeClassIntent
     */
 };
 /*

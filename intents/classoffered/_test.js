@@ -12,5 +12,5 @@ const opts = {
 conversation(opts)
     .userSays('ClassesOfferedIntent', {"Quarter": "summer", "Year": "2018", "Subjects": "ocea"})
     .plainResponse
-        .shouldEqual("For the summer2018 quarter at Bellevue College are offered following classes: Environmental Oceanography")
+        .shouldEqual("The following ocea classes are offered summer 2018 Environmental Oceanography")
     .end();

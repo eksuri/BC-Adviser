@@ -10,7 +10,7 @@ const opts = {
 };
 
 conversation(opts)
-    .userSays('RetakeClassIntent', { "CourseAbbrev":"CS", "CourseNumber":"101"})
+    .userSays('RetakeClassIntent', { "CourseAbbrev":"CS", "CourseNumber":"300"})
     .plainResponse
-        .shouldEqual("This class is offered at Bellevue College Summer 2017 Winter 2018")
+        .shouldEqual("This class is offered at Bellevue College Fall 2018")
     .end();

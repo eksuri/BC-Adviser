@@ -13,7 +13,7 @@ exports.ClassesOfferedIntent = async function () {
     const year = this.event.request.intent.slots.Year.value;
 
 
-    coursesOffered = courses.getCoursesOffered(subject, quarter + year)
+    coursesOffered = await courses.getCoursesOffered(subject, quarter + year);
 
     speech.say("The following")
           .say(subject)
@@ -21,13 +21,11 @@ exports.ClassesOfferedIntent = async function () {
           .say(quarter)
           .say(year)
           .pause("1s")
-          .say()
 
     coursesOffered.forEach((c) => {
-        speech.say(c)
-    })
+        speech.say(c)}
+    );
 
     this.emit(':tell', speech.ssml(true));
-
 }
 
