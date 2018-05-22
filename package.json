@@ -4,7 +4,7 @@
   "description": "Amazon Alexa Skill for Bellevue College Capstone",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha intents/classoffered/_test.js --reporter spec"
+    "test": "./node_modules/.bin/mocha intents/**/_test.js --reporter list"
   },
   "repository": {
     "type": "git",
@@ -20,11 +20,13 @@
   "homepage": "https://github.com/eksuri/BC-Adviser#readme",
   "dependencies": {
     "alexa-sdk": "^1.0.25",
+    "ask-sdk": "^2.0.5",
+    "ask-sdk-v1adapter": "^2.0.5",
     "node-fetch": "^2.1.2",
     "ssml-builder": "^0.4.3"
   },
   "devDependencies": {
-    "alexa-conversation": "^0.2.0",
+    "alexa-conversation": "eksuri/alexa-conversation#refs/heads/jgamell/addContextObject",
     "mocha": "^5.2.0"
   },
   "resolutions": {

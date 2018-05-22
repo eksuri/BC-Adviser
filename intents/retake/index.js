@@ -14,8 +14,6 @@ exports.RetakeClassIntent = async function () {
 
     speech.say("This class is offered at Bellevue College")
 
-    console.log(quarters);
-
     quarters.forEach((q) => speech.say(q).pause("1s"));
     this.emit(':tell', speech.ssml(true));
 }
