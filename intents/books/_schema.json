@@ -1,0 +1,33 @@
+{
+    "intents": [
+      {
+        "name": "BookIntent",
+        "samples": [
+          "what books are required for  {CourseAbbrev} {CourseNumber} item {ItemNumber}",
+          "what books are required for {CourseAbbrev} {CourseNumber} item number {ItemNumber}",
+          "what books are required for course {CourseAbbrev} course number {CourseNumber} item number {ItemNumber}",
+          "what books are required for item number {ItemNumber}",
+          "what books are required for item {ItemNumber}",
+          "what books are required for {CourseAbbrev} {CourseNumber}",
+          "what books are required for {CourseAbbrev}",
+          "what books are required for {CourseNumber}",
+          "what books are required for {CourseAbbrev} item {ItemNumber}",
+          "what books are required for {CourseAbbrev} item number {ItemNumber}"
+        ],
+        "slots": [
+          {
+            "name": "CourseAbbrev",
+            "type": "LIST_OF_SUBJECTS"
+        },
+        {
+            "name": "CourseNumber",
+            "type": "AMAZON.NUMBER"
+        },
+        {
+            "name": "ItemNumber",
+            "type": "AMAZON.FOUR_DIGIT_NUMBER"
+        }
+        ]
+      }
+    ]
+  }

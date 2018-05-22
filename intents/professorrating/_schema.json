@@ -1,0 +1,71 @@
+{
+    "intents": [
+      {
+        "name": "RatingIntent",
+        "samples": [
+          "what is the rating for {FirstName} {LastName} at rate my professors dot com",
+          "what is the rating for {FirstName} {LastName} at rate my professor dot com",
+          "what is the rating for {FirstName} {LastName}"
+        ],
+        "slots": [
+          {
+            "name": "FirstName",
+            "type": "LIST_OF_NAMES"
+        },
+        {
+            "name": "LastName",
+            "type": "LIST_OF_NAMES"
+        }
+        ]
+      }
+    ],
+    "types": [
+      {
+          "name": "LIST_OF_NAMES",
+          "values": [
+              {
+                  "id": null,
+                  "name": {
+                      "value": "Jen",
+                      "synonyms": []
+                  }
+              },
+              {
+                  "id": null,
+                  "name": {
+                      "value": "Townsend",
+                      "synonyms": []
+                  }
+              },
+              {
+                "id": null,
+                "name": {
+                    "value": "Fatma",
+                    "synonyms": []
+                }
+              },
+              {
+                "id": null,
+                "name": {
+                    "value": "Bill",
+                    "synonyms": []
+                }
+              },
+              {
+                "id": null,
+                "name": {
+                    "value": "Iverson",
+                    "synonyms": []
+                }
+              },
+              {
+                "id": null,
+                "name": {
+                    "value": "Serce",
+                    "synonyms": []
+                }
+              }
+          ]
+      }
+  ]
+  }
