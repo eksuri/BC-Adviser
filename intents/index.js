@@ -1,4 +1,4 @@
-﻿const about= require('./about');
+﻿const about = require('./about');
 const amazon = require('./amazon');
 const classes = require('./classoffered');
 const canvas = require('./canvas');
@@ -17,12 +17,12 @@ exports.handlers = {
     'MyGradesIntent': canvas.GetMyGrades,
     'Degrees' :  degrees.GetBellevueDegreesIntent,
     'GetFinalsInfoIntent' : finals.GetFinalsInfoIntent,
-    'RecommendedIntent': recommended.GetRecommendedIntent,
-    'PrerequisiteIntent': recommended.GetPrerequisiteIntent,
+    //'RecommendedIntent': recommended.GetRecommendedIntent,
+    //'PrerequisiteIntent': recommended.GetPrerequisiteIntent,
     'RetakeClassIntent': retake.RetakeClassIntent
 };
 
-exports.handlers_v2 = about.Handler;
+exports.handlers_v2 = [recommended.Handler, about.Handler];
 
 exports.schemas = [
     about.schema,

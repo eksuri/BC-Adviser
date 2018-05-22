@@ -28,7 +28,7 @@ exports.getPrerequisite = async (subject, number) => {
 }
 
 
-exports.getRecommended = async () => {
+exports.getRecommended = async (subject, number) => {
     const footnotes = await getFootnotes(subject, number);
     const recommended = footnotes.find((f) => {
         return f.startsWith("Recomended");

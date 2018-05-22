@@ -3,7 +3,7 @@ const app = require('../../index.js');
 const config = require('../../config.json');
 
 let opts = config.opts;
-    opts.name = 'About Intent';
+    opts.name = 'Finals Intent';
     opts.app = app;
     opts.handler = app.handler;
 

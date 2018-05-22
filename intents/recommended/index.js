@@ -4,48 +4,40 @@ exports.schema = schema
 
 const courses = require('../../common/ctc/courses.js');
 
-exports.GetRecommendedIntent = async function () {
-    let speech = new Speech();
+exports.Handlers = {
+    canHandle(handlerInput) {
+        const request = handlerInput.requestEnvelope.request;
+        return request.type === 'IntentRequest' && ["RecommendedIntent", "PrerequisiteIntent"].includes(request.intent.name);
+    },
+    async handle(handlerInput) {
+        let speech = new Speech();
+        const responseBuilder = handlerInput.responseBuilder;
 
-    const CourseAbbrev = this.event.request.intent.slots.CourseAbbrev.value;
-    const CourseNumber = this.event.request.intent.slots.CourseNumber.value;
-    
-    recommended = await courses.getRecommended(CourseAbbrev, CourseNumber);
+        const CourseAbbrev = handlerInput.requestEnvelope.request.intent.slots.CourseAbbrev.value;
+        const CourseNumber = handlerInput.requestEnvelope.request.intent.slots.CourseNumber.value;
 
-    if (recommended) {
-        speech.say("Before taking")
-              .say(CourseAbbrev)
-              .say(CourseNumber)
-              .say("it is recommended that you should take")
-              .say(recommended)
-    } else {
-        speech.say("There are no recommended classes for you to take before")
-              .say(CourseAbbrev)
-              .say(CourseNumber)
-    }
+        const which = handlerInput.requestEnvelope.request.intent.name === "RecommendedIntent"
+        
+        footnote = (which ? await courses.getRecommended(CourseAbbrev, CourseNumber):
+                            await courses.getPrerequisite(CourseAbbrev, CourseNumber));
 
-    this.emit(':tell', speech.ssml(true));
+        if (footnote) {
+            speech.say((which?"recommended":"prerequisites"))
+                  .say("for")
+                  .say(CourseAbbrev)
+                  .say(CourseNumber)
+                  .say("include")
+                  .say(footnote)
+        } else {
+            speech.say("There are no")
+                  .say((which?"recommended":"prerequisites"))
+                  .say("for you to take before")
+                  .say(CourseAbbrev)
+                  .say(CourseNumber)
+        }
+
+        return responseBuilder.speak(speech.ssml(true))
+                              .getResponse();
+    },
 }
 
-exports.GetPrerequisiteIntent = async function () {
-    let speech = new Speech();
-
-    const CourseAbbrev = this.event.request.intent.slots.CourseAbbrev.value;
-    const CourseNumber = this.event.request.intent.slots.CourseNumber.value;
-    
-    prerequisite = await courses.getPrerequisite(CourseAbbrev, CourseNumber);
-
-    if (prerequisite) {
-        speech.say("Prerequisites for")
-              .say(CourseAbbrev)
-              .say(CourseNumber)
-              .say("include")
-              .say(prerequisite)
-    } else {
-        speech.say("There are no prerequisites for you to take before")
-              .say(CourseAbbrev)
-              .say(CourseNumber)
-    }
-
-    this.emit(':tell', speech.ssml(true));
-}
