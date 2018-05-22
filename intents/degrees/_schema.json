@@ -4,14 +4,23 @@
             "name": "BellevueDegrees",
             "samples": [
                 "{program}",
+                "{program} degrees",
                 "{program} please",
-                "I would like more information on {program}",
+                "{program} degrees please",
+                "list {program}",
+                "list {program} degrees",
                 "tell me about {program}",
+                "tell me about {program} degrees",
+                "I would like more information on {program}",
+                "I would like more information on {program} degrees",
                 "I would like to know about {program}",
-                "List {program}",
+                "I would like to know about {program} degrees",
                 "please tell me about {program}",
+                "please tell me about {program} degrees",
                 "please give me more information on {program}",
-                "please tell me more about {program}"
+                "please give me more information on {program} degrees",
+                "please tell me more about {program}",
+                "please tell me more about {program} degrees"
             ],
             "slots": [
                 {
@@ -35,35 +44,42 @@
                 {
                     "id": null,
                     "name": {
-                        "value": "bachelors degrees",
+                        "value": "bachelors",
                         "synonyms": []
                     }
                 },
                 {
                     "id": null,
                     "name": {
-                        "value": "professional and technical degrees",
+                        "value": "professional",
                         "synonyms": []
                     }
                 },
                 {
                     "id": null,
                     "name": {
-                        "value": "non transfer degrees",
+                        "value": "technical",
                         "synonyms": []
                     }
                 },
                 {
                     "id": null,
                     "name": {
-                        "value": "transfer associate degrees",
+                        "value": "non transfer",
                         "synonyms": []
                     }
                 },
                 {
                     "id": null,
                     "name": {
-                        "value": "test",
+                        "value": "transfer",
+                        "synonyms": []
+                    }
+                },
+                                {
+                    "id": null,
+                    "name": {
+                        "value": "associate",
                         "synonyms": []
                     }
                 },
@@ -71,13 +87,6 @@
                     "id": null,
                     "name": {
                         "value": "eastern Washington",
-                        "synonyms": []
-                    }
-                },
-                {
-                    "id": null,
-                    "name": {
-                        "value": "professional degrees",
                         "synonyms": []
                     }
                 }

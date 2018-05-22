@@ -3,14 +3,14 @@ const app = require('../../index.js');
 const config = require('../../config.json');
 
 const opts = {
-    name: 'BellevueDegrees',
+    name: 'Degrees',
     appId: config.appId,
     app: app,
     fixSpaces: true
 };
 
 conversation(opts)
-    .userSays('BellevueDegrees', {"program": "bachelors degrees"})
+    .userSays('Degrees', {"program": "associates"})
     .plainResponse
-        .shouldContain("Health Promotion and Management")
+        .shouldContain("asdfhjkladfsasds")
     .end();
