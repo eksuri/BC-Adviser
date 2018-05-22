@@ -2,18 +2,18 @@ const Speech = require('ssml-builder');
 const schema = require('./_schema.json')
 exports.schema = schema
 
-const courses = require('../../common/ctc/courses.js');
+const sections = require('../../common/ctc/sections.js');
 
 exports.ClassesOfferedIntent = async function () {
     let speech = new Speech();
 
-    const subject = this.event.request.intent.slots.Subjects.value;
     const quarter = (this.event.request.intent.slots.Quarter.value == "autumn" ?
-        "fall" : this.event.request.intent.slots.Quarter.value);
+            "fall" : this.event.request.intent.slots.Quarter.value);
     const year = this.event.request.intent.slots.Year.value;
+    const subject = this.event.request.intent.slots.Subjects.value;
 
 
-    coursesOffered = await courses.getCoursesOffered(subject, quarter + year);
+    coursesOffered = await sections.getCoursesOffered(quarter + year, subject);
 
     speech.say("The following")
           .say(subject)
