@@ -7,3 +7,21 @@ exports.AboutIntent = async function () {
     speech.say("This application was made by Seniors at Bellevue College working on their Capstone for Computer Science.")
     this.emit(':tell', speech.ssml(true));
 }
+
+exports.Handler = {
+    canHandle(handlerInput) {
+        const request = handlerInput.requestEnvelope.request;
+        return request.type === 'IntentRequest' && request.intent.name === 'AboutIntent';
+    },
+    async handle(handlerInput) {
+        const responseBuilder = handlerInput.responseBuilder;
+        
+        //const attributesManager = handlerInput.attributesManager;
+        //const requestAttributes = attributesManager.getRequestAttributes();
+
+        return responseBuilder
+            .speak('This application was made by Seniors at Bellevue College working on their Capstone for Computer Science.')
+            .getResponse();
+    },
+}
+

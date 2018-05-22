@@ -8,11 +8,10 @@ const recommended = require('./recommended');
 const retake = require('./retake');
 
 exports.handlers = {
-    'AboutIntent': about.AboutIntent,
     'AMAZON.HelpIntent': amazon.HelpIntent,
     'AMAZON.CancelIntent': amazon.CancelIntent,
     'AMAZON.StopIntent': amazon.StopIntent,
-    'Unhandled': amazon.Unhandled,
+    //'Unhandled': amazon.Unhandled,
     'ClassesOfferedIntent' : classes.ClassesOfferedIntent,
     'MyClassesIntent': canvas.GetMyClasses,
     'MyGradesIntent': canvas.GetMyGrades,
@@ -22,6 +21,8 @@ exports.handlers = {
     'PrerequisiteIntent': recommended.GetPrerequisiteIntent,
     'RetakeClassIntent': retake.RetakeClassIntent
 };
+
+exports.handlers_v2 = about.Handler;
 
 exports.schemas = [
     about.schema,
