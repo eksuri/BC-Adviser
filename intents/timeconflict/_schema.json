@@ -1,0 +1,39 @@
+{
+      "intents": [
+          {
+              "name": "TimeConflictIntent",
+              "slots": [
+                {
+                    "name": "CourseAbbrev1",
+                    "type": "LIST_OF_SUBJECTS"
+                },
+                {
+                    "name": "CourseNumber1",
+                    "type": "AMAZON.NUMBER"
+                },
+                {
+                    "name": "CourseAbbrev2",
+                    "type": "LIST_OF_SUBJECTS"
+                },
+                {
+                    "name": "CourseNumber2",
+                    "type": "AMAZON.NUMBER"
+                },
+                {
+                    "name": "Quarter",
+                    "type": "LIST_OF_QUARTERS"
+                },
+                {
+                    "name": "Year",
+                    "type": "AMAZON.FOUR_DIGIT_NUMBER"
+                }
+              ],
+              "samples": [
+                  "Can I take {CourseAbbrev1} {CourseNumber1} in the same time with {CourseAbbrev2} {CourseNumber2} in the {Quarter} {Year}",
+                  "if can I take {CourseAbbrev1} {CourseNumber1} in the same time with {CourseAbbrev2} {CourseNumber2} in the {Quarter} {Year}",
+                  "Can I take {CourseAbbrev1} {CourseNumber1} in the same time with {CourseAbbrev2} {CourseNumber2} in {Quarter} {Year}",
+                  "if can I take {CourseAbbrev1} {CourseNumber1} in the same time with {CourseAbbrev2} {CourseNumber2} in {Quarter} {Year}"
+              ]
+          }
+      ]
+}

@@ -1,0 +1,31 @@
+{
+      "intents": [
+          {
+              "name": "ClassScheduleIntent",
+              "slots": [
+                {
+                    "name": "CourseAbbrev",
+                    "type": "LIST_OF_SUBJECTS"
+                },
+                {
+                    "name": "CourseNumber",
+                    "type": "AMAZON.NUMBER"
+                },
+                {
+                    "name": "Quarter",
+                    "type": "LIST_OF_QUARTERS"
+                },
+                {
+                    "name": "Year",
+                    "type": "AMAZON.FOUR_DIGIT_NUMBER"
+                }
+              ],
+              "samples": [
+                  "what time is offered {CourseAbbrev} {CourseNumber} in the {Quarter} {Year}",
+                  "what time is {CourseAbbrev} {CourseNumber} in the {Quarter} {Year}",
+                  "what time will be {CourseAbbrev} {CourseNumber} in the {Quarter} {Year}",
+                  "What is the schedule for the {CourseAbbrev} {CourseNumber} in the {Quarter} {Year}"
+              ]
+          }
+      ]
+}

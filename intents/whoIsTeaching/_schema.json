@@ -1,0 +1,33 @@
+{
+    "intents": [
+        {
+            "name": "WhoIsTeachingIntent",
+            "slots": [
+                {
+                    "name": "CourseAbbrev",
+                    "type": "LIST_OF_SUBJECTS"
+                },
+                {
+                    "name": "CourseNumber",
+                    "type": "AMAZON.NUMBER"
+                },
+                {
+                    "name": "Quarter",
+                    "type": "LIST_OF_QUARTERS"
+                },
+                {
+                    "name": "Year",
+                    "type": "AMAZON.FOUR_DIGIT_NUMBER"
+                }
+            ],
+            "samples": [
+                "Who is teaching {CourseAbbrev} {CourseNumber} in the {Quarter} {Year} quarter",
+                "Who is teaching {CourseAbbrev} {CourseNumber} in the {Quarter} {Year}",
+                "I would like to know who is teaching {CourseAbbrev} {CourseNumber} in the {Quarter} {Year} quarter",
+                "I would like to know who is teaching {CourseAbbrev} {CourseNumber} in the {Quarter} {Year}",
+                "I want to know who is teaching {CourseAbbrev} {CourseNumber} in the {Quarter} {Year}",
+                "I want to know who is teaching {CourseAbbrev} {CourseNumber} in the {Quarter} {Year} quarter"
+            ]
+        }
+    ]
+}
