@@ -1,11 +1,5 @@
 const fetch = require('node-fetch');
 
-getSubjects = async (quarter) => {
-    const res = await fetch("http://bellevuecollege.edu/classes/" + quarter.toUpperCase() + "/?format=json");
-    const data = await res.json();
-    return data.Courses;
-}
-
 getSections = async (quarter, subject) => {
     const res = await fetch("http://bellevuecollege.edu/classes/" + quarter.toUpperCase() + "/" + subject.toUpperCase() + "/?format=json");
     const data = await res.json();
