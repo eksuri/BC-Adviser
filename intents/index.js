@@ -2,7 +2,6 @@
 const amazon = require('./amazon');
 const classes = require('./classoffered');
 const canvas = require('./canvas');
-const common = require('./common_types');
 const degrees = require('./degrees');
 const finals = require('./finals');
 const recommended = require('./recommended');
@@ -31,7 +30,6 @@ exports.schemas = [
     amazon.schema,
     canvas.schema,
     classes.schema,
-    common.schema,
     degrees.schema,
     finals.schema,
     recommended.schema,
