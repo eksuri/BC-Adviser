@@ -8,7 +8,9 @@ const finals = require('./finals');
 const recommended = require('./recommended');
 const retake = require('./retake');
 const schedule = require('./classschedule');
-const instructors = require('./getInstructors')
+const instructors = require('./getInstructors');
+//const schedule = require('./classschedule');
+
 
 exports.handlers = {
     'AMAZON.HelpIntent': amazon.HelpIntent,

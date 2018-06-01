@@ -1,22 +1,19 @@
-﻿//Created by Marius Popescu - 7.mariuspopescu.10@gmail.com 
-const conversation = require('alexa-conversation');
+﻿const conversation = require('alexa-conversation');
 const app = require('../../index.js');
 const config = require('../../config.json');
 
-const opts = {
-    name: 'ClassScheduleIntent',
-    appId: config.appId,
-    app: app,
-    fixSpaces: true
-};
+let opts = config.opts;
+    opts.name = 'Class Schedule Intent';
+    opts.app = app;
+    opts.handler = app.handler;
 
 conversation(opts)
 
     //Test 1: The class is held Tuesday/Thursday and Friday.
-    .userSays('ClassScheduleIntent', { "CourseAbbrev":"CS", "CourseNumber":"401", "Quarter":"Spring", "Year":"2018"})
+    .userSays('ClassScheduleIntent', { "CourseAbbrev":"CS", "CourseNumber":"410", "Quarter":"Spring", "Year":"2018"})
     .plainResponse
         .shouldEqual("CS401 will be available in the Spring2018 at Bellevue College : Tuesday Thursday 10:30am-12:20pm Friday 1:30pm-2:20pm")
-       
+        .end()/*       
     //Test 2: The class is held Monday/Wednesday and Friday
     .userSays('ClassScheduleIntent', { "CourseAbbrev":"CS", "CourseNumber":"410", "Quarter":"Spring", "Year":"2018"})
     .plainResponse
@@ -36,7 +33,6 @@ conversation(opts)
     .userSays('ClassScheduleIntent', { "CourseAbbrev":"CS", "CourseNumber":"101", "Quarter":"Spring", "Year":"2018"})
     .plainResponse
         .shouldEqual("CS101 will be available in the Spring2018 at Bellevue College : Online")
-/************ */
     //Test 6: The class is not found - the class exists but is not offered in the requested quarter
     .userSays('ClassScheduleIntent', { "CourseAbbrev":"CS", "CourseNumber":"300", "Quarter":"Spring", "Year":"2018"})
     .plainResponse
@@ -51,5 +47,5 @@ conversation(opts)
     .userSays('ClassScheduleIntent', { "CourseAbbrev":"CS", "CourseNumber":"401", "Quarter": "Spring", "Year": null})
     .plainResponse
         .shouldEqual("You did not enter all the required variables. You should enter a course abreviation, a course number, a quarter, and a year.")    
-   /***************** */
         .end();
+        */
