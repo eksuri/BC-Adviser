@@ -1,4 +1,3 @@
-//Created by Marius Popescu - 7.mariuspopescu.10@gmail.com 
 const https = require('./get');
 
 exports.getTeachers = (CourseAbbrev, CourseNumber, quarter, year, callback) => {

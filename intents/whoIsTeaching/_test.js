@@ -1,4 +1,3 @@
-//Created by Marius Popescu - 7.mariuspopescu.10@gmail.com 
 const conversation = require('alexa-conversation');
 const app = require('../../index.js');
 const config = require('../../config.json');

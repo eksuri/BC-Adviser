@@ -1,4 +1,3 @@
-//Created by Marius Popescu - 7.mariuspopescu.10@gmail.com 
 const schema = require('./_schema.json')
 exports.schema = schema
 

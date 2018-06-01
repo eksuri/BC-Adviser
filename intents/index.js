@@ -9,8 +9,7 @@ const recommended = require('./recommended');
 const retake = require('./retake');
 const schedule = require('./classschedule');
 const instructors = require('./getInstructors');
-//const schedule = require('./classschedule');
-
+const conflict = require('./timeconflict');
 
 exports.handlers = {
     'AMAZON.HelpIntent': amazon.HelpIntent,
@@ -27,6 +26,7 @@ exports.handlers = {
     //'PrerequisiteIntent': recommended.GetPrerequisiteIntent,
     'RetakeClassIntent': retake.RetakeClassIntent,
     'ClassScheduleIntent': schedule.ClassScheduleIntent,
+    'TimeConflictIntent': conflict.TimeConflictIntent,
     'GetInstructorsIntent': instructors.getInstructors,
 };
 
@@ -42,5 +42,7 @@ exports.schemas = [
     finals.schema,
     recommended.schema,
     retake.schema,
-    instructors.schema
+    instructors.schema,
+    conflict.schema,
+    schedule.schema
 ]

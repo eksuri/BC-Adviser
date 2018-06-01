@@ -1,15 +1,15 @@
-const https = require('./get');
+const fetch = require('node-fetch');
 
 const regex = new RegExp ('\"title(.*)','g'); 
 const regex2 = new RegExp ('title\":\"(.*?)\".*?\"author\":\"(.*?)\"','g'); 
 
 
-exports.getTexts = (className, classNumber, itemNumber, callback) => {
+exports.getTexts = async (className, classNumber, itemNumber, callback) => {
     const regex3 = new RegExp ('http:\/\/bellevue\.verbacompare\.com(.*)__' + itemNumber, 'g');
     getBookStoreRegex(className, classNumber, itemNumber, regex, regex2, regex3, (data) => callback(data));
 };
 
-function getBookStoreRegex (className, classNumber, itemNumber, regex, regex2, regex3, callback){
+async function getBookStoreRegex (className, classNumber, itemNumber, regex, regex2, regex3, callback){
     getBookStore(className, classNumber, itemNumber, regex3, (data) => {
 
         let reducedData;
@@ -30,36 +30,20 @@ function getBookStoreRegex (className, classNumber, itemNumber, regex, regex2, r
     })
 };
 
-function getBookStore(className, classNumber, itemNumber, regex, callback){
+async function getBookStore(className, classNumber, itemNumber, regex, callback){
+    //http://bellevue.verbacompare.com/comparison?id=F18__CS__300__3473
+    
     getClasses(className, (data) => {
         match = regex.exec(data);
     
         https.getHttp(match[0], (data2) => {
             decodeHtmlEntity(data2);
-            //console.log(data2);
             callback(data2)
         })
     })
-
-
-    // This code tries to go directly to the BC Bookstore and retrieve the page for the given class and item number.  We aren't doing it
-    // this way anymore...
-    // if (className.includes("&"))
-    // {
-    //     className.replace("&", "");
-    //     https.getHttp('http://bellevue.verbacompare.com/comparison?id=S18__' + className + '__' + classNumber + '%26__' + itemNumber, (data) => {
-    //     callback(data);
-    //     });
-    // }
-    // else
-    // {
-    //     https.getHttp('http://bellevue.verbacompare.com/comparison?id=S18__' + className + '__' + classNumber + '__' + itemNumber, (data) => {
-    //     callback(data);
-    // });
-    // }
 }
 
-function getClasses(className, callback) {
+async function getClasses(className, callback) {
     https.get('https://www.bellevuecollege.edu/classes/Spring2018/' + className.toUpperCase(), (data) => {
         decodeHtmlEntity(data);
         callback(data)
@@ -67,7 +51,7 @@ function getClasses(className, callback) {
 }
 
 // hopefully no one's regex is relying on Html entitys or this will have to be pushed farther down the line
-function decodeHtmlEntity(str) {
+async function decodeHtmlEntity(str) {
     return str.replace(/&#(\d+);/g, function(match, dec) {
       return String.fromCharCode(dec);
     });
