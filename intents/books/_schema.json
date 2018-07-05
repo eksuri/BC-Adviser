@@ -1,0 +1,32 @@
+{
+    "intents": [
+      {
+        "name": "BookIntent",
+        "samples": [
+          "what books are required for  {CourseAbbrev} {CourseNumber} item {ItemNumber} in {Quarter} {Year}"
+        ],
+        "slots": [
+          {
+            "name": "CourseAbbrev",
+            "type": "LIST_OF_SUBJECTS"
+        },
+        {
+            "name": "CourseNumber",
+            "type": "AMAZON.NUMBER"
+        },
+        {
+          "name": "Quarter",
+          "type": "LIST_OF_QUARTERS"
+        },
+        {
+          "name": "Year",
+          "type": "AMAZON.FOUR_DIGIT_NUMBER"
+        },
+        {
+            "name": "ItemNumber",
+            "type": "AMAZON.FOUR_DIGIT_NUMBER"
+        }
+        ]
+      }
+    ]
+  }

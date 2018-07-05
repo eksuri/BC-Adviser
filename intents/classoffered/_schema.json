@@ -22,35 +22,5 @@
                 "what classes are offered {Quarter} {Year} for {Subjects}"
             ]
         }
-    ],
-    "types" : [
-        {
-            "name": "LIST_OF_QUARTERS",
-            "values": [
-                {
-                    "name": {
-                        "value": "Fall",
-                        "syonyms": [
-                            "Autumn"
-                        ]
-                    }
-                },
-                {
-                    "name": {
-                        "value": "Summer"
-                    }
-                },
-                {
-                    "name": {
-                        "value": "Spring"
-                    }
-                },
-                {
-                    "name": {
-                        "value": "Winter"
-                    }
-                }
-            ]
-        }
     ]
 }

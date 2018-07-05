@@ -27,6 +27,34 @@
                 "samples": []
             },
             {
+                "name": "BookIntent",
+                "samples": [
+                    "what books are required for  {CourseAbbrev} {CourseNumber} item {ItemNumber} in {Quarter} {Year}"
+                ],
+                "slots": [
+                    {
+                        "name": "CourseAbbrev",
+                        "type": "LIST_OF_SUBJECTS"
+                    },
+                    {
+                        "name": "CourseNumber",
+                        "type": "AMAZON.NUMBER"
+                    },
+                    {
+                        "name": "Quarter",
+                        "type": "LIST_OF_QUARTERS"
+                    },
+                    {
+                        "name": "Year",
+                        "type": "AMAZON.FOUR_DIGIT_NUMBER"
+                    },
+                    {
+                        "name": "ItemNumber",
+                        "type": "AMAZON.FOUR_DIGIT_NUMBER"
+                    }
+                ]
+            },
+            {
                 "name": "MyClassesIntent",
                 "slots": [],
                 "samples": [
@@ -72,14 +100,23 @@
                 "name": "BellevueDegrees",
                 "samples": [
                     "{program}",
+                    "{program} degrees",
                     "{program} please",
-                    "I would like more information on {program}",
+                    "{program} degrees please",
+                    "list {program}",
+                    "list {program} degrees",
                     "tell me about {program}",
+                    "tell me about {program} degrees",
+                    "I would like more information on {program}",
+                    "I would like more information on {program} degrees",
                     "I would like to know about {program}",
-                    "List {program}",
+                    "I would like to know about {program} degrees",
                     "please tell me about {program}",
+                    "please tell me about {program} degrees",
                     "please give me more information on {program}",
-                    "please tell me more about {program}"
+                    "please give me more information on {program} degrees",
+                    "please tell me more about {program}",
+                    "please tell me more about {program} degrees"
                 ],
                 "slots": [
                     {
@@ -260,33 +297,121 @@
                     "in what quarter is offered {CourseAbbrev} {CourseNumber}",
                     "in which quarter is offered {CourseAbbrev} {CourseNumber}"
                 ]
+            },
+            {
+                "name": "TimeConflictIntent",
+                "slots": [
+                    {
+                        "name": "CourseAbbrev1",
+                        "type": "LIST_OF_SUBJECTS"
+                    },
+                    {
+                        "name": "CourseNumber1",
+                        "type": "AMAZON.NUMBER"
+                    },
+                    {
+                        "name": "CourseAbbrev2",
+                        "type": "LIST_OF_SUBJECTS"
+                    },
+                    {
+                        "name": "CourseNumber2",
+                        "type": "AMAZON.NUMBER"
+                    },
+                    {
+                        "name": "Quarter",
+                        "type": "LIST_OF_QUARTERS"
+                    },
+                    {
+                        "name": "Year",
+                        "type": "AMAZON.FOUR_DIGIT_NUMBER"
+                    }
+                ],
+                "samples": [
+                    "Can I take {CourseAbbrev1} {CourseNumber1} in the same time with {CourseAbbrev2} {CourseNumber2} in the {Quarter} {Year}",
+                    "if can I take {CourseAbbrev1} {CourseNumber1} in the same time with {CourseAbbrev2} {CourseNumber2} in the {Quarter} {Year}",
+                    "Can I take {CourseAbbrev1} {CourseNumber1} in the same time with {CourseAbbrev2} {CourseNumber2} in {Quarter} {Year}",
+                    "if can I take {CourseAbbrev1} {CourseNumber1} in the same time with {CourseAbbrev2} {CourseNumber2} in {Quarter} {Year}"
+                ]
+            },
+            {
+                "name": "ClassScheduleIntent",
+                "slots": [
+                    {
+                        "name": "CourseAbbrev",
+                        "type": "LIST_OF_SUBJECTS"
+                    },
+                    {
+                        "name": "CourseNumber",
+                        "type": "AMAZON.NUMBER"
+                    },
+                    {
+                        "name": "Quarter",
+                        "type": "LIST_OF_QUARTERS"
+                    },
+                    {
+                        "name": "Year",
+                        "type": "AMAZON.FOUR_DIGIT_NUMBER"
+                    }
+                ],
+                "samples": [
+                    "what time is offered {CourseAbbrev} {CourseNumber} in the {Quarter} {Year}",
+                    "what time is {CourseAbbrev} {CourseNumber} in the {Quarter} {Year}",
+                    "what time will be {CourseAbbrev} {CourseNumber} in the {Quarter} {Year}",
+                    "What is the schedule for the {CourseAbbrev} {CourseNumber} in the {Quarter} {Year}"
+                ]
             }
         ],
         "types": [
             {
-                "name": "LIST_OF_QUARTERS",
+                "name": "degreeType",
                 "values": [
                     {
+                        "id": null,
                         "name": {
-                            "value": "Fall",
-                            "syonyms": [
-                                "Autumn"
-                            ]
+                            "value": "bachelors",
+                            "synonyms": []
                         }
                     },
                     {
+                        "id": null,
                         "name": {
-                            "value": "Summer"
+                            "value": "professional",
+                            "synonyms": []
                         }
                     },
                     {
+                        "id": null,
                         "name": {
-                            "value": "Spring"
+                            "value": "technical",
+                            "synonyms": []
                         }
                     },
                     {
+                        "id": null,
                         "name": {
-                            "value": "Winter"
+                            "value": "non transfer",
+                            "synonyms": []
+                        }
+                    },
+                    {
+                        "id": null,
+                        "name": {
+                            "value": "transfer",
+                            "synonyms": []
+                        }
+                    },
+                    {
+                        "id": null,
+                        "name": {
+                            "value": "associate",
+                            "synonyms": []
+                        }
+                    },
+                    {
+                        "id": null,
+                        "name": {
+                            "value": "eastern Washington",
+                            "synonyms": []
                         }
                     }
                 ]
@@ -298,894 +423,1013 @@
                         "id": "",
                         "name": {
                             "value": "ACCT",
-                            "synonyms": []
+                            "synonyms": [
+                                "Accounting"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "ACCT&",
-                            "synonyms": []
+                            "synonyms": [
+                                "Accounting-Transfer"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "ABE",
-                            "synonyms": []
+                            "synonyms": [
+                                "Adult Basic Education"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "ADFIT",
-                            "synonyms": []
+                            "synonyms": [
+                                "Adult Fitness"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
-                            "value": "ALDAC ",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "HSSA&",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "AHE",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "AHEA",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "AHEL",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "AHEM",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "AHEP",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "ASL, ASL&",
-                            "synonyms": []
+                            "value": "ASL",
+                            "synonyms": [
+                                "American Sign Language"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "ANTH",
-                            "synonyms": []
+                            "synonyms": [
+                                "Anthropology"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
-                            "value": "ANTH&",
-                            "synonyms": []
+                            "value": "ALL",
+                            "synonyms": [
+                                "Applied Linguistics & Language"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "ARAB",
-                            "synonyms": []
+                            "synonyms": [
+                                "Arabic"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "ART",
-                            "synonyms": []
+                            "synonyms": [
+                                "Art"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "ASTR",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "ASTR&",
-                            "synonyms": []
+                            "synonyms": [
+                                "Astronomy"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "BIOL",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "BIOL&",
-                            "synonyms": []
+                            "synonyms": [
+                                "Biology"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "BOTAN",
-                            "synonyms": []
+                            "synonyms": [
+                                "Botany"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "BA",
-                            "synonyms": []
+                            "synonyms": [
+                                "Business Administration-Transfer"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "BUSIT",
-                            "synonyms": []
+                            "synonyms": [
+                                "Business Intelligence"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
-                            "value": "BUS,",
-                            "synonyms": []
+                            "value": "BUS",
+                            "synonyms": [
+                                "Business Management"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
-                            "value": "BUS&",
-                            "synonyms": []
+                            "value": "BSUST",
+                            "synonyms": [
+                                "Business Sustainable Practices"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "BTS",
-                            "synonyms": []
+                            "synonyms": [
+                                "Business Technology Systems"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "CEO",
+                            "synonyms": [
+                                "Career Education Options"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "CHEM",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "CHEM&",
-                            "synonyms": []
+                            "synonyms": [
+                                "Chemistry"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "CHIN",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "CHIN&",
-                            "synonyms": []
+                            "synonyms": [
+                                "Chinese"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "CMST",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "CMST&",
-                            "synonyms": []
+                            "synonyms": [
+                                "Communication Studies"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "CS",
-                            "synonyms": []
+                            "synonyms": [
+                                "Computer Science"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "CJ",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "CJ&",
-                            "synonyms": []
+                            "synonyms": [
+                                "Criminal Justice"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "CES",
-                            "synonyms": []
+                            "synonyms": [
+                                "Cultural & Ethnic Studies"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "DANCE",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "DA",
-                            "synonyms": []
+                            "synonyms": [
+                                "Dance"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "DBA",
-                            "synonyms": []
+                            "synonyms": [
+                                "Database Administration"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "DEVED",
-                            "synonyms": []
+                            "synonyms": [
+                                "Developmental Education"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "DUTEC",
-                            "synonyms": []
+                            "synonyms": [
+                                "Diagnostic Ultrasound"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "DMA",
-                            "synonyms": []
+                            "synonyms": [
+                                "Digital Media Arts"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "DRMA",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "DRMA&",
-                            "synonyms": []
+                            "synonyms": [
+                                "Drama"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "ECED",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "ECED&",
-                            "synonyms": []
+                            "synonyms": [
+                                "Early Learning & Teacher Education"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "ECON",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "ECON&",
-                            "synonyms": []
+                            "synonyms": [
+                                "Economics"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "EDUC",
-                            "synonyms": []
+                            "synonyms": [
+                                "Education"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
-                            "value": "EDUC&",
-                            "synonyms": []
+                            "value": "ENDT",
+                            "synonyms": [
+                                "Electroneurodiagnostic Technologist"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "ENGR",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "ENGR&",
-                            "synonyms": []
+                            "synonyms": [
+                                "Engineering"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "ENGL",
-                            "synonyms": []
+                            "synonyms": [
+                                "English"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
-                            "value": "ENGL&",
-                            "synonyms": []
+                            "value": "ESL",
+                            "synonyms": [
+                                "English as a Second Language"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "ELIUP",
+                            "synonyms": [
+                                "English Language Institute University Preparation"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "ENVS",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "ENVS&",
-                            "synonyms": []
+                            "synonyms": [
+                                "Environmental Science"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "EXPRL",
-                            "synonyms": []
+                            "synonyms": [
+                                "Experiential Learning"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "FRCH",
-                            "synonyms": []
+                            "synonyms": [
+                                "French"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
-                            "value": "FRCH&",
-                            "synonyms": []
+                            "value": "GED",
+                            "synonyms": [
+                                "General Education Development (GED)"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "GEOG",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "GEOG&",
-                            "synonyms": []
+                            "synonyms": [
+                                "Geography"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "GEOL",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "GEOL&",
-                            "synonyms": []
+                            "synonyms": [
+                                "Geology"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "GERM",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "GERM&",
-                            "synonyms": []
+                            "synonyms": [
+                                "German"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "HLTH",
-                            "synonyms": []
+                            "synonyms": [
+                                "Health"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
-                            "value": "HPM",
-                            "synonyms": []
+                            "value": "HPRO",
+                            "synonyms": [
+                                "Health Professions"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
-                            "value": "HCI",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "HCML",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "HSC",
-                            "synonyms": []
+                            "value": "HCTM",
+                            "synonyms": [
+                                "Healthcare Technology Management"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "HIST",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "HIST&",
-                            "synonyms": []
+                            "synonyms": [
+                                "History"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "HD",
-                            "synonyms": []
+                            "synonyms": [
+                                "Human Development"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
-                            "value": "ISIT",
-                            "synonyms": []
+                            "value": "HUMAN",
+                            "synonyms": [
+                                "Humanities"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "IMAGE",
+                            "synonyms": [
+                                "Imaging"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "IS",
+                            "synonyms": [
+                                "Independent Studies"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "ID",
+                            "synonyms": [
+                                "Individual Development"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "IT",
-                            "synonyms": []
+                            "synonyms": [
+                                "Information Technology"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "INTER",
+                            "synonyms": [
+                                "Interdisciplinary Studies"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "INDES",
-                            "synonyms": []
+                            "synonyms": [
+                                "Interior Design"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "IBP",
+                            "synonyms": [
+                                "International Business Professions"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "INTST",
-                            "synonyms": []
+                            "synonyms": [
+                                "International Studies"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "ITAL",
-                            "synonyms": []
+                            "synonyms": [
+                                "Italian"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "JAPN",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "JAPN&",
-                            "synonyms": []
+                            "synonyms": [
+                                "Japanese"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "MKTG",
-                            "synonyms": []
+                            "synonyms": [
+                                "Marketing"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "MATH",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "MATH&",
-                            "synonyms": []
+                            "synonyms": [
+                                "Mathematics"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "DOSM",
-                            "synonyms": []
+                            "synonyms": [
+                                "Medical Dosimetry"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "MEDIT",
+                            "synonyms": [
+                                "Medical Informatics"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "METR",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "MBS",
-                            "synonyms": []
+                            "synonyms": [
+                                "Meteorology"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "MUSC",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "MUSC&",
-                            "synonyms": []
+                            "synonyms": [
+                                "Music"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "NSCOM",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "NDT",
-                            "synonyms": []
+                            "synonyms": [
+                                "Network Services & Computing Systems"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "NMTEC",
-                            "synonyms": []
+                            "synonyms": [
+                                "Nuclear Medicine Technology"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "NURS",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "NAC",
-                            "synonyms": []
+                            "synonyms": [
+                                "Nursing"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "NUTR",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "NUTR&",
-                            "synonyms": []
+                            "synonyms": [
+                                "Nutrition"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "OLS",
-                            "synonyms": []
+                            "synonyms": [
+                                "Occupational & Life Skills"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "OCEA",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "OCEA&",
-                            "synonyms": []
+                            "synonyms": [
+                                "Oceanography"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "PARED",
-                            "synonyms": []
+                            "synonyms": [
+                                "Parent Education"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "PHIL",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "PHIL&",
-                            "synonyms": []
+                            "synonyms": [
+                                "Philosophy"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "PE",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "RECED",
-                            "synonyms": []
+                            "synonyms": [
+                                "Physical Education"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "PHYS",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "PHYS&",
-                            "synonyms": []
+                            "synonyms": [
+                                "Physics"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "POLS",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "POLS&",
-                            "synonyms": []
+                            "synonyms": [
+                                "Political Science"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "PROG",
-                            "synonyms": []
+                            "synonyms": [
+                                "Programming"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "PSYC",
-                            "synonyms": []
+                            "synonyms": [
+                                "Psychology"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
-                            "value": "PSYC&",
-                            "synonyms": []
+                            "value": "RAIM",
+                            "synonyms": [
+                                "Radiation and Imaging Management"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "RAIT",
-                            "synonyms": []
+                            "synonyms": [
+                                "Radiation and Imaging Technology"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "RADON",
-                            "synonyms": []
+                            "synonyms": [
+                                "Radiation Therapy"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "RATEC",
-                            "synonyms": []
+                            "synonyms": [
+                                "Radiologic Technology"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "RADA",
+                            "synonyms": [
+                                "Radiologist Assistant"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "RECED",
+                            "synonyms": [
+                                "Recreation Leadership "
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "SOC",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "SOC&",
-                            "synonyms": []
+                            "synonyms": [
+                                "Sociology"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "SPAN",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "SPAN&",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": "",
-                        "name": {
-                            "value": "STEM",
-                            "synonyms": []
+                            "synonyms": [
+                                "Spanish"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "TECH",
-                            "synonyms": []
+                            "synonyms": [
+                                "Technical Support"
+                            ]
                         }
                     },
                     {
                         "id": "",
                         "name": {
                             "value": "TRANS",
-                            "synonyms": []
+                            "synonyms": [
+                                "Translation and Interpretation"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "ALDAC",
+                            "synonyms": [
+                                "Alcohol & Drug Counseling"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "ISIT",
+                            "synonyms": [
+                                "Information Systems/Information Technology"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "NDT",
+                            "synonyms": [
+                                "Neurodiagnostic Technology"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "AHE",
+                            "synonyms": [
+                                "Allied Health Education"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "AHEA",
+                            "synonyms": [
+                                "Allied Health Education Administration"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "AHEL",
+                            "synonyms": [
+                                "Allied Health Education Laboratory"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "AHEP",
+                            "synonyms": [
+                                "Allied Health Education Pharmacology"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "AHEE",
+                            "synonyms": [
+                                "Allied Health Education Emergency"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "DA",
+                            "synonyms": [
+                                "Data Analytics"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "WLANG",
+                            "synonyms": [
+                                "World Languages"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "HPM",
+                            "synonyms": [
+                                "Health Promotion & Management"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "HCML",
+                            "synonyms": [
+                                "Healthcare Management & Leadership"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "HSC",
+                            "synonyms": [
+                                "High School Completion"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "AHEM",
+                            "synonyms": [
+                                "Allied Health Education Medicine"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "MBS",
+                            "synonyms": [
+                                "Molecular Biosciences"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "INFO",
+                            "synonyms": [
+                                "Information Studies"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "HCI",
+                            "synonyms": [
+                                "Healthcare Informatics"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "NAC",
+                            "synonyms": [
+                                "Nursing Assistant"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "STEM",
+                            "synonyms": [
+                                "STEM"
+                            ]
                         }
                     }
                 ]
             },
             {
-                "name": "degreeType",
+                "name": "LIST_OF_QUARTERS",
                 "values": [
                     {
-                        "id": null,
+                        "id": "",
                         "name": {
-                            "value": "bachelors degrees",
-                            "synonyms": []
+                            "value": "Fall",
+                            "synonyms": [
+                                "Autumn"
+                            ]
                         }
                     },
                     {
-                        "id": null,
+                        "id": "",
                         "name": {
-                            "value": "professional and technical degrees",
-                            "synonyms": []
+                            "value": "Summer"
                         }
                     },
                     {
-                        "id": null,
+                        "id": "",
                         "name": {
-                            "value": "non transfer degrees",
-                            "synonyms": []
+                            "value": "Spring"
                         }
                     },
                     {
-                        "id": null,
+                        "id": "",
                         "name": {
-                            "value": "transfer associate degrees",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": null,
-                        "name": {
-                            "value": "test",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": null,
-                        "name": {
-                            "value": "eastern Washington",
-                            "synonyms": []
-                        }
-                    },
-                    {
-                        "id": null,
-                        "name": {
-                            "value": "professional degrees",
-                            "synonyms": []
+                            "value": "Winter"
                         }
                     }
                 ]

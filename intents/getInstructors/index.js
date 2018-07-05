@@ -4,28 +4,30 @@ exports.schema = schema
 
 const sections = require('../../common/ctc/sections.js');
 
-exports.ClassesOfferedIntent = async function () {
+exports.getInstructors = async function () {
     let speech = new Speech();
 
     const quarter = (this.event.request.intent.slots.Quarter.value == "autumn" ?
             "fall" : this.event.request.intent.slots.Quarter.value);
     const year = this.event.request.intent.slots.Year.value;
     const subject = this.event.request.intent.slots.Subjects.value;
+    const number = this.event.request.intent.slots.Number.value;
 
+    const instructors = await sections.getInstructors(quarter + year, number, subject);
 
-    coursesOffered = await sections.getCoursesOffered(quarter + year, subject);
-
-    speech.say("The following")
+    speech.say("The instructors for")
           .say(subject)
-          .say("classes are offered")
+          .say(number)
+          .say("in")
           .say(quarter)
           .say(year)
-          .pause("1s")
-
-    coursesOffered.forEach((c) => {
-        speech.say(c)}
-    );
+          .say("are")
+    instructors.forEach((i) => {
+        speech.say(i);
+    })
 
     this.emit(':tell', speech.ssml(true));
 }
+
+
 

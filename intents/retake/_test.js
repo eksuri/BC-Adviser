@@ -2,15 +2,13 @@ const conversation = require('alexa-conversation');
 const app = require('../../index.js');
 const config = require('../../config.json');
 
-const opts = {
-    name: 'RetakeClassIntent',
-    appId: config.appId,
-    app: app,
-    fixSpaces: true
-};
+let opts = config.opts;
+    opts.name = 'Retake Intent';
+    opts.app = app;
+    opts.handler = app.handler;
 
 conversation(opts)
-    .userSays('RetakeClassIntent', { "CourseAbbrev":"CS", "CourseNumber":"101"})
+    .userSays('RetakeClassIntent', { "CourseAbbrev":"CS", "CourseNumber":"300"})
     .plainResponse
-        .shouldEqual("This class is offered at Bellevue College Summer 2017 Winter 2018")
+        .shouldEqual("This class is offered at Bellevue College Fall 2018")
     .end();

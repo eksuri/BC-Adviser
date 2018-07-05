@@ -2,12 +2,10 @@ const conversation = require('alexa-conversation');
 const app = require('../../index.js');
 const config = require('../../config.json');
 
-const opts = {
-    name: 'GetFinalsInfoIntent',
-    appId: config.appId,
-    app: app,
-    fixSpaces: true
-};
+let opts = config.opts;
+    opts.name = 'Finals Intent';
+    opts.app = app;
+    opts.handler = app.handler;
 
 conversation(opts)
     .userSays('GetFinalsInfoIntent')

@@ -1,22 +1,19 @@
+const Speech = require('ssml-builder');
 const schema = require('./_schema.json')
 exports.schema = schema
 
-const quarters = require('../../common/quarters');
+const courses = require('../../common/ctc/courses');
 
-exports.RetakeClassIntent = function () {
-    //Extract the value of the slots
-    //const course = this.event.request.intent.slots.CourseAbbrev.value;
+exports.RetakeClassIntent = async function () {
+    let speech = new Speech();
 
     const CourseAbbrev = this.event.request.intent.slots.CourseAbbrev.value;
     const CourseNumber = this.event.request.intent.slots.CourseNumber.value;
 
-    quarters.getQuarters(CourseAbbrev, CourseNumber, (quarts) => {
-        let speechOutput = "This class is offered at Bellevue College "
-        for (let i = 0; i = quarts.length / 2; i++) {
-            speechOutput += quarts.pop() + " ";
-            quarts.pop();
-        }
-        this.response.speak(speechOutput);
-        this.emit(':responseReady');
-    });
+    const quarters = await courses.getQuartersOffered(CourseAbbrev, CourseNumber);
+
+    speech.say("This class is offered at Bellevue College")
+
+    quarters.forEach((q) => speech.say(q).pause("1s"));
+    this.emit(':tell', speech.ssml(true));
 }

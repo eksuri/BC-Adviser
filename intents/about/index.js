@@ -1,10 +1,20 @@
-﻿const schema = require('./_schema.json')
+﻿const Speech = require('ssml-builder');
+const schema = require('./_schema.json')
 exports.schema = schema
 
-const ABOUT_MESSAGE = "This application was made by Seniors at Bellevue College working on their Capstone for Computer Science.";
+exports.Handler = {
+    canHandle(handlerInput) {
+        const request = handlerInput.requestEnvelope.request;
+        return request.type === 'IntentRequest' && request.intent.name === 'AboutIntent';
+    },
+    async handle(handlerInput) {
+        const responseBuilder = handlerInput.responseBuilder;
 
-exports.AboutIntent = function () {
-    const speechOutput = ABOUT_MESSAGE;
-    this.response.speak(speechOutput);
-    this.emit(':responseReady');
+        let speech = new Speech();
+        speech.say("This application was made by Seniors at Bellevue College working on their Capstone for Computer Science.")
+
+        return responseBuilder.speak(speech.ssml(true))
+                              .getResponse();
+    },
 }
+
