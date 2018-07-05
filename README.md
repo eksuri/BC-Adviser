@@ -102,6 +102,16 @@ Here's an example test case.
 Before you can build your schema, test, or run this application, you need to create your config.json file. It should have the following fields: 
 
     {
-        "appId": "amzn1.ask.skill.id-goes-here",
-        "token": "canvas-token-goes-here"
+        "opts": {
+            "appId": "amzn1.ask.skill.some-app-id",
+            "sessionId": "SessionId.some-session-id",
+            "userId": "amzn1.ask.account.some-user-id",
+            "accessToken": "some-access-token",
+            "requestId": "EdwRequestId.some-request-id",
+            "locale": "en-US",
+            "contextObj": null,
+            "fixSpaces": true,
+            "fuzzyDistance": 0.93
+        },
+        "token": "some-canvas-token",
     }
