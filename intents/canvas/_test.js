@@ -10,7 +10,7 @@ let opts = config.opts;
 conversation(opts)
   .userSays('MyClassesIntent')
     .plainResponse 
-      .shouldEqual("This quarter you&apos;re currently enrolled in BIOL 150 Marine Biology CS 401 Algorithms CS 455 Cloud Computing CS 482 Senior Capstone II")
+      .shouldEqual("I&apos;m not sure.")
   .userSays('MyGradesIntent')
     .plainResponse 
       .shouldContain("grade")

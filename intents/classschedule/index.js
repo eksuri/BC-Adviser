@@ -41,8 +41,6 @@ exports.ClassScheduleIntent = async function  () {
         }
     });
 
-    console.log(scheduleString);
-
     speech.say(CourseAbbrev)
           .say(CourseNumber)
           .say("is offered")
