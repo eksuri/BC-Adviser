@@ -10,5 +10,5 @@ let opts = config.opts;
 conversation(opts)
     .userSays('GetInstructorsIntent', {"Quarter": "Fall", "Year": "2018", "Subjects": "CS", "Number": "211"})
     .plainResponse
-        .shouldEqual("aaaa")
+        .shouldEqual("The instructors for CS 211 in Fall 2018 are Taesik Kim Taesik Kim James Livingston Craig Niiyama")
     .end();
