@@ -247,6 +247,24 @@
                 ]
             },
             {
+                "name": "RatingIntent",
+                "samples": [
+                    "what is the rating for {FirstName} {LastName} at rate my professors dot com",
+                    "what is the rating for {FirstName} {LastName} at rate my professor dot com",
+                    "what is the rating for {FirstName} {LastName}"
+                ],
+                "slots": [
+                    {
+                        "name": "FirstName",
+                        "type": "LIST_OF_NAMES"
+                    },
+                    {
+                        "name": "LastName",
+                        "type": "LIST_OF_NAMES"
+                    }
+                ]
+            },
+            {
                 "name": "RecommendedIntent",
                 "samples": [
                     "What classes are recommended before I take {CourseAbbrev} {CourseNumber}"
@@ -299,22 +317,14 @@
                 ]
             },
             {
-                "name": "TimeConflictIntent",
+                "name": "GetInstructorsIntent",
                 "slots": [
                     {
-                        "name": "CourseAbbrev1",
+                        "name": "Subject",
                         "type": "LIST_OF_SUBJECTS"
                     },
                     {
-                        "name": "CourseNumber1",
-                        "type": "AMAZON.NUMBER"
-                    },
-                    {
-                        "name": "CourseAbbrev2",
-                        "type": "LIST_OF_SUBJECTS"
-                    },
-                    {
-                        "name": "CourseNumber2",
+                        "name": "Number",
                         "type": "AMAZON.NUMBER"
                     },
                     {
@@ -327,10 +337,47 @@
                     }
                 ],
                 "samples": [
-                    "Can I take {CourseAbbrev1} {CourseNumber1} in the same time with {CourseAbbrev2} {CourseNumber2} in the {Quarter} {Year}",
-                    "if can I take {CourseAbbrev1} {CourseNumber1} in the same time with {CourseAbbrev2} {CourseNumber2} in the {Quarter} {Year}",
-                    "Can I take {CourseAbbrev1} {CourseNumber1} in the same time with {CourseAbbrev2} {CourseNumber2} in {Quarter} {Year}",
-                    "if can I take {CourseAbbrev1} {CourseNumber1} in the same time with {CourseAbbrev2} {CourseNumber2} in {Quarter} {Year}"
+                    "Who is teaching {Subject} {Number} in the {Quarter} {Year} quarter",
+                    "Who is teaching {Subject} {Number} in the {Quarter} {Year}",
+                    "I would like to know who is teaching {Subject} {Number} in the {Quarter} {Year} quarter",
+                    "I would like to know who is teaching {Subject} {Number} in the {Quarter} {Year}",
+                    "I want to know who is teaching {Subject} {Number} in the {Quarter} {Year}",
+                    "I want to know who is teaching {Subject} {Number} in the {Quarter} {Year} quarter"
+                ]
+            },
+            {
+                "name": "TimeConflictIntent",
+                "slots": [
+                    {
+                        "name": "CourseAbbrevOne",
+                        "type": "LIST_OF_SUBJECTS"
+                    },
+                    {
+                        "name": "CourseNumberOne",
+                        "type": "AMAZON.NUMBER"
+                    },
+                    {
+                        "name": "CourseAbbrevTwo",
+                        "type": "LIST_OF_SUBJECTS"
+                    },
+                    {
+                        "name": "CourseNumberTwo",
+                        "type": "AMAZON.NUMBER"
+                    },
+                    {
+                        "name": "Quarter",
+                        "type": "LIST_OF_QUARTERS"
+                    },
+                    {
+                        "name": "Year",
+                        "type": "AMAZON.FOUR_DIGIT_NUMBER"
+                    }
+                ],
+                "samples": [
+                    "Can I take {CourseAbbrevOne} {CourseNumberOne} in the same time with {CourseAbbrevTwo} {CourseNumberTwo} in the {Quarter} {Year}",
+                    "if can I take {CourseAbbrevOne} {CourseNumberOne} in the same time with {CourseAbbrevTwo} {CourseNumberTwo} in the {Quarter} {Year}",
+                    "Can I take {CourseAbbrevOne} {CourseNumberOne} in the same time with {CourseAbbrevTwo} {CourseNumberTwo} in {Quarter} {Year}",
+                    "if can I take {CourseAbbrevOne} {CourseNumberOne} in the same time with {CourseAbbrevTwo} {CourseNumberTwo} in {Quarter} {Year}"
                 ]
             },
             {
@@ -411,6 +458,53 @@
                         "id": null,
                         "name": {
                             "value": "eastern Washington",
+                            "synonyms": []
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "LIST_OF_NAMES",
+                "values": [
+                    {
+                        "id": null,
+                        "name": {
+                            "value": "Jen",
+                            "synonyms": []
+                        }
+                    },
+                    {
+                        "id": null,
+                        "name": {
+                            "value": "Townsend",
+                            "synonyms": []
+                        }
+                    },
+                    {
+                        "id": null,
+                        "name": {
+                            "value": "Fatma",
+                            "synonyms": []
+                        }
+                    },
+                    {
+                        "id": null,
+                        "name": {
+                            "value": "Bill",
+                            "synonyms": []
+                        }
+                    },
+                    {
+                        "id": null,
+                        "name": {
+                            "value": "Iverson",
+                            "synonyms": []
+                        }
+                    },
+                    {
+                        "id": null,
+                        "name": {
+                            "value": "Serce",
                             "synonyms": []
                         }
                     }

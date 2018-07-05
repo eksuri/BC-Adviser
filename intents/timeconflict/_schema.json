@@ -4,19 +4,19 @@
               "name": "TimeConflictIntent",
               "slots": [
                 {
-                    "name": "CourseAbbrev1",
+                    "name": "CourseAbbrevOne",
                     "type": "LIST_OF_SUBJECTS"
                 },
                 {
-                    "name": "CourseNumber1",
+                    "name": "CourseNumberOne",
                     "type": "AMAZON.NUMBER"
                 },
                 {
-                    "name": "CourseAbbrev2",
+                    "name": "CourseAbbrevTwo",
                     "type": "LIST_OF_SUBJECTS"
                 },
                 {
-                    "name": "CourseNumber2",
+                    "name": "CourseNumberTwo",
                     "type": "AMAZON.NUMBER"
                 },
                 {
@@ -29,10 +29,10 @@
                 }
               ],
               "samples": [
-                  "Can I take {CourseAbbrev1} {CourseNumber1} in the same time with {CourseAbbrev2} {CourseNumber2} in the {Quarter} {Year}",
-                  "if can I take {CourseAbbrev1} {CourseNumber1} in the same time with {CourseAbbrev2} {CourseNumber2} in the {Quarter} {Year}",
-                  "Can I take {CourseAbbrev1} {CourseNumber1} in the same time with {CourseAbbrev2} {CourseNumber2} in {Quarter} {Year}",
-                  "if can I take {CourseAbbrev1} {CourseNumber1} in the same time with {CourseAbbrev2} {CourseNumber2} in {Quarter} {Year}"
+                  "Can I take {CourseAbbrevOne} {CourseNumberOne} in the same time with {CourseAbbrevTwo} {CourseNumberTwo} in the {Quarter} {Year}",
+                  "if can I take {CourseAbbrevOne} {CourseNumberOne} in the same time with {CourseAbbrevTwo} {CourseNumberTwo} in the {Quarter} {Year}",
+                  "Can I take {CourseAbbrevOne} {CourseNumberOne} in the same time with {CourseAbbrevTwo} {CourseNumberTwo} in {Quarter} {Year}",
+                  "if can I take {CourseAbbrevOne} {CourseNumberOne} in the same time with {CourseAbbrevTwo} {CourseNumberTwo} in {Quarter} {Year}"
               ]
           }
       ]
