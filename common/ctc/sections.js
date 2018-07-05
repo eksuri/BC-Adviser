@@ -2,7 +2,8 @@ const fetch = require('node-fetch');
 
 getSections = async (quarter, subject) => {
     const res = await fetch("http://bellevuecollege.edu/classes/" + quarter.toUpperCase() + "/" + subject.toUpperCase() + "/?format=json");
-    const data = await res.json();
+    const text = await res.text();
+    const data = JSON.parse(text.replace(`"ID":null,`,``)); // duplicate object key fix
 
     return data;
 }
@@ -17,13 +18,14 @@ getCourseSections = async (quarter, subject, number) => {
     return courses[0].Sections;
 }
 
-getCourseSection = async (quarter, subject, number, id) => {
+exports.getCourseSection = async (quarter, subject, number, id) => {
     const sections = await getCourseSections(quarter, subject, number);
-    const courses = sections.Courses.filter((c) => {
-        return c.Sections[0].ID.ItemNumber === id
+
+    const courses = sections.filter((s) => {
+        return s.ID ? s.ID.ItemNumber === id : false; // more robust, try to do this more
     });
 
-    return courses[0].Sections[0];
+    return courses[0];
 }
 
 exports.getInstructors = async (quarter, number, subject) => {

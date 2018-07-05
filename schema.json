@@ -27,6 +27,34 @@
                 "samples": []
             },
             {
+                "name": "BookIntent",
+                "samples": [
+                    "what books are required for  {CourseAbbrev} {CourseNumber} item {ItemNumber} in {Quarter} {Year}"
+                ],
+                "slots": [
+                    {
+                        "name": "CourseAbbrev",
+                        "type": "LIST_OF_SUBJECTS"
+                    },
+                    {
+                        "name": "CourseNumber",
+                        "type": "AMAZON.NUMBER"
+                    },
+                    {
+                        "name": "Quarter",
+                        "type": "LIST_OF_QUARTERS"
+                    },
+                    {
+                        "name": "Year",
+                        "type": "AMAZON.FOUR_DIGIT_NUMBER"
+                    },
+                    {
+                        "name": "ItemNumber",
+                        "type": "AMAZON.FOUR_DIGIT_NUMBER"
+                    }
+                ]
+            },
+            {
                 "name": "MyClassesIntent",
                 "slots": [],
                 "samples": [
@@ -269,37 +297,71 @@
                     "in what quarter is offered {CourseAbbrev} {CourseNumber}",
                     "in which quarter is offered {CourseAbbrev} {CourseNumber}"
                 ]
+            },
+            {
+                "name": "TimeConflictIntent",
+                "slots": [
+                    {
+                        "name": "CourseAbbrev1",
+                        "type": "LIST_OF_SUBJECTS"
+                    },
+                    {
+                        "name": "CourseNumber1",
+                        "type": "AMAZON.NUMBER"
+                    },
+                    {
+                        "name": "CourseAbbrev2",
+                        "type": "LIST_OF_SUBJECTS"
+                    },
+                    {
+                        "name": "CourseNumber2",
+                        "type": "AMAZON.NUMBER"
+                    },
+                    {
+                        "name": "Quarter",
+                        "type": "LIST_OF_QUARTERS"
+                    },
+                    {
+                        "name": "Year",
+                        "type": "AMAZON.FOUR_DIGIT_NUMBER"
+                    }
+                ],
+                "samples": [
+                    "Can I take {CourseAbbrev1} {CourseNumber1} in the same time with {CourseAbbrev2} {CourseNumber2} in the {Quarter} {Year}",
+                    "if can I take {CourseAbbrev1} {CourseNumber1} in the same time with {CourseAbbrev2} {CourseNumber2} in the {Quarter} {Year}",
+                    "Can I take {CourseAbbrev1} {CourseNumber1} in the same time with {CourseAbbrev2} {CourseNumber2} in {Quarter} {Year}",
+                    "if can I take {CourseAbbrev1} {CourseNumber1} in the same time with {CourseAbbrev2} {CourseNumber2} in {Quarter} {Year}"
+                ]
+            },
+            {
+                "name": "ClassScheduleIntent",
+                "slots": [
+                    {
+                        "name": "CourseAbbrev",
+                        "type": "LIST_OF_SUBJECTS"
+                    },
+                    {
+                        "name": "CourseNumber",
+                        "type": "AMAZON.NUMBER"
+                    },
+                    {
+                        "name": "Quarter",
+                        "type": "LIST_OF_QUARTERS"
+                    },
+                    {
+                        "name": "Year",
+                        "type": "AMAZON.FOUR_DIGIT_NUMBER"
+                    }
+                ],
+                "samples": [
+                    "what time is offered {CourseAbbrev} {CourseNumber} in the {Quarter} {Year}",
+                    "what time is {CourseAbbrev} {CourseNumber} in the {Quarter} {Year}",
+                    "what time will be {CourseAbbrev} {CourseNumber} in the {Quarter} {Year}",
+                    "What is the schedule for the {CourseAbbrev} {CourseNumber} in the {Quarter} {Year}"
+                ]
             }
         ],
         "types": [
-            {
-                "name": "LIST_OF_QUARTERS",
-                "values": [
-                    {
-                        "name": {
-                            "value": "Fall",
-                            "syonyms": [
-                                "Autumn"
-                            ]
-                        }
-                    },
-                    {
-                        "name": {
-                            "value": "Summer"
-                        }
-                    },
-                    {
-                        "name": {
-                            "value": "Spring"
-                        }
-                    },
-                    {
-                        "name": {
-                            "value": "Winter"
-                        }
-                    }
-                ]
-            },
             {
                 "name": "degreeType",
                 "values": [
@@ -1336,6 +1398,38 @@
                             "synonyms": [
                                 "STEM"
                             ]
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "LIST_OF_QUARTERS",
+                "values": [
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "Fall",
+                            "synonyms": [
+                                "Autumn"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "Summer"
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "Spring"
+                        }
+                    },
+                    {
+                        "id": "",
+                        "name": {
+                            "value": "Winter"
                         }
                     }
                 ]
