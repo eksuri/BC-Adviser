@@ -4,7 +4,7 @@ exports.schema = schema
 
 const courses = require('../../common/ctc/courses.js');
 
-exports.Handlers = {
+exports.Handler = {
     canHandle(handlerInput) {
         const request = handlerInput.requestEnvelope.request;
         return request.type === 'IntentRequest' && ["RecommendedIntent", "PrerequisiteIntent"].includes(request.intent.name);
