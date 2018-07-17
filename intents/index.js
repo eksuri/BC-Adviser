@@ -11,6 +11,7 @@ const retake = require('./retake');
 const schedule = require('./classschedule');
 const instructors = require('./getInstructors');
 const conflict = require('./timeconflict');
+const scholarships = require('./scholarships');
 
 
 exports.handlers = {
@@ -22,7 +23,7 @@ exports.handlers = {
     'ClassesOfferedIntent' : classes.ClassesOfferedIntent,
     'MyClassesIntent': canvas.GetMyClasses,
     'MyGradesIntent': canvas.GetMyGrades,
-    'Degrees' :  degrees.GetBellevueDegreesIntent,
+    'GetBellevueDegreesIntent' :  degrees.GetBellevueDegreesIntent,
     'GetFinalsInfoIntent' : finals.GetFinalsInfoIntent,
     //'RecommendedIntent': recommended.GetRecommendedIntent,
     //'PrerequisiteIntent': recommended.GetPrerequisiteIntent,
@@ -31,6 +32,7 @@ exports.handlers = {
     'ClassScheduleIntent': schedule.ClassScheduleIntent,
     'TimeConflictIntent': conflict.TimeConflictIntent,
     'GetInstructorsIntent': instructors.getInstructors,
+    'GetScholarshipIntent': scholarships.GetScholarshipIntent,
 };
 
 exports.handlers_v2 = [about.Handler,
@@ -50,4 +52,5 @@ exports.schemas = [
     instructors.schema,
     conflict.schema,
     schedule.schema,
+    scholarships.schema,
 ]

@@ -97,7 +97,7 @@
                 ]
             },
             {
-                "name": "BellevueDegrees",
+                "name": "GetBellevueDegreesIntent",
                 "samples": [
                     "{program}",
                     "{program} degrees",
@@ -406,6 +406,18 @@
                     "what time will be {CourseAbbrev} {CourseNumber} in the {Quarter} {Year}",
                     "What is the schedule for the {CourseAbbrev} {CourseNumber} in the {Quarter} {Year}"
                 ]
+            },
+            {
+                "name": "GetScholarshipIntent",
+                "samples": [
+                    "what scholarships are available",
+                    "what scholarships are there",
+                    "tell me about scholarships",
+                    "are there scholarships",
+                    "are there any scholarships",
+                    "i would like to know more about scholarships",
+                    "i want to know more about scholarships"
+                ]
             }
         ],
         "types": [
@@ -457,7 +469,7 @@
                     {
                         "id": null,
                         "name": {
-                            "value": "eastern Washington",
+                            "value": "certificate",
                             "synonyms": []
                         }
                     }

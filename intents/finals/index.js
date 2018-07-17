@@ -8,6 +8,7 @@ exports.GetFinalsInfoIntent = async function () {
     let speech = new Speech();
 
     const dates = await finals.getDates((new Date()).getMonth());
+    
 
     speech.say("Finals this quarter start on")
           .say(dates.shift())
