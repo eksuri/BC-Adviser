@@ -16,23 +16,10 @@ exports.TimeConflictIntent = async function () {
         "fall" : this.event.request.intent.slots.Quarter.value);
     const year = this.event.request.intent.slots.Year.value;
     
-    // format: {Sections: [Times: [MW, 10:30, 12:30], [F, 11:30, 1:30]]}
-    const scheduleOne = await sections.getCourseSchedule(quarter + year, CourseAbbrevOne, CourseNumberOne);
-    const scheduleTwo = await sections.getCourseSchedule(quarter + year, CourseAbbrevTwo, CourseNumberTwo);
-    
-    // update times object before fully implementing
-
     // boolean
-    let no_conflict = scheduleOne.Sections.some((s1) => {
-        // boolean
-        return c = scheduleTwo.Sections.some((s2)=> {
-            return (true);
-        })
-    })
-    
-    speech.say("You")
-          .say(no_conflict ? "can" : "cannot")
-          .say("take both")
+    let conflict = await sections.CompareCourseSchedule (CourseAbbrevOne, CourseNumberOne, CourseAbbrevTwo, CourseNumberTwo, quarter, year);
+    if(conflict===true){
+    speech.say("You cannot take both")
           .say(CourseAbbrevOne)
           .say(CourseNumberOne)
           .say("and")
@@ -42,4 +29,20 @@ exports.TimeConflictIntent = async function () {
           .say(year)
 
     this.emit(':tell', speech.ssml(true));
+    }
+    else{
+        speech.say("Of course, you can take both")
+        .say(CourseAbbrevOne)
+        .say(CourseNumberOne)
+        .say("and")
+        .say(CourseAbbrevTwo)
+        .say(CourseNumberTwo)
+        .say(quarter)
+        .say(year)
+
+  this.emit(':tell', speech.ssml(true));
+
+    }
+    //console.log("The boolean variable is: " + conflict); //just for debuging 
+    //console.log(speech); //just for debuging
 }
