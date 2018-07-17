@@ -7,8 +7,10 @@ let opts = config.opts;
     opts.app = app;
     opts.handler = app.handler;
 
+    process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0; // hack for BC misconfigured SSL
+
 conversation(opts)
-    .userSays('Degrees', {"program": "associates"})
+    .userSays('Degrees', {"program": "non transfer"})
     .plainResponse
-        .shouldContain("Associate")
+        .shouldContain("zzzzz")
     .end();

@@ -1,12 +1,8 @@
 {
     "intents": [
         {
-            "name": "BellevueDegrees",
+            "name": "GetBellevueDegreesIntent",
             "samples": [
-                "{program}",
-                "{program} degrees",
-                "{program} please",
-                "{program} degrees please",
                 "list {program}",
                 "list {program} degrees",
                 "tell me about {program}",
@@ -14,13 +10,7 @@
                 "I would like more information on {program}",
                 "I would like more information on {program} degrees",
                 "I would like to know about {program}",
-                "I would like to know about {program} degrees",
-                "please tell me about {program}",
-                "please tell me about {program} degrees",
-                "please give me more information on {program}",
-                "please give me more information on {program} degrees",
-                "please tell me more about {program}",
-                "please tell me more about {program} degrees"
+                "I would like to know about {program} degrees"
             ],
             "slots": [
                 {
@@ -86,7 +76,7 @@
                 {
                     "id": null,
                     "name": {
-                        "value": "eastern Washington",
+                        "value": "certificate",
                         "synonyms": []
                     }
                 }

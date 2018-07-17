@@ -23,7 +23,7 @@ exports.handlers = {
     'ClassesOfferedIntent' : classes.ClassesOfferedIntent,
     'MyClassesIntent': canvas.GetMyClasses,
     'MyGradesIntent': canvas.GetMyGrades,
-    'Degrees' :  degrees.GetBellevueDegreesIntent,
+    'GetBellevueDegreesIntent' :  degrees.GetBellevueDegreesIntent,
     'GetFinalsInfoIntent' : finals.GetFinalsInfoIntent,
     //'RecommendedIntent': recommended.GetRecommendedIntent,
     //'PrerequisiteIntent': recommended.GetPrerequisiteIntent,
@@ -32,7 +32,7 @@ exports.handlers = {
     'ClassScheduleIntent': schedule.ClassScheduleIntent,
     'TimeConflictIntent': conflict.TimeConflictIntent,
     'GetInstructorsIntent': instructors.getInstructors,
-    'ScholarshipIntent': scholarships.GetScholarshipIntent,
+    'GetScholarshipIntent': scholarships.GetScholarshipIntent,
 };
 
 exports.handlers_v2 = [about.Handler,

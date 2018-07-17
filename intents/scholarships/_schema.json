@@ -1,7 +1,7 @@
 {
     "intents": [
       {
-        "name": "ScholarshipIntent",
+        "name": "GetScholarshipIntent",
         "samples": [
           "what scholarships are available",
           "what scholarships are there",

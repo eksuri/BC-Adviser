@@ -25,7 +25,7 @@ exports.GetProfessorRatingIntent = async function () {
         }
         else {
             speechOutput = "On a scale of 0 to 5, Professor " + FirstName + " " + LastName + " has an overall rating of " + rating[0] + ", and a level of difficulty of " + rating[2] + ".";
-            speechOutput = speechOutput + " " + rating[1] + " percent of students would take Professor " + LastName + " again.";
+            speechOutput = speechOutput + " " + rating[1] + " of students would take Professor " + LastName + " again.";
 
             this.response.speak(speechOutput);
             this.emit(':responseReady');

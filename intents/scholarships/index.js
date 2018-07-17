@@ -18,7 +18,7 @@ exports.GetScholarshipIntent = async function () {
     } else { // general case, more than one.
         let last = scholarships.pop();
 
-        speech.say("Avaliable scholarships include")
+        speech.say("Available scholarships include")
 
         scholarships.forEach((s) => {
             speech.say(s)
