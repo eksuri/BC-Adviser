@@ -31,25 +31,28 @@ exports.Handler = {
         // update times object before fully implementing
 
         // boolean
-        let no_conflict = scheduleOne.Sections.some((s1) => {
-            // boolean
-            return c = scheduleTwo.Sections.some((s2) => {
-                return (true);
-            })
-        })
-
-        speech.say("You")
-            .say(no_conflict ? "can" : "cannot")
-            .say("take both")
-            .say(CourseAbbrevOne)
-            .say(CourseNumberOne)
-            .say("and")
-            .say(CourseAbbrevTwo)
-            .say(CourseNumberTwo)
-            .say(quarter)
-            .say(year)
-
-        return responseBuilder.speak(speech.ssml(true))
-            .getResponse();
+        let conflict = await sections.CompareCourseSchedule (CourseAbbrevOne, CourseNumberOne, CourseAbbrevTwo, CourseNumberTwo, quarter, year);
+        
+        if(conflict===true){
+          speech.say("You cannot take both")
+                .say(CourseAbbrevOne)
+                .say(CourseNumberOne)
+                .say("and")
+                .say(CourseAbbrevTwo)
+                .say(CourseNumberTwo)
+                .say(quarter)
+                .say(year)
+          }else{
+              speech.say("Of course, you can take both")
+              .say(CourseAbbrevOne)
+              .say(CourseNumberOne)
+              .say("and")
+              .say(CourseAbbrevTwo)
+              .say(CourseNumberTwo)
+              .say(quarter)
+              .say(year)
+          }
+          return responseBuilder.speak(speech.ssml(true))
+              .getResponse();
     }
 }
