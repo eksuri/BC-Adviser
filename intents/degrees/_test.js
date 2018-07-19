@@ -8,7 +8,7 @@ let opts = config.opts;
     opts.handler = app.handler;
 
 conversation(opts)
-    .userSays('Degrees', {"program": "associates"})
+    .userSays('BellevueDegrees', {"program": "associates"})
     .plainResponse
         .shouldContain("Associate")
     .end();

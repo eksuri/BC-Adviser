@@ -1,36 +1,110 @@
 {
-    "intents": [
-      {
-        "name": "RecommendedIntent",
-        "samples": [
-          "What classes are recommended before I take {CourseAbbrev} {CourseNumber}"
-        ],
-        "slots": [
-          {
-            "name": "CourseAbbrev",
-            "type": "LIST_OF_SUBJECTS"
+  "intents": [
+    {
+      "name": "RecommendedIntent",
+      "samples": [
+        "What classes are recommended before my class"
+      ],
+      "slots": [
+        {
+          "name": "CourseAbbrev",
+          "type": "LIST_OF_SUBJECTS"
         },
         {
-            "name": "CourseNumber",
-            "type": "AMAZON.NUMBER"
+          "name": "CourseNumber",
+          "type": "AMAZON.NUMBER"
         }
-        ]
-      },
-      {
-        "name": "PrerequisiteIntent",
-        "samples": [
-          "Are there any prerequisites for {CourseAbbrev} {CourseNumber}"
-        ],
-        "slots": [
-          {
-            "name": "CourseAbbrev",
-            "type": "LIST_OF_SUBJECTS"
+      ]
+    },
+    {
+      "name": "PrerequisiteIntent",
+      "samples": [
+        "Are there any prerequisites before my class"
+      ],
+      "slots": [
+        {
+          "name": "CourseAbbrev",
+          "type": "LIST_OF_SUBJECTS"
         },
         {
-            "name": "CourseNumber",
-            "type": "AMAZON.NUMBER"
+          "name": "CourseNumber",
+          "type": "AMAZON.NUMBER"
         }
-        ]
-      }
-    ]
-  }
+      ]
+    }
+  ],
+  "dialogs": [
+    {
+      "name": "RecommendedIntent",
+      "confirmationRequired": false,
+      "prompts": {},
+      "slots": [
+        {
+          "name": "CourseAbbrev",
+          "type": "LIST_OF_SUBJECTS",
+          "confirmationRequired": false,
+          "elicitationRequired": true,
+          "prompts": {
+            "elicitation": "subject_elication"
+          }
+        },
+        {
+          "name": "CourseNumber",
+          "type": "AMAZON.NUMBER",
+          "confirmationRequired": false,
+          "elicitationRequired": true,
+          "prompts": {
+            "elicitation": "number_elication"
+          }
+        }
+      ]
+    },
+    {
+      "name": "PrerequisiteIntent",
+      "slots": [
+        {
+          "name": "CourseAbbrev",
+          "type": "LIST_OF_SUBJECTS",
+          "confirmationRequired": false,
+          "elicitationRequired": true,
+          "prompts": {
+            "elicitation": "subject_elication"
+          }
+        },
+        {
+          "name": "CourseNumber",
+          "type": "AMAZON.NUMBER",
+          "confirmationRequired": false,
+          "elicitationRequired": true,
+          "prompts": {
+            "elicitation": "number_elication"
+          }
+        }
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "id": "subject_elication",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "which course subject?"
+        },
+        {
+          "type": "PlainText",
+          "value": "which type of course?"
+        }
+      ]
+    },
+    {
+      "id": "number_elication",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "which course number?"
+        }
+      ]
+    }
+  ]
+}

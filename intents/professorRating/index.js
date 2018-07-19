@@ -1,35 +1,55 @@
+const Speech = require('ssml-builder');
 const schema = require('./_schema.json')
 exports.schema = schema
 
 const ratings = require('../../common/web/ratings');
 
 
-exports.GetProfessorRatingIntent = async function () {
-    const FirstName = this.event.request.intent.slots.FirstName.value;
-    const LastName = this.event.request.intent.slots.LastName.value;
-    let speechOutput;
+exports.Handler = {
+    canHandle(handlerInput) {
+        const request = handlerInput.requestEnvelope.request;
+        return request.type === 'IntentRequest'
+            && request.intent.name === 'RatingIntent';
+    },
+    async handle(handlerInput) {
+        let speech = new Speech();
 
-    if (FirstName == "" || FirstName == null || LastName == "" || LastName == null) {
-        speechOutput = "You need to provide a full name.";
-        this.response.speak(speechOutput);
-        this.emit(':responseReady');
-    }
-    else {
+        const responseBuilder = handlerInput.responseBuilder;
+        const slots = handlerInput.requestEnvelope.request.intent.slots;
 
-        let rating = await ratings.getRating(FirstName, LastName)
+        const FirstName = slots.FirstName.value;
+        const LastName = slots.LastName.value;
+        let speechOutput;
 
-        if (rating == null) {
-            speechOutput = "We couldn't find that professor's rating.";
-            this.response.speak(speechOutput);
-            this.emit(':responseReady');
+        if (FirstName == "" || FirstName == null || LastName == "" || LastName == null) {
+            speech.say("You need to provide a full name.");
+        } else {
+
+            let rating = await ratings.getRating(FirstName, LastName)
+
+            if (rating == null) {
+                speech.say("We couldn't find that professor's rating.");
+            }
+            else {
+                speech.say("On a scale of 0 to 5, Professor")
+                    .say(FirstName)
+                    .say(LastName)
+                    .say("has an overall rating of")
+                    .say(rating[0])
+                    .say("and a level of difficulty of")
+                    .say(rating[2])
+                    .pause("1s")
+                    .say(rating[1])
+                    .say("percent of students would take Professor")
+                    .say(LastName)
+                    .say("again");
+            }
         }
-        else {
-            speechOutput = "On a scale of 0 to 5, Professor " + FirstName + " " + LastName + " has an overall rating of " + rating[0] + ", and a level of difficulty of " + rating[2] + ".";
-            speechOutput = speechOutput + " " + rating[1] + " percent of students would take Professor " + LastName + " again.";
 
-            this.response.speak(speechOutput);
-            this.emit(':responseReady');
-        }
-    }
+        return responseBuilder.speak(speech.ssml(true))
+            .getResponse();
+
+
+    },
 }
 

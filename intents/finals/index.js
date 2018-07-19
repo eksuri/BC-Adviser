@@ -4,17 +4,27 @@ exports.schema = schema
 
 const finals = require('../../common/web/finals.js');
 
-exports.GetFinalsInfoIntent = async function () {
-    let speech = new Speech();
+exports.Handler = {
+    canHandle(handlerInput) {
+        const request = handlerInput.requestEnvelope.request;
+        return request.type === 'IntentRequest'
+            && request.intent.name === 'GetFinalsInfoIntent';
+    },
+    async handle(handlerInput) {
+        let speech = new Speech();
+        
+        const responseBuilder = handlerInput.responseBuilder;
 
-    const dates = await finals.getDates((new Date()).getMonth());
+        const dates = await finals.getDates((new Date()).getMonth());
 
-    speech.say("Finals this quarter start on")
-          .say(dates.shift())
-          .say("and last until")
-          .say(dates.pop());
+        speech.say("Finals this quarter start on")
+            .say(dates.shift())
+            .say("and last until")
+            .say(dates.pop());
 
-    this.emit(':tell', speech.ssml(true));
+        return responseBuilder.speak(speech.ssml(true))
+            .getResponse();
+    },
 }
 
 

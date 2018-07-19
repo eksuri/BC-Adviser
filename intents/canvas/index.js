@@ -4,35 +4,26 @@ exports.schema = schema
 
 const canvas = require('../../common/canvas/index.js');
 
-exports.GetMyClasses = async function () {
-    let speech = new Speech();
-    courses = await canvas.getClasses();
+exports.Handler = {
+    canHandle(handlerInput) {
+        const request = handlerInput.requestEnvelope.request;
+        return request.type === 'IntentRequest' && request.intent.name === 'MyClassesIntent';
+    },
+    async handle(handlerInput) {
+        let speech = new Speech();
 
-    if (courses != null && courses[0] != null) {
-        speech.say("This quarter you're currently enrolled in");
-        courses.forEach((course) => speech.say(course));
-    } else {
-        speech.say("I'm not sure.");
-    }
+        const responseBuilder = handlerInput.responseBuilder;
+        courses = await canvas.getClasses();
 
-
-    this.emit(':tell', speech.ssml(true));
-}
-
-
-exports.GetMyGrades = async function () {
-    let speech = new Speech();
-    grades = await canvas.getGrades();
-
-    if (grades != null && grades[0] != null) {
-        speech.say("Your grade in")
-              .say(grades[0][0])
-              .say("is")
-              .say(grades[0][1])
-    } else {
-        speech.say("I'm not sure.");
-    }
+        if (courses != null && courses[0] != null) {
+            speech.say("This quarter you're currently enrolled in");
+            courses.forEach((course) => speech.say(course));
+        } else {
+            speech.say("I'm not sure.");
+        }
 
 
-    this.emit(':tell', speech.ssml(true));
+        return responseBuilder.speak(speech.ssml(true))
+            .getResponse();
+    },
 }
