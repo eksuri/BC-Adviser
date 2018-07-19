@@ -2,13 +2,10 @@ const fetch = require('node-fetch');
 
 getSections = async (quarter, subject) => {
     const res = await fetch("http://bellevuecollege.edu/classes/" + quarter.toUpperCase() + "/" + subject.toUpperCase() + "/?format=json");
-    const text = await res.text();// What is this?
+    const text = await res.text();
     const data = JSON.parse(text.replace(`"ID":null,`,``)); // duplicate object key fix
 
-    //just for test printout the data
-    //console.log(data); //just for debuging
-
-    return data; 
+    return data;
 }
 
 
