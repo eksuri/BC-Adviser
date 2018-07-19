@@ -40,7 +40,7 @@ getAssignments = async(id) => {
 
 }
 
-getAllQuizzes = async(id) => {
+getQuizzes = async(id) => {
     return "Test Quiz";
 
     //you need to 'fetch' the right api url, and pass along your id & token in the request
