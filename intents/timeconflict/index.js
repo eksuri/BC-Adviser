@@ -4,42 +4,52 @@ exports.schema = schema
 
 const sections = require('../../common/ctc/sections');
 
-exports.TimeConflictIntent = async function () {
-    let speech = new Speech();
+exports.Handler = {
+    canHandle(handlerInput) {
+        const request = handlerInput.requestEnvelope.request;
+        return request.type === 'IntentRequest'
+            && request.intent.name === 'TimeConflictIntent';
+    },
+    async handle(handlerInput) {
+        let speech = new Speech();
 
-    //Extract the value of the slots
-    const CourseAbbrevOne = this.event.request.intent.slots.CourseAbbrevOne.value;
-    const CourseNumberOne = this.event.request.intent.slots.CourseNumberOne.value;
-    const CourseAbbrevTwo = this.event.request.intent.slots.CourseAbbrevTwo.value;
-    const CourseNumberTwo = this.event.request.intent.slots.CourseNumberTwo.value;
-    const quarter = (this.event.request.intent.slots.Quarter.value == "autumn" ?
-        "fall" : this.event.request.intent.slots.Quarter.value);
-    const year = this.event.request.intent.slots.Year.value;
-    
-    // format: {Sections: [Times: [MW, 10:30, 12:30], [F, 11:30, 1:30]]}
-    const scheduleOne = await sections.getCourseSchedule(quarter + year, CourseAbbrevOne, CourseNumberOne);
-    const scheduleTwo = await sections.getCourseSchedule(quarter + year, CourseAbbrevTwo, CourseNumberTwo);
-    
-    // update times object before fully implementing
+        const responseBuilder = handlerInput.responseBuilder;
+        const slots = handlerInput.requestEnvelope.request.intent.slots;
 
-    // boolean
-    let no_conflict = scheduleOne.Sections.some((s1) => {
+        //Extract the value of the slots
+        const CourseAbbrevOne = slots.CourseAbbrevOne.value;
+        const CourseNumberOne = slots.CourseNumberOne.value;
+        const CourseAbbrevTwo = slots.CourseAbbrevTwo.value;
+        const CourseNumberTwo = slots.CourseNumberTwo.value;
+        const quarter = (slots.Quarter.value == "autumn" ? "fall" : slots.Quarter.value);
+        const year = slots.Year.value;
+
+        // format: {Sections: [Times: [MW, 10:30, 12:30], [F, 11:30, 1:30]]}
+        const scheduleOne = await sections.getCourseSchedule(quarter + year, CourseAbbrevOne, CourseNumberOne);
+        const scheduleTwo = await sections.getCourseSchedule(quarter + year, CourseAbbrevTwo, CourseNumberTwo);
+
+        // update times object before fully implementing
+
         // boolean
-        return c = scheduleTwo.Sections.some((s2)=> {
-            return (true);
+        let no_conflict = scheduleOne.Sections.some((s1) => {
+            // boolean
+            return c = scheduleTwo.Sections.some((s2) => {
+                return (true);
+            })
         })
-    })
-    
-    speech.say("You")
-          .say(no_conflict ? "can" : "cannot")
-          .say("take both")
-          .say(CourseAbbrevOne)
-          .say(CourseNumberOne)
-          .say("and")
-          .say(CourseAbbrevTwo)
-          .say(CourseNumberTwo)
-          .say(quarter)
-          .say(year)
 
-    this.emit(':tell', speech.ssml(true));
+        speech.say("You")
+            .say(no_conflict ? "can" : "cannot")
+            .say("take both")
+            .say(CourseAbbrevOne)
+            .say(CourseNumberOne)
+            .say("and")
+            .say(CourseAbbrevTwo)
+            .say(CourseNumberTwo)
+            .say(quarter)
+            .say(year)
+
+        return responseBuilder.speak(speech.ssml(true))
+            .getResponse();
+    }
 }

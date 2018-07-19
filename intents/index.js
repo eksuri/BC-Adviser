@@ -12,28 +12,18 @@ const schedule = require('./classschedule');
 const instructors = require('./getInstructors');
 const conflict = require('./timeconflict');
 
-
-exports.handlers = {
-    'AMAZON.HelpIntent': amazon.HelpIntent,
-    'AMAZON.CancelIntent': amazon.CancelIntent,
-    'AMAZON.StopIntent': amazon.StopIntent,
-    'BookIntent': books.GetBookIntent,
-    //'Unhandled': amazon.Unhandled,
-    'ClassesOfferedIntent' : classes.ClassesOfferedIntent,
-    'MyClassesIntent': canvas.GetMyClasses,
-    'MyGradesIntent': canvas.GetMyGrades,
-    'Degrees' :  degrees.GetBellevueDegreesIntent,
-    'GetFinalsInfoIntent' : finals.GetFinalsInfoIntent,
-    //'RecommendedIntent': recommended.GetRecommendedIntent,
-    //'PrerequisiteIntent': recommended.GetPrerequisiteIntent,
-    'RatingIntent': rating.GetProfessorRatingIntent,
-    'RetakeClassIntent': retake.RetakeClassIntent,
-    'ClassScheduleIntent': schedule.ClassScheduleIntent,
-    'TimeConflictIntent': conflict.TimeConflictIntent,
-    'GetInstructorsIntent': instructors.getInstructors,
-};
-
-exports.handlers_v2 = [about.Handler,
+exports.handlers = [amazon.Handler,
+                       about.Handler,
+                       books.Handler,
+                       canvas.Handler,
+                       classes.Handler,
+                       conflict.Handler,
+                       degrees.Handler,
+                       finals.Handler,
+                       instructors.Handler,
+                       rating.Handler,
+                       retake.Handler,
+                       schedule.Handler,
                        recommended.inProgress,
                        recommended.Completed];
 

@@ -4,28 +4,39 @@ exports.schema = schema
 
 const sections = require('../../common/ctc/sections.js');
 
-exports.ClassesOfferedIntent = async function () {
-    let speech = new Speech();
+exports.Handler = {
+    canHandle(handlerInput) {
+        const request = handlerInput.requestEnvelope.request;
+        return request.type === 'IntentRequest'
+            && request.intent.name === 'ClassesOfferedIntent';
+    },
+    async handle(handlerInput) {
+        let speech = new Speech();
 
-    const quarter = (this.event.request.intent.slots.Quarter.value == "autumn" ?
-            "fall" : this.event.request.intent.slots.Quarter.value);
-    const year = this.event.request.intent.slots.Year.value;
-    const subject = this.event.request.intent.slots.Subjects.value;
+        const responseBuilder = handlerInput.responseBuilder;
+        const slots = handlerInput.requestEnvelope.request.intent.slots;
+
+        const quarter = (slots.Quarter.value == "autumn" ? "fall" : slots.Quarter.value);
+        const year = slots.Year.value;
+        const subject = slots.Subjects.value;
 
 
-    coursesOffered = await sections.getCoursesOffered(quarter + year, subject);
+        coursesOffered = await sections.getCoursesOffered(quarter + year, subject);
 
-    speech.say("The following")
-          .say(subject)
-          .say("classes are offered")
-          .say(quarter)
-          .say(year)
-          .pause("1s")
+        speech.say("The following")
+            .say(subject)
+            .say("classes are offered")
+            .say(quarter)
+            .say(year)
+            .pause("1s")
 
-    coursesOffered.forEach((c) => {
-        speech.say(c)}
-    );
+        coursesOffered.forEach((c) => {
+            speech.say(c)
+        }
+        );
 
-    this.emit(':tell', speech.ssml(true));
+        return responseBuilder.speak(speech.ssml(true))
+            .getResponse();
+    }
 }
 

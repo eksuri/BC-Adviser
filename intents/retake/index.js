@@ -4,16 +4,28 @@ exports.schema = schema
 
 const courses = require('../../common/ctc/courses');
 
-exports.RetakeClassIntent = async function () {
-    let speech = new Speech();
+exports.Handler = {
+    canHandle(handlerInput) {
+        const request = handlerInput.requestEnvelope.request;
+        return request.type === 'IntentRequest'
+            && request.intent.name === 'RetakeClassIntent';
+    },
+    async handle(handlerInput) {
+        let speech = new Speech();
 
-    const CourseAbbrev = this.event.request.intent.slots.CourseAbbrev.value;
-    const CourseNumber = this.event.request.intent.slots.CourseNumber.value;
+        const responseBuilder = handlerInput.responseBuilder;
+        const slots = handlerInput.requestEnvelope.request.intent.slots;
 
-    const quarters = await courses.getQuartersOffered(CourseAbbrev, CourseNumber);
+        const CourseAbbrev = slots.CourseAbbrev.value;
+        const CourseNumber = slots.CourseNumber.value;
 
-    speech.say("This class is offered at Bellevue College")
+        const quarters = await courses.getQuartersOffered(CourseAbbrev, CourseNumber);
 
-    quarters.forEach((q) => speech.say(q).pause("1s"));
-    this.emit(':tell', speech.ssml(true));
+        speech.say("This class is offered at Bellevue College")
+
+        quarters.forEach((q) => speech.say(q).pause("1s"));
+        
+        return responseBuilder.speak(speech.ssml(true))
+            .getResponse();
+    },
 }

@@ -4,29 +4,39 @@ exports.schema = schema
 
 const sections = require('../../common/ctc/sections.js');
 
-exports.getInstructors = async function () {
-    let speech = new Speech();
+exports.Handler = {
+    canHandle(handlerInput) {
+        const request = handlerInput.requestEnvelope.request;
+        return request.type === 'IntentRequest'
+            && request.intent.name === 'GetInstructorsIntent';
+    },
+    async handle(handlerInput) {
+        let speech = new Speech();
 
-    const quarter = (this.event.request.intent.slots.Quarter.value == "autumn" ?
-            "fall" : this.event.request.intent.slots.Quarter.value);
-    const year = this.event.request.intent.slots.Year.value;
-    const subject = this.event.request.intent.slots.Subjects.value;
-    const number = this.event.request.intent.slots.Number.value;
+        const responseBuilder = handlerInput.responseBuilder;
+        const slots = handlerInput.requestEnvelope.request.intent.slots;
 
-    const instructors = await sections.getInstructors(quarter + year, number, subject);
+        const quarter = (slots.Quarter.value == "autumn" ? "fall" : slots.Quarter.value);
+        const year = slots.Year.value;
+        const subject = slots.Subjects.value;
+        const number = slots.Number.value;
 
-    speech.say("The instructors for")
-          .say(subject)
-          .say(number)
-          .say("in")
-          .say(quarter)
-          .say(year)
-          .say("are")
-    instructors.forEach((i) => {
-        speech.say(i);
-    })
+        const instructors = await sections.getInstructors(quarter + year, number, subject);
 
-    this.emit(':tell', speech.ssml(true));
+        speech.say("The instructors for")
+            .say(subject)
+            .say(number)
+            .say("in")
+            .say(quarter)
+            .say(year)
+            .say("are")
+        instructors.forEach((i) => {
+            speech.say(i);
+        })
+
+        return responseBuilder.speak(speech.ssml(true))
+            .getResponse();
+    },
 }
 
 
