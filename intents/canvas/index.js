@@ -13,7 +13,7 @@ exports.Handler = {
         let speech = new Speech();
 
         const responseBuilder = handlerInput.responseBuilder;
-        courses = await canvas.getClasses();
+        courses = await canvas.getCourseNames();
 
         if (courses != null && courses[0] != null) {
             speech.say("This quarter you're currently enrolled in");
