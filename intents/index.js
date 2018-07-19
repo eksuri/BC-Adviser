@@ -34,7 +34,8 @@ exports.handlers = {
 };
 
 exports.handlers_v2 = [about.Handler,
-                       recommended.Handler];
+                       recommended.inProgress,
+                       recommended.Completed];
 
 exports.schemas = [
     about.schema,

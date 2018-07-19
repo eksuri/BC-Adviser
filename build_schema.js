@@ -53,16 +53,10 @@ common_quarters = async () => {
 }
 
 main = async () => {
-    let base = {
-        "languageModel": {
-            "invocationName": "bc adviser",
-            "intents": [],
-            "types": [],
-        }
-    }
-    
     let intents = []
     let types = []
+    let dialogs = []
+    let prompts = []
     
     schemas.forEach((schema) => {
         if (schema.intents) {
@@ -75,16 +69,32 @@ main = async () => {
                 types.push(type)
             })
         }
+        if (schema.dialogs) {
+            schema.dialogs.forEach((dialog) => {
+                dialogs.push(dialog)
+            })
+        }
+        if (schema.prompts) {
+            schema.prompts.forEach((prompt) => {
+                prompts.push(prompt)
+            })
+        }
     })
     
     types.push(await common_subjects());
     types.push(await common_quarters());
 
     let schema = {
-        "languageModel": {
-            "invocationName": "bc adviser",
-            "intents": intents,
-            "types": types,
+        "interactionModel": {
+            "languageModel": {
+                "invocationName": "bc adviser",
+                "intents": intents,
+                "types": types,
+            },
+            "dialog": {
+                "intents": dialogs
+            },
+            "prompts": prompts
         }
     }
     
