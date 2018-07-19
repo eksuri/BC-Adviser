@@ -5,66 +5,72 @@ exports.schema = schema
 const sections = require('../../common/ctc/sections');
 const texts = require('../../common/web/texts');
 
-exports.GetBookIntent = async function () {
-    let speech = new Speech();
 
-    const CourseAbbrev = this.event.request.intent.slots.CourseAbbrev.value;
-    const CourseNumber = this.event.request.intent.slots.CourseNumber.value;
-    const ItemNumber = this.event.request.intent.slots.ItemNumber.value;
+exports.Handler = {
+    canHandle(handlerInput) {
+        const request = handlerInput.requestEnvelope.request;
+        return request.type === 'IntentRequest' && request.intent.name === 'BookIntent';
+    },
+    async handle(handlerInput) {
+        let speech = new Speech();
 
-    const quarter = (this.event.request.intent.slots.Quarter.value == "autumn" ?
-        "fall" : this.event.request.intent.slots.Quarter.value);
-    const year = this.event.request.intent.slots.Year.value;
+        const responseBuilder = handlerInput.responseBuilder;
+        const slots = handlerInput.requestEnvelope.request.intent.slots;
+
+        const CourseAbbrev = slots.CourseAbbrev.value;
+        const CourseNumber = slots.CourseNumber.value;
+        const ItemNumber = slots.ItemNumber.value;
+
+        const quarter = (slots.Quarter.value == "autumn" ? "fall" : slots.Quarter.value);
+        const year = slots.Year.value;
 
 
-    const c = await sections.getCourseSection(quarter + year, CourseAbbrev, CourseNumber, ItemNumber);
+        const c = await sections.getCourseSection(quarter + year, CourseAbbrev, CourseNumber, ItemNumber);
 
-    //http://bellevue.verbacompare.com/comparison?id=F18__ART__101__0650
+        //http://bellevue.verbacompare.com/comparison?id=F18__ART__101__0650
 
-    let books = await texts.getTexts(c.Yrq.FriendlyName, c.CourseSubject, c.CourseNumber, c.ID.ItemNumber);
-    let bookAndAuthor = "";
-    
-    if (books != null && books[0] != null) {
-        i = 0;
-        while (books[i] != null) {
-            bookAndAuthor = bookAndAuthor + books[i] + ", by " + books[i + 1];
-            if (books[i + 2] != null) {
-                bookAndAuthor = bookAndAuthor + ", ";
+        let books = await texts.getTexts(c.Yrq.FriendlyName, c.CourseSubject, c.CourseNumber, c.ID.ItemNumber);
+        let bookAndAuthor = "";
+
+        if (books != null && books[0] != null) {
+            i = 0;
+            while (books[i] != null) {
+                bookAndAuthor = bookAndAuthor + books[i] + ", by " + books[i + 1];
+                if (books[i + 2] != null) {
+                    bookAndAuthor = bookAndAuthor + ", ";
+                }
+                else {
+                    bookAndAuthor = bookAndAuthor + ".";
+                }
+                i = i + 2;
+            }
+
+            if (bookAndAuthor.includes("No Textbook Required")) {
+                speech.say("There are no recommended books for")
+                    .say(CourseAbbrev)
+                    .say(CourseNumber)
+                    .say("item number")
+                    .say(ItemNumber)
             }
             else {
-                bookAndAuthor = bookAndAuthor + ".";
+                speech.say("Books required for")
+                    .say(CourseAbbrev)
+                    .say(CourseNumber)
+                    .say("item number")
+                    .say(ItemNumber)
+                    .say("are")
+                    .pause("1s")
+                    .say(bookAndAuthor);
             }
-            i = i + 2;
         }
-
-        if (bookAndAuthor.includes("No Textbook Required")) {
+        else {
             speech.say("There are no recommended books for")
                 .say(CourseAbbrev)
                 .say(CourseNumber)
                 .say("item number")
-                .say(ItemNumber)
+                .say(ItemNumber);
         }
-        else {
-            speech.say("Books required for")
-                .say(CourseAbbrev)
-                .say(CourseNumber)
-                .say("item number")
-                .say(ItemNumber)
-                .say("are")
-                .pause("1s")
-                .say(bookAndAuthor);
-        }
-    }
-    else {
-        speech.say("There are no recommended books for")
-            .say(CourseAbbrev)
-            .say(CourseNumber)
-            .say("item number")
-            .say(ItemNumber);
-    }
-
-    this.emit(':tell', speech.ssml(true));
-
-
+        return responseBuilder.speak(speech.ssml(true))
+            .getResponse();
+    },
 }
-
