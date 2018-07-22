@@ -13,19 +13,25 @@ getCanvasCourses = async() => {
 
 getCanvasCourseIds = async () => {
     const classes  = await getCanvasCourses();
-    const ids = classes.map((c) => {return c.ID});
+    const ids = classes.map((c) => {return c.id});
 
     return ids;
 }
 
 getAssignments = async(id) => {
-    return "Test Assignment";
+    // return "Test Assignment";
 
     //you need to 'fetch' the right api url, and pass along your id & token in the request
     //then you turn your 'res' into 'json' named data
 
-    //const res = await fetch("https://canvas.instructure.com/api/????????????");
-    //const data = await res.json();
+    // console.log(id);
+
+    const res = await fetch("https://canvas.instructure.com/api/v1/courses/" + id + "/assignments?access_token=" + token);
+    const assignments = await res.json();
+
+    // console.log(assignments);
+
+    // console.log(data);
 
     //data will be an array of assignments
 
@@ -33,9 +39,15 @@ getAssignments = async(id) => {
     //you can use the map function to do it in one line if you want
     //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
 
+    const assignmentNames = assignments.map((c) => {return c.name});
+
+    console.log(assignmentNames);
+
     //or do a more traditional for loop or for each and fill an array
 
     //return something;
+
+    return assignmentNames;
     
 
 }
@@ -62,11 +74,24 @@ getQuizzes = async(id) => {
 }
 
 exports.getAllAssignments = async () => {
-    const ids = await getCanvasCourseIds();
-    const AssignmentNames = ids.map((id) => getAssignments(id));
-    
-    return AssignmentNames;
+    exports.getAllAssignments = async () => {
+        const ids = await getCanvasCourseIds();
+        const AssignmentNames = ids.map(async (id) => getAssignments(id));    
+        Promise.all(AssignmentNames).then((completed) => {return completed});
+    }
+
 }
+
+// exports.getAllAssignments = async () => {
+//     const ids = await getCanvasCourseIds();
+//     const AssignmentNames = ids.map((id) => getAssignments(id));
+
+
+     
+
+    
+//     return AssignmentNames;
+// }
 
 
 exports.getAllQuizzes = async () => {
