@@ -4,6 +4,16 @@
             "invocationName": "bc adviser",
             "intents": [
                 {
+                    "name": "GetAssignmentsIntent",
+                    "slots": [],
+                    "samples": [
+                        "what are my assignments",
+                        "get my assignments",
+                        "list my assignments",
+                        "tell me my assignments"
+                    ]
+                },
+                {
                     "name": "AboutIntent",
                     "slots": [],
                     "samples": [
