@@ -21,8 +21,10 @@ exports.Handler = {
 
         speech.say("Your assignments for this quarter are: ");
         assignmentNames.forEach((d) => {
-            speech.say(d)
-                  .pause("1s");
+            d.forEach((e) => {
+                speech.say(e)
+                    .pause("1s");
+            });
         });
 
         return responseBuilder.speak(speech.ssml(true))
