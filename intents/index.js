@@ -11,6 +11,7 @@ const retake = require('./retake');
 const schedule = require('./classschedule');
 const instructors = require('./getInstructors');
 const conflict = require('./timeconflict');
+const assignments = require('./assignments');
 
 exports.handlers = [amazon.Handler,
                        about.Handler,
@@ -24,10 +25,12 @@ exports.handlers = [amazon.Handler,
                        rating.Handler,
                        retake.Handler,
                        schedule.Handler,
+                       assignments.Handler,
                        recommended.inProgress,
                        recommended.Completed];
 
 exports.schemas = [
+    assignments.schema,
     about.schema,
     amazon.schema,
     books.schema,
