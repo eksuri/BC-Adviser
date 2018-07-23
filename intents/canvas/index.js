@@ -22,6 +22,16 @@ exports.Handler = {
             speech.say("I'm not sure.");
         }
 
+        quizzes = await canvas.getAllQuizzes();
+
+        if (quizzes != null && quizzes[0] != null) {
+            speech.say("You have the following quizzes: ");
+            quizzes.forEach((course) => {
+                course.forEach((quizz) => speech.say(quizz));
+            });
+        } else {
+            speech.say("You are lucky, you have no quizzes!");
+        }
 
         return responseBuilder.speak(speech.ssml(true))
             .getResponse();
