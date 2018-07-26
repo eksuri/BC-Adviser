@@ -1,4 +1,5 @@
 const Speech = require('ssml-builder');
+const State = require ('../../common/state.js');
 const schema = require('./_schema.json')
 exports.schema = schema
 
@@ -12,21 +13,11 @@ exports.Handler = {
     },
     async handle(handlerInput) {
         let speech = new Speech();
-
-        const responseBuilder = handlerInput.responseBuilder;
-        const slots = handlerInput.requestEnvelope.request.intent.slots;
-
-        //Extract the value of the slots
-        const subject = slots.subject.value;
-        const number = slots.number.value;
-        const quarter = (slots.quarter.value == "autumn" ?
-            "fall" : slots.quarter.value);
-        const year = slots.year.value;
-
+        let s = new State(handlerInput.requestEnvelope.request.intent.slots);
 
         // format: {Sections: [Times: [MW, 10:30, 12:30], [F, 11:30, 1:30]]}
         // potential format: {mask: [0,1,0,1,1,0], times:[[10:30,12:30],[10:30,12:30],[11:30,1:30]]}
-        const schedule = await sections.getCourseSchedule(quarter + year, subject, number);
+        const schedule = await sections.getCourseSchedule(s.fullQuarter, s.subject, s.number);
 
 
 
@@ -50,8 +41,8 @@ exports.Handler = {
             }
         });
 
-        speech.say(subject)
-            .say(number)
+        speech.say(s.subject)
+            .say(s.number)
             .say("is offered")
             .say(scheduleString)
             .pause("2s");
@@ -62,7 +53,7 @@ exports.Handler = {
         // figure out how to start telling some of the times
         // convert times array into object
 
-        return responseBuilder.speak(speech.ssml(true))
+        return handlerInput.responseBuilder.speak(speech.ssml(true))
             .getResponse();
     }
 }

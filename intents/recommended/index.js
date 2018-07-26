@@ -1,4 +1,5 @@
 const Speech = require('ssml-builder');
+const State = require ('../../common/state.js');
 const schema = require('./_schema.json')
 exports.schema = schema
 
@@ -29,32 +30,28 @@ exports.Completed = {
     },
     async handle(handlerInput) {
         let speech = new Speech();
-        const responseBuilder = handlerInput.responseBuilder;
-
-        const subject = handlerInput.requestEnvelope.request.intent.slots.subject.value;
-        const number = handlerInput.requestEnvelope.request.intent.slots.number.value;
-
+        let s = new State(handlerInput.requestEnvelope.request.intent.slots);
         const which = handlerInput.requestEnvelope.request.intent.name === "RecommendedIntent"
 
-        footnote = (which ? await courses.getRecommended(subject, number) :
-            await courses.getPrerequisite(subject, number));
+        footnote = (which ? await courses.getRecommended(s.subject, s.number) :
+                            await courses.getPrerequisite(s.subject, s.number));
 
         if (footnote) {
             speech.say((which ? "recommended" : "prerequisites"))
                 .say("for")
-                .say(subject)
-                .say(number)
+                .say(s.subject)
+                .say(s.number)
                 .say("include")
                 .say(footnote)
         } else {
             speech.say("There are no")
                 .say((which ? "recommended" : "prerequisites"))
                 .say("for you to take before")
-                .say(subject)
-                .say(number)
+                .say(s.subject)
+                .say(s.number)
         }
 
-        return responseBuilder.speak(speech.ssml(true))
+        return handlerInput.responseBuilder.speak(speech.ssml(true))
             .getResponse();
     },
 }

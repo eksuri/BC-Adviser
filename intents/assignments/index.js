@@ -1,4 +1,5 @@
 const Speech = require('ssml-builder');
+const State = require ('../../common/state.js');
 const schema = require('./_schema.json')
 exports.schema = schema
 
@@ -12,9 +13,6 @@ exports.Handler = {
     },
     async handle(handlerInput) {
         let speech = new Speech();
-        
-        const responseBuilder = handlerInput.responseBuilder;
-
         const assignmentNames = await assignments.getAllAssignments();
 
         speech.say("Your assignments for this quarter are: ");
@@ -25,7 +23,7 @@ exports.Handler = {
             });
         });
 
-        return responseBuilder.speak(speech.ssml(true))
+        return handlerInput.responseBuilder.speak(speech.ssml(true))
             .getResponse();
     },
 }

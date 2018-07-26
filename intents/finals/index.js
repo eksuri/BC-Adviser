@@ -1,4 +1,5 @@
 const Speech = require('ssml-builder');
+const State = require ('../../common/state.js');
 const schema = require('./_schema.json')
 exports.schema = schema
 
@@ -12,9 +13,6 @@ exports.Handler = {
     },
     async handle(handlerInput) {
         let speech = new Speech();
-        
-        const responseBuilder = handlerInput.responseBuilder;
-
         const dates = await finals.getDates((new Date()).getMonth());
 
         speech.say("Finals this quarter start on")
@@ -22,7 +20,7 @@ exports.Handler = {
             .say("and last until")
             .say(dates.pop());
 
-        return responseBuilder.speak(speech.ssml(true))
+        return handlerInput.responseBuilder.speak(speech.ssml(true))
             .getResponse();
     },
 }

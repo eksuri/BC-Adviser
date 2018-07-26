@@ -1,4 +1,5 @@
 const Speech = require('ssml-builder');
+const State = require ('../../common/state.js');
 const schema = require('./_schema.json')
 exports.schema = schema
 
@@ -12,20 +13,14 @@ exports.Handler = {
     },
     async handle(handlerInput) {
         let speech = new Speech();
-
-        const responseBuilder = handlerInput.responseBuilder;
-        const slots = handlerInput.requestEnvelope.request.intent.slots;
-
-        const subject = slots.subject.value;
-        const number = slots.number.value;
-
-        const quarters = await courses.getquartersOffered(subject, number);
+        let s = new State(handlerInput.requestEnvelope.request.intent.slots);
+        const quarters = await courses.getQuartersOffered(s.subject, s.number);
 
         speech.say("This class is offered at Bellevue College")
 
         quarters.forEach((q) => speech.say(q).pause("1s"));
         
-        return responseBuilder.speak(speech.ssml(true))
+        return handlerInput.responseBuilder.speak(speech.ssml(true))
             .getResponse();
     },
 }

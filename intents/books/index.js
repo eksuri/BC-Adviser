@@ -1,10 +1,10 @@
 const Speech = require('ssml-builder');
+const State = require ('../../common/state.js');
 const schema = require('./_schema.json')
 exports.schema = schema
 
 const sections = require('../../common/ctc/sections');
 const texts = require('../../common/web/texts');
-
 
 exports.Handler = {
     canHandle(handlerInput) {
@@ -13,19 +13,8 @@ exports.Handler = {
     },
     async handle(handlerInput) {
         let speech = new Speech();
-
-        const responseBuilder = handlerInput.responseBuilder;
-        const slots = handlerInput.requestEnvelope.request.intent.slots;
-
-        const subject = slots.subject.value;
-        const number = slots.number.value;
-        const courseId = slots.courseId.value;
-
-        const quarter = (slots.quarter.value == "autumn" ? "fall" : slots.quarter.value);
-        const year = slots.year.value;
-
-
-        const c = await sections.getCourseSection(quarter + year, subject, number, courseId);
+        let s = new State(handlerInput.requestEnvelope.request.intent.slots);
+        const c = await sections.getCourseSection(s.fullQuarter, s.subject, s.number, s.courseId);
 
         //http://bellevue.verbacompare.com/comparison?id=F18__ART__101__0650
 
@@ -47,17 +36,17 @@ exports.Handler = {
 
             if (bookAndAuthor.includes("No Textbook Required")) {
                 speech.say("There are no recommended books for")
-                    .say(subject)
-                    .say(number)
+                    .say(s.subject)
+                    .say(s.number)
                     .say("item number")
-                    .say(courseId)
+                    .say(s.courseId)
             }
             else {
                 speech.say("Books required for")
-                    .say(subject)
-                    .say(number)
+                    .say(s.subject)
+                    .say(s.number)
                     .say("item number")
-                    .say(courseId)
+                    .say(s.courseId)
                     .say("are")
                     .pause("1s")
                     .say(bookAndAuthor);
@@ -65,12 +54,12 @@ exports.Handler = {
         }
         else {
             speech.say("There are no recommended books for")
-                .say(subject)
-                .say(number)
+                .say(s.subject)
+                .say(s.number)
                 .say("item number")
-                .say(courseId);
+                .say(s.courseId);
         }
-        return responseBuilder.speak(speech.ssml(true))
+        return handlerInput.responseBuilder.speak(speech.ssml(true))
             .getResponse();
     },
 }

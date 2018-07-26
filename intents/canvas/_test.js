@@ -10,5 +10,5 @@ let opts = config.opts;
 conversation(opts)
   .userSays('MyClassesIntent')
     .plainResponse 
-      .shouldEqual("This quarter you&apos;re currently enrolled in CS 483 Senior Capstone III")
+      .shouldContain("Capstone")
   .end();

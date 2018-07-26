@@ -1,4 +1,5 @@
 const Speech = require('ssml-builder');
+const State = require ('../../common/state.js');
 const schema = require('./_schema.json')
 exports.schema = schema
 
@@ -12,29 +13,21 @@ exports.Handler = {
     },
     async handle(handlerInput) {
         let speech = new Speech();
-
-        const responseBuilder = handlerInput.responseBuilder;
-        const slots = handlerInput.requestEnvelope.request.intent.slots;
-
-        const quarter = (slots.quarter.value == "autumn" ? "fall" : slots.quarter.value);
-        const year = slots.year.value;
-        const subject = slots.subjects.value;
-        const number = slots.number.value;
-
-        const instructors = await sections.getInstructors(quarter + year, subject, number);
+        let s = new State(handlerInput.requestEnvelope.request.intent.slots);
+        const instructors = await sections.getInstructors(s.fullQuarter, s.subject, s.number);
 
         speech.say("The instructors for")
-            .say(subject)
-            .say(number)
+            .say(s.subject)
+            .say(s.number)
             .say("in")
-            .say(quarter)
-            .say(year)
+            .say(s.quarter)
+            .say(s.year)
             .say("are")
         instructors.forEach((i) => {
             speech.say(i);
         })
 
-        return responseBuilder.speak(speech.ssml(true))
+        return handlerInput.responseBuilder.speak(speech.ssml(true))
             .getResponse();
     },
 }

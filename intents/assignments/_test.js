@@ -10,5 +10,5 @@ let opts = config.opts;
 conversation(opts)
     .userSays('GetAssignmentsIntent')
     .plainResponse
-        .shouldContain("Molecule")
+        .shouldContain("Test")
     .end();

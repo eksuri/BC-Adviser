@@ -1,4 +1,5 @@
 const Speech = require('ssml-builder');
+const State = require ('../../common/state.js');
 const schema = require('./_schema.json')
 exports.schema = schema
 
@@ -12,7 +13,6 @@ exports.Handler = {
     async handle(handlerInput) {
         let speech = new Speech();
 
-        const responseBuilder = handlerInput.responseBuilder;
         courses = await canvas.getCourseNames();
 
         if (courses != null && courses[0] != null) {
@@ -33,7 +33,7 @@ exports.Handler = {
             speech.say("You are lucky, you have no quizzes!");
         }
 
-        return responseBuilder.speak(speech.ssml(true))
+        return handlerInput.responseBuilder.speak(speech.ssml(true))
             .getResponse();
     },
 }
