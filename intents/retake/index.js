@@ -5,7 +5,7 @@ exports.schema = schema
 
 const courses = require('../../common/ctc/courses');
 
-exports.Handler = {
+exports.Handler = [{
     canHandle(handlerInput) {
         const request = handlerInput.requestEnvelope.request;
         return request.type === 'IntentRequest'
@@ -23,4 +23,4 @@ exports.Handler = {
         return handlerInput.responseBuilder.speak(speech.ssml(true))
             .getResponse();
     },
-}
+}]

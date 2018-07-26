@@ -6,6 +6,8 @@ const config = require('./config.json')
 exports.handler = function (event, context, callback) {
     const alexa = Alexa.handler(event, context, callback);
     alexa.appId = config.opts.appId;
-    intents.handlers.forEach((h) =>  alexa.registerV2Handlers(h)); // New API functions for registering v2 request handlers
+    intents.handlers.forEach((ha) => {
+        ha.forEach((h) => alexa.registerV2Handlers(h))
+    });
     alexa.execute();
 };

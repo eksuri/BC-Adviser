@@ -22,8 +22,7 @@ exports.handlers = [amazon.Handler,
                     schedule.Handler,
                     assignments.Handler,
                     quizzes.Handler,
-                    recommended.inProgress,
-                    recommended.Completed];
+                    recommended.Handler];
 
 exports.schemas = [
     assignments.schema,

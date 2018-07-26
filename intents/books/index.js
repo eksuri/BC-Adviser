@@ -6,7 +6,7 @@ exports.schema = schema
 const sections = require('../../common/ctc/sections');
 const texts = require('../../common/web/texts');
 
-exports.Handler = {
+exports.Handler = [{
     canHandle(handlerInput) {
         const request = handlerInput.requestEnvelope.request;
         return request.type === 'IntentRequest' && request.intent.name === 'BookIntent';
@@ -62,4 +62,4 @@ exports.Handler = {
         return handlerInput.responseBuilder.speak(speech.ssml(true))
             .getResponse();
     },
-}
+}]

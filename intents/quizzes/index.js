@@ -5,7 +5,7 @@ exports.schema = schema
 
 const canvas = require('../../common/canvas/index.js');
 
-exports.Handler = {
+exports.Handler = [{
     canHandle(handlerInput) {
         const request = handlerInput.requestEnvelope.request;
         return request.type === 'IntentRequest'
@@ -27,6 +27,4 @@ exports.Handler = {
         return handlerInput.responseBuilder.speak(speech.ssml(true))
             .getResponse();
     },
-}
-
-
+}]

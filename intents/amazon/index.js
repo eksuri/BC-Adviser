@@ -3,7 +3,7 @@ const State = require ('../../common/state.js');
 const schema = require('./_schema.json')
 exports.schema = schema
 
-exports.Handler = {
+exports.Handler = [{
     canHandle(handlerInput) {
         const request = handlerInput.requestEnvelope.request;
         return request.type === 'IntentRequest'
@@ -24,4 +24,4 @@ exports.Handler = {
         return handlerInput.responseBuilder.speak(speech.ssml(true))
             .getResponse();
     }, 
-}
+}]

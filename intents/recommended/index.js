@@ -5,7 +5,7 @@ exports.schema = schema
 
 const courses = require('../../common/ctc/courses.js');
 
-exports.inProgress = {
+exports.Handler =[ {
     canHandle(handlerInput) {
         const request = handlerInput.requestEnvelope.request;
         return request.type === 'IntentRequest'
@@ -18,10 +18,8 @@ exports.inProgress = {
             .addDelegateDirective(currentIntent)
             .getResponse();
     },
-}
-
-
-exports.Completed = {
+},
+{
     canHandle(handlerInput) {
         const request = handlerInput.requestEnvelope.request;
         return request.type === 'IntentRequest'
@@ -54,5 +52,4 @@ exports.Completed = {
         return handlerInput.responseBuilder.speak(speech.ssml(true))
             .getResponse();
     },
-}
-
+}]
