@@ -31,27 +31,27 @@ exports.Completed = {
         let speech = new Speech();
         const responseBuilder = handlerInput.responseBuilder;
 
-        const CourseAbbrev = handlerInput.requestEnvelope.request.intent.slots.CourseAbbrev.value;
-        const CourseNumber = handlerInput.requestEnvelope.request.intent.slots.CourseNumber.value;
+        const subject = handlerInput.requestEnvelope.request.intent.slots.subject.value;
+        const number = handlerInput.requestEnvelope.request.intent.slots.number.value;
 
         const which = handlerInput.requestEnvelope.request.intent.name === "RecommendedIntent"
 
-        footnote = (which ? await courses.getRecommended(CourseAbbrev, CourseNumber) :
-            await courses.getPrerequisite(CourseAbbrev, CourseNumber));
+        footnote = (which ? await courses.getRecommended(subject, number) :
+            await courses.getPrerequisite(subject, number));
 
         if (footnote) {
             speech.say((which ? "recommended" : "prerequisites"))
                 .say("for")
-                .say(CourseAbbrev)
-                .say(CourseNumber)
+                .say(subject)
+                .say(number)
                 .say("include")
                 .say(footnote)
         } else {
             speech.say("There are no")
                 .say((which ? "recommended" : "prerequisites"))
                 .say("for you to take before")
-                .say(CourseAbbrev)
-                .say(CourseNumber)
+                .say(subject)
+                .say(number)
         }
 
         return responseBuilder.speak(speech.ssml(true))

@@ -16,10 +16,10 @@ exports.Handler = {
         const responseBuilder = handlerInput.responseBuilder;
         const slots = handlerInput.requestEnvelope.request.intent.slots;
 
-        const CourseAbbrev = slots.CourseAbbrev.value;
-        const CourseNumber = slots.CourseNumber.value;
+        const subject = slots.subject.value;
+        const number = slots.number.value;
 
-        const quarters = await courses.getQuartersOffered(CourseAbbrev, CourseNumber);
+        const quarters = await courses.getquartersOffered(subject, number);
 
         speech.say("This class is offered at Bellevue College")
 

@@ -17,16 +17,16 @@ exports.Handler = {
         const slots = handlerInput.requestEnvelope.request.intent.slots;
 
         //Extract the value of the slots
-        const CourseAbbrev = slots.CourseAbbrev.value;
-        const CourseNumber = slots.CourseNumber.value;
-        const quarter = (slots.Quarter.value == "autumn" ?
-            "fall" : slots.Quarter.value);
-        const year = slots.Year.value;
+        const subject = slots.subject.value;
+        const number = slots.number.value;
+        const quarter = (slots.quarter.value == "autumn" ?
+            "fall" : slots.quarter.value);
+        const year = slots.year.value;
 
 
         // format: {Sections: [Times: [MW, 10:30, 12:30], [F, 11:30, 1:30]]}
         // potential format: {mask: [0,1,0,1,1,0], times:[[10:30,12:30],[10:30,12:30],[11:30,1:30]]}
-        const schedule = await sections.getCourseSchedule(quarter + year, CourseAbbrev, CourseNumber);
+        const schedule = await sections.getCourseSchedule(quarter + year, subject, number);
 
 
 
@@ -50,8 +50,8 @@ exports.Handler = {
             }
         });
 
-        speech.say(CourseAbbrev)
-            .say(CourseNumber)
+        speech.say(subject)
+            .say(number)
             .say("is offered")
             .say(scheduleString)
             .pause("2s");

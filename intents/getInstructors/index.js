@@ -16,10 +16,10 @@ exports.Handler = {
         const responseBuilder = handlerInput.responseBuilder;
         const slots = handlerInput.requestEnvelope.request.intent.slots;
 
-        const quarter = (slots.Quarter.value == "autumn" ? "fall" : slots.Quarter.value);
-        const year = slots.Year.value;
-        const subject = slots.Subjects.value;
-        const number = slots.Number.value;
+        const quarter = (slots.quarter.value == "autumn" ? "fall" : slots.quarter.value);
+        const year = slots.year.value;
+        const subject = slots.subjects.value;
+        const number = slots.number.value;
 
         const instructors = await sections.getInstructors(quarter + year, number, subject);
 

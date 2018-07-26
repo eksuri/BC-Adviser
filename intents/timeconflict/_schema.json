@@ -4,35 +4,35 @@
               "name": "TimeConflictIntent",
               "slots": [
                 {
-                    "name": "CourseAbbrevOne",
-                    "type": "LIST_OF_SUBJECTS"
+                    "name": "subjectOne",
+                    "type": "SUBJECT"
                 },
                 {
-                    "name": "CourseNumberOne",
+                    "name": "numberOne",
                     "type": "AMAZON.NUMBER"
                 },
                 {
-                    "name": "CourseAbbrevTwo",
-                    "type": "LIST_OF_SUBJECTS"
+                    "name": "subjectTwo",
+                    "type": "SUBJECT"
                 },
                 {
-                    "name": "CourseNumberTwo",
+                    "name": "numberTwo",
                     "type": "AMAZON.NUMBER"
                 },
                 {
-                    "name": "Quarter",
-                    "type": "LIST_OF_QUARTERS"
+                    "name": "quarter",
+                    "type": "QUARTER"
                 },
                 {
-                    "name": "Year",
+                    "name": "year",
                     "type": "AMAZON.FOUR_DIGIT_NUMBER"
                 }
               ],
               "samples": [
-                  "Can I take {CourseAbbrevOne} {CourseNumberOne} in the same time with {CourseAbbrevTwo} {CourseNumberTwo} in the {Quarter} {Year}",
-                  "if can I take {CourseAbbrevOne} {CourseNumberOne} in the same time with {CourseAbbrevTwo} {CourseNumberTwo} in the {Quarter} {Year}",
-                  "Can I take {CourseAbbrevOne} {CourseNumberOne} in the same time with {CourseAbbrevTwo} {CourseNumberTwo} in {Quarter} {Year}",
-                  "if can I take {CourseAbbrevOne} {CourseNumberOne} in the same time with {CourseAbbrevTwo} {CourseNumberTwo} in {Quarter} {Year}"
+                  "Can I take {subjectOne} {numberOne} in the same time with {subjectTwo} {numberTwo} in the {quarter} {year}",
+                  "if can I take {subjectOne} {numberOne} in the same time with {subjectTwo} {numberTwo} in the {quarter} {year}",
+                  "Can I take {subjectOne} {numberOne} in the same time with {subjectTwo} {numberTwo} in {quarter} {year}",
+                  "if can I take {subjectOne} {numberOne} in the same time with {subjectTwo} {numberTwo} in {quarter} {year}"
               ]
           }
       ]

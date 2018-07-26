@@ -7,11 +7,11 @@
       ],
       "slots": [
         {
-          "name": "CourseAbbrev",
-          "type": "LIST_OF_SUBJECTS"
+          "name": "subject",
+          "type": "SUBJECT"
         },
         {
-          "name": "CourseNumber",
+          "name": "number",
           "type": "AMAZON.NUMBER"
         }
       ]
@@ -23,11 +23,11 @@
       ],
       "slots": [
         {
-          "name": "CourseAbbrev",
-          "type": "LIST_OF_SUBJECTS"
+          "name": "subject",
+          "type": "SUBJECT"
         },
         {
-          "name": "CourseNumber",
+          "name": "number",
           "type": "AMAZON.NUMBER"
         }
       ]
@@ -40,8 +40,8 @@
       "prompts": {},
       "slots": [
         {
-          "name": "CourseAbbrev",
-          "type": "LIST_OF_SUBJECTS",
+          "name": "subject",
+          "type": "SUBJECT",
           "confirmationRequired": false,
           "elicitationRequired": true,
           "prompts": {
@@ -49,7 +49,7 @@
           }
         },
         {
-          "name": "CourseNumber",
+          "name": "number",
           "type": "AMAZON.NUMBER",
           "confirmationRequired": false,
           "elicitationRequired": true,
@@ -63,8 +63,8 @@
       "name": "PrerequisiteIntent",
       "slots": [
         {
-          "name": "CourseAbbrev",
-          "type": "LIST_OF_SUBJECTS",
+          "name": "subject",
+          "type": "SUBJECT",
           "confirmationRequired": false,
           "elicitationRequired": true,
           "prompts": {
@@ -72,7 +72,7 @@
           }
         },
         {
-          "name": "CourseNumber",
+          "name": "number",
           "type": "AMAZON.NUMBER",
           "confirmationRequired": false,
           "elicitationRequired": true,

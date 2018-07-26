@@ -10,7 +10,7 @@ const subjects = require('./common/ctc/subjects.js');
 common_subjects = async () => {
     const data = await subjects.getAllSubjects();
 
-    const name = "LIST_OF_SUBJECTS";
+    const name = "SUBJECT";
     const values = data.Subjects.map((s)=> {
         let v = {};
             v.id = "";
@@ -27,7 +27,7 @@ common_subjects = async () => {
 }
 
 common_quarters = async () => {
-    const name = "LIST_OF_QUARTERS";
+    const name = "QUARTER";
     const quarters = [["Fall", "Autumn"],
                       ["Summer"],
                       ["Spring"],

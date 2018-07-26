@@ -40,27 +40,27 @@
                 {
                     "name": "BookIntent",
                     "samples": [
-                        "what books are required for  {CourseAbbrev} {CourseNumber} item {ItemNumber} in {Quarter} {Year}"
+                        "what books are required for  {subject} {number} item {courseId} in {quarter} {year}"
                     ],
                     "slots": [
                         {
-                            "name": "CourseAbbrev",
-                            "type": "LIST_OF_SUBJECTS"
+                            "name": "subject",
+                            "type": "SUBJECT"
                         },
                         {
-                            "name": "CourseNumber",
+                            "name": "number",
                             "type": "AMAZON.NUMBER"
                         },
                         {
-                            "name": "Quarter",
-                            "type": "LIST_OF_QUARTERS"
+                            "name": "quarter",
+                            "type": "QUARTER"
                         },
                         {
-                            "name": "Year",
+                            "name": "year",
                             "type": "AMAZON.FOUR_DIGIT_NUMBER"
                         },
                         {
-                            "name": "ItemNumber",
+                            "name": "courseId",
                             "type": "AMAZON.FOUR_DIGIT_NUMBER"
                         }
                     ]
@@ -89,22 +89,22 @@
                     "name": "ClassesOfferedIntent",
                     "slots": [
                         {
-                            "name": "Subjects",
-                            "type": "LIST_OF_SUBJECTS"
+                            "name": "subject",
+                            "type": "SUBJECT"
                         },
                         {
-                            "name": "Quarter",
-                            "type": "LIST_OF_QUARTERS"
+                            "name": "quarter",
+                            "type": "QUARTER"
                         },
                         {
-                            "name": "Year",
+                            "name": "year",
                             "type": "AMAZON.FOUR_DIGIT_NUMBER"
                         }
                     ],
                     "samples": [
-                        "what {Subjects} classes are offered {Quarter} {Year}",
-                        "what classes are offered in {Quarter} {Year} for {Subjects}",
-                        "what classes are offered {Quarter} {Year} for {Subjects}"
+                        "what {subject} classes are offered {quarter} {year}",
+                        "what classes are offered in {quarter} {year} for {subject}",
+                        "what classes are offered {quarter} {year} for {subject}"
                     ]
                 },
                 {
@@ -132,7 +132,7 @@
                     "slots": [
                         {
                             "name": "program",
-                            "type": "degreeType"
+                            "type": "DEGREE"
                         }
                     ]
                 },
@@ -260,18 +260,18 @@
                 {
                     "name": "RatingIntent",
                     "samples": [
-                        "what is the rating for {FirstName} {LastName} at rate my professors dot com",
-                        "what is the rating for {FirstName} {LastName} at rate my professor dot com",
-                        "what is the rating for {FirstName} {LastName}"
+                        "what is the rating for {firstName} {lastName} at rate my professors dot com",
+                        "what is the rating for {firstName} {lastName} at rate my professor dot com",
+                        "what is the rating for {firstName} {lastName}"
                     ],
                     "slots": [
                         {
-                            "name": "FirstName",
-                            "type": "LIST_OF_NAMES"
+                            "name": "firstName",
+                            "type": "AMAZON.US_FIRST_NAME"
                         },
                         {
-                            "name": "LastName",
-                            "type": "LIST_OF_NAMES"
+                            "name": "lastName",
+                            "type": "AMAZON.US_FIRST_NAME"
                         }
                     ]
                 },
@@ -282,11 +282,11 @@
                     ],
                     "slots": [
                         {
-                            "name": "CourseAbbrev",
-                            "type": "LIST_OF_SUBJECTS"
+                            "name": "subject",
+                            "type": "SUBJECT"
                         },
                         {
-                            "name": "CourseNumber",
+                            "name": "number",
                             "type": "AMAZON.NUMBER"
                         }
                     ]
@@ -298,11 +298,11 @@
                     ],
                     "slots": [
                         {
-                            "name": "CourseAbbrev",
-                            "type": "LIST_OF_SUBJECTS"
+                            "name": "subject",
+                            "type": "SUBJECT"
                         },
                         {
-                            "name": "CourseNumber",
+                            "name": "number",
                             "type": "AMAZON.NUMBER"
                         }
                     ]
@@ -311,117 +311,117 @@
                     "name": "RetakeClassIntent",
                     "slots": [
                         {
-                            "name": "CourseAbbrev",
-                            "type": "LIST_OF_SUBJECTS"
+                            "name": "subject",
+                            "type": "SUBJECT"
                         },
                         {
-                            "name": "CourseNumber",
+                            "name": "number",
                             "type": "AMAZON.NUMBER"
                         }
                     ],
                     "samples": [
-                        "when can I retake {CourseAbbrev} {CourseNumber}",
-                        "when is offered {CourseAbbrev} {CourseNumber}",
-                        "when can I next take {CourseAbbrev} {CourseNumber}",
-                        "in what quarter is offered {CourseAbbrev} {CourseNumber}",
-                        "in which quarter is offered {CourseAbbrev} {CourseNumber}"
+                        "when can I retake {subject} {number}",
+                        "when is offered {subject} {number}",
+                        "when can I next take {subject} {number}",
+                        "in what quarter is offered {subject} {number}",
+                        "in which quarter is offered {subject} {number}"
                     ]
                 },
                 {
                     "name": "GetInstructorsIntent",
                     "slots": [
                         {
-                            "name": "Subject",
-                            "type": "LIST_OF_SUBJECTS"
+                            "name": "subject",
+                            "type": "SUBJECT"
                         },
                         {
-                            "name": "Number",
+                            "name": "number",
                             "type": "AMAZON.NUMBER"
                         },
                         {
-                            "name": "Quarter",
-                            "type": "LIST_OF_QUARTERS"
+                            "name": "quarter",
+                            "type": "QUARTER"
                         },
                         {
-                            "name": "Year",
+                            "name": "year",
                             "type": "AMAZON.FOUR_DIGIT_NUMBER"
                         }
                     ],
                     "samples": [
-                        "Who is teaching {Subject} {Number} in the {Quarter} {Year} quarter",
-                        "Who is teaching {Subject} {Number} in the {Quarter} {Year}",
-                        "I would like to know who is teaching {Subject} {Number} in the {Quarter} {Year} quarter",
-                        "I would like to know who is teaching {Subject} {Number} in the {Quarter} {Year}",
-                        "I want to know who is teaching {Subject} {Number} in the {Quarter} {Year}",
-                        "I want to know who is teaching {Subject} {Number} in the {Quarter} {Year} quarter"
+                        "Who is teaching {subject} {number} in the {quarter} {year} quarter",
+                        "Who is teaching {subject} {number} in the {quarter} {year}",
+                        "I would like to know who is teaching {subject} {number} in the {quarter} {year} quarter",
+                        "I would like to know who is teaching {subject} {number} in the {quarter} {year}",
+                        "I want to know who is teaching {subject} {number} in the {quarter} {year}",
+                        "I want to know who is teaching {subject} {number} in the {quarter} {year} quarter"
                     ]
                 },
                 {
                     "name": "TimeConflictIntent",
                     "slots": [
                         {
-                            "name": "CourseAbbrevOne",
-                            "type": "LIST_OF_SUBJECTS"
+                            "name": "subjectOne",
+                            "type": "SUBJECT"
                         },
                         {
-                            "name": "CourseNumberOne",
+                            "name": "numberOne",
                             "type": "AMAZON.NUMBER"
                         },
                         {
-                            "name": "CourseAbbrevTwo",
-                            "type": "LIST_OF_SUBJECTS"
+                            "name": "subjectTwo",
+                            "type": "SUBJECT"
                         },
                         {
-                            "name": "CourseNumberTwo",
+                            "name": "numberTwo",
                             "type": "AMAZON.NUMBER"
                         },
                         {
-                            "name": "Quarter",
-                            "type": "LIST_OF_QUARTERS"
+                            "name": "quarter",
+                            "type": "QUARTER"
                         },
                         {
-                            "name": "Year",
+                            "name": "year",
                             "type": "AMAZON.FOUR_DIGIT_NUMBER"
                         }
                     ],
                     "samples": [
-                        "Can I take {CourseAbbrevOne} {CourseNumberOne} in the same time with {CourseAbbrevTwo} {CourseNumberTwo} in the {Quarter} {Year}",
-                        "if can I take {CourseAbbrevOne} {CourseNumberOne} in the same time with {CourseAbbrevTwo} {CourseNumberTwo} in the {Quarter} {Year}",
-                        "Can I take {CourseAbbrevOne} {CourseNumberOne} in the same time with {CourseAbbrevTwo} {CourseNumberTwo} in {Quarter} {Year}",
-                        "if can I take {CourseAbbrevOne} {CourseNumberOne} in the same time with {CourseAbbrevTwo} {CourseNumberTwo} in {Quarter} {Year}"
+                        "Can I take {subjectOne} {numberOne} in the same time with {subjectTwo} {numberTwo} in the {quarter} {year}",
+                        "if can I take {subjectOne} {numberOne} in the same time with {subjectTwo} {numberTwo} in the {quarter} {year}",
+                        "Can I take {subjectOne} {numberOne} in the same time with {subjectTwo} {numberTwo} in {quarter} {year}",
+                        "if can I take {subjectOne} {numberOne} in the same time with {subjectTwo} {numberTwo} in {quarter} {year}"
                     ]
                 },
                 {
                     "name": "ClassScheduleIntent",
                     "slots": [
                         {
-                            "name": "CourseAbbrev",
-                            "type": "LIST_OF_SUBJECTS"
+                            "name": "subject",
+                            "type": "SUBJECT"
                         },
                         {
-                            "name": "CourseNumber",
+                            "name": "number",
                             "type": "AMAZON.NUMBER"
                         },
                         {
-                            "name": "Quarter",
-                            "type": "LIST_OF_QUARTERS"
+                            "name": "quarter",
+                            "type": "QUARTER"
                         },
                         {
-                            "name": "Year",
+                            "name": "year",
                             "type": "AMAZON.FOUR_DIGIT_NUMBER"
                         }
                     ],
                     "samples": [
-                        "what time is offered {CourseAbbrev} {CourseNumber} in the {Quarter} {Year}",
-                        "what time is {CourseAbbrev} {CourseNumber} in the {Quarter} {Year}",
-                        "what time will be {CourseAbbrev} {CourseNumber} in the {Quarter} {Year}",
-                        "What is the schedule for the {CourseAbbrev} {CourseNumber} in the {Quarter} {Year}"
+                        "what time is offered {subject} {number} in the {quarter} {year}",
+                        "what time is {subject} {number} in the {quarter} {year}",
+                        "what time will be {subject} {number} in the {quarter} {year}",
+                        "What is the schedule for the {subject} {number} in the {quarter} {year}"
                     ]
                 }
             ],
             "types": [
                 {
-                    "name": "degreeType",
+                    "name": "DEGREE",
                     "values": [
                         {
                             "id": null,
@@ -475,54 +475,7 @@
                     ]
                 },
                 {
-                    "name": "LIST_OF_NAMES",
-                    "values": [
-                        {
-                            "id": null,
-                            "name": {
-                                "value": "Jen",
-                                "synonyms": []
-                            }
-                        },
-                        {
-                            "id": null,
-                            "name": {
-                                "value": "Townsend",
-                                "synonyms": []
-                            }
-                        },
-                        {
-                            "id": null,
-                            "name": {
-                                "value": "Fatma",
-                                "synonyms": []
-                            }
-                        },
-                        {
-                            "id": null,
-                            "name": {
-                                "value": "Bill",
-                                "synonyms": []
-                            }
-                        },
-                        {
-                            "id": null,
-                            "name": {
-                                "value": "Iverson",
-                                "synonyms": []
-                            }
-                        },
-                        {
-                            "id": null,
-                            "name": {
-                                "value": "Serce",
-                                "synonyms": []
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "LIST_OF_SUBJECTS",
+                    "name": "SUBJECT",
                     "values": [
                         {
                             "id": "",
@@ -1508,7 +1461,7 @@
                     ]
                 },
                 {
-                    "name": "LIST_OF_QUARTERS",
+                    "name": "QUARTER",
                     "values": [
                         {
                             "id": "",
@@ -1549,8 +1502,8 @@
                     "prompts": {},
                     "slots": [
                         {
-                            "name": "CourseAbbrev",
-                            "type": "LIST_OF_SUBJECTS",
+                            "name": "subject",
+                            "type": "SUBJECT",
                             "confirmationRequired": false,
                             "elicitationRequired": true,
                             "prompts": {
@@ -1558,7 +1511,7 @@
                             }
                         },
                         {
-                            "name": "CourseNumber",
+                            "name": "number",
                             "type": "AMAZON.NUMBER",
                             "confirmationRequired": false,
                             "elicitationRequired": true,
@@ -1572,8 +1525,8 @@
                     "name": "PrerequisiteIntent",
                     "slots": [
                         {
-                            "name": "CourseAbbrev",
-                            "type": "LIST_OF_SUBJECTS",
+                            "name": "subject",
+                            "type": "SUBJECT",
                             "confirmationRequired": false,
                             "elicitationRequired": true,
                             "prompts": {
@@ -1581,7 +1534,7 @@
                             }
                         },
                         {
-                            "name": "CourseNumber",
+                            "name": "number",
                             "type": "AMAZON.NUMBER",
                             "confirmationRequired": false,
                             "elicitationRequired": true,

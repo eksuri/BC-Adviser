@@ -25,7 +25,7 @@
             "slots": [
                 {
                     "name": "program",
-                    "type": "degreeType"
+                    "type": "DEGREE"
                 }
             ]
         },
@@ -39,7 +39,7 @@
     ],
     "types": [
         {
-            "name": "degreeType",
+            "name": "DEGREE",
             "values": [
                 {
                     "id": null,

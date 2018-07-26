@@ -17,8 +17,6 @@ exports.Handler = {
 
         const assignmentNames = await assignments.getAllAssignments();
 
-        console.log(assignmentNames);
-
         speech.say("Your assignments for this quarter are: ");
         assignmentNames.forEach((d) => {
             d.forEach((e) => {

@@ -8,7 +8,7 @@ let opts = config.opts;
     opts.handler = app.handler;
 
 conversation(opts)
-    .userSays('GetInstructorsIntent', {"Quarter": "Fall", "Year": "2018", "Subjects": "CS", "Number": "211"})
+    .userSays('GetInstructorsIntent', {"quarter": "Fall", "year": "2018", "subjects": "CS", "number": "211"})
     .plainResponse
         .shouldEqual("The instructors for CS 211 in Fall 2018 are Taesik Kim Taesik Kim James Livingston Craig Niiyama")
     .end();

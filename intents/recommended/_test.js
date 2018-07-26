@@ -8,7 +8,7 @@ let opts = config.opts;
     opts.handler = app.handler;
 
 conversation(opts)
-    .userSays('PrerequisiteIntent', { "CourseAbbrev":"math", "CourseNumber":"078"})
+    .userSays('PrerequisiteIntent', { "subject":"math", "number":"078"})
     .plainResponse
         .shouldEqual("prerequisites for math 078 include completion of MATH 070 with a C or better, MATH 075 with a grade of B or higher, or placement by assessment.")
     .end();

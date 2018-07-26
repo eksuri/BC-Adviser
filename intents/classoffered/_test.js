@@ -8,7 +8,7 @@ let opts = config.opts;
     opts.handler = app.handler;
 
 conversation(opts)
-    .userSays('ClassesOfferedIntent', {"Quarter": "summer", "Year": "2018", "Subjects": "ocea"})
+    .userSays('ClassesOfferedIntent', {"quarter": "summer", "year": "2018", "subjects": "ocea"})
     .plainResponse
         .shouldEqual("The following ocea classes are offered summer 2018 Introduction to Oceanography w/ Lab Environmental Oceanography")
     .end();

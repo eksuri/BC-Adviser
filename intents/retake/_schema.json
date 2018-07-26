@@ -4,20 +4,20 @@
             "name": "RetakeClassIntent",
             "slots": [
                 {
-                    "name": "CourseAbbrev",
-                    "type": "LIST_OF_SUBJECTS"
+                    "name": "subject",
+                    "type": "SUBJECT"
                 },
                 {
-                    "name": "CourseNumber",
+                    "name": "number",
                     "type": "AMAZON.NUMBER"
                 }
             ],
             "samples": [
-                "when can I retake {CourseAbbrev} {CourseNumber}",
-                "when is offered {CourseAbbrev} {CourseNumber}",
-                "when can I next take {CourseAbbrev} {CourseNumber}",
-                "in what quarter is offered {CourseAbbrev} {CourseNumber}",
-                "in which quarter is offered {CourseAbbrev} {CourseNumber}"
+                "when can I retake {subject} {number}",
+                "when is offered {subject} {number}",
+                "when can I next take {subject} {number}",
+                "in what quarter is offered {subject} {number}",
+                "in which quarter is offered {subject} {number}"
             ]
         }
     ]

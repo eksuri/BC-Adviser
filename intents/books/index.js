@@ -17,19 +17,19 @@ exports.Handler = {
         const responseBuilder = handlerInput.responseBuilder;
         const slots = handlerInput.requestEnvelope.request.intent.slots;
 
-        const CourseAbbrev = slots.CourseAbbrev.value;
-        const CourseNumber = slots.CourseNumber.value;
-        const ItemNumber = slots.ItemNumber.value;
+        const subject = slots.subject.value;
+        const number = slots.number.value;
+        const courseId = slots.courseId.value;
 
-        const quarter = (slots.Quarter.value == "autumn" ? "fall" : slots.Quarter.value);
-        const year = slots.Year.value;
+        const quarter = (slots.quarter.value == "autumn" ? "fall" : slots.quarter.value);
+        const year = slots.year.value;
 
 
-        const c = await sections.getCourseSection(quarter + year, CourseAbbrev, CourseNumber, ItemNumber);
+        const c = await sections.getCourseSection(quarter + year, subject, number, courseId);
 
         //http://bellevue.verbacompare.com/comparison?id=F18__ART__101__0650
 
-        let books = await texts.getTexts(c.Yrq.FriendlyName, c.CourseSubject, c.CourseNumber, c.ID.ItemNumber);
+        let books = await texts.getTexts(c.Yrq.FriendlyName, c.CourseSubject, c.number, c.ID.courseId);
         let bookAndAuthor = "";
 
         if (books != null && books[0] != null) {
@@ -47,17 +47,17 @@ exports.Handler = {
 
             if (bookAndAuthor.includes("No Textbook Required")) {
                 speech.say("There are no recommended books for")
-                    .say(CourseAbbrev)
-                    .say(CourseNumber)
+                    .say(subject)
+                    .say(number)
                     .say("item number")
-                    .say(ItemNumber)
+                    .say(courseId)
             }
             else {
                 speech.say("Books required for")
-                    .say(CourseAbbrev)
-                    .say(CourseNumber)
+                    .say(subject)
+                    .say(number)
                     .say("item number")
-                    .say(ItemNumber)
+                    .say(courseId)
                     .say("are")
                     .pause("1s")
                     .say(bookAndAuthor);
@@ -65,10 +65,10 @@ exports.Handler = {
         }
         else {
             speech.say("There are no recommended books for")
-                .say(CourseAbbrev)
-                .say(CourseNumber)
+                .say(subject)
+                .say(number)
                 .say("item number")
-                .say(ItemNumber);
+                .say(courseId);
         }
         return responseBuilder.speak(speech.ssml(true))
             .getResponse();

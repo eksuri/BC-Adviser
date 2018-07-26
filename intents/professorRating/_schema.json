@@ -3,69 +3,20 @@
       {
         "name": "RatingIntent",
         "samples": [
-          "what is the rating for {FirstName} {LastName} at rate my professors dot com",
-          "what is the rating for {FirstName} {LastName} at rate my professor dot com",
-          "what is the rating for {FirstName} {LastName}"
+          "what is the rating for {firstName} {lastName} at rate my professors dot com",
+          "what is the rating for {firstName} {lastName} at rate my professor dot com",
+          "what is the rating for {firstName} {lastName}"
         ],
         "slots": [
           {
-            "name": "FirstName",
-            "type": "LIST_OF_NAMES"
+            "name": "firstName",
+            "type": "AMAZON.US_FIRST_NAME"
         },
         {
-            "name": "LastName",
-            "type": "LIST_OF_NAMES"
+            "name": "lastName",
+            "type": "AMAZON.US_FIRST_NAME"
         }
         ]
       }
-    ],
-    "types": [
-      {
-          "name": "LIST_OF_NAMES",
-          "values": [
-              {
-                  "id": null,
-                  "name": {
-                      "value": "Jen",
-                      "synonyms": []
-                  }
-              },
-              {
-                  "id": null,
-                  "name": {
-                      "value": "Townsend",
-                      "synonyms": []
-                  }
-              },
-              {
-                "id": null,
-                "name": {
-                    "value": "Fatma",
-                    "synonyms": []
-                }
-              },
-              {
-                "id": null,
-                "name": {
-                    "value": "Bill",
-                    "synonyms": []
-                }
-              },
-              {
-                "id": null,
-                "name": {
-                    "value": "Iverson",
-                    "synonyms": []
-                }
-              },
-              {
-                "id": null,
-                "name": {
-                    "value": "Serce",
-                    "synonyms": []
-                }
-              }
-          ]
-      }
-  ]
+    ]
   }

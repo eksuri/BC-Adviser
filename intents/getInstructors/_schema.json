@@ -4,29 +4,29 @@
             "name": "GetInstructorsIntent",
             "slots": [
                 {
-                    "name": "Subject",
-                    "type": "LIST_OF_SUBJECTS"
+                    "name": "subject",
+                    "type": "SUBJECT"
                 },
                 {
-                    "name": "Number",
+                    "name": "number",
                     "type": "AMAZON.NUMBER"
                 },
                 {
-                    "name": "Quarter",
-                    "type": "LIST_OF_QUARTERS"
+                    "name": "quarter",
+                    "type": "QUARTER"
                 },
                 {
-                    "name": "Year",
+                    "name": "year",
                     "type": "AMAZON.FOUR_DIGIT_NUMBER"
                 }
             ],
             "samples": [
-                "Who is teaching {Subject} {Number} in the {Quarter} {Year} quarter",
-                "Who is teaching {Subject} {Number} in the {Quarter} {Year}",
-                "I would like to know who is teaching {Subject} {Number} in the {Quarter} {Year} quarter",
-                "I would like to know who is teaching {Subject} {Number} in the {Quarter} {Year}",
-                "I want to know who is teaching {Subject} {Number} in the {Quarter} {Year}",
-                "I want to know who is teaching {Subject} {Number} in the {Quarter} {Year} quarter"
+                "Who is teaching {subject} {number} in the {quarter} {year} quarter",
+                "Who is teaching {subject} {number} in the {quarter} {year}",
+                "I would like to know who is teaching {subject} {number} in the {quarter} {year} quarter",
+                "I would like to know who is teaching {subject} {number} in the {quarter} {year}",
+                "I want to know who is teaching {subject} {number} in the {quarter} {year}",
+                "I want to know who is teaching {subject} {number} in the {quarter} {year} quarter"
             ]
         }
     ]

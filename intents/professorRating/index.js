@@ -17,23 +17,23 @@ exports.Handler = {
         const responseBuilder = handlerInput.responseBuilder;
         const slots = handlerInput.requestEnvelope.request.intent.slots;
 
-        const FirstName = slots.FirstName.value;
-        const LastName = slots.LastName.value;
+        const firstName = slots.firstName.value;
+        const lastName = slots.lastName.value;
         let speechOutput;
 
-        if (FirstName == "" || FirstName == null || LastName == "" || LastName == null) {
+        if (firstName == "" || firstName == null || lastName == "" || lastName == null) {
             speech.say("You need to provide a full name.");
         } else {
 
-            let rating = await ratings.getRating(FirstName, LastName)
+            let rating = await ratings.getRating(firstName, lastName)
 
             if (rating == null) {
                 speech.say("We couldn't find that professor's rating.");
             }
             else {
                 speech.say("On a scale of 0 to 5, Professor")
-                    .say(FirstName)
-                    .say(LastName)
+                    .say(firstName)
+                    .say(lastName)
                     .say("has an overall rating of")
                     .say(rating[0])
                     .say("and a level of difficulty of")
@@ -41,7 +41,7 @@ exports.Handler = {
                     .pause("1s")
                     .say(rating[1])
                     .say("percent of students would take Professor")
-                    .say(LastName)
+                    .say(lastName)
                     .say("again");
             }
         }

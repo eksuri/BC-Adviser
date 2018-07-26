@@ -31,18 +31,18 @@ The schema for the whole application can be build by running node build_schema.j
                 "name": "IntentName",
                 "slots": [
                     {
-                        "name": "Foods"
-                        "type": "LIST_OF_FOODS
+                        "name": "food"
+                        "type": "FOOD"
                     }
                 ],
                 "samples": [
-                    "how many {Foods}" are avaliable"
+                    "how many {food} are avaliable"
                 ]
             }
         ],
         "types" : [
             {
-                "name": "LIST_OF_FOODS",
+                "name": "FOOD",
                 "values": [
                     {
                         "name": {

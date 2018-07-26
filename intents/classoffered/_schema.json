@@ -4,22 +4,22 @@
             "name": "ClassesOfferedIntent",
             "slots": [
                 {
-                    "name": "Subjects",
-                    "type": "LIST_OF_SUBJECTS"
+                    "name": "subject",
+                    "type": "SUBJECT"
                 },
                 {
-                    "name": "Quarter",
-                    "type": "LIST_OF_QUARTERS"
+                    "name": "quarter",
+                    "type": "QUARTER"
                 },
                 {
-                    "name": "Year",
+                    "name": "year",
                     "type": "AMAZON.FOUR_DIGIT_NUMBER"
                 }
             ],
             "samples": [
-                "what {Subjects} classes are offered {Quarter} {Year}",
-                "what classes are offered in {Quarter} {Year} for {Subjects}",
-                "what classes are offered {Quarter} {Year} for {Subjects}"
+                "what {subject} classes are offered {quarter} {year}",
+                "what classes are offered in {quarter} {year} for {subject}",
+                "what classes are offered {quarter} {year} for {subject}"
             ]
         }
     ]

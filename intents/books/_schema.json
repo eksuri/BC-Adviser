@@ -3,27 +3,27 @@
       {
         "name": "BookIntent",
         "samples": [
-          "what books are required for  {CourseAbbrev} {CourseNumber} item {ItemNumber} in {Quarter} {Year}"
+          "what books are required for  {subject} {number} item {courseId} in {quarter} {year}"
         ],
         "slots": [
           {
-            "name": "CourseAbbrev",
-            "type": "LIST_OF_SUBJECTS"
+            "name": "subject",
+            "type": "SUBJECT"
         },
         {
-            "name": "CourseNumber",
+            "name": "number",
             "type": "AMAZON.NUMBER"
         },
         {
-          "name": "Quarter",
-          "type": "LIST_OF_QUARTERS"
+          "name": "quarter",
+          "type": "QUARTER"
         },
         {
-          "name": "Year",
+          "name": "year",
           "type": "AMAZON.FOUR_DIGIT_NUMBER"
         },
         {
-            "name": "ItemNumber",
+            "name": "courseId",
             "type": "AMAZON.FOUR_DIGIT_NUMBER"
         }
         ]

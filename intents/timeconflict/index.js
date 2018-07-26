@@ -17,16 +17,16 @@ exports.Handler = {
         const slots = handlerInput.requestEnvelope.request.intent.slots;
 
         //Extract the value of the slots
-        const CourseAbbrevOne = slots.CourseAbbrevOne.value;
-        const CourseNumberOne = slots.CourseNumberOne.value;
-        const CourseAbbrevTwo = slots.CourseAbbrevTwo.value;
-        const CourseNumberTwo = slots.CourseNumberTwo.value;
-        const quarter = (slots.Quarter.value == "autumn" ? "fall" : slots.Quarter.value);
-        const year = slots.Year.value;
+        const subjectOne = slots.subjectOne.value;
+        const numberOne = slots.numberOne.value;
+        const subjectTwo = slots.subjectTwo.value;
+        const numberTwo = slots.numberTwo.value;
+        const quarter = (slots.quarter.value == "autumn" ? "fall" : slots.quarter.value);
+        const year = slots.year.value;
 
         // format: {Sections: [Times: [MW, 10:30, 12:30], [F, 11:30, 1:30]]}
-        const scheduleOne = await sections.getCourseSchedule(quarter + year, CourseAbbrevOne, CourseNumberOne);
-        const scheduleTwo = await sections.getCourseSchedule(quarter + year, CourseAbbrevTwo, CourseNumberTwo);
+        const scheduleOne = await sections.getCourseSchedule(quarter + year, subjectOne, numberOne);
+        const scheduleTwo = await sections.getCourseSchedule(quarter + year, subjectTwo, numberTwo);
 
         // update times object before fully implementing
 
@@ -41,11 +41,11 @@ exports.Handler = {
         speech.say("You")
             .say(no_conflict ? "can" : "cannot")
             .say("take both")
-            .say(CourseAbbrevOne)
-            .say(CourseNumberOne)
+            .say(subjectOne)
+            .say(numberOne)
             .say("and")
-            .say(CourseAbbrevTwo)
-            .say(CourseNumberTwo)
+            .say(subjectTwo)
+            .say(numberTwo)
             .say(quarter)
             .say(year)
 
