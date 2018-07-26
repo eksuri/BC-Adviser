@@ -35,7 +35,7 @@ exports.Handler =[ {
                             await courses.getPrerequisite(s.subject, s.number));
 
         if (footnote) {
-            speech.say((which ? "recommended" : "prerequisites"))
+            speech.say((which ? "recommendations" : "prerequisites"))
                 .say("for")
                 .say(s.subject)
                 .say(s.number)
@@ -43,7 +43,7 @@ exports.Handler =[ {
                 .say(footnote)
         } else {
             speech.say("There are no")
-                .say((which ? "recommended" : "prerequisites"))
+                .say((which ? "recommendations" : "prerequisites"))
                 .say("for you to take before")
                 .say(s.subject)
                 .say(s.number)
