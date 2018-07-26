@@ -1,4 +1,5 @@
 const Speech = require('ssml-builder');
+const State = require ('../../common/state.js');
 const schema = require('./_schema.json')
 exports.schema = schema
 
@@ -29,6 +30,21 @@ exports.Handler =[ {
     async handle(handlerInput) {
         let speech = new Speech();
         let s = new State(handlerInput.requestEnvelope.request.intent.slots);
+
+        // take note of how we get the fullQuarter, subject, and number from the object 's'
+        const instructors = await sections.getInstructors(s.fullQuarter, s.subject, s.number);
+
+        // instructors should be an array of full instructor names as strings.
+        // for each instructor in the array, call ratings.getRating(Firstname, Lastname);
+        // split the strings based off of the first space to get the first and last name,
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+
+
+
+        // then compare all the responses to figure out who is the highest rated professor and return that
+        
+        //have some responses if there are no instructors, or none with ratings, or other edge cases.
+
 
 
         /*
