@@ -21,12 +21,79 @@
                 }
             ],
             "samples": [
-                "Who is teaching {subject} {number} in the {quarter} {year} quarter",
-                "Who is teaching {subject} {number} in the {quarter} {year}",
-                "I would like to know who is teaching {subject} {number} in the {quarter} {year} quarter",
-                "I would like to know who is teaching {subject} {number} in the {quarter} {year}",
-                "I want to know who is teaching {subject} {number} in the {quarter} {year}",
-                "I want to know who is teaching {subject} {number} in the {quarter} {year} quarter"
+                "who is teaching {subject} {number} in the {quarter} {year} quarter",
+                "who is teaching {subject} {number} in the {quarter} {year}",
+                "i would like to know who is teaching {subject} {number} in the {quarter} {year} quarter",
+                "i would like to know who is teaching {subject} {number} in the {quarter} {year}",
+                "i want to know who is teaching {subject} {number} in the {quarter} {year}",
+                "i want to know who is teaching {subject} {number} in the {quarter} {year} quarter",
+                "who is teaching",
+                "who is teaching a class",
+                "who is teaching a course",
+                "who is teaching {subject}",
+                "who is teaching {subject} {number}",
+                "who is teaching {subject} {quarter}",
+                "who is teaching {subject} {quarter} {year}",
+                "who is teaching {subject} {number} {year}",
+                "who is teaching {subject} {number} in {quarter} {year} quarter",
+                "who is teaching {subject} {number} in {quarter} {year}",
+                "i would like to know who is teaching {subject} {number} in {quarter} {year}",
+                "i would like to know who is teaching {subject} {number} in {quarter} {year}",
+                "i want to know who is teaching {subject} {number} in {quarter} {year}",
+                "i want to know who is teaching {subject} {number} in {quarter} {year}",
+                "who is teaching {subject} {number} {quarter} {year} quarter",
+                "who is teaching {subject} {number} {quarter} {year}",
+                "i would like to know who is teaching {subject} {number} {quarter} {year}",
+                "i would like to know who is teaching {subject} {number} {quarter} {year}",
+                "i want to know who is teaching {subject} {number} {quarter} {year}",
+                "i want to know who is teaching {subject} {number} {quarter} {year}",
+                "who is teaching {subject} {quarter} quarter",
+                "who is teaching {subject} {quarter} quarter {year}"
+            ]
+        }
+    ],
+    "dialogs": [
+        {
+            "name": "GetInstructorsIntent",
+            "confirmationRequired": false,
+            "prompts": {},
+            "slots": [
+                {
+                    "name": "subject",
+                    "type": "SUBJECT",
+                    "confirmationRequired": false,
+                    "elicitationRequired": true,
+                    "prompts": {
+                        "elicitation": "subject_elication"
+                    }
+                },
+                {
+                    "name": "number",
+                    "type": "AMAZON.NUMBER",
+                    "confirmationRequired": false,
+                    "elicitationRequired": true,
+                    "prompts": {
+                        "elicitation": "number_elication"
+                    }
+                },
+                {
+                    "name": "quarter",
+                    "type": "QUARTER",
+                    "confirmationRequired": false,
+                    "elicitationRequired": true,
+                    "prompts": {
+                        "elicitation": "quarter_elication"
+                    }
+                },
+                {
+                    "name": "year",
+                    "type": "AMAZON.FOUR_DIGIT_NUMBER",
+                    "confirmationRequired": false,
+                    "elicitationRequired": true,
+                    "prompts": {
+                        "elicitation": "year_elication"
+                    }
+                }
             ]
         }
     ]

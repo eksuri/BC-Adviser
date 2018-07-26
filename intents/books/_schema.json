@@ -3,7 +3,36 @@
       {
         "name": "BookIntent",
         "samples": [
-          "what books are required for  {subject} {number} item {courseId} in {quarter} {year}"
+          "what are my books",
+          "what books do I need",
+          "what books do I need for my classes",
+          "what books do I need for my courses",
+          "what are my books",
+          "get my books",
+          "tell me my books",
+          "tell me what books I need",
+          "please list my books",
+          "list my books",
+          "what books are required",
+          "please list my books for {subject}",
+          "what are my books for {subject}",
+          "what books are required for {subject}",
+          "what books do I need for {subject}",
+          "what are my books for {subject}",
+          "tell me my books for {subject}",
+          "list my books for {subject}",
+          "get my books for {subject}",
+          "get my books for {subject} {number}",
+          "tell me what books I need for {subject}",
+          "please list my books for {subject} {number}",
+          "what are my books for {subject} {number}",
+          "what books are required for {subject} {number}",
+          "what books do I need for {subject} {number}",
+          "what are my books for {subject} {number}",
+          "tell me my books for {subject} {number}",
+          "list my books for {subject} {number}",
+          "tell me what books I need for {subject} {number}",
+          "what books are required for {subject} {number} item {courseId} in {quarter} {year}"      
         ],
         "slots": [
           {
@@ -26,6 +55,60 @@
             "name": "courseId",
             "type": "AMAZON.FOUR_DIGIT_NUMBER"
         }
+        ]
+      }
+    ],
+    "dialogs": [
+      {
+        "name": "BookIntent",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "subject",
+            "type": "SUBJECT",
+            "confirmationRequired": false,
+            "elicitationRequired": true,
+            "prompts": {
+              "elicitation": "subject_elication"
+            }
+          },
+          {
+            "name": "number",
+            "type": "AMAZON.NUMBER",
+            "confirmationRequired": false,
+            "elicitationRequired": true,
+            "prompts": {
+              "elicitation": "number_elication"
+            }
+          },
+          {
+            "name": "quarter",
+            "type": "QUARTER",
+            "confirmationRequired": false,
+            "elicitationRequired": true,
+            "prompts": {
+              "elicitation": "quarter_elication"
+            }
+          },
+          {
+            "name": "year",
+            "type": "AMAZON.FOUR_DIGIT_NUMBER",
+            "confirmationRequired": false,
+            "elicitationRequired": true,
+            "prompts": {
+              "elicitation": "year_elication"
+            }
+          },
+          {
+            "name": "courseId",
+            "type": "AMAZON.FOUR_DIGIT_NUMBER",
+            "confirmationRequired": false,
+            "elicitationRequired": true,
+            "prompts": {
+              "elicitation": "id_elication"
+            }
+          }
         ]
       }
     ]

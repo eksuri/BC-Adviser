@@ -21,11 +21,98 @@
                 }
               ],
               "samples": [
-                  "what time is offered {subject} {number} in the {quarter} {year}",
-                  "what time is {subject} {number} in the {quarter} {year}",
-                  "what time will be {subject} {number} in the {quarter} {year}",
-                  "What is the schedule for the {subject} {number} in the {quarter} {year}"
+                "i want to know when I can take a class",
+                "i want to know when can I take a class",
+                "when can I take a class",
+                "when is a class offered",
+                "what time is offered {subject} {number} in the {quarter} {year}",
+                "what time is {subject} {number} in the {quarter} {year}",
+                "what time will be {subject} {number} in the {quarter} {year}",
+                "what is the schedule for the {subject} {number} in the {quarter} {year}",
+                "what time is {subject} {number} offered in the {quarter} {year}",
+                "what time is {subject} {number} offered in {quarter} {year}",
+                "i want to know what time a class is offered",
+                "i want to know when a class is offered",
+                "when is {subject} offered",
+                "when is {subject} offered in {quarter}",
+                "when is offered {subject} {number} in the {quarter} {year}",
+                "when is {subject} {number} in the {quarter} {year}",
+                "when will be {subject} {number} in the {quarter} {year}",
+                "when is the schedule for the {subject} {number} in the {quarter} {year}",
+                "when is {subject} {number} offered in the {quarter} {year}",
+                "when is {subject} {number} offered in {quarter} {year}",
+                "i want to know what time a class is offered",
+                "i want to know when a class is offered",
+                "when is {subject} offered",
+                "when is {subject} offered in {quarter}",
+                "what time is offered {subject} {number} in the {quarter} quarter {year}",
+                "what time is {subject} {number} in the {quarter} quarter {year}",
+                "what time will be {subject} {number} in the {quarter} winter {year}",
+                "what is the schedule for the {subject} {number} in the {quarter}  quarter {year}",
+                "what time is {subject} {number} offered in the {quarter} quarter {year}",
+                "what time is {subject} {number} offered in {quarter} quarter {year}",
+                "when is {subject} offered in {quarter} quarter",
+                "when is offered {subject} {number} in the {quarter} quarter {year}",
+                "when is {subject} {number} in the {quarter} quarter {year}",
+                "when will be {subject} {number} in the {quarter} quarter {year}",
+                "when is the schedule for the {subject} {number} in the {quarter} quarter {year}",
+                "when is {subject} {number} offered in the {quarter} quarter {year}",
+                "when is {subject} {number} offered in {quarter} quarter {year}",
+                "when is {subject} offered in {quarter} quarter",
+                "i want to know when I can take a course",
+                "i want to know when can I take a course",
+                "when can I take a course",
+                "when is a course offered",
+                "i want to know what time a course is offered",
+                "i want to know when a course is offered",
+                "i want to know what time a course is offered",
+                "i want to know when a course is offered"
               ]
           }
+      ],
+      "dialogs": [
+        {
+          "name": "ClassScheduleIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "subject",
+              "type": "SUBJECT",
+              "confirmationRequired": false,
+              "elicitationRequired": true,
+              "prompts": {
+                "elicitation": "subject_elication"
+              }
+            },
+            {
+              "name": "number",
+              "type": "AMAZON.NUMBER",
+              "confirmationRequired": false,
+              "elicitationRequired": true,
+              "prompts": {
+                "elicitation": "number_elication"
+              }
+            },
+            {
+              "name": "quarter",
+              "type": "QUARTER",
+              "confirmationRequired": false,
+              "elicitationRequired": true,
+              "prompts": {
+                "elicitation": "quarter_elication"
+              }
+            },
+            {
+              "name": "year",
+              "type": "AMAZON.FOUR_DIGIT_NUMBER",
+              "confirmationRequired": false,
+              "elicitationRequired": true,
+              "prompts": {
+                "elicitation": "year_elication"
+              }
+            }
+          ]
+        }
       ]
 }

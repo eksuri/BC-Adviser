@@ -40,7 +40,36 @@
                 {
                     "name": "BookIntent",
                     "samples": [
-                        "what books are required for  {subject} {number} item {courseId} in {quarter} {year}"
+                        "what are my books",
+                        "what books do I need",
+                        "what books do I need for my classes",
+                        "what books do I need for my courses",
+                        "what are my books",
+                        "get my books",
+                        "tell me my books",
+                        "tell me what books I need",
+                        "please list my books",
+                        "list my books",
+                        "what books are required",
+                        "please list my books for {subject}",
+                        "what are my books for {subject}",
+                        "what books are required for {subject}",
+                        "what books do I need for {subject}",
+                        "what are my books for {subject}",
+                        "tell me my books for {subject}",
+                        "list my books for {subject}",
+                        "get my books for {subject}",
+                        "get my books for {subject} {number}",
+                        "tell me what books I need for {subject}",
+                        "please list my books for {subject} {number}",
+                        "what are my books for {subject} {number}",
+                        "what books are required for {subject} {number}",
+                        "what books do I need for {subject} {number}",
+                        "what are my books for {subject} {number}",
+                        "tell me my books for {subject} {number}",
+                        "list my books for {subject} {number}",
+                        "tell me what books I need for {subject} {number}",
+                        "what books are required for {subject} {number} item {courseId} in {quarter} {year}"
                     ],
                     "slots": [
                         {
@@ -104,44 +133,35 @@
                     "samples": [
                         "what {subject} classes are offered {quarter} {year}",
                         "what classes are offered in {quarter} {year} for {subject}",
-                        "what classes are offered {quarter} {year} for {subject}"
+                        "what classes are offered {quarter} {year} for {subject}",
+                        "what {subject} classes are offered",
+                        "what classes are offered",
+                        "what {subject} classes are offered {quarter}",
+                        "what classes are offered {quarter}",
+                        "what {subject} classes are offered {year}",
+                        "what classes are offered {year}",
+                        "what {subject} classes are offered {quarter} quarter",
+                        "what classes are offered {quarter} quarter",
+                        "what {subject} classes are offered in {year}",
+                        "what classes are offered in {year}",
+                        "what classes are offered in {quarter} {year}",
+                        "what classes are offered {quarter} {year}",
+                        "what {subject} courses are offered {quarter} {year}",
+                        "what courses are offered in {quarter} {year} for {subject}",
+                        "what courses are offered {quarter} {year} for {subject}",
+                        "what {subject} courses are offered",
+                        "what courses are offered",
+                        "what {subject} courses are offered {quarter}",
+                        "what courses are offered {quarter}",
+                        "what {subject} courses are offered {year}",
+                        "what courses are offered {year}",
+                        "what {subject} courses are offered {quarter} quarter",
+                        "what courses are offered {quarter} quarter",
+                        "what {subject} courses are offered in {year}",
+                        "what courses are offered in {year}",
+                        "what courses are offered in {quarter} {year}",
+                        "what courses are offered {quarter} {year}"
                     ]
-                },
-                {
-                    "name": "BellevueDegrees",
-                    "samples": [
-                        "{program}",
-                        "{program} degrees",
-                        "{program} please",
-                        "{program} degrees please",
-                        "list {program}",
-                        "list {program} degrees",
-                        "tell me about {program}",
-                        "tell me about {program} degrees",
-                        "I would like more information on {program}",
-                        "I would like more information on {program} degrees",
-                        "I would like to know about {program}",
-                        "I would like to know about {program} degrees",
-                        "please tell me about {program}",
-                        "please tell me about {program} degrees",
-                        "please give me more information on {program}",
-                        "please give me more information on {program} degrees",
-                        "please tell me more about {program}",
-                        "please tell me more about {program} degrees"
-                    ],
-                    "slots": [
-                        {
-                            "name": "program",
-                            "type": "DEGREE"
-                        }
-                    ]
-                },
-                {
-                    "name": "LaunchRequest",
-                    "samples": [
-                        "open college advisor"
-                    ],
-                    "slots": []
                 },
                 {
                     "name": "GetFinalsInfoIntent",
@@ -258,27 +278,53 @@
                     ]
                 },
                 {
-                    "name": "RatingIntent",
-                    "samples": [
-                        "what is the rating for {firstName} {lastName} at rate my professors dot com",
-                        "what is the rating for {firstName} {lastName} at rate my professor dot com",
-                        "what is the rating for {firstName} {lastName}"
-                    ],
-                    "slots": [
-                        {
-                            "name": "firstName",
-                            "type": "AMAZON.US_FIRST_NAME"
-                        },
-                        {
-                            "name": "lastName",
-                            "type": "AMAZON.US_FIRST_NAME"
-                        }
-                    ]
-                },
-                {
                     "name": "RecommendedIntent",
                     "samples": [
-                        "What classes are recommended before my class"
+                        "what classes are recommended before my class",
+                        "what classes are recommended before I take {subject} {number}",
+                        "what class is recommended before my class",
+                        "what class is recommended before taking {subject} {number}",
+                        "what classes are recommended before taking {subject} {number}",
+                        "what classes are recommended before {subject} {number}",
+                        "what class is recommended before taking my class",
+                        "what class is recommended before I take {subject} {number}",
+                        "what class is recommended before  taking {subject} {number}",
+                        "what is recommended before my class",
+                        "what is recommended before I take my class",
+                        "what is recommended before I take {subject} {number}",
+                        "what is recommended before taking my class",
+                        "what is recommended before {subject} {number}",
+                        "what is recommended before taking {subject} {number}",
+                        "what class do you recommend before my class",
+                        "what classes do you recommend before taking my class",
+                        "what is recommended before taking my class",
+                        "are there any recommended classes before my class",
+                        "are there any recommended classes before taking my class",
+                        "are there any classes that are recommended before my class",
+                        "are there any classes that are recommended before taking my class",
+                        "i want to know recommendations before taking a class",
+                        "i want to know what is recommended before taking a class",
+                        "what courses are recommended before my course",
+                        "what courses are recommended before I take {subject} {number}",
+                        "what course is recommended before my course",
+                        "what course is recommended before taking {subject} {number}",
+                        "what courses are recommended before taking {subject} {number}",
+                        "what courses are recommended before {subject} {number}",
+                        "what course is recommended before taking my course",
+                        "what course is recommended before I take {subject} {number}",
+                        "what course is recommended before  taking {subject} {number}",
+                        "what is recommended before my course",
+                        "what is recommended before I take my course",
+                        "what is recommended before taking my course",
+                        "what course do you recommend before my course",
+                        "what courses do you recommend before taking my course",
+                        "what is recommended before taking my course",
+                        "are there any recommended courses before my course",
+                        "are there any recommended courses before taking my course",
+                        "are there any courses that are recommended before my course",
+                        "are there any courses that are recommended before taking my course",
+                        "i want to know recommendations before taking a course",
+                        "i want to know what is recommended before taking a course"
                     ],
                     "slots": [
                         {
@@ -294,7 +340,114 @@
                 {
                     "name": "PrerequisiteIntent",
                     "samples": [
-                        "Are there any prerequisites before my class"
+                        "are there any prerequisites before my class",
+                        "are there prerequisites before my class",
+                        "is there a prerequisite before my class",
+                        "what is a prerequisite before my class",
+                        "what prerequisites are there before my class",
+                        "what are prerequisites before taking my class",
+                        "what prerequisites are there before taking my class",
+                        "i want to know the prerequisites before a class",
+                        "tell me the prerequisites before a class",
+                        "list the prerequisites before class",
+                        "prerequisites",
+                        "prerequisites before class",
+                        "tell me the prerequisites before {subject} {number}",
+                        "list the prerequisites before {subject} {number}",
+                        "prerequisites",
+                        "prerequisites before {subject} {number}",
+                        "are there any prerequisites before {subject} {number}",
+                        "are there prerequisites before {subject} {number}",
+                        "is there a prerequisite before {subject} {number}",
+                        "what is a prerequisite before {subject} {number}",
+                        "what prerequisites are there before {subject} {number}",
+                        "what are prerequisites before taking {subject} {number}",
+                        "what prerequisites are there before taking {subject} {number}",
+                        "are there any prerequisites for my class",
+                        "are there prerequisites for my class",
+                        "are there any prerequisites before my course",
+                        "are there prerequisites before my course",
+                        "is there a prerequisite before my course",
+                        "what is a prerequisite before my course",
+                        "what prerequisites are there before my course",
+                        "what are prerequisites before taking my course",
+                        "what prerequisites are there before taking my course",
+                        "i want to know the prerequisites before a course",
+                        "tell me the prerequisites before a course",
+                        "list the prerequisites before course",
+                        "prerequisites before course",
+                        "are there any prerequisites for my course",
+                        "are there prerequisites for my course",
+                        "is there a prerequisite for my course",
+                        "what is a prerequisite for my course",
+                        "what prerequisites are there for my course",
+                        "what are prerequisites before taking my course",
+                        "what are the prerequisites before taking my course",
+                        "what are the prerequisites for my course",
+                        "what are the prerequisites for my course",
+                        "what prerequisites are there before taking my course",
+                        "i want to know the prerequisites for a course",
+                        "tell me the prerequisites for a course",
+                        "list the prerequisites for course",
+                        "prerequisites for a course",
+                        "are there any prerequisites before taking my course",
+                        "are there prerequisites before taking my course",
+                        "is there a prerequisite before taking my course",
+                        "what is a prerequisite before taking my course",
+                        "what prerequisites are there before taking my course",
+                        "what are prerequisites before taking my course",
+                        "what prerequisites are there before taking my course",
+                        "i want to know the prerequisites before taking a course",
+                        "tell me the prerequisites before taking a course",
+                        "list the prerequisites before taking a course",
+                        "prerequisites before taking  a course",
+                        "is there a prerequisite for my class",
+                        "what is a prerequisite for my class",
+                        "what prerequisites are there for my class",
+                        "what are prerequisites before taking my class",
+                        "what are the prerequisites before taking my class",
+                        "what are the prerequisites for my class",
+                        "what are the prerequisites for my class",
+                        "what are the prerequisites for {subject} {number}",
+                        "what are prerequisites for {subject} {number}",
+                        "what prerequisites are there before taking my class",
+                        "i want to know the prerequisites for a class",
+                        "tell me the prerequisites for a class",
+                        "list the prerequisites for class",
+                        "prerequisites for a class",
+                        "tell me the prerequisites for {subject} {number}",
+                        "list the prerequisites for {subject} {number}",
+                        "prerequisites",
+                        "prerequisites for {subject} {number}",
+                        "are there any prerequisites for {subject} {number}",
+                        "are there prerequisites for {subject} {number}",
+                        "is there a prerequisite for {subject} {number}",
+                        "what is a prerequisite for {subject} {number}",
+                        "what prerequisites are there for {subject} {number}",
+                        "what are prerequisites before taking {subject} {number}",
+                        "what prerequisites are there before taking {subject} {number}",
+                        "are there any prerequisites before taking my class",
+                        "are there prerequisites before taking my class",
+                        "is there a prerequisite before taking my class",
+                        "what is a prerequisite before taking my class",
+                        "what prerequisites are there before taking my class",
+                        "what are prerequisites before taking my class",
+                        "what prerequisites are there before taking my class",
+                        "i want to know the prerequisites before taking a class",
+                        "tell me the prerequisites before taking a class",
+                        "list the prerequisites before taking a class",
+                        "prerequisites before taking  a class",
+                        "tell me the prerequisites before taking {subject} {number}",
+                        "list the prerequisites before taking {subject} {number}",
+                        "prerequisites",
+                        "prerequisites before taking {subject} {number}",
+                        "are there any prerequisites before taking {subject} {number}",
+                        "are there prerequisites before taking {subject} {number}",
+                        "is there a prerequisite before taking {subject} {number}",
+                        "what is a prerequisite before taking {subject} {number}",
+                        "what prerequisites are there before taking {subject} {number}",
+                        "what are prerequisites before taking taking {subject} {number}",
+                        "what prerequisites are there before taking {subject} {number}"
                     ],
                     "slots": [
                         {
@@ -324,7 +477,52 @@
                         "when is offered {subject} {number}",
                         "when can I next take {subject} {number}",
                         "in what quarter is offered {subject} {number}",
-                        "in which quarter is offered {subject} {number}"
+                        "in which quarter is offered {subject} {number}",
+                        "in what quarter is offered {subject} {number} offered",
+                        "in which quarter is {subject} {number} offered",
+                        "when is {subject} {number} offered",
+                        "when is {subject} {number} offered again",
+                        "when can I retake {subject} {number} again",
+                        "i want to retake {subject} {number}",
+                        "i want to retake {subject} {number} again",
+                        "i want to retake a class",
+                        "when can I retake a class",
+                        "i want to know when I can retake a class",
+                        "i want to know when can I retake a class",
+                        "when can I retake {subject} {number} again",
+                        "when is offered {subject} {number} again",
+                        "when can I next take {subject} {number} again",
+                        "in what quarter is offered {subject} {number} again",
+                        "in which quarter is offered {subject} {number} again",
+                        "in what quarter is offered {subject} {number} offered",
+                        "when can I retake {subject}",
+                        "when is offered {subject}",
+                        "when can I next take {subject}",
+                        "in what quarter is offered {subject}",
+                        "in which quarter is offered {subject}",
+                        "in what quarter is offered {subject} offered",
+                        "in which quarter is {subject} offered",
+                        "when is {subject} offered",
+                        "when is {subject} offered again",
+                        "when can I retake {subject} again",
+                        "i want to retake {subject}",
+                        "i want to retake {subject} again",
+                        "i want to retake a class",
+                        "when can I retake a class",
+                        "i want to know when I can retake a class",
+                        "i want to know when can I retake a class",
+                        "when can I retake {subject} again",
+                        "when is offered {subject} again",
+                        "when can I next take {subject} again",
+                        "in what quarter is offered {subject} again",
+                        "in which quarter is offered {subject} again",
+                        "in what quarter is offered {subject} offered",
+                        "in which quarter is {subject} offered",
+                        "i want to retake a course",
+                        "when can I retake a course",
+                        "i want to know when I can retake a course",
+                        "i want to know when can I retake a course",
+                        "i want to retake a course"
                     ]
                 },
                 {
@@ -348,47 +546,34 @@
                         }
                     ],
                     "samples": [
-                        "Who is teaching {subject} {number} in the {quarter} {year} quarter",
-                        "Who is teaching {subject} {number} in the {quarter} {year}",
-                        "I would like to know who is teaching {subject} {number} in the {quarter} {year} quarter",
-                        "I would like to know who is teaching {subject} {number} in the {quarter} {year}",
-                        "I want to know who is teaching {subject} {number} in the {quarter} {year}",
-                        "I want to know who is teaching {subject} {number} in the {quarter} {year} quarter"
-                    ]
-                },
-                {
-                    "name": "TimeConflictIntent",
-                    "slots": [
-                        {
-                            "name": "subjectOne",
-                            "type": "SUBJECT"
-                        },
-                        {
-                            "name": "numberOne",
-                            "type": "AMAZON.NUMBER"
-                        },
-                        {
-                            "name": "subjectTwo",
-                            "type": "SUBJECT"
-                        },
-                        {
-                            "name": "numberTwo",
-                            "type": "AMAZON.NUMBER"
-                        },
-                        {
-                            "name": "quarter",
-                            "type": "QUARTER"
-                        },
-                        {
-                            "name": "year",
-                            "type": "AMAZON.FOUR_DIGIT_NUMBER"
-                        }
-                    ],
-                    "samples": [
-                        "Can I take {subjectOne} {numberOne} in the same time with {subjectTwo} {numberTwo} in the {quarter} {year}",
-                        "if can I take {subjectOne} {numberOne} in the same time with {subjectTwo} {numberTwo} in the {quarter} {year}",
-                        "Can I take {subjectOne} {numberOne} in the same time with {subjectTwo} {numberTwo} in {quarter} {year}",
-                        "if can I take {subjectOne} {numberOne} in the same time with {subjectTwo} {numberTwo} in {quarter} {year}"
+                        "who is teaching {subject} {number} in the {quarter} {year} quarter",
+                        "who is teaching {subject} {number} in the {quarter} {year}",
+                        "i would like to know who is teaching {subject} {number} in the {quarter} {year} quarter",
+                        "i would like to know who is teaching {subject} {number} in the {quarter} {year}",
+                        "i want to know who is teaching {subject} {number} in the {quarter} {year}",
+                        "i want to know who is teaching {subject} {number} in the {quarter} {year} quarter",
+                        "who is teaching",
+                        "who is teaching a class",
+                        "who is teaching a course",
+                        "who is teaching {subject}",
+                        "who is teaching {subject} {number}",
+                        "who is teaching {subject} {quarter}",
+                        "who is teaching {subject} {quarter} {year}",
+                        "who is teaching {subject} {number} {year}",
+                        "who is teaching {subject} {number} in {quarter} {year} quarter",
+                        "who is teaching {subject} {number} in {quarter} {year}",
+                        "i would like to know who is teaching {subject} {number} in {quarter} {year}",
+                        "i would like to know who is teaching {subject} {number} in {quarter} {year}",
+                        "i want to know who is teaching {subject} {number} in {quarter} {year}",
+                        "i want to know who is teaching {subject} {number} in {quarter} {year}",
+                        "who is teaching {subject} {number} {quarter} {year} quarter",
+                        "who is teaching {subject} {number} {quarter} {year}",
+                        "i would like to know who is teaching {subject} {number} {quarter} {year}",
+                        "i would like to know who is teaching {subject} {number} {quarter} {year}",
+                        "i want to know who is teaching {subject} {number} {quarter} {year}",
+                        "i want to know who is teaching {subject} {number} {quarter} {year}",
+                        "who is teaching {subject} {quarter} quarter",
+                        "who is teaching {subject} {quarter} quarter {year}"
                     ]
                 },
                 {
@@ -412,68 +597,66 @@
                         }
                     ],
                     "samples": [
+                        "i want to know when I can take a class",
+                        "i want to know when can I take a class",
+                        "when can I take a class",
+                        "when is a class offered",
                         "what time is offered {subject} {number} in the {quarter} {year}",
                         "what time is {subject} {number} in the {quarter} {year}",
                         "what time will be {subject} {number} in the {quarter} {year}",
-                        "What is the schedule for the {subject} {number} in the {quarter} {year}"
+                        "what is the schedule for the {subject} {number} in the {quarter} {year}",
+                        "what time is {subject} {number} offered in the {quarter} {year}",
+                        "what time is {subject} {number} offered in {quarter} {year}",
+                        "i want to know what time a class is offered",
+                        "i want to know when a class is offered",
+                        "when is {subject} offered",
+                        "when is {subject} offered in {quarter}",
+                        "when is offered {subject} {number} in the {quarter} {year}",
+                        "when is {subject} {number} in the {quarter} {year}",
+                        "when will be {subject} {number} in the {quarter} {year}",
+                        "when is the schedule for the {subject} {number} in the {quarter} {year}",
+                        "when is {subject} {number} offered in the {quarter} {year}",
+                        "when is {subject} {number} offered in {quarter} {year}",
+                        "i want to know what time a class is offered",
+                        "i want to know when a class is offered",
+                        "when is {subject} offered",
+                        "when is {subject} offered in {quarter}",
+                        "what time is offered {subject} {number} in the {quarter} quarter {year}",
+                        "what time is {subject} {number} in the {quarter} quarter {year}",
+                        "what time will be {subject} {number} in the {quarter} winter {year}",
+                        "what is the schedule for the {subject} {number} in the {quarter}  quarter {year}",
+                        "what time is {subject} {number} offered in the {quarter} quarter {year}",
+                        "what time is {subject} {number} offered in {quarter} quarter {year}",
+                        "when is {subject} offered in {quarter} quarter",
+                        "when is offered {subject} {number} in the {quarter} quarter {year}",
+                        "when is {subject} {number} in the {quarter} quarter {year}",
+                        "when will be {subject} {number} in the {quarter} quarter {year}",
+                        "when is the schedule for the {subject} {number} in the {quarter} quarter {year}",
+                        "when is {subject} {number} offered in the {quarter} quarter {year}",
+                        "when is {subject} {number} offered in {quarter} quarter {year}",
+                        "when is {subject} offered in {quarter} quarter",
+                        "i want to know when I can take a course",
+                        "i want to know when can I take a course",
+                        "when can I take a course",
+                        "when is a course offered",
+                        "i want to know what time a course is offered",
+                        "i want to know when a course is offered",
+                        "i want to know what time a course is offered",
+                        "i want to know when a course is offered"
+                    ]
+                },
+                {
+                    "name": "GetQuizzesIntent",
+                    "slots": [],
+                    "samples": [
+                        "what are my quizzes",
+                        "get my quizzes",
+                        "list my quizzes",
+                        "tell me my quizzes"
                     ]
                 }
             ],
             "types": [
-                {
-                    "name": "DEGREE",
-                    "values": [
-                        {
-                            "id": null,
-                            "name": {
-                                "value": "bachelors",
-                                "synonyms": []
-                            }
-                        },
-                        {
-                            "id": null,
-                            "name": {
-                                "value": "professional",
-                                "synonyms": []
-                            }
-                        },
-                        {
-                            "id": null,
-                            "name": {
-                                "value": "technical",
-                                "synonyms": []
-                            }
-                        },
-                        {
-                            "id": null,
-                            "name": {
-                                "value": "non transfer",
-                                "synonyms": []
-                            }
-                        },
-                        {
-                            "id": null,
-                            "name": {
-                                "value": "transfer",
-                                "synonyms": []
-                            }
-                        },
-                        {
-                            "id": null,
-                            "name": {
-                                "value": "associate",
-                                "synonyms": []
-                            }
-                        },
-                        {
-                            "id": null,
-                            "name": {
-                                "value": "eastern Washington",
-                                "synonyms": []
-                            }
-                        }
-                    ]
-                },
                 {
                     "name": "SUBJECT",
                     "values": [
@@ -1497,6 +1680,92 @@
         "dialog": {
             "intents": [
                 {
+                    "name": "BookIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "subject",
+                            "type": "SUBJECT",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "subject_elication"
+                            }
+                        },
+                        {
+                            "name": "number",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "number_elication"
+                            }
+                        },
+                        {
+                            "name": "quarter",
+                            "type": "QUARTER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "quarter_elication"
+                            }
+                        },
+                        {
+                            "name": "year",
+                            "type": "AMAZON.FOUR_DIGIT_NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "year_elication"
+                            }
+                        },
+                        {
+                            "name": "courseId",
+                            "type": "AMAZON.FOUR_DIGIT_NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "id_elication"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ClassesOfferedIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "subject",
+                            "type": "SUBJECT",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "subject_elication"
+                            }
+                        },
+                        {
+                            "name": "quarter",
+                            "type": "QUARTER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "quarter_elication"
+                            }
+                        },
+                        {
+                            "name": "year",
+                            "type": "AMAZON.FOUR_DIGIT_NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "year_elication"
+                            }
+                        }
+                    ]
+                },
+                {
                     "name": "RecommendedIntent",
                     "confirmationRequired": false,
                     "prompts": {},
@@ -1543,6 +1812,117 @@
                             }
                         }
                     ]
+                },
+                {
+                    "name": "RetakeClassIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "subject",
+                            "type": "SUBJECT",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "subject_elication"
+                            }
+                        },
+                        {
+                            "name": "number",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "number_elication"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "GetInstructorsIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "subject",
+                            "type": "SUBJECT",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "subject_elication"
+                            }
+                        },
+                        {
+                            "name": "number",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "number_elication"
+                            }
+                        },
+                        {
+                            "name": "quarter",
+                            "type": "QUARTER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "quarter_elication"
+                            }
+                        },
+                        {
+                            "name": "year",
+                            "type": "AMAZON.FOUR_DIGIT_NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "year_elication"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ClassScheduleIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "subject",
+                            "type": "SUBJECT",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "subject_elication"
+                            }
+                        },
+                        {
+                            "name": "number",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "number_elication"
+                            }
+                        },
+                        {
+                            "name": "quarter",
+                            "type": "QUARTER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "quarter_elication"
+                            }
+                        },
+                        {
+                            "name": "year",
+                            "type": "AMAZON.FOUR_DIGIT_NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "year_elication"
+                            }
+                        }
+                    ]
                 }
             ]
         },
@@ -1553,10 +1933,6 @@
                     {
                         "type": "PlainText",
                         "value": "which course subject?"
-                    },
-                    {
-                        "type": "PlainText",
-                        "value": "which type of course?"
                     }
                 ]
             },
@@ -1566,6 +1942,33 @@
                     {
                         "type": "PlainText",
                         "value": "which course number?"
+                    }
+                ]
+            },
+            {
+                "id": "quarter_elication",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "which quarter?"
+                    }
+                ]
+            },
+            {
+                "id": "year_elication",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "which_year?"
+                    }
+                ]
+            },
+            {
+                "id": "id_elication",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "which course id?"
                     }
                 ]
             }

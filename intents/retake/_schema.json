@@ -17,7 +17,79 @@
                 "when is offered {subject} {number}",
                 "when can I next take {subject} {number}",
                 "in what quarter is offered {subject} {number}",
-                "in which quarter is offered {subject} {number}"
+                "in which quarter is offered {subject} {number}",
+                "in what quarter is offered {subject} {number} offered",
+                "in which quarter is {subject} {number} offered",
+                "when is {subject} {number} offered",
+                "when is {subject} {number} offered again",
+                "when can I retake {subject} {number} again",
+                "i want to retake {subject} {number}",
+                "i want to retake {subject} {number} again",
+                "i want to retake a class",
+                "when can I retake a class",
+                "i want to know when I can retake a class",
+                "i want to know when can I retake a class",
+                "when can I retake {subject} {number} again",
+                "when is offered {subject} {number} again",
+                "when can I next take {subject} {number} again",
+                "in what quarter is offered {subject} {number} again",
+                "in which quarter is offered {subject} {number} again",
+                "in what quarter is offered {subject} {number} offered",
+                "when can I retake {subject}",
+                "when is offered {subject}",
+                "when can I next take {subject}",
+                "in what quarter is offered {subject}",
+                "in which quarter is offered {subject}",
+                "in what quarter is offered {subject} offered",
+                "in which quarter is {subject} offered",
+                "when is {subject} offered",
+                "when is {subject} offered again",
+                "when can I retake {subject} again",
+                "i want to retake {subject}",
+                "i want to retake {subject} again",
+                "i want to retake a class",
+                "when can I retake a class",
+                "i want to know when I can retake a class",
+                "i want to know when can I retake a class",
+                "when can I retake {subject} again",
+                "when is offered {subject} again",
+                "when can I next take {subject} again",
+                "in what quarter is offered {subject} again",
+                "in which quarter is offered {subject} again",
+                "in what quarter is offered {subject} offered",
+                "in which quarter is {subject} offered",
+                "i want to retake a course",
+                "when can I retake a course",
+                "i want to know when I can retake a course",
+                "i want to know when can I retake a course",
+                "i want to retake a course"
+            ]
+        }
+    ],
+    "dialogs": [
+        {
+            "name": "RetakeClassIntent",
+            "confirmationRequired": false,
+            "prompts": {},
+            "slots": [
+                {
+                    "name": "subject",
+                    "type": "SUBJECT",
+                    "confirmationRequired": false,
+                    "elicitationRequired": true,
+                    "prompts": {
+                        "elicitation": "subject_elication"
+                    }
+                },
+                {
+                    "name": "number",
+                    "type": "AMAZON.NUMBER",
+                    "confirmationRequired": false,
+                    "elicitationRequired": true,
+                    "prompts": {
+                        "elicitation": "number_elication"
+                    }
+                }
             ]
         }
     ]

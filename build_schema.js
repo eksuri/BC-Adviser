@@ -11,44 +11,44 @@ common_subjects = async () => {
     const data = await subjects.getAllSubjects();
 
     const name = "SUBJECT";
-    const values = data.Subjects.map((s)=> {
+    const values = data.Subjects.map((s) => {
         let v = {};
-            v.id = "";
-            v.name = {};
-            v.name.value = s.Slug;
-            v.name.synonyms = [s.Title];
-            return v;
+        v.id = "";
+        v.name = {};
+        v.name.value = s.Slug;
+        v.name.synonyms = [s.Title];
+        return v;
     })
-    
+
     let common = {};
-        common.name = name;
-        common.values = values;
+    common.name = name;
+    common.values = values;
     return common;
 }
 
 common_quarters = async () => {
     const name = "QUARTER";
     const quarters = [["Fall", "Autumn"],
-                      ["Summer"],
-                      ["Spring"],
-                      ["Winter"]]
-    const values = quarters.map((s)=> {
+    ["Summer"],
+    ["Spring"],
+    ["Winter"]]
+    const values = quarters.map((s) => {
         let v = {};
-            v.id = "";
-            v.name = {};
-            v.name.value = s.shift();
-            if(s.length > 0) {
-                v.name.synonyms = [];
-                s.forEach((synonym)=> {
-                    v.name.synonyms.push(synonym);
-                })
-            }
-            return v;
+        v.id = "";
+        v.name = {};
+        v.name.value = s.shift();
+        if (s.length > 0) {
+            v.name.synonyms = [];
+            s.forEach((synonym) => {
+                v.name.synonyms.push(synonym);
+            })
+        }
+        return v;
     })
-    
+
     let common = {};
-        common.name = name;
-        common.values = values;
+    common.name = name;
+    common.values = values;
     return common;
 }
 
@@ -57,7 +57,7 @@ main = async () => {
     let types = []
     let dialogs = []
     let prompts = []
-    
+
     schemas.forEach((schema) => {
         if (schema.intents) {
             schema.intents.forEach((intent) => {
@@ -80,7 +80,7 @@ main = async () => {
             })
         }
     })
-    
+
     types.push(await common_subjects());
     types.push(await common_quarters());
 
@@ -94,11 +94,57 @@ main = async () => {
             "dialog": {
                 "intents": dialogs
             },
-            "prompts": prompts
+            "prompts": [
+                {
+                    "id": "subject_elication",
+                    "variations": [
+                        {
+                            "type": "PlainText",
+                            "value": "which course subject?"
+                        },
+                    ]
+                },
+                {
+                    "id": "number_elication",
+                    "variations": [
+                        {
+                            "type": "PlainText",
+                            "value": "which course number?"
+                        }
+                    ]
+                },
+                {
+                    "id": "quarter_elication",
+                    "variations": [
+                        {
+                            "type": "PlainText",
+                            "value": "which quarter?"
+                        },
+                    ]
+                },
+                {
+                    "id": "year_elication",
+                    "variations": [
+                        {
+                            "type": "PlainText",
+                            "value": "which_year?"
+                        },
+                    ]
+                },
+                {
+                    "id": "id_elication",
+                    "variations": [
+                        {
+                            "type": "PlainText",
+                            "value": "which course id?"
+                        },
+                    ]
+                },
+            ]
         }
     }
-    
-    fs.writeFile('./schema.json', JSON.stringify(schema, null, 4), 'utf-8', function(err) {
+
+    fs.writeFile('./schema.json', JSON.stringify(schema, null, 4), 'utf-8', function (err) {
         if (err) throw err
     })
 }

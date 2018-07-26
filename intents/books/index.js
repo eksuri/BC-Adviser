@@ -6,10 +6,26 @@ exports.schema = schema
 const sections = require('../../common/ctc/sections');
 const texts = require('../../common/web/texts');
 
-exports.Handler = [{
+exports.Handler =[ {
     canHandle(handlerInput) {
         const request = handlerInput.requestEnvelope.request;
-        return request.type === 'IntentRequest' && request.intent.name === 'BookIntent';
+        return request.type === 'IntentRequest'
+            && ["BookIntent"].includes(request.intent.name)
+            && ["STARTED", "IN_PROGRESS"].includes(request.dialogState);
+    },
+    async handle(handlerInput) {
+        const currentIntent = handlerInput.requestEnvelope.request.intent;
+        return handlerInput.responseBuilder
+            .addDelegateDirective(currentIntent)
+            .getResponse();
+    },
+},
+{
+    canHandle(handlerInput) {
+        const request = handlerInput.requestEnvelope.request;
+        return request.type === 'IntentRequest'
+            && ["BookIntent"].includes(request.intent.name)
+            && ["COMPLETED"].includes(request.dialogState);
     },
     async handle(handlerInput) {
         let speech = new Speech();

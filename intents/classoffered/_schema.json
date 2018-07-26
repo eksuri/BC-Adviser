@@ -19,8 +19,71 @@
             "samples": [
                 "what {subject} classes are offered {quarter} {year}",
                 "what classes are offered in {quarter} {year} for {subject}",
-                "what classes are offered {quarter} {year} for {subject}"
+                "what classes are offered {quarter} {year} for {subject}",
+                "what {subject} classes are offered",
+                "what classes are offered",
+                "what {subject} classes are offered {quarter}",
+                "what classes are offered {quarter}",
+                "what {subject} classes are offered {year}",
+                "what classes are offered {year}",
+                "what {subject} classes are offered {quarter} quarter",
+                "what classes are offered {quarter} quarter",
+                "what {subject} classes are offered in {year}",
+                "what classes are offered in {year}",
+                "what classes are offered in {quarter} {year}",
+                "what classes are offered {quarter} {year}",
+                "what {subject} courses are offered {quarter} {year}",
+                "what courses are offered in {quarter} {year} for {subject}",
+                "what courses are offered {quarter} {year} for {subject}",
+                "what {subject} courses are offered",
+                "what courses are offered",
+                "what {subject} courses are offered {quarter}",
+                "what courses are offered {quarter}",
+                "what {subject} courses are offered {year}",
+                "what courses are offered {year}",
+                "what {subject} courses are offered {quarter} quarter",
+                "what courses are offered {quarter} quarter",
+                "what {subject} courses are offered in {year}",
+                "what courses are offered in {year}",
+                "what courses are offered in {quarter} {year}",
+                "what courses are offered {quarter} {year}"
             ]
         }
+    ],
+    "dialogs": [
+      {
+        "name": "ClassesOfferedIntent",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "subject",
+            "type": "SUBJECT",
+            "confirmationRequired": false,
+            "elicitationRequired": true,
+            "prompts": {
+              "elicitation": "subject_elication"
+            }
+          },
+          {
+            "name": "quarter",
+            "type": "QUARTER",
+            "confirmationRequired": false,
+            "elicitationRequired": true,
+            "prompts": {
+              "elicitation": "quarter_elication"
+            }
+          },
+          {
+            "name": "year",
+            "type": "AMAZON.FOUR_DIGIT_NUMBER",
+            "confirmationRequired": false,
+            "elicitationRequired": true,
+            "prompts": {
+              "elicitation": "year_elication"
+            }
+          }
+        ]
+      }
     ]
 }
