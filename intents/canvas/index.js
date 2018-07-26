@@ -12,7 +12,6 @@ exports.Handler = {
     },
     async handle(handlerInput) {
         let speech = new Speech();
-
         courses = await canvas.getCourseNames();
 
         if (courses != null && courses[0] != null) {
@@ -20,17 +19,6 @@ exports.Handler = {
             courses.forEach((course) => speech.say(course));
         } else {
             speech.say("I'm not sure.");
-        }
-
-        quizzes = await canvas.getAllQuizzes();
-
-        if (quizzes != null && quizzes[0] != null) {
-            speech.say("You have the following quizzes: ");
-            quizzes.forEach((course) => {
-                course.forEach((quizz) => speech.say(quizz));
-            });
-        } else {
-            speech.say("You are lucky, you have no quizzes!");
         }
 
         return handlerInput.responseBuilder.speak(speech.ssml(true))

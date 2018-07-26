@@ -1,0 +1,14 @@
+{
+    "intents": [
+        {
+            "name": "GetQuizzesIntent",
+            "slots": [],
+            "samples": [
+                "what are my quizzes",
+                "get my quizzes",
+                "list my quizzes",
+                "tell me my quizzes"
+            ]
+        }
+    ]
+}

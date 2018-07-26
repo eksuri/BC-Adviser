@@ -9,19 +9,21 @@ const retake = require('./retake');
 const schedule = require('./classschedule');
 const instructors = require('./getInstructors');
 const assignments = require('./assignments');
+const quizzes = require('./quizzes');
 
 exports.handlers = [amazon.Handler,
-                       about.Handler,
-                       books.Handler,
-                       canvas.Handler,
-                       classes.Handler,
-                       finals.Handler,
-                       instructors.Handler,
-                       retake.Handler,
-                       schedule.Handler,
-                       assignments.Handler,
-                       recommended.inProgress,
-                       recommended.Completed];
+                    about.Handler,
+                    books.Handler,
+                    canvas.Handler,
+                    classes.Handler,
+                    finals.Handler,
+                    instructors.Handler,
+                    retake.Handler,
+                    schedule.Handler,
+                    assignments.Handler,
+                    quizzes.Handler,
+                    recommended.inProgress,
+                    recommended.Completed];
 
 exports.schemas = [
     assignments.schema,
@@ -35,4 +37,5 @@ exports.schemas = [
     retake.schema,
     instructors.schema,
     schedule.schema,
+    quizzes.schema,
 ]

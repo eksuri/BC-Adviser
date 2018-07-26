@@ -1,6 +1,6 @@
 const fetch = require('node-fetch');
 
-exports.getTexts = async (quarterString, className, classNumber, itemNumber) => {
+exports.getTexts = async (quarterString, courseName, courseNumber, courseId) => {
 
     //http://bellevue.verbacompare.com/comparison?id=F18__ART__101__0650
     //http://bellevue.verbacompare.com/comparison?id=W18__ACCT__101__4000
@@ -17,11 +17,12 @@ exports.getTexts = async (quarterString, className, classNumber, itemNumber) => 
         .replace("Summer", "X");
 
     const bookUrl = "http://bellevue.verbacompare.com/comparison?id="+ quarterSlug
-                                                              + "__" + className
-                                                              + "__" + classNumber
-                                                              + "__" + itemNumber
+                                                              + "__" + courseName
+                                                              + "__" + courseNumber
+                                                              + "__" + courseId
+                                                      
 
-    const res = await fetch("http://bellevue.verbacompare.com/comparison?id=" + quarterSlug + "__" + className + "__" + classNumber + "__" + itemNumber);
+    const res = await fetch(bookUrl);
     const data = await res.text();
 
 

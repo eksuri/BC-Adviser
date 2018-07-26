@@ -27,6 +27,10 @@ class State {
         return (typeof this.courseNumber != null) ? this.courseNumber : null;
     }
 
+    get id() {
+        return (typeof this.courseId != null) ? this.courseId : null;
+    }
+
 }
 
 module.exports = State

@@ -9,19 +9,20 @@ exports.Handler = {
     canHandle(handlerInput) {
         const request = handlerInput.requestEnvelope.request;
         return request.type === 'IntentRequest'
-            && request.intent.name === 'GetAssignmentsIntent';
+            && request.intent.name === 'GetQuizzesIntent';
     },
     async handle(handlerInput) {
         let speech = new Speech();
-        const assignmentNames = await canvas.getAllAssignments();
+        quizzes = await canvas.getAllQuizzes();
 
-        speech.say("Your assignments for this quarter are: ");
-        assignmentNames.forEach((d) => {
-            d.forEach((e) => {
-                speech.say(e)
-                    .pause("1s");
+        if (quizzes != null && quizzes[0] != null) {
+            speech.say("You have the following quizzes: ");
+            quizzes.forEach((course) => {
+                course.forEach((quizz) => speech.say(quizz));
             });
-        });
+        } else {
+            speech.say("You are lucky, you have no quizzes!");
+        }
 
         return handlerInput.responseBuilder.speak(speech.ssml(true))
             .getResponse();

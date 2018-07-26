@@ -14,11 +14,11 @@ exports.Handler = {
     async handle(handlerInput) {
         let speech = new Speech();
         let s = new State(handlerInput.requestEnvelope.request.intent.slots);
-        const c = await sections.getCourseSection(s.fullQuarter, s.subject, s.number, s.courseId);
+        const c = await sections.getCourseSection(s.fullQuarter, s.subject, s.number, s.id);
 
         //http://bellevue.verbacompare.com/comparison?id=F18__ART__101__0650
 
-        let books = await texts.getTexts(c.Yrq.FriendlyName, c.CourseSubject, c.number, c.ID.courseId);
+        let books = await texts.getTexts(c.Yrq.FriendlyName, c.CourseSubject, c.CourseNumber, c.ID.ItemNumber);
         let bookAndAuthor = "";
 
         if (books != null && books[0] != null) {
