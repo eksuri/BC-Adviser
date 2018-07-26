@@ -127,7 +127,7 @@ main = async () => {
                     "variations": [
                         {
                             "type": "PlainText",
-                            "value": "which_year?"
+                            "value": "which year?"
                         },
                     ]
                 },
