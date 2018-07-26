@@ -7,7 +7,23 @@
                 "what classes am I taking",
                 "what classes am I taking this quarter",
                 "what classes am I in",
-                "what classes am I in this quarter"
+                "what classes am I in this quarter",
+                "what are my classes",
+                "what are my classes this quarter",
+                "list my classes",
+                "list my classes for this quarter",
+                "get my classes",
+                "get my classes for this quarter",
+                "what courses am I taking",
+                "what courses am I taking this quarter",
+                "what courses am I in",
+                "what courses am I in this quarter",
+                "what are my courses",
+                "what are my courses this quarter",
+                "list my courses",
+                "list my courses for this quarter",
+                "get my courses",
+                "get my courses for this quarter"
             ]
         },
         {
@@ -16,8 +32,12 @@
             "samples": [
                 "what are my grades",
                 "what are my grades this quarter",
-                "what are my grades in ",
-                "what classes am I in this quarter"
+                "what are my grades in",
+                "what are my grades for this quarter",
+                "get my grades",
+                "get my grades for this quarter",
+                "list my grades",
+                "list my grades for this quarter"
             ]
         }
     ]
