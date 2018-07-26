@@ -28,7 +28,7 @@ exports.getCourseSection = async (quarter, subject, number, id) => {
     return courses[0];
 }
 
-exports.getInstructors = async (quarter, number, subject) => {
+exports.getInstructors = async (quarter, subject, number) => {
     const sections = await getCourseSections(quarter, subject, number);
     
     const offerings = sections.map((s) => {

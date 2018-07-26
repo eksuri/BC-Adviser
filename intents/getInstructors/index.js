@@ -21,7 +21,7 @@ exports.Handler = {
         const subject = slots.subjects.value;
         const number = slots.number.value;
 
-        const instructors = await sections.getInstructors(quarter + year, number, subject);
+        const instructors = await sections.getInstructors(quarter + year, subject, number);
 
         speech.say("The instructors for")
             .say(subject)
