@@ -2,25 +2,36 @@ const Speech = require('ssml-builder');
 const schema = require('./_schema.json')
 exports.schema = schema
 
+const sections = require('../../common/ctc/sections.js');
 const ratings = require('../../common/web/ratings');
 
-
-exports.Handler = [{
+exports.Handler =[ {
     canHandle(handlerInput) {
         const request = handlerInput.requestEnvelope.request;
         return request.type === 'IntentRequest'
-            && request.intent.name === 'RatingIntent';
+            && ["RatingIntent"].includes(request.intent.name)
+            && ["STARTED", "IN_PROGRESS"].includes(request.dialogState);
+    },
+    async handle(handlerInput) {
+        const currentIntent = handlerInput.requestEnvelope.request.intent;
+        return handlerInput.responseBuilder
+            .addDelegateDirective(currentIntent)
+            .getResponse();
+    },
+},
+{
+    canHandle(handlerInput) {
+        const request = handlerInput.requestEnvelope.request;
+        return request.type === 'IntentRequest'
+            && ["RatingIntent"].includes(request.intent.name)
+            && ["COMPLETED"].includes(request.dialogState);
     },
     async handle(handlerInput) {
         let speech = new Speech();
+        let s = new State(handlerInput.requestEnvelope.request.intent.slots);
 
-        const responseBuilder = handlerInput.responseBuilder;
-        const slots = handlerInput.requestEnvelope.request.intent.slots;
 
-        const firstName = slots.firstName.value;
-        const lastName = slots.lastName.value;
-        let speechOutput;
-
+        /*
         if (firstName == "" || firstName == null || lastName == "" || lastName == null) {
             speech.say("You need to provide a full name.");
         } else {
@@ -45,10 +56,8 @@ exports.Handler = [{
                     .say("again");
             }
         }
-
-        return responseBuilder.speak(speech.ssml(true))
+*/
+        return handlerInput.responseBuilder.speak(speech.ssml(true))
             .getResponse();
-
-
     },
 }]
