@@ -7,6 +7,10 @@ exports.getRating = async (firstName, lastName) => {
     const resFirst = await dataFirst.text();
 
     matchFirst = regexFirst.exec(resFirst);
+
+    if (matchFirst == null) {
+        return null;
+    }
     
     const resSecond = await fetch("http://www.ratemyprofessors.com/ShowRatings.jsp?tid=" + matchFirst[1]);
     const dataSecond = await resSecond.text();
