@@ -7,6 +7,10 @@ exports.getRating = async (firstName, lastName) => {
     const resFirst = await dataFirst.text();
 
     matchFirst = regexFirst.exec(resFirst);
+
+    if (matchFirst == null) {
+        return null;
+    }
     
     const resSecond = await fetch("http://www.ratemyprofessors.com/ShowRatings.jsp?tid=" + matchFirst[1]);
     const dataSecond = await resSecond.text();
@@ -21,12 +25,20 @@ exports.getRating = async (firstName, lastName) => {
     while ((matchSecond = regexSecond.exec(dataSecond))) {
         matchSecond.shift();
         matchSecond.forEach((s) => {
-            results.push(s.trim());
+            let result = s.trim();
+            if (result === 'N/A') {
+                results.push(null);
+            } else if (result.endsWith('%')) {
+                results.push(Number.parseInt(result.slice(0, -1)));
+            } else {
+                results.push(Number.parseFloat(result));
+            }
         })
     }
 
-    return(results);
-
+    if (results.length === 3) {// quality, would take, difficulty
+        return { "quality": results[0], "take_again": results[1], "difficulty": results[2]};
+    } else {return null};
 }
 
 // hopefully no one's regex is relying on Html entitys or this will have to be pushed farther down the line

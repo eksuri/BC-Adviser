@@ -1,10 +1,34 @@
 class State {
     constructor(slots) {
-        this.courseQuarter = slots.quarter ? (slots.quarter.value == "autumn" ? "fall" : slots.quarter.value) : null;
-        this.courseYear = slots.year ? slots.year.value : null;
-        this.courseSlug = slots.subject ? slots.subject.value : null;
-        this.courseNumber = slots.number ? slots.number.value : null;
-        this.courseId = slots.courseId ? slots.courseId.value : null
+        this.quarter = slots.quarter;
+        this.year = slots.year;
+        this.subject = slots.subject;
+        this.number = slots.number;
+        this.id = slots.courseId;
+    }
+
+    set quarter(slot) {
+        this.courseQuarter = slot ? (slot.value == "autumn" ? "fall" : slot.value) : null;
+    }
+
+    set year(slot) {
+        this.courseYear = slot? slot.value : null;
+    }
+
+    set subject(slot) {
+        if (slot.resolutions) {
+            this.courseSlug = slot.resolutions.resolutionsPerAuthority[0].values[0].value.name;
+        } else {
+            this.courseSlug = slot? slot.value : null;
+        }
+    }
+
+    set number(slot) {
+        this.courseNumber = slot? slot.value : null;
+    }
+
+    set id(slot) {
+        this.courseId = slot? slot.value : null;
     }
 
     get fullQuarter() {
