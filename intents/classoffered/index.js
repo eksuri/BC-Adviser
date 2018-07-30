@@ -9,7 +9,7 @@ exports.Handler =[ {
     canHandle(handlerInput) {
         const request = handlerInput.requestEnvelope.request;
         return request.type === 'IntentRequest'
-            && ["ClassOffered"].includes(request.intent.name)
+            && ["ClassesOfferedIntent"].includes(request.intent.name)
             && ["STARTED", "IN_PROGRESS"].includes(request.dialogState);
     },
     async handle(handlerInput) {
@@ -23,7 +23,7 @@ exports.Handler =[ {
     canHandle(handlerInput) {
         const request = handlerInput.requestEnvelope.request;
         return request.type === 'IntentRequest'
-            && request.intent.name === 'ClassesOfferedIntent'
+            && ["ClassesOfferedIntent"].includes(request.intent.name)
             && ["COMPLETED"].includes(request.dialogState);;
     },
     async handle(handlerInput) {
