@@ -10,6 +10,7 @@ const schedule = require('./classschedule');
 const instructors = require('./getInstructors');
 const assignments = require('./assignments');
 const quizzes = require('./quizzes');
+const ratemyprof = require('./ratemyprofessor');
 
 exports.handlers = [amazon.Handler,
                     about.Handler,
@@ -22,7 +23,8 @@ exports.handlers = [amazon.Handler,
                     schedule.Handler,
                     assignments.Handler,
                     quizzes.Handler,
-                    recommended.Handler];
+                    recommended.Handler,
+                    ratemyprof.Handler];
 
 exports.schemas = [
     assignments.schema,
@@ -37,4 +39,5 @@ exports.schemas = [
     instructors.schema,
     schedule.schema,
     quizzes.schema,
+    ratemyprof.schema,
 ]
