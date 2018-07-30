@@ -8,7 +8,7 @@ let opts = config.opts;
     opts.handler = app.handler;
 
 conversation(opts)
-    .userSays('RatingIntent', {"quarter": "Fall", "year": "2018", "subject": "CHEM&", "number": "121"})
+    .userSays('RatingIntent', {"quarter": "Fall", "year": "2018", "subject": "ENGL", "number": "101"})
     .plainResponse
-        .shouldContain("Brett")
+        .shouldEqual("The highest rated professor for ENGL 101 is Thomas Ryan with a rating of 5")
     .end();

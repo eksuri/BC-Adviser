@@ -35,7 +35,10 @@ exports.getInstructors = async (quarter, subject, number) => {
         return s.Offered[0].InstructorName;
     })
     
-    return offerings;
+    const instructors = new Set();
+    offerings.forEach((o) => instructors.add(o));
+    
+    return Array.from(instructors);
 }
 
 
