@@ -39,7 +39,8 @@ exports.Handler =[ {
             .say(s.year)
             .say("are")
         instructors.forEach((i) => {
-            speech.say(i);
+            speech.say(i)
+                  .pause("1s");
         })
 
         return handlerInput.responseBuilder.speak(speech.ssml(true))
