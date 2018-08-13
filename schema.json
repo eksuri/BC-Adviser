@@ -1833,6 +1833,15 @@
                                     "STEM"
                                 ]
                             }
+                        },
+                        {
+                            "id": "",
+                            "name": {
+                                "value": "ROBAI",
+                                "synonyms": [
+                                    "Robotics and Artifical Intelligence"
+                                ]
+                            }
                         }
                     ]
                 },

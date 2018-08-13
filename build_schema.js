@@ -9,7 +9,6 @@ const subjects = require('./common/ctc/subjects.js');
 
 common_subjects = async () => {
     const data = await subjects.getAllSubjects();
-    console.log(data);
     const name = "SUBJECT";
     const values = data.Subjects.map((s) => {
         let v = {};
