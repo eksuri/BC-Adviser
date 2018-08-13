@@ -13,15 +13,27 @@ exports.Handler = [{
     },
     async handle(handlerInput) {
         let speech = new Speech();
-        const assignmentNames = await canvas.getAllAssignments();
+        const assignments = await canvas.getAllAssignments();
 
-        speech.say("Your assignments for this quarter are: ");
-        assignmentNames.forEach((d) => {
-            d.forEach((e) => {
-                speech.say(e)
-                    .pause("1s");
+        const assignments_count = assignments.reduce((a, b) => a + b.length, 0);
+
+        if (assignments_count!= 0)
+        {
+            speech.say("You have")
+                  .say(assignments_count)
+                  .say("assignments.")
+                  .pause("1s")
+                  .say("Your assignments are");
+
+            assignments.forEach((a) => {a.forEach((b) => {
+                speech.say(b)
+                      .pause("1s")});
             });
-        });
+
+        }
+        else {
+            speech.say("You have no assignments");
+        }        
 
         return handlerInput.responseBuilder.speak(speech.ssml(true))
             .getResponse();

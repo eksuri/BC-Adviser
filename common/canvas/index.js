@@ -22,9 +22,10 @@ getAssignments = async(id) => {
 
     const res = await fetch("https://canvas.instructure.com/api/v1/courses/" + id + "/assignments?access_token=" + token);
     const assignments = await res.json();
-    const assignmentNames = assignments.map((c) => {return c.name});
+    const current_assignments = assignments.filter((a) => a.due_at == null || a.due_at > Date.now());
+    const assignment_names = current_assignments.map((c) => {return c.name});
   
-    return assignmentNames;
+    return assignment_names;
 }
 
 
