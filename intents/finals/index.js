@@ -15,10 +15,16 @@ exports.Handler = [{
         let speech = new Speech();
         const dates = await finals.getDates((new Date()).getMonth());
 
-        speech.say("Finals this quarter start on")
-            .say(dates.shift())
-            .say("and last until")
-            .say(dates.pop());
+        if (Array.isArray(dates)) {
+            speech.say("Finals this quarter start on")
+                  .say(dates.shift())
+                  .say(dates.pop())
+                  .say("and last until");
+        } else { // summer quarter,
+            speech.say("Summer Quarter final exams are given on the last regularly-scheduled class date unless otherwise arranged with the approval of the Office of Instruction.")
+        }
+
+
 
         return handlerInput.responseBuilder.speak(speech.ssml(true))
             .getResponse();

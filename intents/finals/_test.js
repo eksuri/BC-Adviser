@@ -10,5 +10,5 @@ let opts = config.opts;
 conversation(opts)
     .userSays('GetFinalsInfoIntent')
     .plainResponse
-        .shouldContain("Finals this quarter")
+        .shouldContain("Summer")
     .end();

@@ -8,7 +8,7 @@ exports.getDates = async (month) => {
     } else if (month < 7 ) {
         regex = /Spring.*\n<ul>\n<li>(.*)<\/li>\n<li>(.*)<\/li>\n<li>(.*)<\/li>/;
     } else if (month < 9 ) {
-        regex = /Summer.*\n<ul>\n<li>(.*)<\/li>\n<li>(.*)<\/li>/;
+        return null; // summer doesn't have posted finals.
     }
 
     const res = await fetch("https://www.bellevuecollege.edu/courses/exams/");
