@@ -10,7 +10,12 @@ getCourse = async (subject, number) => {
     const res = await fetch("http://bellevuecollege.edu/classes/All/" + subject.toUpperCase() + "/" + number + "/?format=json");
     const data = await res.json();
 
-    return data;
+    if(data.Courses.length < 1 || data.Courses == undefined) { // could this instead be another call to getCourse?
+        const res = await fetch("http://bellevuecollege.edu/classes/All/" + subject.toUpperCase() + "%26/" + number + "/?format=json");
+        return res.json();
+    } else {
+        return data;
+    }
 }
 
 getFootnotes = async(subject, number) => {
@@ -21,9 +26,8 @@ getFootnotes = async(subject, number) => {
 exports.getPrerequisite = async (subject, number) => {
     const footnotes = await getFootnotes(subject, number);
     const prerequisites = footnotes.find((f) => {
-        return f.startsWith("Prerequisite");
+        return f.includes("Prerequisite");
     })
-
     return (prerequisites ? prerequisites.split(':')[1]:null);
 }
 
@@ -31,7 +35,7 @@ exports.getPrerequisite = async (subject, number) => {
 exports.getRecommended = async (subject, number) => {
     const footnotes = await getFootnotes(subject, number);
     const recommended = footnotes.find((f) => {
-        return f.startsWith("Recomended");
+        return f.includes("Recomended");
     })
 
     return (recommended?recommended.split(':')[1]:null);

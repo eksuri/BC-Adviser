@@ -40,7 +40,7 @@ exports.Handler =[ {
                 .say(s.subject)
                 .say(s.number)
                 .say("include")
-                .say(footnote)
+                .say(footnote.replace(/&/g, ''))
         } else {
             speech.say("There are no")
                 .say((which ? "recommendations" : "prerequisites"))
