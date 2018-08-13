@@ -40,6 +40,7 @@ exports.Handler =[ {
 
         coursesOffered.forEach((c) => {
             speech.say(c)
+                  .pause("1s");
         }
         );
 
