@@ -8,15 +8,22 @@ const canvas = require('../../common/canvas/index.js');
 exports.Handler = [{
     canHandle(handlerInput) {
         const request = handlerInput.requestEnvelope.request;
-        return request.type === 'IntentRequest' && request.intent.name === 'MyClassesIntent';
+        return request.type === 'IntentRequest'
+            && ["MyClassesIntent", "MyGradesIntent"].includes(request.intent.name)
     },
     async handle(handlerInput) {
         let speech = new Speech();
-        courses = await canvas.getCourseNames();
+        const courses = await canvas.getCanvasGrades();
 
         if (courses != null && courses[0] != null) {
-            speech.say("This quarter you're currently enrolled in");
-            courses.forEach((course) => speech.say(course));
+            speech.say("This quarter you're currently enrolled in")
+            courses.forEach((course) => speech.say(course[0]).pause("1s"));
+
+            if (handlerInput.requestEnvelope.request.intent.name === "MyGradesIntent") {
+                    speech.say("Your grades for each course are");
+                    courses.forEach((course) => speech.say(course[0]).pause("1s").say(course[1]).pause("1s"));
+            }
+
         } else {
             speech.say("I'm not sure.");
         }

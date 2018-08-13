@@ -52,16 +52,9 @@ exports.getAllQuizzes = async () => {
     return Promise.all(QuizNames).then((completed) => { return completed});
 }
 
-exports.getCourseNames = async () => {
-    const courses = await getCanvasCourses();
-    const current_courses = courses.filter((course) => {return course.end_at != null});
-    const course_names = current_courses.map((course) => {return course.name.substring(11)});
-    return course_names;
-}
-
 exports.getCanvasGrades = async () => {
     const grades = await getCanvasCourses();
-    const current_grades = grades.filter((g) => {return g.enrollments});
+    const current_grades = grades.filter((g) => {return g.end_at != null && g.enrollments});
     const grades_strings = current_grades.map((g) => {return [g.name.substring(11), g.enrollments[0].computed_final_score]})
     return grades_strings;
 }

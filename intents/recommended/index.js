@@ -29,10 +29,10 @@ exports.Handler =[ {
     async handle(handlerInput) {
         let speech = new Speech();
         let s = new State(handlerInput.requestEnvelope.request.intent.slots);
-        const which = handlerInput.requestEnvelope.request.intent.name === "RecommendedIntent"
+        const which = handlerInput.requestEnvelope.request.intent.name === "RecommendedIntent";
 
-        footnote = (which ? await courses.getRecommended(s.subject, s.number) :
-                            await courses.getPrerequisite(s.subject, s.number));
+        const footnote = (which ? await courses.getRecommended(s.subject, s.number) :
+                                  await courses.getPrerequisite(s.subject, s.number));
 
         if (footnote) {
             speech.say((which ? "recommendations" : "prerequisites"))
