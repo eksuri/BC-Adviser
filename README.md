@@ -112,6 +112,5 @@ Before you can build your schema, test, or run this application, you need to cre
             "contextObj": null,
             "fixSpaces": true,
             "fuzzyDistance": 0.93
-        },
-        "token": "some-canvas-token",
+        }
     }

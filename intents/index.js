@@ -2,7 +2,6 @@
 const amazon = require('./amazon');
 const books = require('./books');
 const classes = require('./classoffered');
-const canvas = require('./canvas');
 const finals = require('./finals');
 const recommended = require('./recommended');
 const retake = require('./retake');
@@ -15,7 +14,6 @@ const ratemyprof = require('./ratemyprofessor');
 exports.handlers = [amazon.Handler,
                     about.Handler,
                     books.Handler,
-                    canvas.Handler,
                     classes.Handler,
                     finals.Handler,
                     instructors.Handler,
@@ -31,7 +29,6 @@ exports.schemas = [
     about.schema,
     amazon.schema,
     books.schema,
-    canvas.schema,
     classes.schema,
     finals.schema,
     recommended.schema,
