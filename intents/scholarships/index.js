@@ -22,12 +22,14 @@ exports.Handler = [{
                   .say(list.length)
                   .say("scholarships, including")
             
-            let random_scholarships = new Set([]);
+            let unique_scholarships = new Set([]);
             
-            while (random_scholarships.size < 3) {
+            while (unique_scholarshipss.size < 3) {
                 let index = Math.floor(Math.random() * list.length);
-                random_scholarships.add(list[index]);
+                unique_scholarships.add(list[index]);
             }
+
+            let random_scholarships = Array.from(unique_scholarships);
 
             speech.say(random_scholarships[0])
                   .pause("1s")
