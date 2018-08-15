@@ -9,23 +9,13 @@ getSections = async (quarter, subject) => {
 }
 
 
-getCourseSections = async (quarter, subject, number) => {
+exports.getCourseSections = async (quarter, subject, number) => {
     const sections = await getSections(quarter, subject);
     const courses = await sections.Courses.filter((c) => {
         return c.Sections[0].CourseNumber === number
     });
     
     return courses[0].Sections;
-}
-
-exports.getCourseSection = async (quarter, subject, number, id) => {
-    const sections = await getCourseSections(quarter, subject, number);
-
-    const courses = sections.filter((s) => {
-        return s.ID ? s.ID.ItemNumber === id : false; // more robust, try to do this more
-    });
-
-    return courses[0];
 }
 
 exports.getInstructors = async (quarter, subject, number) => {

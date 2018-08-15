@@ -30,51 +30,59 @@ exports.Handler =[ {
     async handle(handlerInput) {
         let speech = new Speech();
         let s = new State(handlerInput.requestEnvelope.request.intent.slots);
-        const c = await sections.getCourseSection(s.fullQuarter, s.subject, s.number, s.id);
+        const c = await sections.getCourseSections(s.fullQuarter, s.subject, s.number);
 
-        //http://bellevue.verbacompare.com/comparison?id=F18__ART__101__0650
-
-        let books = await texts.getTexts(c.Yrq.FriendlyName, c.CourseSubject, c.CourseNumber, c.ID.ItemNumber);
-        let bookAndAuthor = "";
-
-        if (books != null && books[0] != null) {
-            i = 0;
-            while (books[i] != null) {
-                bookAndAuthor = bookAndAuthor + books[i] + ", by " + books[i + 1];
-                if (books[i + 2] != null) {
-                    bookAndAuthor = bookAndAuthor + ", ";
+        if (c.length === 0 ) {
+            speech.say("I'm sorry, I couldn't find that.")
+        } else if(c.length > 1) {
+            speech.say("There are")
+                  .say(c.length)
+                  .say("different sections avaliable for")
+                  .say(s.subject)
+                  .say(s.number)
+                  .say("in")
+                  .say(s.quarter)
+                  .say(s.year)
+                  .pause("1s")
+                  .say("Please check online for your book.");
+        } else {
+            let books = await texts.getTexts(c.Yrq.FriendlyName, c.CourseSubject, c.CourseNumber, c.ID.ItemNumber);
+            let bookAndAuthor = "";
+    
+            if (books != null && books[0] != null) {
+                i = 0;
+                while (books[i] != null) {
+                    bookAndAuthor = bookAndAuthor + books[i] + ", by " + books[i + 1];
+                    if (books[i + 2] != null) {
+                        bookAndAuthor = bookAndAuthor + ", ";
+                    }
+                    else {
+                        bookAndAuthor = bookAndAuthor + ".";
+                    }
+                    i = i + 2;
+                }
+    
+                if (bookAndAuthor.includes("No Textbook Required")) {
+                    speech.say("There are no recommended books for")
+                        .say(s.subject)
+                        .say(s.number)
                 }
                 else {
-                    bookAndAuthor = bookAndAuthor + ".";
+                    speech.say("Books required for")
+                        .say(s.subject)
+                        .say(s.number)
+                        .say("are")
+                        .pause("1s")
+                        .say(bookAndAuthor);
                 }
-                i = i + 2;
             }
-
-            if (bookAndAuthor.includes("No Textbook Required")) {
+            else {
                 speech.say("There are no recommended books for")
                     .say(s.subject)
                     .say(s.number)
-                    .say("item number")
-                    .say(s.courseId)
-            }
-            else {
-                speech.say("Books required for")
-                    .say(s.subject)
-                    .say(s.number)
-                    .say("item number")
-                    .say(s.courseId)
-                    .say("are")
-                    .pause("1s")
-                    .say(bookAndAuthor);
             }
         }
-        else {
-            speech.say("There are no recommended books for")
-                .say(s.subject)
-                .say(s.number)
-                .say("item number")
-                .say(s.courseId);
-        }
+
         return handlerInput.responseBuilder.speak(speech.ssml(true))
             .getResponse();
     },

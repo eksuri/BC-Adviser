@@ -4,7 +4,6 @@ class State {
         this.year = slots.year;
         this.subject = slots.subject;
         this.number = slots.number;
-        this.id = slots.courseId;
     }
 
     set quarter(slot) {
@@ -48,10 +47,6 @@ class State {
         this.courseNumber = slot? slot.value : null;
     }
 
-    set id(slot) {
-        this.courseId = slot? slot.value : null;
-    }
-
     get fullQuarter() {
         return (typeof this.courseQuarter != null & typeof this.courseYear != null) ? this.courseQuarter + this.courseYear : null;
     }
@@ -70,10 +65,6 @@ class State {
 
     get number() {
         return (typeof this.courseNumber != null) ? this.courseNumber : null;
-    }
-
-    get id() {
-        return (typeof this.courseId != null) ? this.courseId : null;
     }
 
 }
