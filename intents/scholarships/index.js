@@ -24,7 +24,7 @@ exports.Handler = [{
             
             let unique_scholarships = new Set([]);
             
-            while (unique_scholarshipss.size < 3) {
+            while (unique_scholarships.size < 3) {
                 let index = Math.floor(Math.random() * list.length);
                 unique_scholarships.add(list[index]);
             }
