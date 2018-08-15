@@ -37,7 +37,7 @@ exports.Handler =[ {
         } else if(c.length > 1) {
             speech.say("There are")
                   .say(c.length)
-                  .say("different sections avaliable for")
+                  .say("different sections available for")
                   .say(s.subject)
                   .say(s.number)
                   .say("in")

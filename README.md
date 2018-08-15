@@ -36,7 +36,7 @@ The schema for the whole application can be build by running node build_schema.j
                     }
                 ],
                 "samples": [
-                    "how many {food} are avaliable"
+                    "how many {food} are available"
                 ]
             }
         ],

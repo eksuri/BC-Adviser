@@ -10,5 +10,5 @@ let opts = config.opts;
 conversation(opts)
     .userSays('BookIntent', { "subject":"cs", "number":"341", "quarter": "fall", "year": "2018"})
     .plainResponse
-        .shouldEqual("There are 2 different sections avaliable for acct 101 in summer 2018 Please check online for your book.")
+        .shouldEqual("There are 2 different sections available for acct 101 in summer 2018 Please check online for your book.")
     .end();

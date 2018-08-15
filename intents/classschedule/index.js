@@ -40,7 +40,7 @@ exports.Handler =[ {
         } else if (schedule.Sections.length > 1) {
             speech.say("There are")
                   .say(schedule.Sections.length)
-                  .say("different sections avaliable for")
+                  .say("different sections available for")
                   .say(s.subject)
                   .say(s.number)
                   .say("in")
