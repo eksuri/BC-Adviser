@@ -20,6 +20,7 @@ getCourse = async (subject, number) => {
 
 getFootnotes = async(subject, number) => {
     const data = await getCourse(subject, number);
+    console.log(data.Courses[0].Footnotes);
     return data.Courses[0].Footnotes;
 }
 
@@ -35,7 +36,7 @@ exports.getPrerequisite = async (subject, number) => {
 exports.getRecommended = async (subject, number) => {
     const footnotes = await getFootnotes(subject, number);
     const recommended = footnotes.find((f) => {
-        return f.includes("Recomended") || f.includes("recomended");
+        return f.includes("Recommended") || f.includes("recommended");
     })
 
     return (recommended?recommended.split(':')[1]:null);
