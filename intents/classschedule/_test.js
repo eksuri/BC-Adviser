@@ -12,7 +12,7 @@ conversation(opts)
     //Test 1: The class is held Tuesday/Thursday and Friday.
     .userSays('ClassScheduleIntent', { "subject":"CS", "number":"410", "quarter":"Spring", "year":"2018"})
     .plainResponse
-        .shouldEqual("CS 410 is offered Monday Wednedsay 12:30 to 14:20 Friday 11:30 to 12:20")
+        .shouldEqual("CS 410 is offered Monday Wednesday 12 30 to 14 20 Friday 11 30 to 12 20")
         .end()/*       
     //Test 2: The class is held Monday/Wednesday and Friday
     .userSays('ClassScheduleIntent', { "subject":"CS", "number":"410", "quarter":"Spring", "year":"2018"})

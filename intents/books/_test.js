@@ -10,5 +10,5 @@ let opts = config.opts;
 conversation(opts)
     .userSays('BookIntent', { "subject":"acct", "number":"101", "quarter": "summer", "year": "2018"})
     .plainResponse
-        .shouldEqual("Books required for acct 101 item number 4000 are Horngren&apos;s Acct. Financial Chpt.(Ll) W/ Access Code, by Nobles.")
+        .shouldEqual("There are 2 different sections avaliable for acct 101 in summer 2018 Please check online for your book.")
     .end();
