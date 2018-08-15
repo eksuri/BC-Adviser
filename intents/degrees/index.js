@@ -29,7 +29,7 @@ exports.Handler = [ {
                       .pause("1s");
             });
         } else {
-            speech.say("That is not avaliable at this time");
+            speech.say("That is not avalaible at this time");
         }
     
         return responseBuilder.speak(speech.ssml(true))

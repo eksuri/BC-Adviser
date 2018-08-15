@@ -1,4 +1,4 @@
-exports.list= ["bachelors", "associates", "transfer", "non transfer", 
+exports.list= ["bachelors", "associate", "transfer", "non transfer", 
                "professional", "technical", "eastern Washington"];
 
 exports.getDegrees = async (degree_type) => {
@@ -14,7 +14,7 @@ exports.getDegrees = async (degree_type) => {
             return await getTransferDegrees();
         case "non transfer":
             return await getNonTransferDegrees();
-        case "associates":
+        case "associate":
         default:
             return await Promise.all([
                 getTransferDegrees(),
