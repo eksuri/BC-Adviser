@@ -9,18 +9,22 @@ const ratemyprof = require('./ratemyprofessor');
 const recommended = require('./recommended');
 const retake = require('./retake');
 const schedule = require('./classschedule');
+const scholarship = require('./scholarships');
 
-exports.handlers = [about.Handler,
-                    amazon.Handler,
-                    books.Handler,
-                    classes.Handler,
-                    degrees.Handler,
-                    finals.Handler,
-                    instructors.Handler,
-                    ratemyprof.Handler,
-                    recommended.Handler,
-                    retake.Handler,
-                    schedule.Handler];
+exports.handlers = [
+    about.Handler,
+    amazon.Handler,
+    books.Handler,
+    classes.Handler,
+    degrees.Handler,
+    finals.Handler,
+    instructors.Handler,
+    ratemyprof.Handler,
+    recommended.Handler,
+    retake.Handler,
+    schedule.Handler,
+    scholarship.Handler,
+];
 
 exports.schemas = [
     about.schema,
@@ -34,4 +38,5 @@ exports.schemas = [
     recommended.schema,
     retake.schema,
     schedule.schema,
+    scholarship.schema,
 ]

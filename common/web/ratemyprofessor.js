@@ -1,4 +1,3 @@
-//const https = require('./get');
 const fetch = require('node-fetch');
 
 exports.getRating = async (firstName, lastName) => {

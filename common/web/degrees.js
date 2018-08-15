@@ -1,5 +1,3 @@
-const fetch = require('node-fetch');
-
 exports.list= ["bachelors", "associates", "transfer", "non transfer", 
                "professional", "technical", "eastern Washington"];
 
