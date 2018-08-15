@@ -14,6 +14,7 @@
             ],
             "samples": [
                 "when can I retake {subject} {number}",
+                "when can I take {subject} {number}",
                 "when is offered {subject} {number}",
                 "when can I next take {subject} {number}",
                 "in what quarter is offered {subject} {number}",
@@ -27,6 +28,8 @@
                 "i want to retake {subject} {number} again",
                 "i want to retake a class",
                 "when can I retake a class",
+                "when can I take a class",
+                "when is offered a class",
                 "i want to know when I can retake a class",
                 "i want to know when can I retake a class",
                 "when can I retake {subject} {number} again",

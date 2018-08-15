@@ -21,10 +21,7 @@
                 }
               ],
               "samples": [
-                "i want to know when I can take a class",
-                "i want to know when can I take a class",
-                "when can I take a class",
-                "when is a class offered",
+                "i want to know the schedule for a class",
                 "what time is offered {subject} {number} in the {quarter} {year}",
                 "what time is {subject} {number} in the {quarter} {year}",
                 "what time will be {subject} {number} in the {quarter} {year}",
@@ -32,8 +29,6 @@
                 "what time is {subject} {number} offered in the {quarter} {year}",
                 "what time is {subject} {number} offered in {quarter} {year}",
                 "i want to know what time a class is offered",
-                "i want to know when a class is offered",
-                "when is {subject} offered",
                 "when is {subject} offered in {quarter}",
                 "when is offered {subject} {number} in the {quarter} {year}",
                 "when is {subject} {number} in the {quarter} {year}",
@@ -59,14 +54,9 @@
                 "when is {subject} {number} offered in the {quarter} quarter {year}",
                 "when is {subject} {number} offered in {quarter} quarter {year}",
                 "when is {subject} offered in {quarter} quarter",
-                "i want to know when I can take a course",
-                "i want to know when can I take a course",
-                "when can I take a course",
                 "when is a course offered",
                 "i want to know what time a course is offered",
-                "i want to know when a course is offered",
-                "i want to know what time a course is offered",
-                "i want to know when a course is offered"
+                "i want to know what time a course is offered"
               ]
           }
       ],
