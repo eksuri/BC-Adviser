@@ -2,39 +2,36 @@
 const amazon = require('./amazon');
 const books = require('./books');
 const classes = require('./classoffered');
+const degrees = require('./degrees')
 const finals = require('./finals');
+const instructors = require('./getInstructors');
+const ratemyprof = require('./ratemyprofessor');
 const recommended = require('./recommended');
 const retake = require('./retake');
 const schedule = require('./classschedule');
-const instructors = require('./getInstructors');
-const assignments = require('./assignments');
-const quizzes = require('./quizzes');
-const ratemyprof = require('./ratemyprofessor');
 
-exports.handlers = [amazon.Handler,
-                    about.Handler,
+exports.handlers = [about.Handler,
+                    amazon.Handler,
                     books.Handler,
                     classes.Handler,
+                    degrees.Handler,
                     finals.Handler,
                     instructors.Handler,
-                    retake.Handler,
-                    schedule.Handler,
-                    assignments.Handler,
-                    quizzes.Handler,
+                    ratemyprof.Handler,
                     recommended.Handler,
-                    ratemyprof.Handler];
+                    retake.Handler,
+                    schedule.Handler];
 
 exports.schemas = [
-    assignments.schema,
     about.schema,
     amazon.schema,
     books.schema,
     classes.schema,
+    degrees.schema,
     finals.schema,
+    instructors.schema,
+    ratemyprof.schema,
     recommended.schema,
     retake.schema,
-    instructors.schema,
     schedule.schema,
-    quizzes.schema,
-    ratemyprof.schema,
 ]

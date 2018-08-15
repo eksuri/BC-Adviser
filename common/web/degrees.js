@@ -1,6 +1,7 @@
 const fetch = require('node-fetch');
 
-exports.list= ["bachelors", "associates", "transfer", "non transfer", "professional", "technical", "eastern Washington"];
+exports.list= ["bachelors", "associates", "transfer", "non transfer", 
+               "professional", "technical", "eastern Washington"];
 
 exports.getDegrees = async (degree_type) => {
     switch (degree_type) {
@@ -24,61 +25,22 @@ exports.getDegrees = async (degree_type) => {
       }
 }
 
-
 getBachelorsDegrees = async () => {
-    const regex = /<a href=\"https:\/\/www.bellevuecollege.edu\/programs\/degrees\/bachelor.*>.*(?:Arts|Science)\s(?:Degree\s)?(.*)<\/a>/g;
-    const url = "https://www.bellevuecollege.edu/programs/degrees/bachelor/";
-    
-    return await getDegrees(regex, url);
+    return ["Applied Accounting", "Computer Science", "Data Analytics", "Digital Marketing", "Health Promotion and Management", "Healthcare Informatics", "Healthcare Management and Leadership", "Information Systems and Technology", "Interior Design", "Molecular Biosciences", "Nursing", "Radiation and Imaging Sciences"]
 }
 
 getProfTechDegrees = async () => {
-    const regex = /<td>(?:<a href=.*?>)?(.*?)(?:<\/a>)?<\/td>\s<td>(.*)<\/td>\s<td>(.*)<\/td>\s<td>(?:<a href=.*?>)?(.*?)(?:<\/a>)?<\/td>/g;
-    const url = "https://www.bellevuecollege.edu/programs/degrees/proftech/";
-    
-    const degrees = await getDegrees(regex, url);
-
-    let array = [];
-    for (let i = degrees.length - 4; i >= 0; i -= 4) {
-        array.unshift(degrees[i]);
-    }
-
-    return array;
+    return ["Robotics and AI", "Accounting", "Allied Health", "Business Management", "Business Technology", "Criminal Justice", "Diagnostic Ultrasound Technology", "Digital Marketing", "Digital Media Arts", "Early Childhood Education", "Information Systems", "Interior Studies", "Marketing Management", "Molecular Sciences Technician", "Network Services and Computing Systems", "Neurodiagnostic Technology", "Nuclear Medicine Technlogy", "Radiation Therapy", "Radiologic Technology"]
 }
 
 getEasternDegrees = async () => {
-    const regex = /B\.[AS]\.\sin (.+)<\/h3>/g;
-    const url = "https://www.bellevuecollege.edu/programs/degrees/bachelor/eastern/";
-    
-    return await getDegrees(regex, url);
+    return ["Business Administration", "Children's Studies", "Interdisciplinary STudies", "Psychology"]   
 }
 
 getTransferDegrees = async () => {
-    const regex = /<h2>.*(Associate.*)\(/g;
-    const url = "https://www.bellevuecollege.edu/programs/degrees/transfer/";
-
-    return await getDegrees(regex, url);
+    return ["Direct Transfer Aggrement", "Business", "Math Education", "Biology", "Engineering", "Music"]
 }
 
 getNonTransferDegrees = async () => {
-    const regex = /<a href=\"https:\/\/www.bellevuecollege.edu\/programs\/degrees\/nontransfer.*>(.*)<\/a><\/li>/g;
-    const url = "https://www.bellevuecollege.edu/programs/degrees/nontransfer/";
-
-    return await getDegrees(regex, url);
-}
-
-getDegrees = async (regex, url) => {
-    const res = await fetch(url);
-    const data = await res.text();
-
-    let array = [];
-
-    while ((match = regex.exec(data))) {
-        match.shift();
-        match.forEach((s) => {
-            array.push(s);
-        })
-    }
-
-    return array;
+    return ["General Studies", "Occupational and Life Skills"]
 }
