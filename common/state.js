@@ -8,11 +8,32 @@ class State {
     }
 
     set quarter(slot) {
-        this.courseQuarter = slot ? (slot.value == "autumn" ? "fall" : slot.value) : null;
+        if (slot) {
+            this.courseQuarter = slot.value == "autumn" ? "fall" : slot.value;
+        }
+        else {
+            const date = new Date();
+            const month = date.getMonth();
+
+            if (month < 4) {
+                this.courseQuarter = "winter";
+            } else if (month < 7 ) {
+                this.courseQuarter = "spring";
+            } else if (month < 9 ) {
+                this.courseQuarter = "summer";
+            } else {
+                this.courseQuarter = "fall";
+            }
+        }
     }
 
     set year(slot) {
-        this.courseYear = slot? slot.value : null;
+        if (slot) {
+            this.courseYear = parseInt(slot);
+        } else {
+            const date = new Date();
+            this.courseYear = date.getFullYear();
+        }
     }
 
     set subject(slot) {

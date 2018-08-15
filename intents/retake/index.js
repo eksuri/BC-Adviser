@@ -31,9 +31,30 @@ exports.Handler =[ {
         let s = new State(handlerInput.requestEnvelope.request.intent.slots);
         const quarters = await courses.getQuartersOffered(s.subject, s.number);
 
+        console.log(quarters);
+
+        const projected_quarters = quarters.map((q) => {
+            const p = q.split(" ");
+            if (parseInt(q[1]) > s.year) { // it's already ahead a year
+                return q;
+            } else if (parseInt(p[1]) < s.year) { // it's behind a year
+                p[1]++;
+                return p[0].concat(" ", p[1].toString());
+            } else { // same year
+                if (p[0].toLowerCase() === s.quarter || s.quarter === 'fall' || p[0].toLowerCase() === 'winter' || (p[0].toLowerCase() === 'spring' && s.quarter === 'summer')) {
+                    p[1]++;
+                    return p[0].concat(" ", p[1].toString());
+                } else {
+                    return q;
+                }
+            }
+        })
+
+        console.log(projected_quarters);
+
         speech.say("This class is offered at Bellevue College")
 
-        quarters.forEach((q) => speech.say(q).pause("1s"));
+        projected_quarters.forEach((q) => speech.say(q).pause("1s"));
         
         return handlerInput.responseBuilder.speak(speech.ssml(true))
             .getResponse();

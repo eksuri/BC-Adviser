@@ -10,5 +10,5 @@ let opts = config.opts;
 conversation(opts)
     .userSays('ScholarshipIntent')
     .plainResponse
-        .shouldContain("Humane")
+        .shouldContain("including")
     .end();

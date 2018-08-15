@@ -26,7 +26,7 @@ getFootnotes = async(subject, number) => {
 exports.getPrerequisite = async (subject, number) => {
     const footnotes = await getFootnotes(subject, number);
     const prerequisites = footnotes.find((f) => {
-        return f.includes("Prerequisite");
+        return f.includes("Prerequisite") || f.includes("prerequisite");
     })
     return (prerequisites ? prerequisites.split(':')[1]:null);
 }
@@ -35,13 +35,13 @@ exports.getPrerequisite = async (subject, number) => {
 exports.getRecommended = async (subject, number) => {
     const footnotes = await getFootnotes(subject, number);
     const recommended = footnotes.find((f) => {
-        return f.includes("Recomended");
+        return f.includes("Recomended") || f.includes("recomended");
     })
 
     return (recommended?recommended.split(':')[1]:null);
 }
 
 exports.getQuartersOffered = async(subject, number) => {
-    const course = await getCourse(subject, number);    
+    const course = await getCourse(subject, number);
     return course.QuartersOffered.map((q) => {return q.FriendlyName});;
 }
