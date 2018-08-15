@@ -10,6 +10,7 @@ const recommended = require('./recommended');
 const retake = require('./retake');
 const schedule = require('./classschedule');
 const scholarship = require('./scholarships');
+const timeconflict = require('./timeconflict');
 
 exports.handlers = [
     about.Handler,
@@ -24,6 +25,7 @@ exports.handlers = [
     retake.Handler,
     schedule.Handler,
     scholarship.Handler,
+    timeconflict.Handler,
 ];
 
 exports.schemas = [
@@ -39,4 +41,5 @@ exports.schemas = [
     retake.schema,
     schedule.schema,
     scholarship.schema,
+    timeconflict.schema,
 ]

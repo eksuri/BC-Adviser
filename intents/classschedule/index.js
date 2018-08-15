@@ -34,7 +34,6 @@ exports.Handler =[ {
         // potential format: {mask: [0,1,0,1,1,0], times:[[10:30,12:30],[10:30,12:30],[11:30,1:30]]}
         const schedule = await sections.getCourseSchedule(s.fullQuarter, s.subject, s.number);
 
-        console.log(schedule.Sections.length);
 
         if(schedule.Sections.length === 0) {
             speech.say("I'm sorry, I couldn't find that.")
@@ -50,32 +49,24 @@ exports.Handler =[ {
                   .pause("1s")
                   .say("Please check online for the full schedule");
         } else {
-            let scheduleString = "";
+            speech.say(s.subject)
+                  .say(s.number)
+                  .say("is offered")
+
             schedule.Sections[0].Times.forEach((s) => {
                 // each of these have three elements
                 if (s[0] == "Online") {
-                    scheduleString += "Online"
+                    speech.say("Online");
                 } else {
-                    let days = s[0]
-                        .replace("Th", "Thursday")
-                        .replace("T", "Tuesday ")
-                        .replace("M", "Monday ")
-                        .replace("W", "Wednedsay ")
-                        .replace("F", "Friday ");
-                    scheduleString += days;
-                    scheduleString += " "
-                    scheduleString += s[1];
-                    scheduleString += " to "
-                    scheduleString += s[2];
-                    scheduleString += " ";
+                    s.Days.forEach((day) => speech.say(day));
+                    speech.say(s.Start.Hour)
+                          .say(s.Start.Minute)
+                          .say("to")
+                          .say(s.End.Hour)
+                          .say(s.End.Minute)
+                          .pause("1s");
                 }
             });
-    
-            speech.say(s.subject)
-                .say(s.number)
-                .say("is offered")
-                .say(scheduleString)
-                .pause("1s");
         }
 
 

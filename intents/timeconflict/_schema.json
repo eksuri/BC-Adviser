@@ -1,0 +1,106 @@
+{
+    "intents": [
+        {
+            "name": "TimeConflictIntent",
+            "slots": [
+              {
+                  "name": "subjectOne",
+                  "type": "SUBJECT"
+              },
+              {
+                "name": "subjectTwo",
+                "type": "SUBJECT"
+              },
+              {
+                  "name": "numberOne",
+                  "type": "AMAZON.NUMBER"
+              },
+              {
+                "name": "numberTwo",
+                "type": "AMAZON.NUMBER"
+              },
+              {
+                  "name": "quarter",
+                  "type": "QUARTER"
+              },
+              {
+                  "name": "year",
+                  "type": "AMAZON.FOUR_DIGIT_NUMBER"
+              }
+            ],
+            "samples": [
+              "i want to know if can i take two classes in the same time",
+              "can i take two classes in the same time",
+              "which classes can i take in the same time",
+              "i want to know which classes can i take in the same time",
+              "Can I take {subjectOne} {numberOne} in the same time with {subjectTwo} {numberTwo} in the {quarter} {year}",
+              "if can I take {subjectOne} {numberOne} in the same time with {subjectTwo} {numberTwo} in the {quarter} {year}",
+              "Can I take {subjectOne} {numberOne} in the same time with {subjectTwo} {numberTwo} in {quarter} {year}",
+              "if can I take {subjectOne} {numberOne} in the same time with {subjectTwo} {numberTwo} in {quarter} {year}"
+            ]
+        }
+    ],
+    "dialogs": [
+      {
+        "name": "TimeConflictIntent",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "subjectOne",
+            "type": "SUBJECT",
+            "confirmationRequired": false,
+            "elicitationRequired": true,
+            "prompts": {
+              "elicitation": "subject_elication"
+            }
+          },
+          {
+            "name": "subjectTwo",
+            "type": "SUBJECT",
+            "confirmationRequired": false,
+            "elicitationRequired": true,
+            "prompts": {
+              "elicitation": "subject_elication"
+            }
+          },
+          {
+            "name": "numberOne",
+            "type": "AMAZON.NUMBER",
+            "confirmationRequired": false,
+            "elicitationRequired": true,
+            "prompts": {
+              "elicitation": "number_elication"
+            }
+          },
+          {
+            "name": "numberTwo",
+            "type": "AMAZON.NUMBER",
+            "confirmationRequired": false,
+            "elicitationRequired": true,
+            "prompts": {
+              "elicitation": "number_elication"
+            }
+          },
+          {
+            "name": "quarter",
+            "type": "QUARTER",
+            "confirmationRequired": false,
+            "elicitationRequired": true,
+            "prompts": {
+              "elicitation": "quarter_elication"
+            }
+          },
+          {
+            "name": "year",
+            "type": "AMAZON.FOUR_DIGIT_NUMBER",
+            "confirmationRequired": false,
+            "elicitationRequired": true,
+            "prompts": {
+              "elicitation": "year_elication"
+            }
+          }
+        ]
+      }
+    ]
+}
