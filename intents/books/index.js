@@ -46,7 +46,7 @@ exports.Handler =[ {
                   .pause("1s")
                   .say("Please check online for your book.");
         } else {
-            let books = await texts.getTexts(c.Yrq.FriendlyName, c.CourseSubject, c.CourseNumber, c.ID.ItemNumber);
+            let books = await texts.getTexts(c[0].Yrq.FriendlyName, c[0].CourseSubject, c[0].CourseNumber, c[0].ID.ItemNumber);
             let bookAndAuthor = "";
     
             if (books != null && books[0] != null) {
