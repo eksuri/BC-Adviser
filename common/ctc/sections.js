@@ -11,10 +11,10 @@ getSections = async (quarter, subject) => {
 
 getCourseSections = async (quarter, subject, number) => {
     const sections = await getSections(quarter, subject);
-    const courses = sections.Courses.filter((c) => {
+    const courses = await sections.Courses.filter((c) => {
         return c.Sections[0].CourseNumber === number
     });
-
+    
     return courses[0].Sections;
 }
 

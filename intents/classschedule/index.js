@@ -34,39 +34,50 @@ exports.Handler =[ {
         // potential format: {mask: [0,1,0,1,1,0], times:[[10:30,12:30],[10:30,12:30],[11:30,1:30]]}
         const schedule = await sections.getCourseSchedule(s.fullQuarter, s.subject, s.number);
 
+        console.log(schedule.Sections.length);
 
+        if(schedule.Sections.length === 0) {
+            speech.say("I'm sorry, I couldn't find that.")
+        } else if (schedule.Sections.length > 1) {
+            speech.say("There are")
+                  .say(schedule.Sections.length)
+                  .say("different sections avaliable for")
+                  .say(s.subject)
+                  .say(s.number)
+                  .say("in")
+                  .say(s.quarter)
+                  .say(s.year)
+                  .pause("1s")
+                  .say("Please check online for the full schedule");
+        } else {
+            let scheduleString = "";
+            schedule.Sections[0].Times.forEach((s) => {
+                // each of these have three elements
+                if (s[0] == "Online") {
+                    scheduleString += "Online"
+                } else {
+                    let days = s[0]
+                        .replace("Th", "Thursday")
+                        .replace("T", "Tuesday ")
+                        .replace("M", "Monday ")
+                        .replace("W", "Wednedsay ")
+                        .replace("F", "Friday ");
+                    scheduleString += days;
+                    scheduleString += " "
+                    scheduleString += s[1];
+                    scheduleString += " to "
+                    scheduleString += s[2];
+                    scheduleString += " ";
+                }
+            });
+    
+            speech.say(s.subject)
+                .say(s.number)
+                .say("is offered")
+                .say(scheduleString)
+                .pause("1s");
+        }
 
-        let scheduleString = "";
-        schedule.Sections[0].Times.forEach((s) => {
-            // each of these have three elements
-            if (s[0] == "Online") {
-                scheduleString += "Online"
-            } else {
-                let days = s[0]
-                    .replace("Th", "Thursday")
-                    .replace("T", "Tuesday ")
-                    .replace("M", "Monday ")
-                    .replace("W", "Wednedsay ")
-                    .replace("F", "Friday ");
-                scheduleString += days;
-                scheduleString += s[1];
-                scheduleString += " to "
-                scheduleString += s[2];
-                scheduleString += " ";
-            }
-        });
-
-        speech.say(s.subject)
-            .say(s.number)
-            .say("is offered")
-            .say(scheduleString)
-            .pause("2s");
-
-
-
-
-        // figure out how to start telling some of the times
-        // convert times array into object
 
         return handlerInput.responseBuilder.speak(speech.ssml(true))
             .getResponse();

@@ -29,7 +29,7 @@ class State {
 
     set year(slot) {
         if (slot) {
-            this.courseYear = parseInt(slot);
+            this.courseYear = parseInt(slot.value);
         } else {
             const date = new Date();
             this.courseYear = date.getFullYear();

@@ -8,7 +8,7 @@ let opts = config.opts;
     opts.handler = app.handler;
 
 conversation(opts)
-    .userSays('RetakeClassIntent', { "subject":"ENGL", "number":"101"})
+    .userSays('RetakeClassIntent', { "subject":"CS", "number":"300"})
     .plainResponse
         .shouldEqual("This class is offered at Bellevue College Fall 2018")
     .end();

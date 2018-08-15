@@ -31,8 +31,6 @@ exports.Handler =[ {
         let s = new State(handlerInput.requestEnvelope.request.intent.slots);
         const quarters = await courses.getQuartersOffered(s.subject, s.number);
 
-        console.log(quarters);
-
         const projected_quarters = quarters.map((q) => {
             const p = q.split(" ");
             if (parseInt(q[1]) > s.year) { // it's already ahead a year
@@ -49,8 +47,6 @@ exports.Handler =[ {
                 }
             }
         })
-
-        console.log(projected_quarters);
 
         speech.say("This class is offered at Bellevue College")
 
