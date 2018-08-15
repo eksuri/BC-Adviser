@@ -55,7 +55,7 @@ exports.getCourseSchedule = async (quarter, subject, number) => {
 
     const offerings = sections.map((s) => {
         if (s.IsOnline) {
-            return [{"Times":["Online", "00:00", "00:00"]}];
+            return {"Times":["Online", "00:00", "00:00"]};
         } else {
             const times = s.Offered.map((o) => {
                 const start = o.StartTime ? (2208960000000 + Number.parseInt(o.StartTime.split(/[\(\)]/)[1])) / 60000 : null;
