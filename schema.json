@@ -811,7 +811,7 @@
                     ]
                 },
                 {
-                    "name": "GetScholarshipIntent",
+                    "name": "ScholarshipIntent",
                     "samples": [
                         "what scholarships are available",
                         "what scholarships are there",
