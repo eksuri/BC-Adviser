@@ -29,7 +29,13 @@ exports.Handler = [{
                 random_scholarships.add(list[index]);
             }
 
-            random_scholarships.forEach((s)=> speech.say(s).pause("1s"));
+            speech.say(random_scholarships[0])
+                  .pause("1s")
+                  .say(random_scholarships[1])
+                  .pause("1s")
+                  .say("and")
+                  .say(random_scholarships[2]);
+
         }            
        return handlerInput.responseBuilder.speak(speech.ssml(true))
             .getResponse();
