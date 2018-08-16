@@ -1,7 +1,26 @@
-# BC-Adviser
-Amazon Alexa Skill for Bellevue College Senior Capstone
+# BC Adviser
+## Introduction
 
-BC-Adviser is built to run in Node v6.10.3, and uses [alexa-conversation](https://github.com/ExpediaDotCom/alexa-conversation) with mocha for test coverage. Intents are added to this alexa skill are modular fashion and new intents can be added to the [intents](https://github.com/eksuri/BC-Adviser/tree/master/intents) folder and by adding them to [intents/index.js](https://github.com/eksuri/BC-Adviser/tree/master/intents/index.js).
+BC Adviser is a Amazon Alexa Skills application developed at Bellevue College as part of a Senior Capstone. The goal of BC Adviser is to take information about Bellevue College that's hard to find on the BC site or that might require a visit to an adviser and expose it with a simple voice powered interface. BC-Adviser will also integrate with Canvas and RateMyProfessor to give reviews on professors and other information about grades and courses.
+
+### Functionality 
+
+
+Students live increasingly busy lives.  Because of work, family, extracurricular and academic obligations, students have a limited amount of time to schedule appointments with academic advisers.  At the same time, the amount of time that advisers can devote to meetings is very limited.
+The BC Adviser project utilizes the Amazon Alexa voice assistant to act as the role of a college and departmental adviser at Bellevue College.  Potential, current, and former students will be able to ask Alexa any questions that they would ask a college adviser in the advising or departmental offices. Typical questions that students ask advisers center on things like classes, applications, fields of study, grades and transcripts, tuition, financial aid, disability and mental health support, scholarships, registration, academic planning,  college transferring, and career advice.  
+The Amazon developer platform for Alexa includes an integrative and supportive development kit for developers to develop, test, and deploy their Alexa skills.  Alexa skills can be developed with a myriad of programming languages.  The languages that the Bellevue College seniors have selected in developing the BC Adviser are JSON, Javascript, and nodejs. 
+
+
+
+## Requirements
+
+## Architecture
+
+## Setup
+
+## Next Steps
+
+BC-Adviser is built to run in Node v8.10, and uses [alexa-conversation](https://github.com/eksuri/alexa-conversation#refs/heads/jgamell/addContextObject) with mocha for test coverage. Intents are added to this alexa skill are modular fashion and new intents can be added to the [intents](https://github.com/eksuri/BC-Adviser/tree/master/intents) folder and by adding them to [intents/index.js](https://github.com/eksuri/BC-Adviser/tree/master/intents/index.js).
 
 Common code is moved out of indivdual intents into [common](https://github.com/eksuri/BC-Adviser/tree/master/common).
 

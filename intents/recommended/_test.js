@@ -13,5 +13,5 @@ conversation(opts)
         .shouldEqual("prerequisites for math 078 include completion of MATH 070 with a C or better, MATH 075 with a grade of B or higher, or placement by assessment.")
     .userSays('RecommendedIntent', { "subject":"math", "number":"152"})
     .plainResponse
-            .shouldEqual("prerequisites for math 078 include completion of MATH 070 with a C or better, MATH 075 with a grade of B or higher, or placement by assessment.")
+            .shouldEqual("recommendations for math 152 include MATH 151.")
     .end();

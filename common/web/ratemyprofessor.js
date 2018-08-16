@@ -13,7 +13,7 @@ exports.getRating = async (firstName, lastName) => {
         }
         
         const resSecond = await fetch("http://www.ratemyprofessors.com/ShowRatings.jsp?tid=" + matchFirst[1]).catch((e) => { return null });
-        if (!resSecond) return null;;
+        if (!resSecond) return null;
         const dataSecond = await resSecond.text();
     
         //const regexSecond = /Overall Quality[\s\S]*title="">(.*)<[\s\S]*Would Take Again[\s\S]*?<div class="grade" title="">\s(.*)[\s\S]*?Level of Difficulty[\s\S]*?title="">\s(.*)[\s\S]*<img src="\/assets\/chilis\/(.*)/g
