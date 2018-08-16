@@ -7,14 +7,20 @@ getSections = async (quarter, subject) => {
     while(text.includes(`"ID":null,`)) {
         text = text.replace(`"ID":null,`, ``);
     }
-    const data = JSON.parse(text); // duplicate object key fix
-    
-    return data;
+    try {
+        const data = JSON.parse(text); // duplicate object key fix
+        return data
+    } catch(e) {
+        console.log(e);
+        return null;
+    }
 }
 
 
 exports.getCourseSections = async (quarter, subject, number) => {
     const sections = await getSections(quarter, subject);
+    if(sections === null) return null;
+
     const courses = await sections.Courses.filter((c) => {
         return c.Sections[0].CourseNumber === number
     });
@@ -24,6 +30,7 @@ exports.getCourseSections = async (quarter, subject, number) => {
 
 exports.getInstructors = async (quarter, subject, number) => {
     const sections = await this.getCourseSections(quarter, subject, number);
+    if(sections === null) return null;
 
     const offerings = sections.map((s) => {
         return s.Offered[0].InstructorName;
@@ -38,6 +45,7 @@ exports.getInstructors = async (quarter, subject, number) => {
 
 exports.getCoursesOffered = async (quarter, subject) => {
     const sections = await getSections(quarter, subject);
+    if(sections === null) return null;
     const courses = sections.Courses.map((c) => { return c.Sections[0].CourseTitle })
 
     return courses;
@@ -46,6 +54,7 @@ exports.getCoursesOffered = async (quarter, subject) => {
 
 exports.getCourseSchedule = async (quarter, subject, number) => {
     const sections = await this.getCourseSections(quarter, subject, number);
+    if(sections === null) return null;
 
     const offerings = sections.map((s) => {
         if (s.IsOnline) {
@@ -69,6 +78,7 @@ exports.getCourseSchedule = async (quarter, subject, number) => {
 
 exports.getCourseSchedule = async (quarter, subject, number) => {
     const sections = await this.getCourseSections(quarter, subject, number);
+    if(sections === null) return null;
 
     const offerings = sections.map((s) => {
         if (s.IsOnline) {
@@ -126,6 +136,9 @@ exports.getCourseSchedule = async (quarter, subject, number) => {
 exports.CompareCourseSchedule = async (s1, s2) => {
     const [scheduleOne, scheduleTwo] = await Promise.all([this.getCourseSchedule(s1.fullQuarter, s1.subject, s1.number), 
                                                           this.getCourseSchedule(s2.fullQuarter, s2.subject, s2.number)]);
+    
+    if(scheduleOne === null && scheduleTwo === null) return null
+    if(scheduleOne === null || scheduleTwo === null) return true;
 
     function conflict(time_one, time_two) {
         if (time_one.Days.includes("Online") || time_one.Days.includes("Online") ) {

@@ -32,7 +32,7 @@ exports.Handler = [{
         let s = new State(handlerInput.requestEnvelope.request.intent.slots);
         const c = await sections.getCourseSections(s.fullQuarter, s.subject, s.number);
 
-        if (c.length === 0) {
+        if (c === null|| c.length === 0) {
             speech.say("I'm sorry, I couldn't find that.")
         } else if (c.length > 1) {
             speech.say("There are")
