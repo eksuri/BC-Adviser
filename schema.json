@@ -563,7 +563,19 @@
                         "are there any courses that are recommended before my course",
                         "are there any courses that are recommended before taking my course",
                         "i want to know recommendations before taking a course",
-                        "i want to know what is recommended before taking a course"
+                        "i want to know what is recommended before taking a course",
+                        "are there any recommendations before my class",
+                        "are there any recommendations before {subject}",
+                        "are there any recommendations before {subject} {number}",
+                        "are there any recommendations before i take my class",
+                        "are there any recommendations before i take {subject}",
+                        "are there any recommendations before i take {subject} {number}",
+                        "are there anything recommended before my class",
+                        "are there anything recommended before {subject}",
+                        "are there anything recommended before {subject} {number}",
+                        "are there anything recommended before i take my class",
+                        "are there anything recommended before i take {subject}",
+                        "are there anything recommended before i take {subject} {number}"
                     ],
                     "slots": [
                         {
