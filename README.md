@@ -169,3 +169,25 @@ Here's an example test case.
 
 
 # Next Steps
+
+Here's what is on the roadmap for the next things to be added to BC Adviser.
+
+## Short Curcuiting
+
+In most skills, we can get events before all the variables have been figured out. In these cases, our applicatin tells Alexa to find out what the rest of the variables are before we will do any work to come up with a response.
+
+It would be worthwhile to redevelop our skills in such a way that we start trying to answer the user's question before we have all the information from them. For example, if the user wants to know what books are required for CS 460, if CS 460 is only offered once a year, we should be able to figure that out and return a list of books instead of asking what quarter & year of CS 460 they're interested in.
+
+## Memoization
+
+If we're going to implement short curcuiting, it would make sense if we took our calls in our common folder and implemented memoization, to cut back on the number of http requests we make to API end points, so we don't fetch the same request 5-6 times as we try to figure out if we can solve it. 
+
+Although the lifecycle of lambda functions is relitivly short before the code gets shut down, in these cases we should continue to hit our 'hot' instance and could take advantage of the cached response.
+
+## Itteration
+
+In some cases, it's not practical to list to a user all 50 instances of English 101 in the fall quarter. It's possible for us to develop an itterator, so our application will let the user know there are 50 different offerings, and then ask the user if they'd like us to list them off five at a time.
+
+## Abstract Boilerplate Code
+
+In each of our modules there's a lot of repititon and boilerplate. Any attempts to abstract this away further would be appreciated.
