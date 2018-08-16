@@ -36,7 +36,41 @@
               "Can I take {subjectOne} {numberOne} in the same time with {subjectTwo} {numberTwo} in the {quarter} {year}",
               "if can I take {subjectOne} {numberOne} in the same time with {subjectTwo} {numberTwo} in the {quarter} {year}",
               "Can I take {subjectOne} {numberOne} in the same time with {subjectTwo} {numberTwo} in {quarter} {year}",
-              "if can I take {subjectOne} {numberOne} in the same time with {subjectTwo} {numberTwo} in {quarter} {year}"
+              "if can I take {subjectOne} {numberOne} in the same time with {subjectTwo} {numberTwo} in {quarter} {year}",
+              "time conflict",
+              "time conflicts",
+              "i want to know if classes conflict",
+              "i want to know if two classes conflict",
+              "i want to know if any two classes conflict",
+              "i want to know if any classes conflict",
+              "i want to know about class conflicts",
+              "class conflict",
+              "class conflicts",
+              "do classes I want to take conflict",
+              "tell me about class conflicts",
+              "tell me if two classes conflict",
+              "tell me if classes conflict",
+              "tell me if any classes conflict",
+              "can i take two classes at the same time",
+              "which classes can i take at the same time",
+              "Can I take {subjectOne} {numberOne} at the same time with {subjectTwo} {numberTwo} in the {quarter} {year}",
+              "if can I take {subjectOne} {numberOne} at the same time with {subjectTwo} {numberTwo} in the {quarter} {year}",
+              "Can I take {subjectOne} {numberOne} at the same time with {subjectTwo} {numberTwo} in {quarter} {year}",
+              "if can I take {subjectOne} {numberOne} at the same time with {subjectTwo} {numberTwo} in {quarter} {year}",
+              "Can I take {subjectOne} {numberOne} at the same time as {subjectTwo} {numberTwo} in the {quarter} {year}",
+              "if can I take {subjectOne} {numberOne} at the same time as {subjectTwo} {numberTwo} in the {quarter} {year}",
+              "Can I take {subjectOne} {numberOne} at the same time as {subjectTwo} {numberTwo} in {quarter} {year}",
+              "if can I take {subjectOne} {numberOne} at the same time as {subjectTwo} {numberTwo} in {quarter} {year}",
+              "Can I take {subjectOne} {numberOne} with {subjectTwo} {numberTwo} in the {quarter} {year}",
+              "if can I take {subjectOne} {numberOne} with {subjectTwo} {numberTwo} in the {quarter} {year}",
+              "Can I take {subjectOne} {numberOne}  with {subjectTwo} {numberTwo} in {quarter} {year}",
+              "if can I take {subjectOne} {numberOne} with {subjectTwo} {numberTwo} in {quarter} {year}",
+              "Can I take {subjectOne} {numberOne} at the same time as {subjectTwo} {numberTwo} in the {quarter} {year}",
+              "if can I take {subjectOne} {numberOne} at the same time as {subjectTwo} {numberTwo} in the {quarter} {year}",
+              "Can I take {subjectOne} {numberOne} at the same time as {subjectTwo} {numberTwo} in {quarter} {year}",
+              "if can I take {subjectOne} {numberOne} at the same time as {subjectTwo} {numberTwo} in {quarter} {year}",
+              "i want to know which classes can i take at the same time",
+              "can i take classes at the same time"
             ]
         }
     ],
@@ -61,7 +95,7 @@
             "confirmationRequired": false,
             "elicitationRequired": true,
             "prompts": {
-              "elicitation": "subject_elication"
+              "elicitation": "subject_elication_2"
             }
           },
           {
@@ -79,7 +113,7 @@
             "confirmationRequired": false,
             "elicitationRequired": true,
             "prompts": {
-              "elicitation": "number_elication"
+              "elicitation": "number_elication_2"
             }
           },
           {

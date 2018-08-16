@@ -139,6 +139,24 @@ main = async () => {
                         },
                     ]
                 },
+                {
+                    "id": "subject_elication_2",
+                    "variations": [
+                        {
+                            "type": "PlainText",
+                            "value": "which other course subject?"
+                        },
+                    ]
+                },
+                {
+                    "id": "number_elication_2",
+                    "variations": [
+                        {
+                            "type": "PlainText",
+                            "value": "which other course number?"
+                        }
+                    ]
+                },
             ]
         }
     }
