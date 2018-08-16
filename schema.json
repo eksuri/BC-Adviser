@@ -313,6 +313,9 @@
                     "samples": [
                         "who is teaching {subject} {number} in the {quarter} {year} quarter",
                         "who is teaching {subject} {number} in the {quarter} {year}",
+                        "who is teaching {subject} {number} in the {quarter} quarter",
+                        "who is teaching {subject} {number} in the {quarter} ",
+                        "who is teaching {subject} {number} in {year}",
                         "i would like to know who is teaching {subject} {number} in the {quarter} {year} quarter",
                         "i would like to know who is teaching {subject} {number} in the {quarter} {year}",
                         "i want to know who is teaching {subject} {number} in the {quarter} {year}",

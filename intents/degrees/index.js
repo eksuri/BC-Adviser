@@ -20,7 +20,7 @@ exports.Handler = [ {
     
         if (degrees.list.includes(degree_type)) {
             const list_of_degrees = await degrees.getDegrees(degree_type);
-            
+
             speech.say(degree_type)
                   .say("degrees include");
     
@@ -29,7 +29,7 @@ exports.Handler = [ {
                       .pause("1s");
             });
         } else {
-            speech.say("That is not avalaible at this time");
+            speech.say("I couldn't find those degrees. Please check online.");
         }
     
         return responseBuilder.speak(speech.ssml(true))
