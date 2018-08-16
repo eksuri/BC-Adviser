@@ -48,8 +48,14 @@ exports.Handler =[ {
             .pause("1s")
 
             coursesOffered.forEach((c) => {
-                speech.say(c)
-                    .pause("1s");
+                let c_array = c.split(" ");
+                let last = c_array.pop();
+                let converted = last.replace("VIII", "8").replace("VII", "7").replace("VI", "6").replace("IV", " 4").replace("V", "5").replace("III", " 3").replace("II", " 2").replace("I", " 1")
+
+                c_array.forEach((ca) => speech.say(ca));
+                speech.say(converted)
+                      .pause("1s");
+
             });
         }
 
