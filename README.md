@@ -195,3 +195,7 @@ In each of our modules there's a lot of repititon and boilerplate. Any attempts 
 ## Canvas
 
 Canvas features have been pulled and put into a seperate branch, feature/Canvas. Canvas was currently working by hardcoding a development token in the config.json file. To implement canvas, we need to rewrite many of the functions to take the token as an argument, rather than having them reach for it as a globally accessible variable. Then we need to get a development token from Bellevue College and register our application for a client id-secret keypair, so we can implement OAuth2 and allow end users to authenticate with their specific Canvas acount using Alexa Account linking.
+
+## Other Schools
+
+We're using the CTC Schedule API publicly exposed by Bellevue College, but other colleges in Washington State use the same application. It would be a worthwhile investment to port the application to work with other schools.
