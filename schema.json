@@ -154,7 +154,13 @@
                         "please give me more information on {program}",
                         "please give me more information on {program} degrees",
                         "please tell me more about {program}",
-                        "please tell me more about {program} degrees"
+                        "please tell me more about {program} degrees",
+                        "what {program} degrees are avaliable",
+                        "which {program} degrees are avaliable",
+                        "what {program} degrees can i get",
+                        "which {program} degrees can i get",
+                        "whiat {program} degrees can i enroll in",
+                        "which {program} degrees can i enroll in"
                     ],
                     "slots": [
                         {

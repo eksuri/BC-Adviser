@@ -1,10 +1,11 @@
 {
   "name": "bc-adviser",
-  "version": "0.7.0",
+  "version": "1.0.0",
   "description": "Amazon Alexa Skill for Bellevue College Capstone",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha intents/**/_test.js --reporter spec"
+    "test": "./node_modules/.bin/mocha intents/**/_test.js --reporter spec",
+    "build": "node build_schema.js"
   },
   "repository": {
     "type": "git",
