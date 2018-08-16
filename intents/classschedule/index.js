@@ -34,8 +34,9 @@ exports.Handler =[ {
         // potential format: {mask: [0,1,0,1,1,0], times:[[10:30,12:30],[10:30,12:30],[11:30,1:30]]}
         const schedule = await sections.getCourseSchedule(s.fullQuarter, s.subject, s.number);
 
-
-        if(schedule.Sections.length === 0) {
+        if(!Array.isArray(schedule)) {
+            speech.say("I'm sorry, that's not working right now.")
+        } else if(schedule.Sections.length === 0) {
             speech.say("I'm sorry, I couldn't find that.")
         } else if (schedule.Sections.length > 1) {
             speech.say("There are")

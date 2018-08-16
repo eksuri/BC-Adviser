@@ -1,13 +1,14 @@
 const fetch = require('node-fetch');
 
 getSections = async (quarter, subject) => {
-    const res = await fetch("http://bellevuecollege.edu/classes/" + quarter.toUpperCase() + "/" + subject.toUpperCase() + "/?format=json");
-    let text = await res.text();
-
-    while(text.includes(`"ID":null,`)) {
-        text = text.replace(`"ID":null,`, ``);
-    }
     try {
+        const res = await fetch("http://bellevuecollege.edu/classes/" + quarter.toUpperCase() + "/" + subject.toUpperCase() + "/?format=json").catch((e)=>{return null});
+        let text = await res.text();
+    
+        while(text.includes(`"ID":null,`)) {
+            text = text.replace(`"ID":null,`, ``);
+        }
+
         const data = JSON.parse(text); // duplicate object key fix
         return data
     } catch(e) {

@@ -5,9 +5,3 @@ exports.getAllSubjects = async () => {
     const data = await res.json();
     return data;
 }
-
-exports.getSubjects = async (quarter) => {
-    const res = await fetch("http://bellevuecollege.edu/classes/" + quarter.toUpperCase() + "/?format=json");
-    const data = await res.json();
-    return data.Courses;
-}

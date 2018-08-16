@@ -31,17 +31,28 @@ exports.Handler =[ {
         let s = new State(handlerInput.requestEnvelope.request.intent.slots);
         const instructors = await sections.getInstructors(s.fullQuarter, s.subject, s.number);
 
-        speech.say("The instructors for")
-            .say(s.subject)
-            .say(s.number)
-            .say("in")
-            .say(s.quarter)
-            .say(s.year)
-            .say("are")
-        instructors.forEach((i) => {
-            speech.say(i)
-                  .pause("1s");
-        })
+        if(!Array.isArray(instructors)){
+            speech.say("I'm sorry, that isn't working right now");
+        } else if (instructors.length === 0) {
+            speech.say("There are no instructors for ")
+                  .say(s.subject)
+                  .say(s.number)
+                  .say("in")
+                  .say(s.quarter)
+                  .say(s.year)
+        } else {
+            speech.say("The instructors for")
+                .say(s.subject)
+                .say(s.number)
+                .say("in")
+                .say(s.quarter)
+                .say(s.year)
+                .say("are")
+            instructors.forEach((i) => {
+                speech.say(i)
+                    .pause("1s");
+            })
+        }
 
         return handlerInput.responseBuilder.speak(speech.ssml(true))
             .getResponse();

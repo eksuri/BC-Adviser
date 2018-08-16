@@ -34,13 +34,15 @@ exports.Handler =[ {
         const footnote = (which ? await courses.getRecommended(s.subject, s.number) :
                                   await courses.getPrerequisite(s.subject, s.number));
 
-        if (footnote) {
+        if(!Array.isArray(footnote)) {
+            speech.say("I couldn't find that")
+        } else if (footnote.length > 0) {
             speech.say((which ? "recommendations" : "prerequisites"))
                 .say("for")
                 .say(s.subject)
                 .say(s.number)
                 .say("include")
-                .say(footnote.replace(/&/g, ''))
+                .say(footnote[1].replace(/&/g, ''))
         } else {
             speech.say("There are no")
                 .say((which ? "recommendations" : "prerequisites"))

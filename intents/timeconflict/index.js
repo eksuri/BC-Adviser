@@ -46,7 +46,9 @@ exports.Handler = [{
         });
 
         let no_conflict = await sections.CompareCourseSchedule(s1, s2);
-        if (no_conflict) {
+        if (no_conflict === null) {
+            speech.say("I'm sorry, I can't find that.");
+        } else if (no_conflict) {
             speech.say("Of course, you can take both")
                   .say(s1.subject)
                   .say(s1.number)
@@ -55,8 +57,6 @@ exports.Handler = [{
                   .say(s2.number)
                   .say(s2.quarter)
                   .say(s2.year)
-
-
         }
         else {
             speech.say("You cannot take both")

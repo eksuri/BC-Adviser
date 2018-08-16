@@ -34,12 +34,13 @@ exports.Handler =[ {
         // take note of how we get the fullQuarter, subject, and number from the object 's'
         const instructors = await sections.getInstructors(s.fullQuarter, s.subject, s.number);
         
-        if (instructors.length == 0) {
+        if (!Array.isArray(instructors)) {
+            speech.say("That isn't working right now, sorry!")
+        } else if (instructors.length == 0) {
             speech.say("There are no instructors for")
                   .say(s.subject)
                   .say(s.number);
-        }
-        else {
+        } else {
             const instructor_ratings = instructors.map(async (instructor) => {
                 const fullname = instructor.split(" ");
                 rating = await ratemyprofessor.getRating(fullname[0], fullname[1]);

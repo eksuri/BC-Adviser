@@ -15,7 +15,9 @@ exports.Handler = [{
         let speech = new Speech();
         const list = await scholarships.getScholarships();
         
-        if (scholarships.length < 3) { // base case, is empty
+        if(!Array.isArray(list)) {
+            speech.say("Sorry, I'm having a hard time with that.")
+        } else if (list.length < 3) { // base case, is empty
             names.say("Sorry, something went wrong.")
         } else { // general case, more than one.
             speech.say("The Bellevue College Foundation currently has")
