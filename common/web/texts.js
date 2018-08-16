@@ -22,8 +22,11 @@ exports.getTexts = async (quarterString, courseName, courseNumber, courseId) => 
                                                               + "__" + courseId
                                                       
 
-    const res = await fetch(bookUrl);
+    const res = await fetch(bookUrl).catch((e) => {return null});
+    if(!res) return null;
+
     const data = await res.text();
+
 
 
     const regexFirst = new RegExp('\"title(.*)', 'g');
