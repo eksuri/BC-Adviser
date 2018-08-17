@@ -172,7 +172,7 @@ Here's an example test case.
 
 Here's what is on the roadmap for the next things to be added to BC Adviser.
 
-## Short Curcuiting
+## Short Circuiting
 
 In most skills, we can get events before all the variables have been figured out. In these cases, our applicatin tells Alexa to find out what the rest of the variables are before we will do any work to come up with a response.
 
